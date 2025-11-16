@@ -88,10 +88,25 @@ if (($_POST['action'] ?? '') === 'send' && $view === 'messages'){
 }
 
 // ---------- fetch lists ----------
+
+// use room 1 as the "global / all spaces" anchor
+if (!defined('GLOBAL_ROOM_ID')) {
+  define('GLOBAL_ROOM_ID', 1);
+}
+
 $rooms = db()->query("SELECT slug,name FROM rooms ORDER BY id ASC")->fetchAll(PDO::FETCH_ASSOC);
+
+// posts = room-specific + global (room_id = GLOBAL_ROOM_ID), non-archived
 $posts = (function($room_id){
-  $q = db()->prepare("SELECT id,title,created_at FROM posts WHERE room_id=? ORDER BY id DESC");
-  $q->execute([$room_id]);
+  $sql = "
+    SELECT id, title, created_at, room_id
+    FROM posts
+    WHERE room_id IN (?, ?)
+      AND (is_archived IS NULL OR is_archived = 0)
+    ORDER BY created_at DESC, id DESC
+  ";
+  $q = db()->prepare($sql);
+  $q->execute([$room_id, GLOBAL_ROOM_ID]);
   return $q->fetchAll(PDO::FETCH_ASSOC);
 })($ROOM_ID);
 
@@ -99,13 +114,31 @@ $nowHuman = date('Y-m-d H:i:s');
 
 // ---------- per-view data ----------
 $messages = $post = null;
-if ($view === 'messages'){
-  $q = db()->prepare("SELECT user,body,created_at FROM messages WHERE room_id=? ORDER BY id ASC");
+
+if ($view === 'messages') {
+  // messages stay room-scoped, no global
+  $q = db()->prepare("
+    SELECT user, body, created_at
+    FROM messages
+    WHERE room_id = ?
+    ORDER BY id ASC
+  ");
   $q->execute([$ROOM_ID]);
   $messages = $q->fetchAll(PDO::FETCH_ASSOC);
+
 } elseif ($view === 'post') {
-  $q = db()->prepare("SELECT id,title,body,created_at FROM posts WHERE id=? AND room_id=?");
-  $q->execute([$post_id, $ROOM_ID]);
+  // allow viewing:
+  // - room-specific post
+  // - global post (GLOBAL_ROOM_ID) from any room
+  $sql = "
+    SELECT id, title, body, created_at, room_id
+    FROM posts
+    WHERE id = ?
+      AND (room_id = ? OR room_id = ?)
+      AND (is_archived IS NULL OR is_archived = 0)
+  ";
+  $q = db()->prepare($sql);
+  $q->execute([$post_id, $ROOM_ID, GLOBAL_ROOM_ID]);
   $post = $q->fetch(PDO::FETCH_ASSOC);
 }
 ?>
