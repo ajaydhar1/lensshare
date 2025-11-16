@@ -1,0 +1,290 @@
+/* futuristic mode */
+
+/* On smaller screens, keep it comfortable */
+@media (max-width: 815px) {
+ #btn-futuristic {
+    display: none;
+  }
+}
+
+/* ===== FUTURISTIC MODE ===== */
+#future-root[hidden] { display: none; }
+
+body.futuristic {
+  overflow: hidden; /* lock page scroll */
+}
+
+
+/* Give certain elements a black background */
+body.futuristic .admtn.sticky,
+body.futuristic #watch-url,
+body.futuristic #watch-load,
+body.futuristic #composer input, 
+body.futuristic #composer textarea,
+body.futuristic #composer button {
+  background: black;
+}
+
+/* Fullscreen Jitsi (video-panel) behind everything */
+body.futuristic #video-panel {
+  position: fixed !important;
+  top: 38px !important;
+  inset: 0 !important;
+  z-index: 100; /* base layer */
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #000;
+}
+
+/* Hide Jitsi panel header */
+body.futuristic .video-bar {
+  /* display: none; */
+}
+
+/* Hide Jitsi panel header */
+body.futuristic #jitsi-embed-<?= $room_slug ?> iframe {
+  height: 100vh !important;
+}
+
+/* Overlay root hosts chat + watch as floating panels */
+body.futuristic #future-root {
+  position: fixed;
+  inset: 0;
+  z-index: 130; /* above jitsi, below exit btn */
+  pointer-events: none; /* let clicks pass through by default */
+}
+
+/* Re-homed panels get overlay styling */
+body.futuristic .future-overlay {
+  position: absolute;
+  pointer-events: auto; /* clickable overlays */
+  /* background: rgba(0,0,0,0.62); */
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  overflow: hidden;
+}
+
+/* Chat overlay: bottom-right */
+body.futuristic #chat-overlay {
+  right: 18px;
+  bottom: 18px;
+  width: min(32vw, 480px);
+  height: min(41vh, 520px);
+  display: flex;
+  flex-direction: column;
+}
+
+body.futuristic #chat-block {
+  min-height: clamp(385px, 41vh, 1000px);
+}
+
+/* Keep your existing chat internals scrolling nicely */
+body.futuristic #chat-overlay #log {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body.futuristic pre {
+  background: rgba(0, 0, 0, .05);
+  color: snow;
+}
+
+body.futuristic .toolbar {
+  background: rgba(0, 0, 0, .4);
+}
+
+body.futuristic pre {
+  word-wrap: break-word; 
+}
+
+/* Watch overlay: top-right */
+body.futuristic #watch-overlay {
+  right: 18px;
+  top: 18px;
+  width: min(32vw, 480px);
+  height: min(40vh, 420px);
+}
+
+/* Make the embeds fill their overlay */
+body.futuristic #watch-overlay .yt-mount,
+body.futuristic #watch-overlay iframe {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+}
+
+/* Floating Exit (FAB) */
+#future-exit{
+  position: fixed;
+  top: 34px; left: 12px;
+  z-index: 2147483647;       /* max it out */
+  pointer-events: auto;      /* ensure it can click */
+  border: 0; border-radius: 999px; width: 42px; height: 42px;
+  background: rgba(255,255,255,.68); color:#000; cursor:pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,.4);
+}
+#future-exit:hover { background: rgba(255,255,255,0.8); }
+
+body.futuristic .toast { background: rgba(15, 23, 28, .3); }
+
+/* Hide normal viewer chrome in futuristic mode */
+body.futuristic #viewer-inner-toolbar,
+body.futuristic main.panel > h3 { opacity: 0; pointer-events: none; }
+
+/* Don’t let overlays cover Jitsi controls (bottom-center), leave a strip */
+@media (min-width: 900px) {
+  body.futuristic #chat-overlay { bottom: 18px; }
+  body.futuristic #watch-overlay { top: 55px; }
+}
+
+/* Mobile tweaks: stack overlays narrower */
+@media (max-width: 900px) {
+  body.futuristic #watch-overlay, body.futuristic #chat-overlay {
+    /* 
+    width: calc(100vw - 24px);
+    left: 12px;
+    */
+    right: 12px;
+  }
+  body.futuristic #watch-overlay { top: 52px; height: 39vh; }
+  body.futuristic #chat-overlay  { bottom: 12px; height: 44vh; }
+  #future-exit { top: 12px; right: 12px; transform: none; }
+}
+
+
+
+/* Futuristic view responsive layout at key breakpoints */
+
+/* On smaller screens, keep it comfortable */
+@media (max-width: 1600px) {
+
+
+}
+
+@media (max-width: 1200px) {
+  body.futuristic #chat-block {
+    min-height: clamp(226px, 18vh, 1000px);
+  }
+
+  body.futuristic #composer div {
+    grid-template-columns: 107px 1fr auto !important;
+  }
+
+}
+
+/* On smaller screens, keep it comfortable */
+@media (max-width: 900px) {
+  body.futuristic #composer div {
+    grid-template-columns: 76px 1fr auto !important;
+  }
+
+  body.futuristic .future-overlay {
+    overflow: auto;
+  }
+
+  body.futuristic #watch-panel {
+    overflow-y: auto;
+  }
+
+}
+
+
+
+/* Futuristic stickers */
+
+/* Ensure your Futuristic root creates a positioning context */
+.futuristic-mode,
+.futuristic-mode .future-stickers {
+  position: relative;
+}
+
+/* Stickers live above the BG but below UI controls */
+.future-stickers {
+  position: absolute;
+  inset: 0;            /* fill the view */
+  pointer-events: none;/* never intercept clicks */
+  z-index: 10;         /* tune vs your layers; exit button should be higher */
+}
+
+/* Base sticker style */
+.sticker {
+  position: absolute;
+  width: clamp(90px, 10vw, 180px);
+  height: clamp(90px, 10vw, 180px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;         /* works for GIF/WebP/PNG */
+  opacity: 0.22;                    /* subtle by default */
+  filter: saturate(120%);
+  will-change: transform, opacity;  /* smoother animations */
+  transform: translateZ(0);
+  /* optional: make glow blend on dark BGs */
+  /* mix-blend-mode: screen; */
+}
+
+/* Individual stickers — set your images here */
+#sticker-1 { 
+  background-image: url("assets/img/stickers/sticker-flash.gif"); 
+  left: 2.5%; top: 10%;
+  animation: floatY 9s ease-in-out infinite, slowSpin 40s linear infinite;
+}
+#sticker-2 { 
+  background-image: url("assets/img/stickers/sticker-social.gif"); 
+  right: 3%; bottom: 14%;
+  /* animation: floatX 11s ease-in-out infinite reverse, slowSpin 54s linear infinite reverse; */
+}
+#sticker-3 { 
+  background-image: url("assets/img/stickers/sticker-sparkles.gif"); 
+  left: 50%; bottom: 8%; transform: translateX(-50%);
+  animation: floatXY 13s ease-in-out infinite, slowPulse 6s ease-in-out infinite;
+  opacity: 0.18; /* this one extra subtle */
+}
+
+/* Motion keyframes */
+@keyframes floatY {
+  0%,100% { transform: translateY(0) }
+  50%     { transform: translateY(-8px) }
+}
+@keyframes floatX {
+  0%,100% { transform: translateX(0) }
+  50%     { transform: translateX(10px) }
+}
+@keyframes floatXY {
+  0%,100% { transform: translate(-50%, 0) }
+  50%     { transform: translate(-50%, -10px) }
+}
+@keyframes slowSpin {
+  from { rotate: 0deg } to { rotate: 360deg }
+}
+@keyframes slowPulse {
+  0%,100% { opacity: 0.14 } 50% { opacity: 0.26 }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .sticker { animation: none !important; }
+}
+
+/* Responsive tweaks — match your breakpoints */
+@media (max-width: 1600px) {
+  .sticker { width: clamp(80px, 12vw, 160px); height: clamp(80px, 12vw, 160px); }
+  #sticker-1 { left: 3%; top: 8%; }
+  #sticker-2 { right: 3%; bottom: 12%; }
+  #sticker-3 { bottom: 6%; }
+}
+@media (max-width: 1200px) {
+  .sticker { opacity: 0.20; }
+  #sticker-1 { top: 6%; }
+  #sticker-2 { bottom: 10%; }
+  #sticker-3 { bottom: 5%; }
+}
+@media (max-width: 900px) {
+  .sticker { width: clamp(64px, 18vw, 120px); height: clamp(64px, 18vw, 120px); opacity: 0.18; }
+  /* Nudge away from probable UI touch targets */
+  #sticker-1 { left: 4%; top: 5%; }
+  #sticker-2 { right: 4%; bottom: 9%; }
+  #sticker-3 { bottom: 4%; }
+}

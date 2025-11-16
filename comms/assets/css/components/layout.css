@@ -1,0 +1,81 @@
+/* ===== Comms responsive layout (drop-in) ===== */
+
+/* Defaults (desktop/tablet keep your current two-column grid) */
+/* no changes needed to your existing desktop rules */
+
+/* Mobile: stack viewer under nav; let nav fit content */
+@media (max-width: 740px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  /* Turn two-column grid into single column */
+  .row {
+    display: grid;
+    grid-template-columns: 1fr; /* single column */
+    gap: 10px;
+    padding: 10px;
+  }
+
+  /* Panels auto-size on mobile */
+  aside.panel,
+  main.panel {
+    margin: 0;                 /* remove extra spacing */
+  }
+
+  /* Let lists expand naturally on mobile */
+  .list {
+    max-height: none;          /* no artificial cap */
+    overflow: visible;         /* scroll only if OS needs it */
+  }
+
+  /* Keep the log viewer comfortable on small screens */
+  pre {
+    max-height: 45vh;          /* roughly half screen */
+  }
+
+  /* Touch-friendly inputs/buttons (prevents iOS zoom) */
+  select,
+  input[type="text"],
+  textarea,
+  button,
+  .btn {
+    font-size: 16px;
+  }
+
+  /* Toolbars breathe & wrap nicely */
+  .toolbar {
+    gap: 6px;
+  }
+  .toolbar form {
+    width: 100%;
+    gap: 6px;
+  }
+  .toolbar form div {
+    grid-template-columns: none !important;
+  }
+
+  /* Optional: keep the viewer title visible while scrolling
+     Uncomment if you want it sticky
+  */
+  /*
+  main.panel > h3 {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #0e1620;        /* match your panel header bg */
+    border-bottom: 1px solid #1e293b;
+    padding: 10px 12px;
+    margin: 0 0 6px 0;
+  }
+  */
+
+  /* Optional: pill/chips tidy on wrap */
+  .pillrow,
+  .chips {
+    flex-wrap: wrap;
+  }
+}

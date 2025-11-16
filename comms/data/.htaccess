@@ -1,0 +1,26 @@
+# --- LogFeed data/ .htaccess (no exec, no listing) ---
+
+# No directory listing / no CGI
+Options -Indexes -ExecCGI
+
+# Never execute scripts here
+<FilesMatch "\.(php|phtml|phar|cgi|pl|py|sh)$">
+  Require all denied
+</FilesMatch>
+
+# Protect hidden files (except ACME for SSL challenges if ever placed here)
+<FilesMatch "^\.(?!well-known/)">
+  Require all denied
+</FilesMatch>
+
+# Read-only over HTTP: allow GET/HEAD/OPTIONS only (block POST/PUT/etc.)
+<LimitExcept GET HEAD OPTIONS>
+  Require all denied
+</LimitExcept>
+
+# Extra safety headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  # If data/ holds private stuff, uncomment to prevent indexing:
+  # Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>

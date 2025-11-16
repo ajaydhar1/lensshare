@@ -1,0 +1,79 @@
+/* toast notifications */
+
+:root{
+/* Reuse your Name Modal tokens if you have them */
+--modal-bg:        var(--name-modal-bg, rgba(16,22,40,.92));
+--modal-border:    var(--name-modal-border, #4760ff);
+--modal-text:      var(--name-modal-text, #eaf0ff);
+--modal-accent:    var(--name-modal-accent, #8ab4ff);
+--modal-shadow:    var(--name-modal-shadow, 0 16px 48px rgba(0,0,0,.35));
+}
+
+/* Stack: top-center under your thin topnav, high z-index */
+.toast-stack {
+position: fixed; z-index: 9999;
+inset: 72px auto auto 50%;             /* push below topnav; tune 72px */
+transform: translateX(-50%);
+display: flex; flex-direction: column; gap: 10px;
+width: min(520px, 96vw);
+pointer-events: none;                   /* only toasts get clicks */
+}
+
+/* Modal-themed toast */
+.toast {
+pointer-events: auto;
+background: var(--modal-bg);
+color: var(--modal-text);
+border: 1px solid var(--modal-border);
+box-shadow: var(--modal-shadow);
+border-radius: 14px;
+padding: 12px 14px;
+display: grid; grid-template-columns: 22px 1fr auto; gap: 10px;
+align-items: start;
+
+/* pop & clarity */
+-webkit-backdrop-filter: saturate(140%) blur(6px);
+backdrop-filter: saturate(140%) blur(6px);
+
+/* entrance */
+opacity: 0; transform: translateY(-6px) scale(.98);
+transition: opacity .16s ease, transform .16s ease, border-color .2s ease;
+}
+
+/* subtle accent stripe (left edge) */
+.toast::before{
+content:""; width: 3px; height: 100%;
+background: linear-gradient(var(--modal-accent), transparent);
+border-radius: 3px;
+grid-column: 1 / 2; justify-self: stretch; align-self: stretch;
+}
+
+/* icon slot (optional) */
+.toast .icon { width: 22px; height: 22px; opacity:.9; grid-column: 1 / 2; }
+.toast .body { grid-column: 2 / 3; }
+.toast .close{ grid-column: 3 / 4; margin-left: 8px; opacity:.8; cursor:pointer; background:none; border:0; color:inherit; font-size:16px; }
+
+.toast.show { opacity: 1; transform: translateY(0) scale(1); }
+
+/* variants (border accent only) */
+.toast.info  { --modal-border: var(--modal-border); }
+.toast.good  { --modal-border: #3fbf6b; }
+.toast.warn  { --modal-border: #e3b341; }
+.toast.error { --modal-border: #f06363; }
+
+.toast.clickable { cursor: pointer; }
+.toast .body { outline: none; }
+
+/* attention pulse for first second (reduces “is that a glitch?”) */
+@keyframes pulseBorder { 0%{box-shadow: 0 0 0 0 rgba(138,180,255,.6)} 100%{box-shadow: 0 0 0 14px rgba(138,180,255,0)} }
+.toast.attn { animation: pulseBorder .9s ease-out 1; }
+
+/* mobile: keep top-center but lower a bit for notches */
+@media (max-width:640px){
+.toast-stack { inset: 64px auto auto 50%; }
+}
+
+/* respect motion settings */
+@media (prefers-reduced-motion: reduce){
+.toast, .toast.show { transition: none; animation: none; }
+}

@@ -1,0 +1,42 @@
+/* watch together */
+.watch.hidden{display:none;}
+.watch .video-bar{
+  display:flex;align-items:center;gap:8px;padding:8px 12px;background:#22242a;border-top:1px solid #1e293b;border-bottom:1px solid #1e293b
+}
+.watch .watch-controls{
+  display:flex;gap:8px;align-items:center;padding:8px 12px;border-bottom:1px dashed #233142
+}
+#watch-url{max-width:520px}
+.watch .watch-frame{ position:relative;width:100%;padding-top:56.25%;background:var(--bg-elev) }
+#yt-player{ position:absolute;inset:0; width:100%; aspect-ratio:16/9; height:auto; border:0 }
+
+/* Two-up layout inside the main viewer panel (with center gutter) */
+#btn-two-up { display: none; }
+
+main.panel.viewer-two-up {
+  --left:  minmax(0, 1.35fr);
+  --right: minmax(0, 1fr);
+  --g: 6px; --min: 260px;
+  display: grid;
+  grid-template-columns: var(--left) var(--g) var(--right);
+  grid-template-areas:
+    "header header header"
+    "toolbar  toolbar toolbar"
+    "video  gutter chat"
+    "footer footer  footer";
+}
+
+/* Header spans both content columns */
+main.panel.viewer-two-up > h3 { grid-area: header; }
+
+/* Place panels */
+main.panel.viewer-two-up #watch-panel { grid-area: video; }
+main.panel.viewer-two-up #chat-block  { grid-area: chat; }
+
+/* Visuals */
+main.panel.viewer-two-up .room-panel { border: 2px solid #1e293b; }
+
+/* Mobile: stacked */
+@media (max-width: 900px) {
+  main.panel.viewer-two-up { display: block; }
+}

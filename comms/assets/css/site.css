@@ -1,0 +1,122 @@
+/* Base (Dark) */
+:root{
+  /* Surface & text */
+  --bg: #7d7d7d;
+  --bg-top-header: #0b1220;
+  --bg-elev: #22242a;
+  --bg-header: #22242a;
+  --bg-panel-header: #22242a;
+  --panel-border: #393939;
+  --text: #eaf0ff;
+  --text-chip: #76ceff;
+  --main-title: #76ceff;
+  --muted: #a9b6d2;
+  --border: #1b2744;
+
+  /* Brand / accents (match your Name Modal) */
+  --accent: #8ab4ff;
+  --accent-strong: #4760ff;
+
+  /* Components */
+  --nav-bg: rgba(12,18,32,.8);
+  --panel-bg: #0f1730;
+  --btn: #2f394d;
+
+  --chip: #2f394d;
+
+  /* Toast / modal tokens (reuse from your Name Modal if you have) */
+  --modal-bg:       rgba(16,22,40,.92);
+  --modal-border:   var(--accent-strong);
+  --modal-text:     var(--text);
+  --modal-accent:   var(--accent);
+  --modal-shadow:   0 16px 48px rgba(0,0,0,.35);
+
+  /* Misc */
+  --link: #9ec2ff;
+}
+
+/* Light Theme */
+html[data-theme="light"]{
+  --bg: #fff;
+  --bg-top-header: slategrey;
+  --bg-elev: #fff;
+  --bg-header: #22242a;
+  --bg-panel-header: #22242a;
+  --text: #0c1630;
+  --text-chip: #76ceff;
+  --main-title: #0c1630;
+  --muted: #51607a;
+  --border: #d7def0;
+
+  --accent: #7dd3fc;
+  --accent-strong: #2749f5;
+
+  --nav-bg: rgba(255,255,255,.85);
+  --panel-bg: #ffffff;
+  --btn: #2f394d;
+
+  --modal-bg: rgba(255,255,255,.96);
+  --modal-border: var(--accent-strong);
+  --modal-text: #0c1630;
+  --modal-accent: var(--accent);
+  --modal-shadow: 0 16px 48px rgba(0,20,60,.12);
+
+  --link: #284df0;
+
+  --chip: #2f394d;
+
+  .admtn{--bg:#0a0c11;--fg:#e5e7eb;--muted:#9aa4b2;--acc:#7aa2f7;--bd:#1c2030;}
+
+  .item:hover {
+    background: var(--bg-header);
+  }
+}
+
+/* Apply tokens */
+
+/*
+body{ background: var(--bg); color: var(--text); }
+a{ color: var(--link); }
+.navbar{ background: var(--nav-bg); backdrop-filter: saturate(140%) blur(8px); border-bottom:1px solid var(--border); }
+.panel{ background: var(--panel-bg); border:1px solid var(--border); }
+*/
+
+/* Toasts you already built will pick these up if you used --modal-* vars */
+.toast{
+  background: var(--modal-bg);
+  color: var(--modal-text);
+  border-color: var(--modal-border);
+  box-shadow: var(--modal-shadow);
+}
+
+/* Smooth but respectful transition */
+@media (prefers-reduced-motion: no-preference){
+  html, body, .panel, .toast, .navbar { transition: background-color .18s ease, color .18s ease, border-color .18s ease; }
+}
+
+/*
+.theme-toggle{
+  display:inline-flex; gap:8px; align-items:center; justify-content:center;
+  height:32px; padding:0 10px; border:1px solid var(--border);
+  background: var(--bg-elev); color: var(--text);
+  border-radius: 999px; cursor: pointer;
+}
+.theme-toggle .sun { display:none; }
+html[data-theme="light"] .theme-toggle .sun { display:inline; }
+html[data-theme="light"] .theme-toggle .moon { display:none; }
+*/
+
+.theme-toggle .sun { background: #f7f9ff; }
+.theme-toggle .sun:hover { background: #f6fcff; }
+
+input, textarea, select{
+  background: var(--bg-elev);
+  color: var(--text);
+  border:1px solid var(--border);
+}
+button.primary{
+  background: var(--accent-strong);
+  color: #fff;
+  border: 1px solid transparent;
+}
+html[data-theme="light"] button.primary{ color: #fff; } /* stays readable */

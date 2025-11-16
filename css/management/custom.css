@@ -1,0 +1,191 @@
+#google-tags p, #youtube-tags p, #research-tags p, .google-tags p, .youtube-tags p, .research-tags p, #google-tags .hashtag, #youtube-tags .hashtag, #research-tags .hashtag, #google-tags .col-md-6 li, #youtube-tags .col-md-6 li, #research-tags .col-md-6 li {
+	transition: .35s; /* Animation */
+}
+
+#google-tags p, #youtube-tags p, #research-tags p, .google-tags p, .youtube-tags p, .research-tags p {
+  background: linear-gradient(90deg,transparent, rgba(0,0,0,.5), transparent);
+}
+
+#google-tags p:hover, #youtube-tags p:hover, #research-tags p:hover, .google-tags p:hover, .youtube-tags p:hover, .research-tags p:hover {
+  background: linear-gradient(90deg,transparent, rgba(255,20,147,.65), transparent);
+}
+
+
+#google-tags li, #youtube-tags li, #research-tags li {
+	-webkit-transition: font-size .5s ease;
+	-moz-transition: font-size .5s ease;
+	-o-transition: font-size .5s ease;
+	transition: font-size .sss5s ease;
+}
+
+#google-tags p:hover, #youtube-tags p:hover, #research-tags p:hover, .google-tags p:hover, .youtube-tags p:hover, .research-tags p:hover {
+	transform: scale(2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+#google-tags .col-md-6 li:hover, #youtube-tags .col-md-6 li:hover, #research-tags .col-md-6 li:hover {
+	transform: scale(1.2);	
+}
+
+#google-tags .hashtag:hover, #youtube-tags .hashtag:hover, #research-tags .hashtag:hover {
+	transform: scale(1.4);
+	/* background: darkslategrey; */
+  background: black;
+}
+
+#google-tags .hashtag a:hover, #youtube-tags .hashtag a:hover, #research-tags .hashtag a:hover {
+	color: #007bff;
+}
+
+#google-tags li:hover, #youtube-tags li:hover, #research-tags li:hover {
+	font-size: 2rem !important;
+}
+
+#google-tags .outline li:hover, #youtube-tags .outline li:hover, #research-tags .outline li:hover {
+	font-size: 1.125rem !important;
+}
+
+/*
+li {
+	font-size: 1.125rem !important;
+}
+*/
+
+.form-control {
+  border: solid white 3px;
+}
+
+.input-group button.btn {
+  border: solid white 3px !important;
+}
+
+.input-group ::placeholder {
+  color: lightgrey !important;
+}
+
+.basement_title {
+    color: #34495E!important;
+}
+.basement_title {
+    padding-bottom: 0;
+    font-size: 35px;
+}
+
+.div-hash-icons {
+	display: inline-block;
+}
+
+span#hash-icons {
+    background: white;
+    padding: 4px 8px 6px 8px;
+    border-radius: 15px;
+    border: #34495E;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.hashtag {
+    font-size: 1.125rem;
+    padding: 8px;
+    border-radius: 5px;
+	background-color: white;
+}
+
+.hashtag {
+    display: inline-block;
+    padding: 8px;
+    border: solid #2E2E2E 1px;
+    margin: 5px;
+}
+
+#tag-cloud-ul h2, h3 {
+   margin-bottom: 30px;
+   margin-top: 20px;
+}
+
+#tag-cloud-ul h4 {
+   margin-top: 20px;
+}
+
+#hgt-blog hr {
+    border: 4px solid burlywood;
+    border-radius: 3px;
+}
+
+.inspiro-slider .slide .slide-captions h1 {
+    font-weight: 500;
+}
+
+#header .header-inner #logo a, #header .header-inner #logo a span, #header #header-wrap #logo a, #header #header-wrap #logo a span {
+    font-weight: 500;
+}
+
+.nav-link-selected {
+	color: yellow !important;
+}
+
+.btn-shadow {
+	box-shadow: 0px 3px 26px 21px rgb(255 255 255 / 90%) !important
+}
+
+.dark:not(.submenu-light) #mainMenu nav > ul > li .dropdown-menu > li > a, .dark:not(.submenu-light) #mainMenu nav > ul > li .dropdown-menu > li > span, .dark:not(.submenu-light) #mainMenu nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a, #mainMenu.dark nav > ul > li .dropdown-menu > li > a, #mainMenu.dark nav > ul > li .dropdown-menu > li > span, #mainMenu.dark nav > ul > li .dropdown-menu > li [class*="col-"] > ul > li > a {
+    color: #ffffff;
+}
+
+.categories i:hover {
+  background-image: linear-gradient(45deg, deeppink, deeppink 80%);
+}
+
+@media (max-width : 450px) {
+	span#hash-icons {
+	    display: block;
+      width: fit-content;
+      padding: 9px;
+	}
+}
+
+
+.body-inner .container #tag-cloud-ul .hashtag a {
+    color: #007bff;
+}
+
+.body-inner .container #tag-cloud-ul .team-desc a {
+    color: #007bff;
+}
+
+.body-inner .container #tag-cloud-ul a {
+    color: white;
+}
+
+/* tabs */
+.body-inner .container #tag-cloud-ul .tabs a {
+    /* color: #007bff; */
+    color: white;
+}
+.body-inner .container #tag-cloud-ul .tabs a.active {
+    /* color: #ee0979; */
+    color: yellow;
+}
+.body-inner .container #tag-cloud-ul .tabs a:hover {
+    /* color: #ee0979; */
+    color: yellow;
+}
+.body-inner .container #tag-cloud-ul .tabs .nav-tabs .nav-link.active {
+    border-bottom: 2px solid yellow;
+}
+.body-inner .container #tag-cloud-ul .tabs p a:hover {
+    color: white;
+}
+
+/* table */
+.body-inner .container table a {
+    color: white;
+}
+/*
+.body-inner .container table tr td.link:first-child a {
+    color: #007bff !important;
+}
+*/
+
+.body-inner .container p {
+    color: #1a1a1a;
+}

@@ -1,0 +1,255 @@
+/* messages toolbar */
+
+/* Keep the log viewer comfortable on small screens */
+pre {
+  max-height: 45vh;          /* roughly half screen */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: auto;
+}
+
+/* Two-up grid with dedicated toolbar row */
+main.panel.viewer-two-up {
+  --left:  minmax(0, 1.35fr);
+  --right: minmax(0, 1fr);
+  --g: 6px; --min: 260px;
+  display: grid;
+  grid-template-columns: var(--left) var(--g) var(--right);
+  grid-template-areas:
+    "header   header   header"
+    "toolbar  header   toolbar"
+    "video    gutter   chat"
+    "footer   footer   footer";
+}
+main.panel.viewer-two-up > h3                  { grid-area: header; }
+main.panel.viewer-two-up #viewer-inner-toolbar { grid-area: toolbar; }
+main.panel.viewer-two-up #watch-panel          { grid-area: video; } /* Watch Together (left) */
+main.panel.viewer-two-up #video-panel          { grid-area: video; } /* Jitsi (left, below watch) */
+main.panel.viewer-two-up #chat-block           { grid-area: chat;  } /* Chat (right) */
+
+/* Three-up now uses 2 columns + center gutter but keeps your areas */
+main.panel.viewer-three-up {
+  --left:  minmax(0, 2fr);
+  --right: minmax(0, 1fr);
+  --g: 6px; --min: 260px;
+  display: grid;
+  grid-template-columns: var(--left) var(--g) var(--right);
+  grid-template-areas:
+    "header   header   header"
+    "toolbar  header   toolbar"
+    "v-chat   gutter   chat"
+    "v-chat   gutter   video"
+    "footer   footer   footer";
+  /* If you also want the watch panel visible at wide widths, you can
+     place it in the left column (above/below v-chat) with normal flow. */
+}
+main.panel.viewer-three-up > h3                  { grid-area: header; }
+main.panel.viewer-three-up #viewer-inner-toolbar { grid-area: toolbar; }
+main.panel.viewer-three-up #video-panel          { grid-area: v-chat; }  /* Jitsi (left) */
+main.panel.viewer-three-up #watch-panel          { grid-area: v-chat; }  /* stacked with #video-panel */
+main.panel.viewer-three-up #chat-block           { grid-area: chat; }
+
+/* Keep toolbar on top while scrolling inside the viewer */
+#viewer-inner-toolbar {
+  /* position: sticky; */
+  top: 0;
+  z-index: 5;
+  background: var(--bg-header);
+  /* border-bottom: 1px solid #1e293b; */
+}
+
+/* Mobile: stack */
+@media (max-width: 900px) {
+  main.panel.viewer-two-up,
+  main.panel.viewer-three-up { display: block; }
+}
+
+
+/* messages/posts panel height */
+
+/* Make the messages panel (chat) take up more space */
+#chat-block {
+  display: flex;
+  flex-direction: column;
+  /* Desktop/tablet: taller but capped */
+  min-height: clamp(420px, 45vh, 1000px);
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  /* Desktop/tablet: taller but capped  */
+}
+
+/* Let the log grow to fill the space, scroll inside if needed */
+#log, .mono {
+  flex: 1;
+  max-height: none;   /* override any earlier max-height */
+  overflow: auto;
+}
+
+/* On smaller screens, keep it comfortable */
+@media (max-width: 900px) {
+  #chat-block, .post { min-height: 45vh; }
+}
+
+
+
+/* ===== Resizable 2-column grid (three-up & two-up) ===== */
+.row main.panel.viewer-three-up,
+main.panel.viewer-three-up.three-up-yt,
+.row main.panel.viewer-two-up,
+main.panel.viewer-two-up {
+  --left:  minmax(0, 2.95fr);   /* three-up default */
+  --right: minmax(0, 1fr);
+  --g: 6px;                     /* gutter width */
+  --min: 260px;                 /* min col width */
+
+  display: grid;
+  grid-template-columns: var(--left) var(--g) var(--right);
+  grid-auto-rows: minmax(min-content, auto);
+  min-height: 480px;
+}
+
+/* Keep your named areas for viewer-three-up, adding the middle gutter slot (.) */
+.row main.panel.viewer-three-up,
+main.panel.viewer-three-up.three-up-yt {
+  grid-template-areas:
+    "header  header  header"
+    "toolbar toolbar toolbar"
+    "v-chat   gutter  chat"
+    "v-chat   gutter  video"
+    "footer  footer  footer";
+}
+
+/* Gutter */
+.row main.panel.viewer-three-up .gutter,
+main.panel.viewer-three-up.three-up-yt .gutter,
+.row main.panel.viewer-two-up .gutter,
+main.panel.viewer-two-up .gutter {
+  grid-column: 2; grid-row: 1 / -1;
+  cursor: col-resize;
+  background: linear-gradient(90deg, transparent 40%, rgba(0,0,0,.12), transparent 60%);
+  position: relative;
+}
+.row main.panel.viewer-three-up .gutter::after,
+main.panel.viewer-three-up.three-up-yt .gutter::after,
+.row main.panel.viewer-two-up .gutter::after,
+main.panel.viewer-two-up .gutter::after {
+  content: ""; position: absolute; inset: 0;
+  border-left: 1px solid rgba(0,0,0,.12);
+  border-right: 1px solid rgba(0,0,0,.12);
+}
+.gutter { grid-area: gutter !important; }
+.gutter:hover{ background: rgba(0,0,0,.06); }
+.gutter.is-dragging{ background: rgba(0,0,0,.12); }
+.gutter:focus-visible{ outline: 2px solid #5b9cff; outline-offset: -2px; }
+
+/* Your existing bits */
+main.panel.viewer-three-up .room-panel { border: 2px solid #1e293b; }
+main.panel.viewer-three-up > h3 { grid-area: header; }
+main.panel.viewer-three-up #video-panel { grid-area: v-chat; }
+main.panel.viewer-three-up #watch-panel { grid-area: video; }
+main.panel.viewer-three-up #chat-block  { grid-area: chat; }
+
+.row main.panel.viewer-three-up #chat-block,
+main.panel.viewer-three-up.three-up-yt #chat-block {
+  display: flex; flex-direction: column;
+  min-height: clamp(220px, 39vh, 1000px);
+}
+.row main.panel.viewer-three-up #log { flex: 1; max-height: 28.8vh; overflow: auto; }
+
+.row main.panel.viewer-two-up #composer div,
+.row main.panel.viewer-three-up #composer div {
+  grid-template-columns: 1fr 1.75fr auto !important;
+}
+
+/* ===== Breakpoints (kept your intent) ===== */
+@media (max-width: 1600px) {
+  .row main.panel.viewer-two-up,
+  .row main.panel.viewer-three-up {
+    --left:  minmax(0, 2fr);
+    --right: minmax(0, 1fr);
+  }
+  .row main.panel.viewer-three-up #chat-block { min-height: clamp(220px, 30vh, 1000px); }
+  .row main.panel.viewer-three-up #log { max-height: 27vh; }
+
+  .row main.panel.viewer-two-up #chat-block { min-height: clamp(220px, 49vh, 1000px); }
+  .row main.panel.viewer-two-up #log { max-height: 48.7vh; }
+}
+
+@media (max-width: 1200px) {
+  /* two-up uses same col vars; ensuring template includes gutter track */
+  .row main.panel.viewer-two-up {
+    grid-template-columns: var(--left) var(--g) var(--right);
+  }
+
+  .row main.panel.viewer-three-up {
+    --left:  minmax(0, 1fr);
+    --right: minmax(0, 1fr);
+    grid-template-columns: var(--left) var(--g) var(--right);
+    grid-template-areas:
+      "header   header   header"
+      "toolbar  toolbar   toolbar"
+      "v-chat   gutter   chat"
+      "video    gutter   chat"
+      "footer   footer    footer";
+  }
+
+  .row main.panel.viewer-three-up #chat-block { min-height: clamp(220px, 70vh, 1000px); }
+  .row main.panel.viewer-three-up #log        { max-height: 68vh; }
+
+  .row main.panel.viewer-two-up #chat-block { min-height: clamp(220px, 49vh, 1000px); }
+  .row main.panel.viewer-two-up #log        { max-height: 48.7vh; }
+}
+
+/* Mobile: stack both; hide gutter */
+@media (max-width: 900px) {
+  main.panel.viewer-three-up,
+  main.panel.viewer-two-up { display: block; }
+  main.panel.viewer-three-up .gutter,
+  main.panel.viewer-two-up .gutter { display: none; }
+  .row main.panel.viewer-three-up #chat-block { min-height: 45vh; }
+}
+
+
+@media (max-width: 740px) {
+
+  .row main.panel.viewer-two-up #composer div, .row main.panel.viewer-three-up #composer div {
+        grid-template-columns: unset !important;
+  }
+
+}
+
+
+
+
+/* smoother drag */
+main.panel.viewer-two-up,
+main.panel.viewer-three-up {
+  will-change: grid-template-columns; /* hint compositor */
+}
+
+main.panel .gutter {
+  touch-action: none; /* stop touch scrolling while dragging */
+}
+
+main.panel.is-resizing iframe,
+main.panel.is-resizing video {
+  pointer-events: none; /* prevent iframe/video from janking mouse/touch */
+}
+
+main.panel.is-resizing * {
+  transition: none !important; /* kill any css transitions during drag */
+}
+
+
+/* room status */
+
+#room-status {
+  margin-left: 8px;
+  opacity: .9;
+}
+#room-status .name { font-weight: 600; }
+#room-status .pulse { animation: pulse 1.2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:.6} 50%{opacity:1} }

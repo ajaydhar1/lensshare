@@ -1,0 +1,222 @@
+/* All pages */
+
+:root{
+  --plum:#3A0B4F; --pink:#F53D9C; --orange:#FF8A3D;
+}
+
+.hi {
+	width: 90px;
+	height: 90px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin: 10px;
+	border: solid white 2px;
+}
+
+#mainNav .navbar-brand {
+    color: #212529;
+}
+
+#mainNav .navbar-brand.white-text {
+    color: white !important;
+}
+
+#mainNav.navbar-shrink .navbar-brand {
+    color: #212529 !important;
+}
+
+.bg-pink {
+	background: deeppink;
+}
+
+#holodeck {
+	background-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,.7)), url(../assets/img/all/teleport.png);
+	background-size: cover;
+    background-position: bottom;
+    padding: 4.25rem 0;
+}
+
+.input-group-prepend .input-group-text {
+	border-radius: 0.375rem 0 0 0.375rem;
+}
+
+.input-group-append .btn {
+	border-radius: 0 0.375rem 0.375rem 0;
+}
+
+header.masthead {
+    background-position: bottom;
+    margin-top: -7rem !important;
+}
+
+#masthead-text {
+	padding-top: 16rem !important;
+}
+
+@media screen and (max-width: 1300px) {
+  #masthead-text {
+    padding-top: 8rem !important;
+  }
+}
+
+hr {
+    border-top: none;
+}
+
+hr.rectangle-divider {
+    height: 1rem;
+    max-width: 2rem;
+    margin: 1.5rem auto;
+    background-color: #cfcfcf;
+    opacity: .5;
+    z-index: 10;
+}
+
+#portfolio .img-fluid {
+	object-fit: cover;
+	width: 100%;
+}
+
+.page-section-smaller {
+    padding: 4.5rem 0;
+}
+
+.explanation-image {
+    width: 385px;
+}
+
+#base-station-btn {
+	background-image: url(../assets/img/all/ultrasound.gif);
+	background-position: center;
+}
+
+.base-station-image {
+   width: 400px;
+}
+
+#dataTable_wrapper { 
+	padding: 30px;
+	border-radius: 20px;
+	background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../assets/img/all/table-bg.jpg);
+	background-size: cover;
+}
+
+#dataTable_wrapper label,
+#dataTable_wrapper td,
+#dataTable_wrapper th,
+#dataTable_wrapper a,
+#dataTable_wrapper .dataTables_info
+{
+	color: white;
+}
+
+#dataTable_wrapper .paginate_button.page-item:not(.active) a {
+	color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+
+#dataTable_wrapper .paginate_button.page-item.active a {
+	background: deeppink;
+}
+
+#dataTable_wrapper td {
+	font-weight: 600;
+}
+
+#dataTable_wrapper td a {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+tr.odd {
+    background: rgba(0,0,0,.07);
+}
+
+#dataTable_wrapper tbody tr:hover {
+	background-color: deeppink !important;
+	box-shadow: 0px 0 3rem rgba(255, 0, 255);
+}
+
+p {
+    font-size: 1.03rem;
+}
+
+@media (min-width: 1200px) {
+	h2, .h2 {
+	    font-size: 2.23rem;
+	}
+}
+
+.btn-pink {
+    background: deeppink;
+    color: white;
+}
+
+.text-pink {
+	color: deeppink !important;
+}
+
+.btn-pink:hover, .btn-pink:focus, .btn-pink:active {
+    background: #212529 !important;
+    color: white !important;
+}
+
+.text-nav-dark {
+	color: rgb(33, 37, 41) !important;
+}
+
+#mainNav .navbar-nav .nav-item .text-nav-dark:hover {
+	color: #f4623a !important;
+}
+
+/*
+body,
+body a {
+	cursor: url(../assets/img/all/pointer.png), auto !important;
+}
+*/
+
+@media(max-width: 575px) {
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width: 992px) {
+	.row .col-lg-6:nth-child(2) {
+	    margin-top: 30px;
+	}
+}
+
+#portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl, #portfolio .container-xxl {
+    max-width: unset;
+}
+
+@media (min-width: 992px) {
+	#mainNav .navbar-brand:hover {
+    	color: unset;
+	}
+}
+
+.shadow {
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5) !important;
+}
+
+body footer a {
+	cursor: pointer !important;
+}
+
+.cta{
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding:.9rem 1.4rem; border-radius:999px; font-weight:700;
+  background:var(--plum); color:#fff; border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 10px 30px rgba(0,0,0,.2); /* transition:transform .15s, */ box-shadow .3s;
+}
+
+.cta:hover{ /* transform:translateY(-1px); */
+  box-shadow:0 12px 36px rgba(0,0,0,.24), 0 0 0 6px rgba(245,61,156,.12);
+}
+
+.cta:focus-visible{ outline:0;
+  box-shadow:0 0 0 4px #fff, 0 0 0 8px var(--pink);
+}

@@ -1,0 +1,57 @@
+/* footer */
+
+/* Default viewer: footer pushes to bottom */
+main.panel { display: flex; flex-direction: column; }
+#site-legal { margin-top: auto; }
+
+/* Side-by-side layout: add footer row to two-up */
+main.panel.viewer-two-up {
+  --left:  minmax(0, 2.95fr);
+  --right: minmax(0, 1fr);
+  --g: 6px; --min: 260px;
+  display: grid;
+  grid-template-columns: var(--left) var(--g) var(--right);
+  grid-template-rows: auto auto 1fr auto;  /* header, toolbar, content, footer */
+  grid-template-areas:
+    "header   header   header"
+    "toolbar  header   toolbar"
+    "video    gutter   chat"
+    "footer   gutter   footer";
+}
+
+/* Placement */
+main.panel.viewer-two-up #viewer-title           { grid-area: header; }
+main.panel.viewer-two-up #viewer-inner-toolbar   { grid-area: toolbar; }
+main.panel.viewer-two-up #watch-panel            { grid-area: video; }
+main.panel.viewer-two-up #video-panel            { grid-area: video; }  /* stacks under watch */
+main.panel.viewer-two-up #chat-block             { grid-area: chat; }
+main.panel.viewer-two-up #site-legal             { grid-area: footer; }
+
+/* ≤1340px: compress three-up into two columns (left videos, right chat) */
+@media (max-width: 1340px) {
+  main.panel.viewer-three-up {
+    --left:  minmax(0, 1fr);
+    --right: minmax(0, 1.35fr);
+    --g: 6px; --min: 260px;
+    display: grid;
+    grid-template-columns: var(--left) var(--g) var(--right);
+    grid-template-areas:
+      "header   header   header"
+      "toolbar  header   toolbar"
+      "video    gutter   chat"
+      "v-chat   gutter   chat"
+      "footer   footer   footer";
+    grid-auto-rows: minmax(min-content, auto);
+  }
+
+  /* area assignments for clarity */
+  main.panel.viewer-three-up #watch-panel { grid-area: video; }   /* top-left */
+  main.panel.viewer-three-up #video-panel { grid-area: v-chat; }  /* below watch */
+  main.panel.viewer-three-up #chat-block  { grid-area: chat; }    /* right, spans both rows */
+}
+
+/* ≤900px: stacked */
+@media (max-width: 900px) {
+  main.panel.viewer-two-up,
+  main.panel.viewer-three-up { display: flex; flex-direction: column; }
+}
