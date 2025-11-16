@@ -1,0 +1,3 @@
+"https://video-lensshare.com/(.*)#config.disableDeepLinking=true"
+
+"space.php?room=\L$1&autocreate=1&token=ajay-7c9f4f2f3a"

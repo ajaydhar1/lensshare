@@ -220,3 +220,13 @@ body footer a {
 .cta:focus-visible{ outline:0;
   box-shadow:0 0 0 4px #fff, 0 0 0 8px var(--pink);
 }
+
+/* Large-ish screens (Chromebook range) */
+@media (min-width: 992px) and (max-width: 1600px) {
+  header.masthead {
+    height: 768px;
+    min-height: 40rem;
+    padding-top: 2.5rem;
+    padding-bottom: 0;
+  }
+}

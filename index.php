@@ -98,7 +98,7 @@
                         <li class="nav-item my-auto"><a class="nav-link" href="#how-it-works">How it Works</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#the-metaverse">The Metaverse</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
-                        <li class="nav-item"><a class="btn btn-primary text-white" href="space.php?room=demo">Happy Hour</a></li>
+                        <li class="nav-item"><a class="btn btn-primary text-white" href="space.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
             </div>
@@ -190,8 +190,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>The <?= $site_name ?> Metaverse</strong></h2>
-                        <p class="text-muted">A Metaverse is a 3D virutal environment in which there are a massive number of avatars online, socializing and interacting.</p>
-                        <p class="text-muted">The <?= $site_name ?> Metaverse is conceptually the same, but realer. There is a 2D virtual environment that consists of "Spaces", which are just video chat rooms. And the people aren't avatars, they just look like themselves.</p>
+                        <p class="text-muted">Most “Metaverses” are 3D worlds filled with cartoon avatars. LensShare is simpler — and more real.</p>
+                        <p class="text-muted">Our Metaverse is a 2D network of “Spaces,” which are just video chat rooms. No avatars. No complicated controls. It’s people talking to people, face-to-face, in real time.</p>
                         <span style="font-size: 2.7rem;">😀😆🤣😇</span>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -210,7 +210,9 @@
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Portals</strong></h2>
-                        <p class="text-muted">The <?= $site_name ?> Metaverse supports an infinite number of Spaces. To help manage this vast Metaspace, we have created seven "Portals", which contain pre-defined Spaces. This way, if you chose a Portal and click on a Space, there are more chances that you will find someone there.</p>
+                        <p class="text-muted">LensShare supports an unlimited number of Spaces. To make it easier to find people, we organize popular Spaces into seven themed <i>Portals</i>.</p>
+                        <p class="text-muted">Choose a Portal → click a Space → you’re instantly in a room where someone might already be hanging out.</p>
+                        <p class="text-muted">It keeps the Metaverse organized and makes it more likely that conversations happen naturally.</p>
                         <p class="text-muted">Here is the complete list of Portals:</p>
                         <div class="mt-4">
                             <a class="btn btn-dark mb-3" href="work.php">Work Rooms</a>
@@ -232,13 +234,13 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Spaces</strong></h2>
-                        <p class="text-muted">Spaces are where the action takes place. A Space is just a zoom-like, video chat room that is meant for talking about a specific topic.</p>
-                        <p class="text-muted">You can move into a private Space by entering a secret room name in a Holodeck. Then just share the link. There is a Holodeck on the homepage and in every Portal.</p>
+                        <p class="text-muted">Spaces are where everything happens. A Space is a simple, Zoom-style video chat room centered around a topic or theme. You can pop into public Spaces, or create your own private one by entering a secret room name in a Holodeck.</p>
+                        <p class="text-muted">Every Portal has a Holodeck, and there’s one on the homepage too.</p>
                         <p class="text-muted">Here are some examples of Spaces in the <a class="btn btn-dark btn-sm" href="sports.php">Sports & Fitness</a> Portal.</p>
                         <div class="mt-5">
-                            <a class="btn btn-dark btn-xl mb-3" href="https://video-lensshare.com/Football#config.disableDeepLinking=true">Football</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="https://video-lensshare.com/Baseball#config.disableDeepLinking=true">Baseball</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="https://video-lensshare.com/Basketball#config.disableDeepLinking=true">Basketball</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=football">Football</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=baseball">Baseball</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=basketball">Basketball</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -252,7 +254,7 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="https://video-lensshare.com/Managers" title="Space Name#config.disableDeepLinking=true">
+                        <a class="portfolio-box" href="space.php?room=managers" title="space name">
                             <img class="img-fluid" src="assets/img/work/managers.gif" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Space</div>
@@ -261,7 +263,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="https://video-lensshare.com/Programmers" title="Space Name#config.disableDeepLinking=true">
+                        <a class="portfolio-box" href="space.php?room=programmers" title="space name">
                             <img class="img-fluid" src="assets/img/work/programmers.gif" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Space</div>
@@ -270,7 +272,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="https://video-lensshare.com/Startups" title="Space Name#config.disableDeepLinking=true">
+                        <a class="portfolio-box" href="space.php?room=startups" title="space name">
                             <img class="img-fluid" src="assets/img/work/startups.gif" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Space</div>
@@ -289,7 +291,7 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="https://video-lensshare.com/Marketers" title="Space Name#config.disableDeepLinking=true">
+                        <a class="portfolio-box" href="space.php?room=marketers" title="space name">
                             <img class="img-fluid" src="assets/img/work/marketers.gif" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Space</div>
@@ -298,7 +300,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="https://video-lensshare.com/Accountants" title="Space Name#config.disableDeepLinking=true">
+                        <a class="portfolio-box" href="space.php?room=accountants" title="space name">
                             <img class="img-fluid" src="assets/img/work/accountants.gif" alt="..." />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Space</div>
@@ -307,7 +309,7 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="https://video-lensshare.com/Doctors" title="Space Name#config.disableDeepLinking=true">
+                        <a class="portfolio-box" href="space.php?room=doctors" title="space name">
                             <img class="img-fluid" src="assets/img/work/doctors.gif" alt="..." />
                             <div class="portfolio-box-caption p-3">
                                 <div class="project-category text-white-50">Space</div>

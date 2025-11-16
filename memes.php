@@ -118,10 +118,6 @@
               font-size: 3.25rem;
           }
 
-          a {
-              color: #F54EA2;
-          }
-
 
           /* Gifs */
 
