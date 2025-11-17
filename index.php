@@ -160,21 +160,21 @@
                         <div class="mt-4">
                             <div class="mb-2"><img class="" src="assets/img/homepage/category-icon.png"></div>
                             <h3 class="h4 mb-2"><strong>Choose a Portal</strong></h3>
-                            <p class="text-muted mb-0">Common interests are grouped into seven portals</p>
+                            <p class="text-muted mb-0">First, choose a portal based on your interest.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-4">
                             <div class="mb-2"><img class="" src="assets/img/homepage/space-icon.png"></div>
                             <h3 class="h4 mb-2"><strong>Click on a Room</strong></h3>
-                            <p class="text-muted mb-0">A space with text + video chat based on a specific topic</p>
+                            <p class="text-muted mb-0">Then click into a room to start a text or video chat on that topic.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-4">
                             <div class="mb-2"><img class="" src="assets/img/homepage/call-icon.png"></div>
                             <h3 class="h4 mb-2"><strong>Chat with People</strong></h3>
-                            <p class="text-muted mb-0">Meet people, make friends, and have some fun!</p>
+                            <p class="text-muted mb-0">Finally, just dive in, meet people, and have fun!</p>
                         </div>
                     </div>
                 </div>
@@ -191,8 +191,9 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>The <?= $site_name ?> Metaverse</strong></h2>
-                        <p class="text-muted">Most “Metaverses” are 3D worlds filled with cartoon avatars. LensShare is simpler — and more real.</p>
-                        <p class="text-muted">Our Metaverse is a 2D network of “Rooms,” which are just video chat rooms. No avatars. No complicated controls. It’s people talking to people, face-to-face, in real time.</p>
+                        <p class="text-muted">LensShare is a 2D network of “Rooms,” which are simple, interest-based spaces with text and video chat.</p>
+                        <p class="text-muted mb-0">There’s no 3D world, no cartoon avatars, and no complicated controls.</p>
+                        <p class="text-muted">Just people talking to people — face-to-face, in real time.</p>
                         <span style="font-size: 2.7rem;">😀😆🤣😇</span>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -211,9 +212,9 @@
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Portals</strong></h2>
-                        <p class="text-muted">LensShare supports an unlimited number of Rooms. To make it easier to find people, we organize popular Rooms into seven themed <i>Portals</i>.</p>
-                        <p class="text-muted">Choose a Portal → click a Room → you’re instantly in a space where someone might already be hanging out.</p>
-                        <p class="text-muted">It keeps the Metaverse organized and makes it more likely that conversations happen naturally.</p>
+
+                        <p class="text-muted">LensShare has an unlimited number of Rooms, so we group them into themed Portals to make it easier to explore.</p>
+                        <p class="text-muted">Just choose a Portal → click a Room → and you’re instantly in a space where someone might already be hanging out.</p>
                         <p class="text-muted">Here is the complete list of Portals:</p>
                         <div class="mt-4">
                             <a class="btn btn-dark mb-3" href="work.php">Work Rooms</a>
@@ -235,9 +236,10 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Rooms</strong></h2>
-                        <p class="text-muted">Rooms are where everything happens. A Room is a simple, Zoom-style text + video chat room centered around a topic or theme. You can pop into public Rooms, or create your own private one by entering a secret room name in a Holodeck.</p>
-                        <p class="text-muted">Every Portal has a Holodeck, and there’s one on the homepage too.</p>
-                        <p class="text-muted">Here are some examples of Rooms in the <a class="btn btn-dark btn-sm" href="sports.php">Sports & Fitness</a> Portal.</p>
+                        <p class="text-muted">Rooms are simple video + text chat spaces built around a topic.</p>
+                        <p class="text-muted">You can join public Rooms or create a private one by typing a secret name into the Holodeck.</p>
+                        <p class="text-muted">Each Portal has a Holodeck, and there’s one on the homepage too.</p>
+                        <p class="text-muted">Here are examples of Rooms in the <a class="btn btn-dark btn-sm" href="sports.php">Sports & Fitness</a> Portal.</p>
                         <div class="mt-5">
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=football">Football</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=baseball">Baseball</a>
