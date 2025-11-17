@@ -77,7 +77,7 @@
                         <li class="nav-item my-auto"><a class="nav-link" href="#sports">Sports</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#fitness">Fitness</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
-                        <li class="nav-item"><a class="btn btn-primary text-white" href="space.php?room=happy-hour">Happy Hour</a></li>
+                        <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
             </div>
@@ -117,17 +117,17 @@
                         <h2 class="mb-3"><strong>Sports</strong></h2>
                         <p class="text-muted">Join a sports room if your a fan of professional sports or play a sport yourself and want help improving your skills.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=football">Football</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=baseball">Baseball</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=basketball">Basketball</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=hockey">Hockey</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=soccer">Soccer</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=golf">Golf</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=tennis">Tennis</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=auto-racing">Auto Racing</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=mma">MMA</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=wrestling">Wrestling</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=gymnastics">Gymnastics</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=football">Football</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=baseball">Baseball</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=basketball">Basketball</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=hockey">Hockey</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=soccer">Soccer</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=golf">Golf</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=tennis">Tennis</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=auto-racing">Auto Racing</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=mma">MMA</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=wrestling">Wrestling</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=gymnastics">Gymnastics</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -148,16 +148,16 @@
                         <h2 class="mb-3"><strong>Fitness</strong></h2>
                         <p class="text-muted">Use these spaces to share your fitness goals and journey with others that workout the same way as you.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=lifting-weights">Lifting Weights</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=calisthenics">Calisthenics</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=cardio">Cardio</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=running">Running</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=biking">Biking</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=walking">Walking</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=stretching">Stretching</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=swimming">Swimming</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=cross-training">Cross Training</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=fitness-wearables">Fitness Wearables</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=lifting-weights">Lifting Weights</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=calisthenics">Calisthenics</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cardio">Cardio</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=running">Running</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=biking">Biking</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=walking">Walking</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=stretching">Stretching</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=swimming">Swimming</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cross-training">Cross Training</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=fitness-wearables">Fitness Wearables</a>
                         </div>
                     </div>
                 </div>

@@ -269,7 +269,7 @@ if ($view === 'messages') {
           🎥 Join video chat
         </a>
 
-        <a id="btn-futuristic" class="btn small" style="">✨ Futuristic mode</a>
+        <?php // <a id="btn-futuristic" class="btn small" style="">✨ Futuristic mode</a> ?>
 
       </div>
 

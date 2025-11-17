@@ -133,7 +133,7 @@
                         <li class="nav-item my-auto"><a class="nav-link" href="#mood-board">Mood Board</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#emoji-and-game-section">Emotions</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
-                        <li class="nav-item"><a class="btn btn-primary text-white" href="space.php?room=happy-hour">Happy Hour</a></li>
+                        <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
             </div>
@@ -172,7 +172,7 @@
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Health <span class="text-pink">+</span> Wellness Base Station</strong></h2>
                         <p class="text-muted">Join the Health & Wellness Base Station to discuss physical and mental health issues in general.</p>
-                        <a id="base-station-btn" class="btn btn-dark btn-xl mt-3" href="space.php?room=health-and-wellness-base-station">Join Base Station</a>
+                        <a id="base-station-btn" class="btn btn-dark btn-xl mt-3" href="room.php?room=health-and-wellness-base-station">Join Base Station</a>
                     </div>
                     <div class="col-lg-6 text-center">
                         <img class="base-station-image img-fluid" style="" src="assets/img/all/base-station.gif">
@@ -192,17 +192,17 @@
                         <h2 class="mb-3"><strong>Physical Health</strong></h2>
                         <p class="text-muted">Join one of these spaces to discuss issues pertaining to maintaining a healty body.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=physical-health-in-general">In Genenral</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=health-insurance">Health Insurance</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=im-sick">I'm Sick</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=nutrition">Nutrition</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=fitness">Fitness</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=dental">Dental</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=vision">Vision</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=medical-issues">Medical Issues</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=illness-prevention">Illness Prevention</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=exercise">Exercise</a>
-                            <?php //<a class="btn btn-dark btn-xl mb-3" href="space.php?room=vaping">Vaping</a> ?>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=physical-health-in-general">In Genenral</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=health-insurance">Health Insurance</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=im-sick">I'm Sick</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=nutrition">Nutrition</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=fitness">Fitness</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=dental">Dental</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=vision">Vision</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=medical-issues">Medical Issues</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=illness-prevention">Illness Prevention</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=exercise">Exercise</a>
+                            <?php //<a class="btn btn-dark btn-xl mb-3" href="room.php?room=vaping">Vaping</a> ?>
                         </div>
                     </div>
                 </div>
@@ -217,16 +217,16 @@
                         <h2 class="mb-3"><strong>Mental Health</strong></h2>
                         <p class="text-muted">Join one of these rooms to discuss mental health issues that you may have, or a friend or family member.</p>
                         <div class="mt-4">
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=mental-health-in-general">In General</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=health-insurance">Health Insurance</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=sleep">Sleep</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=stress">Stress</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=alcohol">Alcohol</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=meditation">Meditation</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=breathwork">Breathwork</a>
-                            <?php //<a class="btn btn-warning btn-xl mb-3" href="space.php?room=ph.d.">Ph.D.</a> ?>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=emotional-wellness">Emotional Wellness</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=body-image">Body Image</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=mental-health-in-general">In General</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=health-insurance">Health Insurance</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=sleep">Sleep</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=stress">Stress</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=alcohol">Alcohol</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=meditation">Meditation</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=breathwork">Breathwork</a>
+                            <?php //<a class="btn btn-warning btn-xl mb-3" href="room.php?room=ph.d.">Ph.D.</a> ?>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=emotional-wellness">Emotional Wellness</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=body-image">Body Image</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -259,82 +259,82 @@
                 <div class="row align-items-start mt-5 mb-4 feelings emoji-rack" style="">
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                         <div class="p-3" style="text-align:center;">
-                            <a href="space.php?room=i-feel-annoyed" class="feeling">
+                            <a href="room.php?room=i-feel-annoyed" class="feeling">
                                 <i class="img-fluid rounded-circle far fa-angry fa-7x emoji"></i>
                             </a>
                         </div>
                         <div class="p-1" style="text-align:center;">
-                            <a href="space.php?room=i-feel-annoyed"><h4 class="text-white">Annoyed</h4></a>
+                            <a href="room.php?room=i-feel-annoyed"><h4 class="text-white">Annoyed</h4></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                         <div class="p-3" style="text-align:center;">
-                            <a href="space.php?room=i-feel-bored" class="feeling">
+                            <a href="room.php?room=i-feel-bored" class="feeling">
                                 <i class="img-fluid rounded-circle far fa-flushed fa-7x emoji"></i>
                             </a>
                         </div>
                         <div class="p-1" style="text-align:center;">
-                            <a href="space.php?room=i-feel-bored"><h4 class="text-white">Bored</h4></a>
+                            <a href="room.php?room=i-feel-bored"><h4 class="text-white">Bored</h4></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                         <div class="p-3" style="text-align:center;">
-                            <a href="space.php?room=i-feel-anxious" class="feeling">
+                            <a href="room.php?room=i-feel-anxious" class="feeling">
                                 <i class="img-fluid rounded-circle far fa-frown-open fa-7x emoji"></i>
                             </a>
                         </div>
                         <div class="p-1" style="text-align:center;">
-                            <a href="space.php?room=i-feel-anxious"><h4 class="text-white">Anxious</h4></a>
+                            <a href="room.php?room=i-feel-anxious"><h4 class="text-white">Anxious</h4></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                         <div class="p-3" style="text-align:center;">
-                            <a href="space.php?room=i-feel-depressed" class="feeling">
+                            <a href="room.php?room=i-feel-depressed" class="feeling">
                                 <i class="img-fluid rounded-circle far fa-sad-tear fa-7x emoji"></i>
                             </a>
                         </div>
                         <div class="p-1" style="text-align:center;">
-                            <a href="space.php?room=i-feel-depressed"><h4 class="text-white">Depressed</h4></a>
+                            <a href="room.php?room=i-feel-depressed"><h4 class="text-white">Depressed</h4></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                         <div class="p-3" style="text-align:center;">
-                            <a href="space.php?room=i-feel-frustrated" class="feeling">
+                            <a href="room.php?room=i-feel-frustrated" class="feeling">
                                 <i class="img-fluid rounded-circle far fa-tired fa-7x emoji"></i>
                             </a>
                         </div>
                         <div class="p-1" style="text-align:center;">
-                            <a href="space.php?room=i-feel-frustrated"><h4 class="text-white">Frustrated</h4></a>
+                            <a href="room.php?room=i-feel-frustrated"><h4 class="text-white">Frustrated</h4></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                         <div class="p-3" style="text-align:center;">
-                            <a href="space.php?room=i-feel-high" class="feeling">
+                            <a href="room.php?room=i-feel-high" class="feeling">
                                 <i class="img-fluid rounded-circle far fa-grin-stars fa-7x emoji"></i>
                             </a>
                         </div>
                         <div class="p-1" style="text-align:center;">
-                            <a href="space.php?room=i-feel-high"><h4 class="text-white">High</h4></a>
+                            <a href="room.php?room=i-feel-high"><h4 class="text-white">High</h4></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                         <div class="p-3" style="text-align:center;">
-                            <a href="space.php?room=i-feel-sleepy" class="feeling">
+                            <a href="room.php?room=i-feel-sleepy" class="feeling">
                                 <i class="img-fluid rounded-circle fas fa-bed fa-7x emoji"></i>
                             </a>
                         </div>
                         <div class="p-1" style="text-align:center;">
-                            <a href="space.php?room=i-feel-sleepy"><h4 class="text-white">Sleepy</h4></a>
+                            <a href="room.php?room=i-feel-sleepy"><h4 class="text-white">Sleepy</h4></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                         <div class="p-3" style="text-align:center;">
-                            <a href="space.php?room=i-feel-lonely" class="feeling">
+                            <a href="room.php?room=i-feel-lonely" class="feeling">
                                 <i class="img-fluid rounded-circle far fa-sad-cry fa-7x emoji"></i>
                             </a>
                         </div>
                         <div class="p-1" style="text-align:center;">
-                            <a href="space.php?room=i-feel-loney"><h4 class="text-white">Lonely</h4></a>
+                            <a href="room.php?room=i-feel-loney"><h4 class="text-white">Lonely</h4></a>
                         </div>
                     </div>
                 </div>

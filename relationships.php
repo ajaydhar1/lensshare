@@ -83,7 +83,7 @@
                         <li class="nav-item my-auto"><a class="nav-link" href="#marriage">Married Life</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#parenting">Parenting</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
-                        <li class="nav-item"><a class="btn btn-primary text-white" href="space.php?room=happy-hour">Happy Hour</a></li>
+                        <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
             </div>
@@ -123,17 +123,17 @@
                         <h2 class="mb-3"><strong>Dating</strong></h2>
                         <p class="text-muted"><?= $site_name ?> can be used as a free online dating site! Meet singles online, then you can develop the relationship offline.</p>
                         <div class="mt-4">
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=virtual-hookups">Virtual Hookups</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=college-dating">College</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=20s-dating">20s</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=30s-dating">30s</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=40s-dating">40s</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=50s-dating">50s</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=silver-singles">Silver Singles</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=gay-dating">Gay</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=lesbian-dating">Lesbian</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=bisexual-dating">Bisexual</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=trans-dating">Trans</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=virtual-hookups">Virtual Hookups</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=college-dating">College</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=20s-dating">20s</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=30s-dating">30s</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=40s-dating">40s</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=50s-dating">50s</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=silver-singles">Silver Singles</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=gay-dating">Gay</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=lesbian-dating">Lesbian</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=bisexual-dating">Bisexual</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=trans-dating">Trans</a>
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex">
@@ -154,15 +154,15 @@
                         <h2 class="mb-3"><strong>Married Life</strong></h2>
                         <p class="text-muted">Marriages can get very complicated. Talk with other couples in your age range and see if you can help each other out.</p>
                         <div class="mt-4">
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=wedding-planning">Wedding Planning</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=newlyweds">Newlyweds</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=married-2-to-5-years">2-5 Years</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=married-5-to-10-years">5-10 Years</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=married-10-to-15-years">10-15 Years</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=married-15-to-20-years">15-20 Years</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=married-20-plus-years">20+ Years</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=separated">Separated</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=divorced">Divorced</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=wedding-planning">Wedding Planning</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=newlyweds">Newlyweds</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=married-2-to-5-years">2-5 Years</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=married-5-to-10-years">5-10 Years</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=married-10-to-15-years">10-15 Years</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=married-15-to-20-years">15-20 Years</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=married-20-plus-years">20+ Years</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=separated">Separated</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=divorced">Divorced</a>
                         </div>
 
                         </div>
@@ -179,14 +179,14 @@
                         <h2 class="mb-3"><strong>Parenting</strong></h2>
                         <p class="text-muted">Parenting is a life long responsibility. Work with other parents to try and make the best parenting decisions for your kids.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=newborns">Newborns (0-2 Months)</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=infants">Infants (3-11 months)</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=toddlers">Toddlers (1-2 Years)</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=preschoolers">Preschoolers (3-4 Years)</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=school-aged">School-Aged (5-12 Years)</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=teenagers">Teens (13-17)</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=college-kids">College Kids (18-21 years)</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=adult-children">Adult Children (22+)</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=newborns">Newborns (0-2 Months)</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=infants">Infants (3-11 months)</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=toddlers">Toddlers (1-2 Years)</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=preschoolers">Preschoolers (3-4 Years)</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=school-aged">School-Aged (5-12 Years)</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=teenagers">Teens (13-17)</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=college-kids">College Kids (18-21 years)</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=adult-children">Adult Children (22+)</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center">

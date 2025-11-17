@@ -92,7 +92,20 @@
 
             html, body {
                 overflow-x: hidden;
+                scroll-behavior: smooth;
             }
+
+            <?php /*
+
+            * {
+              box-sizing: border-box;
+            }
+
+            body * {
+              outline: 1px solid rgba(255, 0, 0, 0.2);
+            }
+
+            */ ?>
 
             #mainNav {
                 box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -169,14 +182,14 @@
             a.anchor {
                 display: block;
                 position: relative;
-                top: -18px;
+                top: -87px;
                 visibility: hidden;
             }
 
             a.anchor.panel-viewer {
                 display: block;
                 position: relative;
-                top: 0px;
+                top: -69px;
                 visibility: hidden;
             }
 
@@ -218,7 +231,7 @@
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item my-auto"><a class="nav-link" href="#sections">Sections</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#panel">Panel</a></li>
-                        <li class="nav-item"><a class="btn btn-primary text-white" href="space.php?room=happy-hour">Happy Hour</a></li>
+                        <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
             </div>

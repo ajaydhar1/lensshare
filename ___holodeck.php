@@ -6,7 +6,7 @@
                         <h1 class="mb-4"><strong>The Holodeck</strong></h1>
                     </div>
                     <div class="col-xl-4 col-lg-6 text-center">
-                        <p>Teleport to a private video space by entering an alphanumeric room name below. Join the room and then share the link with a friend.</p>
+                        <p>Teleport to a private video space by entering an alphanumeric room name below. Join the space and then share the link with a friend.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">

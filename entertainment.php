@@ -89,7 +89,7 @@
                         <li class="nav-item my-auto"><a class="nav-link" href="#memes">Memes</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#games">Game Watch</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
-                        <li class="nav-item"><a class="btn btn-primary text-white" href="space.php?room=happy-hour">Happy Hour</a></li>
+                        <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
             </div>
@@ -132,13 +132,13 @@
                         <h2 class="mb-3"><strong>Mass Media</strong></h2>
                         <p class="text-muted">Discuss the latest hit and indie projects from some of the best creators in the entertainment industry.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=latest-projects">Latest Projects</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=films">Films</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=music">Music</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=tv">TV</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=books">Books</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=art">Art</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=celebrities">Celebrities</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=latest-projects">Latest Projects</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=films">Films</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=music">Music</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=tv">TV</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=books">Books</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=art">Art</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=celebrities">Celebrities</a>
                         </div>
                     </div>
                 </div>

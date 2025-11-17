@@ -171,7 +171,7 @@ main.panel.viewer-three-up.three-up-yt #chat-block {
     --left:  minmax(0, 2fr);
     --right: minmax(0, 1fr);
   }
-  .row main.panel.viewer-three-up #chat-block { min-height: clamp(220px, 30vh, 1000px); }
+  .row main.panel.viewer-three-up #chat-block { min-height: clamp(240px, 30vh, 1000px); }
   .row main.panel.viewer-three-up #log { max-height: 27vh; }
 
   .row main.panel.viewer-two-up #chat-block { min-height: clamp(220px, 49vh, 1000px); }

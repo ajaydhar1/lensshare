@@ -7,24 +7,24 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="<?= $site_name ?> is a video-chat platform that lets you interact with people who share common interests with you. Meet people, make friends, no sign up needed!" />
+        <meta name="description" content="LensShare is a text + video chat platform where you can join interest-based rooms, meet people, and hang out — no sign-up needed." />
         <meta name="author" content="<?= $site_name ?>" />
         
         <!-- Page title -->
-        <title><?= $site_name ?> - A video-chat platform, no sign up needed!</title>
+        <title>LensShare — Text & Video Chat Rooms for Shared Interests</title>
         
         <!-- Favicon-->
         <link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />
 
         <!-- Twitter card and Open Graph-->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="LenShare" />
-        <meta name="twitter:description" content="A video-chat platform that lets you interact with people who share common interests with you." />
+        <meta name="twitter:title" content="LensShare: Text + Video Chat Rooms" />
+        <meta name="twitter:description" content="Join interest-based rooms on LensShare for instant text and video chat. Meet new people, share conversations, and connect without creating an account." />
         <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/homepage/bg-masthead-home.png" />
         
         <meta property="og:url" content="https://<?= $site_domain ?>/" />
-        <meta property="og:title" content="<?= $site_name ?>" />
-        <meta property="og:description" content="A video-chat platform that lets you interact with people who share common interests with you." />
+        <meta property="og:title" content="LensShare: Text + Video Chat Rooms" />
+        <meta property="og:description" content="Join interest-based rooms on LensShare for instant text and video chat. Meet new people, share conversations, and connect without creating an account." />
         <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/homepage/bg-masthead-home.png" />    
         <meta property="og:site_name" content="<?= $site_name ?>" />
 
@@ -98,7 +98,7 @@
                         <li class="nav-item my-auto"><a class="nav-link" href="#how-it-works">How it Works</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#the-metaverse">The Metaverse</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
-                        <li class="nav-item"><a class="btn btn-primary text-white" href="space.php?room=happy-hour">Happy Hour</a></li>
+                        <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
             </div>
@@ -111,8 +111,9 @@
                         <h1 class="text-white font-weight-bold"><strong>The <?= $site_name ?> Metaverse</strong></h1>
                         <hr class="divider" />
                     </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white mb-3"><?= $site_name ?> is a video-chat platform that lets you interact with people who share common interests with you. Meet people, make friends, no sign up needed!</p>
+                    <div class="col-lg-7 align-self-baseline">
+                        <p class="text-white mb-0"><?= $site_name ?> is a text + video chat platform with interest-based rooms.</p>
+                        <p class="text-white mb-3">Hang out, meet people — no sign-up needed.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -165,8 +166,8 @@
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-4">
                             <div class="mb-2"><img class="" src="assets/img/homepage/space-icon.png"></div>
-                            <h3 class="h4 mb-2"><strong>Click on a Space</strong></h3>
-                            <p class="text-muted mb-0">A space is a video-chat room based on a topic</p>
+                            <h3 class="h4 mb-2"><strong>Click on a Room</strong></h3>
+                            <p class="text-muted mb-0">A space with text + video chat based on a specific topic</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
@@ -191,7 +192,7 @@
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>The <?= $site_name ?> Metaverse</strong></h2>
                         <p class="text-muted">Most “Metaverses” are 3D worlds filled with cartoon avatars. LensShare is simpler — and more real.</p>
-                        <p class="text-muted">Our Metaverse is a 2D network of “Spaces,” which are just video chat rooms. No avatars. No complicated controls. It’s people talking to people, face-to-face, in real time.</p>
+                        <p class="text-muted">Our Metaverse is a 2D network of “Rooms,” which are just video chat rooms. No avatars. No complicated controls. It’s people talking to people, face-to-face, in real time.</p>
                         <span style="font-size: 2.7rem;">😀😆🤣😇</span>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -210,8 +211,8 @@
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Portals</strong></h2>
-                        <p class="text-muted">LensShare supports an unlimited number of Spaces. To make it easier to find people, we organize popular Spaces into seven themed <i>Portals</i>.</p>
-                        <p class="text-muted">Choose a Portal → click a Space → you’re instantly in a room where someone might already be hanging out.</p>
+                        <p class="text-muted">LensShare supports an unlimited number of Rooms. To make it easier to find people, we organize popular Rooms into seven themed <i>Portals</i>.</p>
+                        <p class="text-muted">Choose a Portal → click a Room → you’re instantly in a space where someone might already be hanging out.</p>
                         <p class="text-muted">It keeps the Metaverse organized and makes it more likely that conversations happen naturally.</p>
                         <p class="text-muted">Here is the complete list of Portals:</p>
                         <div class="mt-4">
@@ -233,14 +234,14 @@
             <div class="container px-4 px-lg-5">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h2 class="mb-3"><strong>Spaces</strong></h2>
-                        <p class="text-muted">Spaces are where everything happens. A Space is a simple, Zoom-style video chat room centered around a topic or theme. You can pop into public Spaces, or create your own private one by entering a secret room name in a Holodeck.</p>
+                        <h2 class="mb-3"><strong>Rooms</strong></h2>
+                        <p class="text-muted">Rooms are where everything happens. A Room is a simple, Zoom-style text + video chat room centered around a topic or theme. You can pop into public Rooms, or create your own private one by entering a secret room name in a Holodeck.</p>
                         <p class="text-muted">Every Portal has a Holodeck, and there’s one on the homepage too.</p>
-                        <p class="text-muted">Here are some examples of Spaces in the <a class="btn btn-dark btn-sm" href="sports.php">Sports & Fitness</a> Portal.</p>
+                        <p class="text-muted">Here are some examples of Rooms in the <a class="btn btn-dark btn-sm" href="sports.php">Sports & Fitness</a> Portal.</p>
                         <div class="mt-5">
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=football">Football</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=baseball">Baseball</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=basketball">Basketball</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=football">Football</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=baseball">Baseball</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=basketball">Basketball</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -254,28 +255,28 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="space.php?room=managers" title="space name">
+                        <a class="portfolio-box" href="room.php?room=managers" title="room name">
                             <img class="img-fluid" src="assets/img/work/managers.gif" alt="..." />
                             <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Space</div>
+                                <div class="project-category text-white-50">Room</div>
                                 <div class="project-name">Managers</div>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="space.php?room=programmers" title="space name">
+                        <a class="portfolio-box" href="room.php?room=programmers" title="room name">
                             <img class="img-fluid" src="assets/img/work/programmers.gif" alt="..." />
                             <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Space</div>
+                                <div class="project-category text-white-50">Room</div>
                                 <div class="project-name">Programmers</div>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="space.php?room=startups" title="space name">
+                        <a class="portfolio-box" href="room.php?room=startups" title="room name">
                             <img class="img-fluid" src="assets/img/work/startups.gif" alt="..." />
                             <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Space</div>
+                                <div class="project-category text-white-50">Room</div>
                                 <div class="project-name">Startups</div>
                             </div>
                         </a>
@@ -291,28 +292,28 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="space.php?room=marketers" title="space name">
+                        <a class="portfolio-box" href="room.php?room=marketers" title="room name">
                             <img class="img-fluid" src="assets/img/work/marketers.gif" alt="..." />
                             <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Space</div>
+                                <div class="project-category text-white-50">Room</div>
                                 <div class="project-name">Marketers</div>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="space.php?room=accountants" title="space name">
+                        <a class="portfolio-box" href="room.php?room=accountants" title="room name">
                             <img class="img-fluid" src="assets/img/work/accountants.gif" alt="..." />
                             <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Space</div>
+                                <div class="project-category text-white-50">Room</div>
                                 <div class="project-name">Accountants</div>
                             </div>
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="space.php?room=doctors" title="space name">
+                        <a class="portfolio-box" href="room.php?room=doctors" title="room name">
                             <img class="img-fluid" src="assets/img/work/doctors.gif" alt="..." />
                             <div class="portfolio-box-caption p-3">
-                                <div class="project-category text-white-50">Space</div>
+                                <div class="project-category text-white-50">Room</div>
                                 <div class="project-name">Doctors</div>
                             </div>
                         </a>

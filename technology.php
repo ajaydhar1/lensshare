@@ -78,7 +78,7 @@
                         <li class="nav-item my-auto"><a class="nav-link" href="#base-station">Base Station</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#tech">Tech</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
-                        <li class="nav-item"><a class="btn btn-primary text-white" href="space.php?room=happy-hour">Happy Hour</a></li>
+                        <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
             </div>
@@ -117,7 +117,7 @@
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Tech Base Station</strong></h2>
                         <p class="text-muted">Join the Tech Base Station to discuss technology in general. Trade thoughts and share insight on the latest tech.</p>
-                        <a id="base-station-btn" class="btn btn-dark btn-xl mt-3" href="space.php?room=tech-base-station">Join Base Station</a>
+                        <a id="base-station-btn" class="btn btn-dark btn-xl mt-3" href="room.php?room=tech-base-station">Join Base Station</a>
                     </div>
                     <div class="col-lg-6 text-center">
                         <img class="base-station-image img-fluid" style="" src="assets/img/all/base-station.gif">
@@ -137,17 +137,17 @@
                         <h2 class="mb-3"><strong>Blue Chip Technology</strong></h2>
                         <p class="text-muted">These spaces are for discussing foundational technologies that have changed the way we live our lives.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=computers">Computers</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=software">Software</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=hardware">Hardware</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=nano-tech">Nano Tech</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=biotech">Biotech</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=mobile-devices">Mobile Devices</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=websites">Websites</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=mobile-apps">Mobile Apps</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="space.php?room=home-appliances">Home Appliances</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="space.php?room=cars">Cars</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="space.php?room=construction">Construction</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=computers">Computers</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=software">Software</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=hardware">Hardware</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=nano-tech">Nano Tech</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=biotech">Biotech</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=mobile-devices">Mobile Devices</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=websites">Websites</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=mobile-apps">Mobile Apps</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=home-appliances">Home Appliances</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cars">Cars</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=construction">Construction</a>
                         </div>
                     </div>
                 </div>
