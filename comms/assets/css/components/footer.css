@@ -48,6 +48,7 @@ main.panel.viewer-two-up #site-legal             { grid-area: footer; }
   main.panel.viewer-three-up #watch-panel { grid-area: video; }   /* top-left */
   main.panel.viewer-three-up #video-panel { grid-area: v-chat; }  /* below watch */
   main.panel.viewer-three-up #chat-block  { grid-area: chat; }    /* right, spans both rows */
+  main.panel.viewer-three-up #site-legal  { grid-area: footer; }
 }
 
 /* ≤900px: stacked */

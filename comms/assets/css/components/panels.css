@@ -56,6 +56,7 @@ main.panel.viewer-three-up #chat-block           { grid-area: chat; }
   z-index: 5;
   background: var(--bg-header);
   /* border-bottom: 1px solid #1e293b; */
+  margin-bottom: .2rem;
 }
 
 /* Mobile: stack */
@@ -256,3 +257,18 @@ main.panel.is-resizing * {
 #room-status .name { font-weight: 600; }
 #room-status .pulse { animation: pulse 1.2s ease-in-out infinite; }
 @keyframes pulse { 0%,100%{opacity:.6} 50%{opacity:1} }
+
+
+
+
+/* Temporary: disable grid resizer, force responsive layout */
+.row main.panel.viewer-two-up,
+.row main.panel.viewer-three-up {
+  grid-template-columns: var(--left) var(--g) var(--right) !important;
+}
+/* Optional: make gutter non-interactive while resizer is disabled */
+.row main.panel.viewer-two-up .gutter,
+.row main.panel.viewer-three-up .gutter {
+  cursor: default !important;
+  /* pointer-events: none;  <-- only if you want it completely “dead” */
+}

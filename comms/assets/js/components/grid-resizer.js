@@ -1,3 +1,4 @@
+/*
 (function(){
   const SELECT_LAYOUT = 'main.panel'; // we’ll watch any main.panel
   const LAYOUT_ACTIVE = (el) => el.classList.contains('viewer-two-up') || el.classList.contains('viewer-three-up');
@@ -241,3 +242,39 @@
     obs.observe(document.body, { childList:true, subtree:true, attributes:true, attributeFilter:['class'] });
   }
 })();
+
+
+
+// Let users resize while the window is stable
+// But when the window resizes, drop back to the CSS layout
+(function () {
+  const panels = () => document.querySelectorAll(
+    'main.panel.viewer-two-up, main.panel.viewer-three-up'
+  );
+
+  function resetViewerLayout() {
+    panels().forEach(el => {
+      // Remove inline grid-template so CSS + media queries take over again
+      el.style.removeProperty('grid-template-columns');
+    });
+  }
+
+  // Basic debounce to avoid spamming resets while resizing
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resetViewerLayout, 120);
+  });
+})();
+
+
+(function () {
+  const panels = document.querySelectorAll(
+    '.row main.panel.viewer-two-up, .row main.panel.viewer-three-up'
+  );
+  panels.forEach(el => {
+    el.style.removeProperty('grid-template-columns');
+  });
+})();
+
+*/

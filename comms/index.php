@@ -312,6 +312,8 @@ if ($view === 'messages') {
       </div>
       <!-- chat-block END (new) -->
 
+      <div class="gutter" aria-hidden="true"></div>
+
       <!-- Video Chat Panel (Jitsi) -->
       <div id="video-panel" class="video-panel room-panel hidden" aria-hidden="true">
         <div class="video-bar">
