@@ -172,7 +172,7 @@ main.panel.viewer-three-up.three-up-yt #chat-block {
     --right: minmax(0, 1fr);
   }
   .row main.panel.viewer-three-up #chat-block { min-height: clamp(240px, 30vh, 1000px); }
-  .row main.panel.viewer-three-up #log { max-height: 27vh; }
+  .row main.panel.viewer-three-up #log { max-height: 24vh; }
 
   .row main.panel.viewer-two-up #chat-block { min-height: clamp(220px, 49vh, 1000px); }
   .row main.panel.viewer-two-up #log { max-height: 48.7vh; }
@@ -197,7 +197,7 @@ main.panel.viewer-three-up.three-up-yt #chat-block {
   }
 
   .row main.panel.viewer-three-up #chat-block { min-height: clamp(220px, 70vh, 1000px); }
-  .row main.panel.viewer-three-up #log        { max-height: 68vh; }
+  .row main.panel.viewer-three-up #log        { max-height: 52vh; }
 
   .row main.panel.viewer-two-up #chat-block { min-height: clamp(220px, 49vh, 1000px); }
   .row main.panel.viewer-two-up #log        { max-height: 48.7vh; }
@@ -210,6 +210,9 @@ main.panel.viewer-three-up.three-up-yt #chat-block {
   main.panel.viewer-three-up .gutter,
   main.panel.viewer-two-up .gutter { display: none; }
   .row main.panel.viewer-three-up #chat-block { min-height: 45vh; }
+
+  /* add a cap so long chats don’t dominate on mobile */
+  .row main.panel #log { max-height: 40vh; }
 }
 
 

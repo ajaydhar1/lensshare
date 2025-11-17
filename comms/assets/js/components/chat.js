@@ -298,3 +298,22 @@
   if (!window.WS_URL) console.warn('[WS] window.WS_URL is not set');
   connect();
 })();
+
+
+/**
+ * Scroll the chat window to the last message when the DOM is ready
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  // messages panel: prefer bubble panel, else <pre id="log">
+  const panel =
+    document.getElementById('panelMessages') ||
+    document.querySelector('[data-panel="messages"]') ||
+    document.getElementById('log');
+
+  if (!panel) return;
+
+  // wait a tick so layout settles, then scroll
+  requestAnimationFrame(() => {
+    panel.scrollTop = panel.scrollHeight;
+  });
+});
