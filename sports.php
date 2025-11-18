@@ -7,26 +7,26 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="This Portal is for those who love professional sports and others who enjoy working out and partcipating in athletics and exercising themselves." />
-        <meta name="author" content="<?= $site_name ?>" />
-        
+        <meta name="description" content="Explore Sports & Fitness Rooms where you can talk pro sports, share workouts, and support each other’s athletic and fitness goals." />
+        <meta name="author" content="LensShare" />
+
         <!-- Page title -->
-        <title>Sports & Fitness - For those who love sports and exercising.</title>
-        
+        <title>Sports & Fitness Rooms — Talk Sports, Share Workouts | LensShare</title>
+
         <!-- Favicon-->
         <link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />
 
         <!-- Twitter card and Open Graph-->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Sports & Fitness - <?= $site_name ?>" />
-        <meta name="twitter:description" content="For those who love sports and exercising." />
-        <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/sports/santa-snowboarding.jpeg" />
-        
-        <meta property="og:url" content="https://<?= $site_domain ?>/sports.php" />
-        <meta property="og:title" content="Sports & Fitness - <?= $site_name ?>" />
-        <meta property="og:description" content="For those who love sports and exercising." />
-        <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/sports/santa-snowboarding.jpeg" />    
-        <meta property="og:site_name" content="<?= $site_name ?>" />
+        <meta name="twitter:title" content="Sports & Fitness Rooms — LensShare" />
+        <meta name="twitter:description" content="Join Sports & Fitness Rooms to talk games, compare training, and stay motivated with others who love being active." />
+        <meta name="twitter:image" content="https://lensshare.co/assets/img/sports/santa-snowboarding.jpeg" />
+
+        <meta property="og:url" content="https://lensshare.co/sports.php" />
+        <meta property="og:title" content="Sports & Fitness Rooms — LensShare" />
+        <meta property="og:description" content="Join Sports & Fitness Rooms to talk games, compare training, and stay motivated with others who love being active." />
+        <meta property="og:image" content="https://lensshare.co/assets/img/sports/santa-snowboarding.jpeg" />
+        <meta property="og:site_name" content="LensShare" />
 
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -91,7 +91,7 @@
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-7 align-self-baseline">
-                        <p class="text-white-75 mb-3">This Portal is for those who love professional sports and others who enjoy working out and partcipating in athletics and exercising themselves.</p>
+                        <p class="text-white-75 mb-3">This Portal is for people who love professional sports, enjoy working out, or participate in athletics. Share your interests, connect with others, and stay active together.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -103,8 +103,9 @@
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
-                    <div class="col-lg-4 text-center">
-                        <a class="btn btn-light btn-xl" href="#sports">Explore Portal</a>
+                    <div class="col-lg-6 text-center">
+                        <a class="btn btn-light btn-xl" href="#sports">Explore Rooms</a>
+                        <a class="btn btn-secondary btn-xl" style="" href="room.php?room=sports-talk-central">Join Sports Talk Central</a>
                     </div>
                 </div>
             </div>
@@ -115,7 +116,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Sports</strong></h2>
-                        <p class="text-muted">Join a sports room if your a fan of professional sports or play a sport yourself and want help improving your skills.</p>
+                        <p class="text-muted">Join a Sports Room if you’re a fan of professional leagues or play a sport yourself. Talk strategy, compare experiences, and get help improving your skills.</p>
                         <div class="mt-4">
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=football">Football</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=baseball">Baseball</a>
@@ -146,7 +147,7 @@
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Fitness</strong></h2>
-                        <p class="text-muted">Use these spaces to share your fitness goals and journey with others that workout the same way as you.</p>
+                        <p class="text-muted">Use these rooms to share your fitness goals, routines, and progress with others who train the same way you do. Support each other and stay motivated.</p>
                         <div class="mt-4">
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=lifting-weights">Lifting Weights</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=calisthenics">Calisthenics</a>
@@ -159,6 +160,24 @@
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cross-training">Cross Training</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=fitness-wearables">Fitness Wearables</a>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
+        <!-- Call to action-->
+        <section class="page-section text-dark" id="mental-health">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="mb-3"><strong>Sports Talk Central</strong></h2>
+                        <p class="text-muted">Sports Talk Central is the main hub for sports fans in this Portal. Talk about games, trades, players, and storylines across any league — or just hang out and react in real time.</p>
+                        <div class="mt-4">
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=sports-talk-central">Sports Talk Central</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img class="explanation-image img-fluid" style="" src="assets/img/sports/sports-talk.gif">
                     </div>
                 </div>
             </div>

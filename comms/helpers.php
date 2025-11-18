@@ -47,17 +47,16 @@ function ensure_schema(){
     $room_id = (int)db()->lastInsertId();
 
     $p = db()->prepare("INSERT INTO posts(room_id,title,body,created_at) VALUES(?,?,?,?)");
-    $p->execute([$room_id,'Welcome to LogFeed',
-      "This is a sample post in the unified Publishing + Messages prototype.
-
-Use the left nav to switch between rooms and posts.",
+    $p->execute([$room_id,'Welcome to LensShare',
+      "This is a global post for all Spaces.
+Use the left navigation to jump between Rooms and manage your uploads.
+Everything you share appears instantly across your connected Spaces.",
       $now]);
-    $p->execute([$room_id,'House Rules',
-      "- Be kind
-- Keep it local
-- No spam
-
-(These are just demo lines for layout.)",
+    $p->execute([$room_id,'Community Guidelines',
+      "- Keep things friendly
+- Share respectfully
+- No spam or automated uploads
+(Just a simple demo set of rules for layout and testing.)",
       $now]);
 
     $m = db()->prepare("INSERT INTO messages(room_id,user,body,created_at) VALUES(?,?,?,?)");
@@ -87,24 +86,20 @@ function current_room_by_slug($slug){
   return $q->fetch(PDO::FETCH_ASSOC) ?: null;
 }
 function ensure_room_created(string $slug, ?string $name = null): int {
+  // If the room already exists, just return its id
   $r = current_room_by_slug($slug);
   if ($r) return (int)$r['id'];
+
+  // Otherwise create a new room
   $name = $name ?: strtoupper($slug);
   $now  = date('c');
   $ins  = db()->prepare("INSERT INTO rooms(slug,name,created_at) VALUES(?,?,?)");
   $ins->execute([$slug, $name, $now]);
   $room_id = (int)db()->lastInsertId();
-  // seed two default posts
-  $p = db()->prepare("INSERT INTO posts(room_id,title,body,created_at) VALUES(?,?,?,?)");
-  $p->execute([$room_id,'Welcome to LogFeed',
-    "This is your room’s default post.
 
-Use the messages on the right and posts on the left.",$now]);
-  $p->execute([$room_id,'House Rules',
-    "- Be kind
-- Keep it local
-- No spam
+  // NOTE: Previously we seeded two default posts here (Welcome to LogFeed / House Rules).
+  // That behavior has been removed so new rooms start empty.
+  // If you need starter posts for a specific app, seed them separately.
 
-(Edit or delete this post when ready.)",$now]);
   return $room_id;
 }

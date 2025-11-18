@@ -53,9 +53,15 @@ header.masthead {
 	padding-top: 16rem !important;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (min-width: 993px) and (max-width: 1300px) {
   #masthead-text {
-    padding-top: 8rem !important;
+    padding-top: 12rem !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #masthead-text {
+    padding-top: 7rem !important;
   }
 }
 
