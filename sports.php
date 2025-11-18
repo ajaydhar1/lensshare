@@ -104,7 +104,7 @@
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-6 text-center">
-                        <a class="btn btn-light btn-xl" href="#sports">Explore Rooms</a>
+                        <a class="btn btn-light btn-xl mb-2" href="#sports">Explore Rooms</a>
                         <a class="btn btn-secondary btn-xl" style="" href="room.php?room=sports-talk-central">Join Sports Talk Central</a>
                     </div>
                 </div>

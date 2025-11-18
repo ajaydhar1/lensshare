@@ -163,7 +163,7 @@
                 border: solid black 2px;
             }
 
-            .btn {
+            .btn.chip {
                 margin: 2px 0;
             }
 
@@ -240,6 +240,68 @@
 
         <?php require __DIR__.'/comms/index.php'; ?>
         
+        <!-- Quick Holodeck: Private Room Jump -->
+        <section class="private-room-quickjump my-4">
+          <div class="container-fluid px-0">
+            <div class="row justify-content-center">
+              <div class="col-lg-8 col-xl-6">
+                <div class="card bg-light border-0 shadow-sm">
+                  <div class="card-body p-3 p-sm-4">
+                    <h3 class="h5 mb-2">Jump to a Private Room</h3>
+                    <p class="mb-3 small text-muted">
+                      Enter a room name to open a private video space, then share the link with a friend.
+                    </p>
+                    <form id="quick-holodeck-form" class="mb-0">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-text">Room Name</span>
+                        <input
+                          id="quick-holodeck-room"
+                          type="text"
+                          class="form-control"
+                          placeholder="e.g., Study Pod A"
+                          required
+                          pattern="[a-zA-Z0-9 ]+"
+                          aria-label="Private room name"
+                        >
+                        <button class="btn btn-secondary" type="submit">
+                          Go
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          (function () {
+            const form  = document.getElementById('quick-holodeck-form');
+            const input = document.getElementById('quick-holodeck-room');
+
+            if (!form || !input) return;
+
+            form.addEventListener('submit', function (e) {
+              e.preventDefault();
+
+              // Use built-in browser validation
+              if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+              }
+
+              const raw = input.value.trim();
+              if (!raw) return;
+
+              // Navigate to the private video space
+              const room = encodeURIComponent(raw);
+              window.location.href = 'holodeck-video.php?room=' + room;
+            });
+          })();
+        </script>
+
+
         <?php require_once("___footer.php"); ?>
 
         <!-- Bootstrap core JS-->
@@ -250,5 +312,8 @@
 
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+
+
     </body>
 </html>

@@ -7,26 +7,26 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="This Portal is for students in any grade level, and their parents, who want to get ahead of the competition in school." />
-        <meta name="author" content="<?= $site_name ?>" />
+        <meta name="description" content="Explore School & Education Rooms for students of all grade levels—and their parents—to discuss learning, classes, college, and how to succeed in school." />
+        <meta name="author" content="LensShare" />
         
         <!-- Page title -->
-        <title>Education - For students and their parents who want to get ahead in school.</title>
+        <title>School & Education Rooms — Learn, Connect, and Succeed | LensShare</title>
         
         <!-- Favicon-->
         <link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />
 
         <!-- Twitter card and Open Graph-->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Education - <?= $site_name ?>" />
-        <meta name="twitter:description" content="For students and their parents who want to get ahead in school." />
-        <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/education/bg-masthead-education.png" />
+        <meta name="twitter:title" content="School & Education Rooms — LensShare" />
+        <meta name="twitter:description" content="Join School & Education Rooms to talk about learning, classes, college majors, and how to succeed at every stage of school." />
+        <meta name="twitter:image" content="https://lensshare.co/assets/img/education/bg-masthead-education.png" />
         
-        <meta property="og:url" content="https://<?= $site_domain ?>/education.php" />
-        <meta property="og:title" content="Education - <?= $site_name ?>" />
-        <meta property="og:description" content="For students and their parents who want to get ahead in school." />
-        <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/education/bg-masthead-education.png" />    
-        <meta property="og:site_name" content="<?= $site_name ?>" />
+        <meta property="og:url" content="https://lensshare.co/education.php" />
+        <meta property="og:title" content="School & Education Rooms — LensShare" />
+        <meta property="og:description" content="Join School & Education Rooms to talk about learning, classes, college majors, and how to succeed at every stage of school." />
+        <meta property="og:image" content="https://lensshare.co/assets/img/education/bg-masthead-education.png" />
+        <meta property="og:site_name" content="LensShare" />
 
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -83,7 +83,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.php"><?= $site_name ?></a>
+                <a class="navbar-brand" href="index.php">LensShare</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -107,7 +107,7 @@
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-7 align-self-baseline">
-                        <p class="mb-3">This Portal is for students in any grade level, and their parents, who want to get ahead of the competition in school.</p>
+                        <p class="mb-3">This Portal is for students of any grade level—and their parents—who want to do better in school, build skills, and navigate the education system together.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -120,7 +120,8 @@
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-4 text-center">
-                        <a class="btn btn-dark btn-xl" href="#base-station">Explore Portal</a>
+                        <a class="btn btn-dark btn-xl mb-2" href="#base-station">Explore Rooms</a>
+                        <a class="btn btn-light btn-xl" href="#study">Study Together</a>
                     </div>
                 </div>
             </div>
@@ -131,7 +132,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>School <span class="text-pink">&</span> Education Base Station</strong></h2>
-                        <p class="text-muted">Join the School & Education Base Station to discuss education in general. You can share comments and concerns on learning, extra-curriculars, and the education system in general.</p>
+                        <p class="text-muted">Join the School & Education Base Station to talk about learning in general. Share comments and concerns about homework, classes, extra-curriculars, and the education system as a whole.</p>
                         <a id="base-station-btn" class="btn btn-dark btn-xl mt-3" href="room.php?room=school-and-education-base-station">Join Base Station</a>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -150,7 +151,7 @@
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Online College Mixer</strong></h2>
-                        <p class="text-muted">In college, is it important for success to work hard and have some fun too! Join this space to share a drink with fellow college students. Nothing too wild in here though. Take it to a private room if you really want to.</p>
+                        <p class="text-muted">In college, it helps to work hard—and have a little fun too. Join this space to relax, chat, and hang out with other college students. If things get more personal or intense, move the conversation to a private Room.</p>
                         <div class="mt-3">
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=online-college-mixer">Online Mixer</a>
                         </div>
@@ -165,7 +166,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Grade Level</strong></h2>
-                        <p class="text-muted">Join one of these rooms based on your, or you kid's, current level of education.</p>
+                        <p class="text-muted">Join one of these Rooms based on your current grade level—or your child’s—so you can connect with others facing similar challenges.</p>
                         <div class="mt-4">
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=pre-k">Pre-K</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=elementary-school">Elementary School</a>
@@ -195,7 +196,55 @@
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>The Right Way to Learn</strong></h2>
-                        <p class="text-muted">Listen to this audio to get a dose of insight into the time-tested techniques for how to learn effectively.</p>
+                        <p class="text-muted">Play this audio for a quick dose of time-tested techniques on how to learn more effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
+        <!-- Call to action-->
+        <section class="page-section-smaller text-dark" id="study">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="mb-3"><strong>Study Together</strong></h2>
+                        <p class="text-muted">Focused spaces where students can work side-by-side, stay motivated, and share study tips. Join whenever you want a little company while you learn.</p>
+                        <div class="mt-4">
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=study-k8">Younger Students (K-8)</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=study-highschool">High School Students</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=study-undergrad">College & Undergrad</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=study-grad">Grad School / Professional Programs</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=study-med-school">Med School</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=study-mba">MBA</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=study-parents">Parents & Supporters</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=study-quiet">Quiet Study Room</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=study-group">Group Study Room</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=homework-help">Homework Help</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=exam-prep">Exam Prep</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=parents-helping-kids">Parents Helping Kids</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=ask">Ask a Question</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img class="base-station-image img-fluid" style="" src="assets/img/education/study-together.gif">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
+        <!-- Call to action-->
+        <section class="page-section bg-light text-dark" id="learning">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <img class="explanation-image img-fluid" style="height: 370px; width: auto;" src="assets/img/education/college-prep.gif">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="mb-3"><strong>College Prep</strong></h2>
+                        <p class="text-muted">Join this room to talk about college applications, admissions strategies, essays, standardized tests, and everything involved in preparing for college.</p>
+                        <div class="mt-3">
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=college-prep">College Prep Room</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -207,7 +256,7 @@
                 <div class="row text-center justify-content-center">
                     <div class="col-lg-8">
                         <h2 class="mb-3"><strong>College Majors</strong></h2>
-                        <p class="text-muted">Join the room corresponding to your current major in undergrad or grad school, or a subject area you are interested majoring and minoring in if you're applying to colleges.</p>
+                        <p class="text-muted">Join the Room for your current major in undergrad or grad school—or a subject you’re considering for a future major or minor. It’s a space to compare paths, ask questions, and get insight from others in the same area.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center mt-4">

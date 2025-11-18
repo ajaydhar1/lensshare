@@ -5,12 +5,12 @@
                     <div class="col-lg-12 text-center">
                         <h1 class="mb-4"><strong>The Holodeck</strong></h1>
                     </div>
-                    <div class="col-xl-4 col-lg-6 text-center">
+                    <div class="col-xl-4 col-lg-6 col-sm-8 text-center">
                         <p>Teleport to a private video space by entering an alphanumeric room name below. Join the space and then share the link with a friend.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
-                    <div class="col-lg-5 text-center">
+                    <div class="col-lg-5 col-sm-8 text-center">
                         <form id="holodeck-form">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">

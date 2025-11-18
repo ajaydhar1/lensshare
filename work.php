@@ -105,7 +105,7 @@
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-6 text-center">
-                        <a class="btn btn-light btn-xl" style="" href="#base-station">Explore Rooms</a>
+                        <a class="btn btn-light btn-xl mb-2" style="" href="#base-station">Explore Rooms</a>
                         <a class="btn btn-secondary btn-xl" style="" href="room.php?room=lets-work-together">Join a Work Session</a>
                     </div>
                 </div>
