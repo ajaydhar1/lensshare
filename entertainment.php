@@ -7,26 +7,26 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="This Portal is to chat and immerse yourself in the latest media and entertainment." />
-        <meta name="author" content="<?= $site_name ?>" />
-        
+        <meta name="description" content="Explore Entertainment Rooms where you can talk movies, TV, music, memes, live streams, and everything happening in pop culture." />
+        <meta name="author" content="LensShare" />
+
         <!-- Page title -->
-        <title>Entertainment - Chat and immerse yourself in the latest media and entertainment.</title>
-        
+        <title>Entertainment Rooms — Talk Movies, TV, Music & More | LensShare</title>
+
         <!-- Favicon-->
         <link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />
 
         <!-- Twitter card and Open Graph-->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Entertainment - <?= $site_name ?>" />
-        <meta name="twitter:description" content="Chat and immerse yourself in the latest media and entertainment." />
-        <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/entertainment/bg-masthead-entertainment.png" />
-        
-        <meta property="og:url" content="https://<?= $site_domain ?>/entertainment.php" />
-        <meta property="og:title" content="Entertainment - <?= $site_name ?>" />
-        <meta property="og:description" content="Chat and immerse yourself in the latest media and entertainment." />
-        <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/entertainment/bg-masthead-entertainment.png" />    
-        <meta property="og:site_name" content="<?= $site_name ?>" />
+        <meta name="twitter:title" content="Entertainment Rooms — LensShare" />
+        <meta name="twitter:description" content="Join Entertainment Rooms to chat about shows, movies, music, memes, live streams, and the latest in pop culture." />
+        <meta name="twitter:image" content="https://lensshare.co/assets/img/entertainment/bg-masthead-entertainment.png" />
+
+        <meta property="og:url" content="https://lensshare.co/entertainment.php" />
+        <meta property="og:title" content="Entertainment Rooms — LensShare" />
+        <meta property="og:description" content="Join Entertainment Rooms to chat about shows, movies, music, memes, live streams, and the latest in pop culture." />
+        <meta property="og:image" content="https://lensshare.co/assets/img/entertainment/bg-masthead-entertainment.png" />
+        <meta property="og:site_name" content="LensShare" />
 
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -80,7 +80,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.php"><?= $site_name ?></a>
+                <a class="navbar-brand" href="index.php">LensShare</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -103,7 +103,7 @@
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-7 align-self-baseline">
-                        <p class="mb-3">This Portal is to chat and immerse yourself in the latest media and entertainment.</p>
+                        <p class="mb-3">This Portal is for chatting about and immersing yourself in the latest media, shows, music, and entertainment.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -115,8 +115,9 @@
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
-                    <div class="col-lg-4 text-center">
-                        <a class="btn btn-dark btn-xl" href="#media">Explore Portal</a>
+                    <div class="col-lg-6 text-center">
+                        <a class="btn btn-dark btn-xl mb-2" href="#media">Explore Portal</a>
+                        <a class="btn btn-secondary btn-xl" style="" href="room.php?room=watch-party-central">Join Watch Party Central</a>
                     </div>
                 </div>
             </div>
@@ -125,12 +126,30 @@
         <section class="page-section text-dark" id="media">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="mb-3"><strong>Watch Party Central</strong></h2>
+                        <p class="text-muted">The main hangout in the Entertainment Portal. Jump in to watch clips, react to trailers, talk about shows, share music videos, or just vibe with people watching the same thing.</p>
+                        <div class="mt-4">
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=watch-party-central">Watch Party Central</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img class="explanation-image img-fluid" style="" src="assets/img/entertainment/watch-party.gif">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
+        <!-- Call to action-->
+        <section class="page-section bg-light text-dark" id="media">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center">
                     <div class="col-lg-6 text-left">
                         <img class="explanation-image img-fluid" style="" src="assets/img/entertainment/spiderman.gif">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Mass Media</strong></h2>
-                        <p class="text-muted">Discuss the latest hit and indie projects from some of the best creators in the entertainment industry.</p>
+                        <p class="text-muted">Discuss the latest hit projects from your favorite creators across film, TV, streaming, and more.</p>
                         <div class="mt-4">
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=latest-projects">Latest Projects</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=films">Films</a>
@@ -144,14 +163,14 @@
                 </div>
             </div>
         </section>
-        <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
+        <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
         <!-- Call to action-->
-        <section class="page-section bg-light text-dark" id="iheartradio">
+        <section class="page-section text-dark" id="iheartradio">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>iHeartRadio</strong></h2>
-                        <p class="text-muted">Listen to the most popular radio stations in America, including broadcasts from NYC, Chi-town, LA, Miami, and more.</p>
+                        <p class="text-muted">Listen to top radio stations from across the U.S., including NYC, Chicago, LA, Miami, and more.</p>
                         <div class="mt-3">
                             <a class="btn btn-danger btn-xl mb-3" href="iheartradio.php">iHeartRadio</a>
                         </div>
@@ -162,9 +181,9 @@
                 </div>
             </div>
         </section>
-        <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
+        <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
         <!-- Call to action-->
-        <section class="page-section text-dark" id="memes">
+        <section class="page-section bg-light text-dark" id="memes">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6 text-left">
@@ -172,7 +191,7 @@
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>The Meme Factory</strong></h2>
-                        <p class="text-muted">Enter the Meme Factory to find some crazy animated gifs and stickers for you to enjoy and share with your friends.</p>
+                        <p class="text-muted">Enter the Meme Factory to discover wild GIFs and stickers you can enjoy, react with, and share with friends.</p>
                          <div class="mt-3">
                             <a class="btn btn-dark btn-xl mb-3" href="memes.php">Meme Factory</a>
                         </div>
@@ -180,14 +199,14 @@
                 </div>
             </div>
         </section>
-        <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
+        <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
         <!-- Call to action-->
-        <section class="page-section bg-light text-dark" id="games">
+        <section class="page-section text-dark" id="games">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Game Watch</strong></h2>
-                        <p class="text-muted">Watch some of the most entertaining video gameplay, sports, music, and just chatting live streams from around the world.</p><div class="mt-3">
+                        <p class="text-muted">Watch some of the most entertaining gameplay, sports, music, and “just chatting” live streams from around the world.</p><div class="mt-3">
                             <a class="btn btn-dark btn-xl mb-3" href="game-watch.php">Game Watch</a>
                         </div>
                     </div>
