@@ -221,6 +221,29 @@ body footer a {
   box-shadow:0 0 0 4px #fff, 0 0 0 8px var(--pink);
 }
 
+@media (max-width: 900px) {
+  /*
+  a[href="#how-it-works"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  a[href="#how-it-works"] svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    display: inline-block;
+    flex-shrink: 0;
+    stroke: currentColor;
+    fill: none;
+  }
+  */
+
+  a[href="#how-it-works"] svg {
+    display: none;
+  }
+}
+
 /* Large-ish screens (Chromebook range) */
 @media (min-width: 992px) and (max-width: 1600px) {
   header.masthead {

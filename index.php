@@ -8,7 +8,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="LensShare is a text + video chat platform where you can join interest-based rooms, meet people, and hang out — no sign-up needed." />
-        <meta name="author" content="<?= $site_name ?>" />
+        <meta name="author" content="LensShare" />
         
         <!-- Page title -->
         <title>LensShare — Text & Video Chat Rooms for Shared Interests</title>
@@ -20,13 +20,13 @@
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="LensShare: Text + Video Chat Rooms" />
         <meta name="twitter:description" content="Join interest-based rooms on LensShare for instant text and video chat. Meet new people, share conversations, and connect without creating an account." />
-        <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/homepage/bg-masthead-home.png" />
+        <meta name="twitter:image" content="https://lensshare.co/assets/img/homepage/bg-masthead-home.png" />
         
-        <meta property="og:url" content="https://<?= $site_domain ?>/" />
+        <meta property="og:url" content="https://lensshare.co/" />
         <meta property="og:title" content="LensShare: Text + Video Chat Rooms" />
         <meta property="og:description" content="Join interest-based rooms on LensShare for instant text and video chat. Meet new people, share conversations, and connect without creating an account." />
-        <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/homepage/bg-masthead-home.png" />    
-        <meta property="og:site_name" content="<?= $site_name ?>" />
+        <meta property="og:image" content="https://lensshare.co/assets/img/homepage/bg-masthead-home.png" />    
+        <meta property="og:site_name" content="LensShare" />
 
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -78,10 +78,6 @@
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: contain;
-            }
-
-            #cta-btn {
-                background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4)), url(assets/img/homepage/cta-bg.gif);
             }
 
         </style>

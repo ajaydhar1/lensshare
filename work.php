@@ -7,26 +7,26 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="In this Portal you can help each with your jobs. It can be task specific, or career oriented. Share advice for professional and personal growth." />
-        <meta name="author" content="<?= $site_name ?>" />
+        <meta name="description" content="Explore topic-based Work Rooms where you can share advice, ask questions, and support each other’s professional and personal growth." />
+        <meta name="author" content="LensShare" />
         
         <!-- Page title -->
-        <title>Work Rooms - Get advice. Give advice. For professional and personal growth.</title>
+        <title>Work Rooms — Share and Receive Professional Advice | LensShare</title>
         
         <!-- Favicon-->
         <link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />
 
         <!-- Twitter card and Open Graph-->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Work Rooms - <?= $site_name ?>" />
-        <meta name="twitter:description" content="Get advice. Give advice. For professional and personal growth." />
-        <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/bg-masthead.jpg" />
+        <meta name="twitter:title" content="Work Rooms — LensShare" />
+        <meta name="twitter:description" content="Join topic-based Work Rooms to get advice, give advice, and support each other’s growth." />
+        <meta name="twitter:image" content="https://lensshare.co/assets/img/bg-masthead.jpg" />
         
-        <meta property="og:url" content="https://<?= $site_domain ?>/work.php" />
-        <meta property="og:title" content="Work Rooms - <?= $site_name ?>" />
-        <meta property="og:description" content="Get advice. Give advice. For professional and personal growth." />
-        <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/bg-masthead.jpg" />    
-        <meta property="og:site_name" content="<?= $site_name ?>" />
+        <meta property="og:url" content="https://lensshare.co/work.php" />
+        <meta property="og:title" content="Work Rooms — LensShare" />
+        <meta property="og:description" content="Join topic-based Work Rooms to share advice, get support, and collaborate on professional growth." />
+        <meta property="og:image" content="https://lensshare.co/assets/img/bg-masthead.jpg" />
+        <meta property="og:site_name" content="LensShare" />
 
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -92,7 +92,7 @@
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-7 align-self-baseline">
-                        <p class="text-white-75 mb-3">In this Portal you can help each with your jobs. It can be task specific, or career oriented. Share advice for professional and personal growth.</p>
+                        <p class="text-white-75 mb-3">In this Portal, you can help each other with work. Conversations can be task-specific or career-oriented. Share advice, compare experiences, and support each other’s professional growth.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -105,7 +105,8 @@
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-6 text-center">
-                        <a class="btn btn-light btn-xl" style="" href="#base-station">Explore Portal</a>
+                        <a class="btn btn-light btn-xl" style="" href="#base-station">Explore Rooms</a>
+                        <a class="btn btn-secondary btn-xl" style="" href="room.php?room=lets-work-together">Join a Work Session</a>
                     </div>
                 </div>
             </div>
@@ -116,7 +117,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Work Base Station</strong></h2>
-                        <p class="text-muted">Join the Work Rooms Base Station to discuss work in general. You can trade thoughts about your jobs and careers.</p>
+                        <p class="text-muted">Join the Work Rooms Base Station to talk about work in general. Trade thoughts about your jobs, careers, challenges, and wins.</p>
                         <a id="base-station-btn" class="btn btn-dark btn-xl mt-3" href="room.php?room=work-base-station">Join Base Station</a>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -135,7 +136,7 @@
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Essential Rooms</strong></h2>
-                        <p class="text-muted">These are the most important rooms in the Work Rooms Portal. Help each other out of sticky situations and work together to find solutions.</p>
+                        <p class="text-muted">These are the key Rooms in the Work Portal. Help each other through challenges, share solutions, and get quick support when you need it.</p>
                         <div class="mt-4">
                             <a class="btn btn-warning btn-xl mb-3" href="room.php?room=need-help-now">Need Help Now</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=lets-work-together">Let's Work Together</a>
@@ -156,7 +157,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Management Skills Index</strong></h2>
-                        <p class="text-muted">1000+ key professional skills organized by executive and managerial roles.</p>
+                        <p class="text-muted">Explore 1,000+ professional skills organized by executive and managerial roles. A quick way to grow your leadership toolkit.</p>
                         <a id="" class="btn btn-warning btn-xl mt-3" href="management-index.php">Management Index</a>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -172,8 +173,8 @@
                 <div class="row text-center justify-content-center">
                     <div class="col-lg-8">
                         <h2 class="mb-3"><strong>Occuptation Rooms</strong></h2>
-                        <p class="text-muted">Search and click on your job title to talk with other people in your field. You can also enter a different room if you have an interest in, or want insight into, that domain.</p>
-                        <p class="text-muted">Join the Base Station if you can't find anyone in these rooms.</p>
+                        <p class="text-muted">Search and click your job title to talk with others in your field. You can also enter Rooms outside your job if you’re curious about that domain or want a different point of view.</p>
+                        <p class="text-muted">If you don’t see anyone in these Rooms, jump into the Base Station instead.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center mt-4">

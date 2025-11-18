@@ -371,6 +371,8 @@ if ($view === 'messages') {
       <div class="post"><em class="muted">Select a post from the left.</em></div>
     <?php endif; ?>
 
+    <div class="gutter" aria-hidden="true"></div>
+
     <div id="site-legal" class="site-legal" style="padding:10px 12px;color:#94a3b8;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
     <span class="chip"><mark>BETA</mark></span>
     <span><?= $brand['name'] ?> is in active development. Spaces are created intentionally with <code>?autocreate=1</code> and a valid token.</span>
