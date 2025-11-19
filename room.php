@@ -284,6 +284,24 @@
 
             if (!form || !input) return;
 
+            // Small helper to generate a GUID/UUID
+            function generateGuid() {
+              if (window.crypto && window.crypto.randomUUID) {
+                return window.crypto.randomUUID();
+              }
+              // Fallback: not a perfect RFC UUID, but random enough for our use
+              const hex = () => Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+              return (
+                hex() + hex() + "-" +
+                hex() + "-" +
+                hex() + "-" +
+                hex() + "-" +
+                hex() + hex() + hex()
+              );
+            }
+
             form.addEventListener('submit', function (e) {
               e.preventDefault();
 
@@ -296,9 +314,11 @@
               const raw = input.value.trim();
               if (!raw) return;
 
-              // Navigate to the private video space
               const room = encodeURIComponent(raw);
-              window.location.href = 'holodeck-video.php?room=' + room;
+              const guid = encodeURIComponent(generateGuid());
+
+              // Match main Holodeck behavior: room = label, id = secret key
+              window.location.href = 'holodeck-video.php?room=' + room + '&id=' + guid;
             });
           })();
         </script>

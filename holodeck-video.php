@@ -210,23 +210,82 @@
                 align-items: flex-start;
               }
             }
+
+            .ls-edit-name {
+              margin-left: 0.5rem;
+              font-size: 0.75rem;
+              padding: 0.15rem 0.6rem;
+              border-radius: 999px;
+              border: 1px solid rgba(148, 163, 184, 0.6);
+              background: transparent;
+              color: #e5e7eb;
+              cursor: pointer;
+              transition: background 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
+            }
+            .ls-edit-name:hover {
+              background: rgba(30, 64, 175, 0.9);
+              border-color: rgba(129, 140, 248, 0.9);
+            }
+            .ls-edit-name:active {
+              transform: translateY(1px);
+            }
+
           </style>
+
+          <script>
+            function setHolodeckDisplayName(name) {
+              var clean = (name || "").trim();
+              if (!clean) clean = "Guest";
+
+              // 1) Update localStorage
+              try {
+                localStorage.setItem("lensshare:name", clean === "Guest" ? "" : clean);
+              } catch (e) {
+                console.warn("[Holodeck] Could not save name to localStorage", e);
+              }
+
+              // 2) Update visible label
+              var label = document.getElementById("ls-display-name");
+              if (label) {
+                label.textContent = clean;
+              }
+
+              // 3) Tell Jitsi (if loaded)
+              if (window.holodeckJitsi && window.holodeckJitsi.executeCommand) {
+                window.holodeckJitsi.executeCommand("displayName", clean);
+              }
+            }
+          </script>
 
           <script>
             // We'll call this once external_api.js finishes loading
             function initJitsiHolodeck() {
               const JITSI_DOMAIN = "video-lensshare.com"; // your Jitsi host
 
-              // 1) Derive room name from ?room=... (fallback "holodeck")
+              // 1) Derive room data from URL
               const params = new URLSearchParams(window.location.search);
-              let roomRaw = (params.get("room") || "holodeck").trim();
+              let roomRaw = (params.get("room") || "holodeck").trim();  // human label
+              let roomId  = (params.get("id") || "").trim();           // secret GUID
 
-              // Slugify: letters, numbers, hyphens
-              let roomSlug = roomRaw
+              // Slugify label: letters, numbers, hyphens
+              let roomSlugBase = roomRaw
                 .replace(/[^a-zA-Z0-9]+/g, "-")
                 .replace(/-+/g, "-")
                 .replace(/^-|-$/g, "")
                 .toLowerCase() || "holodeck";
+
+              // Derive a short, safe token from the GUID
+              let token = "";
+              if (roomId) {
+                token = roomId.replace(/[^a-zA-Z0-9]+/g, "").slice(0, 10);
+              }
+
+              // Final Jitsi room slug:
+              // - if token exists → label + token
+              // - else → just label (for backwards compatibility)
+              let roomSlug = token
+                ? roomSlugBase + "-" + token
+                : roomSlugBase;
 
               // 2) Display name from localStorage("lensshare:name") or "Guest"
               let displayName = (localStorage.getItem("lensshare:name") || "").trim();
@@ -246,7 +305,6 @@
                   prejoinPageEnabled: true
                 },
                 interfaceConfigOverwrite: {
-                  // tweak if you want a cleaner UI
                   HIDE_DEEP_LINKING_LOGO: true
                 },
                 userInfo: {
@@ -254,14 +312,18 @@
                 }
               });
 
-              // Optional: expose for debugging in console
+              // Optional: expose for debugging
               window.holodeckJitsi = api;
 
-              // Update visible room label text
+              // Update visible room label text (keep the friendly name only)
               const labelEl = document.getElementById("holodeck-room-label");
               if (labelEl) {
-                labelEl.textContent = roomRaw || roomSlug;
+                labelEl.textContent = roomRaw || roomSlugBase;
               }
+
+              // Initialize name display + push into Jitsi as well
+              setHolodeckDisplayName(displayName);
+            
             }
           </script>
 
@@ -294,14 +356,11 @@
                 <span>(from ?room=…)</span>
               </div>
               <div class="holodeck-room">
-                Name: <strong>
-                  <script>
-                    (function () {
-                      var n = (localStorage.getItem("lensshare:name") || "Guest").trim();
-                      document.write(n || "Guest");
-                    })();
-                  </script>
-                </strong>
+                Name:
+                <strong id="ls-display-name">Guest</strong>
+                <button type="button" class="ls-edit-name" id="btn-edit-name">
+                  Edit
+                </button>
               </div>
             </div>
 
@@ -353,6 +412,26 @@
                   }, 1800);
                 }
               });
+
+              // Name edit behavior
+              var editBtn = document.getElementById("btn-edit-name");
+              if (editBtn) {
+                editBtn.addEventListener("click", function () {
+                  var current = (localStorage.getItem("lensshare:name") || "").trim();
+                  var proposed = window.prompt("Enter the name you want to show in this space:", current || "Guest");
+
+                  if (proposed === null) {
+                    // user cancelled
+                    return;
+                  }
+
+                  setHolodeckDisplayName(proposed);
+                });
+              }
+
+              // On load, set UI name from storage (even before Jitsi loads)
+              var stored = (localStorage.getItem("lensshare:name") || "").trim();
+              setHolodeckDisplayName(stored || "Guest");
             })();
           </script>
 
