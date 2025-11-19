@@ -7,26 +7,26 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    	<meta name="description" content="Your favorite songs and artists in one place. Listen to live radio."> 
-        <meta name="author" content="<?= $site_name ?>" />
-        
+    	<meta name="description" content="Browse iHeartRadio live stations, playlists, and podcasts in one place. Jump into rap, pop, rock, sports, news, and more." />
+        <meta name="author" content="LensShare" />
+
         <!-- Page title -->
-        <title>iHeartRadio - Real-time radio broadcasts</title>
-        
+        <title>iHeartRadio Hub — Live Stations, Playlists & Podcasts | LensShare</title>
+
         <!-- Favicon-->
         <link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />
-        
+
         <!-- Twitter card and Open Graph-->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="iHeartRadio - <?= $site_name ?>" />
-        <meta name="twitter:description" content="Your favorite songs and artists in one place. Listen to live radio." />
-        <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/entertainment/heart.jpg" />
-        
-        <meta property="og:url" content="https://<?= $site_domain ?>/iheartradio.php" />
-        <meta property="og:title" content="iHeartRadio - <?= $site_name ?>" />
-        <meta property="og:description" content="Your favorite songs and artists in one place. Listen to live radio." />
-        <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/entertainment/heart.jpg" />    
-        <meta property="og:site_name" content="<?= $site_name ?>" />
+        <meta name="twitter:title" content="iHeartRadio Hub — LensShare" />
+        <meta name="twitter:description" content="Explore iHeartRadio live stations, playlists, and podcasts by genre. Listen to rap, pop, rock, sports, news, and more in one hub." />
+        <meta name="twitter:image" content="https://lensshare.co/assets/img/entertainment/heart.jpg" />
+
+        <meta property="og:url" content="https://lensshare.co/iheartradio.php" />
+        <meta property="og:title" content="iHeartRadio Hub — LensShare" />
+        <meta property="og:description" content="Explore iHeartRadio live stations, playlists, and podcasts by genre. Listen to rap, pop, rock, sports, news, and more in one hub." />
+        <meta property="og:image" content="https://lensshare.co/assets/img/entertainment/heart.jpg" />
+        <meta property="og:site_name" content="LensShare" />
 
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -68,12 +68,20 @@
             color: #e5e7eb;
           }
 
+          #mainNav.navbar-shrink {
+            background-color: #ffffff;
+          }
+
           .navbar-shrink .navbar-nav .nav-link {
             color: black !important;
           }
 
           .navbar-shrink .navbar-nav .nav-link:hover {
             color: #f4623a !important;
+          }
+
+          .navbar-toggler {
+            background-color: #ffffffde;
           }
 
           .footer .small {
@@ -224,7 +232,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand text-secondary" href="index.php"><?= $site_name ?></a>
+                <a class="navbar-brand text-secondary" href="index.php">LensShare</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -288,17 +296,17 @@
                       <div class="row justify-content-center">
                         <div class="col-lg-4 station rap">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/power-1051-1481/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/power-1051-1481/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station rap">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/hot-97-6046/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/hot-97-6046/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station pop">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/z100-1469/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/z100-1469/?embed=true"></iframe>
                           </div>
                         </div>
                       </div>
@@ -308,17 +316,17 @@
                       <div class="row justify-content-center">
                         <div class="col-lg-4 station rap">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/power106-6045/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/power106-6045/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station rap">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/real-923-181/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/real-923-181/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station pop">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/1027-kiis-fm-los-angeles-185/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/1027-kiis-fm-los-angeles-185/?embed=true"></iframe>
                           </div>
                         </div>
                       </div>
@@ -331,17 +339,17 @@
                       <div class="row justify-content-center">
                         <div class="col-lg-4 station rap">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/1075-wgci-chicago-841/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/1075-wgci-chicago-841/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station pop">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/1035-kiss-fm-849/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/1035-kiss-fm-849/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station rock">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/rock-955-857/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/rock-955-857/?embed=true"></iframe>
                           </div>
                         </div>
                       </div>
@@ -352,17 +360,17 @@
                       <div class="row justify-content-center">
                         <div class="col-lg-4 station rap">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/hot-1079-8936/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/hot-1079-8936/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station pop">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/power-961-741/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/power-961-741/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station rock">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/971-the-river-5886/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/971-the-river-5886/?embed=true"></iframe>
                           </div>
                         </div>
                       </div>
@@ -373,17 +381,17 @@
                       <div class="row justify-content-center">
                         <div class="col-lg-4 station rap">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/99jamz-wedr-5903/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/99jamz-wedr-5903/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station pop">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/hits-973-5906/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/hits-973-5906/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station pop">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/y100-miami-1007fm-561/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/y100-miami-1007fm-561/?embed=true"></iframe>
                           </div>
                         </div>
                       </div>
@@ -394,32 +402,32 @@
                       <div class="row justify-content-center">
                         <div class="col-lg-4 station pop">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/995-the-river-1433/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/995-the-river-1433/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station news">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/news-radio-1031-and-810-wgy-1413/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/news-radio-1031-and-810-wgy-1413/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station rock">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/rock-nation-4443/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/rock-nation-4443/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station pop">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/power-973-729/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/power-973-729/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station pop">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/kiss-1023-1421/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/kiss-1023-1421/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station rock">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/pyx-106-albany-1429/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/pyx-106-albany-1429/?embed=true"></iframe>
                           </div>
                         </div>
                       </div>
@@ -431,17 +439,17 @@
                       <div class="row justify-content-center">
                         <div class="col-lg-4 station sports">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/espn-radio-7903/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/espn-radio-7903/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station sports">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/fox-sports-radio-4732/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/fox-sports-radio-4732/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station sports">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/sportsgrid-radio-network-7417/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/sportsgrid-radio-network-7417/?embed=true"></iframe>
                           </div>
                         </div>
                       </div>
@@ -455,17 +463,17 @@
                       <div class="row justify-content-center">
                         <div class="col-lg-4 station new">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/nbc-news-radio-6043/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/nbc-news-radio-6043/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station news">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/fox-news-radio-8627/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/fox-news-radio-8627/?embed=true"></iframe>
                           </div>
                         </div>
                         <div class="col-lg-4 station news">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="200" src="https://www.iheart.com/live/associated-press-radio-6986/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="200" loading="lazy" src="https://www.iheart.com/live/associated-press-radio-6986/?embed=true"></iframe>
                           </div>
                         </div>
                       </div>
@@ -488,7 +496,7 @@
                   <div class="row justify-content-center mb-4">
                     <div class="col-lg-12 station rap">
                       <div class="station-card">
-                        <iframe allow="autoplay" height="300" src="https://www.iheart.com/playlist/rap-reign-312064750-PurSNURsazhXeGsH5tpvq5/?embed=true"></iframe>
+                        <iframe allow="autoplay" height="300" loading="lazy" src="https://www.iheart.com/playlist/rap-reign-312064750-PurSNURsazhXeGsH5tpvq5/?embed=true"></iframe>
                       </div>
                     </div>
                   </div>
@@ -499,7 +507,7 @@
                   <div class="row justify-content-center mb-4">
                     <div class="col-lg-12 station pop">
                       <div class="station-card">
-                        <iframe allow="autoplay" height="300" src="https://www.iheart.com/playlist/iheartradio-leaderboard-312064750-2AL8dU5D7GquY5KGTcNwUm/?embed=true"></iframe>
+                        <iframe allow="autoplay" height="300" loading="lazy" src="https://www.iheart.com/playlist/iheartradio-leaderboard-312064750-2AL8dU5D7GquY5KGTcNwUm/?embed=true"></iframe>
                       </div>
                     </div>
                   </div>
@@ -510,7 +518,7 @@
                   <div class="row justify-content-center mb-4">
                     <div class="col-lg-12 station pop">
                       <div class="station-card">
-                        <iframe allow="autoplay" height="300" src="https://www.iheart.com/playlist/the-new-hit-list-312064750-RbisVGYJ9GmN5DDwGabFkf/?embed=true"></iframe>
+                        <iframe allow="autoplay" height="300" loading="lazy" src="https://www.iheart.com/playlist/the-new-hit-list-312064750-RbisVGYJ9GmN5DDwGabFkf/?embed=true"></iframe>
                       </div>
                     </div>
                   </div>
@@ -521,7 +529,7 @@
                   <div class="row justify-content-center mb-4">
                     <div class="col-lg-12 station pop">
                       <div class="station-card">
-                        <iframe allow="autoplay" height="300" src="https://www.iheart.com/playlist/pop-top-40-312064750-GyZXToRd3rRqdcpVy8A6JW/?embed=true"></iframe>
+                        <iframe allow="autoplay" height="300" loading="lazy" src="https://www.iheart.com/playlist/pop-top-40-312064750-GyZXToRd3rRqdcpVy8A6JW/?embed=true"></iframe>
                       </div>
                     </div>
                   </div>
@@ -532,7 +540,7 @@
                   <div class="row justify-content-center mb-4">
                     <div class="col-lg-12 station rock">
                       <div class="station-card">
-                        <iframe allow="autoplay" height="300" src="https://www.iheart.com/playlist/rock-top-40-312064750-NJCTNpPvjHrjdW92uGvRBG/?embed=true"></iframe>
+                        <iframe allow="autoplay" height="300" loading="lazy" src="https://www.iheart.com/playlist/rock-top-40-312064750-NJCTNpPvjHrjdW92uGvRBG/?embed=true"></iframe>
                       </div>
                     </div>
                   </div>
@@ -554,7 +562,7 @@
                       <div class="row justify-content-center mb-4">
                         <div class="col-lg-12 station news">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="300" src="https://www.iheart.com/podcast/269-the-megyn-kelly-show-71878122/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="300" loading="lazy" src="https://www.iheart.com/podcast/269-the-megyn-kelly-show-71878122/?embed=true"></iframe>
                           </div>
                         </div>
                       </div>
@@ -563,7 +571,7 @@
                       <div class="row justify-content-center mb-4">
                         <div class="col-lg-12 station news">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="300" src="https://www.iheart.com/podcast/1119-on-purpose-with-jay-shett-30589432/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="300" loading="lazy" src="https://www.iheart.com/podcast/1119-on-purpose-with-jay-shett-30589432/?embed=true"></iframe>
                           </div>
                         </div>
                       </div>
@@ -572,7 +580,7 @@
                       <div class="row justify-content-center mb-5">
                         <div class="col-lg-12 station news">
                           <div class="station-card">
-                            <iframe allow="autoplay" height="300" src="https://www.iheart.com/podcast/51-the-sean-hannity-show-24392822/?embed=true"></iframe>
+                            <iframe allow="autoplay" height="300" loading="lazy" src="https://www.iheart.com/podcast/51-the-sean-hannity-show-24392822/?embed=true"></iframe>
                           </div>
                         </div>
                       </div>
