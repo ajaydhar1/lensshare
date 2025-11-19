@@ -240,6 +240,8 @@
 
         <?php require __DIR__.'/comms/index.php'; ?>
         
+        <?php if ($_GET['view'] !== 'post'): ?>
+
         <!-- Quick Holodeck: Private Room Jump -->
         <section class="private-room-quickjump my-4">
           <div class="container-fluid px-0">
@@ -300,6 +302,8 @@
             });
           })();
         </script>
+
+        <?php endif; ?>
 
 
         <?php require_once("___footer.php"); ?>

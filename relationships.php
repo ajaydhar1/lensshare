@@ -7,26 +7,26 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="This Portal is here to help you learn how to cultivate existing relationships and also make new ones too." />
-        <meta name="author" content="<?= $site_name ?>" />
-        
+        <meta name="description" content="A Portal designed to help you strengthen existing relationships and build new ones." />
+        <meta name="author" content="LensShare" />
+
         <!-- Page title -->
-        <title>Relationships - Learn how to cultivate existing relationships and to make new ones.</title>
-        
+        <title>Relationships – Strengthen existing relationships and build new ones.</title>
+
         <!-- Favicon-->
         <link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />
 
-        <!-- Twitter card and Open Graph-->
+        <!-- Twitter card and Open Graph -->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Relationships - <?= $site_name ?>" />
-        <meta name="twitter:description" content="Learn how to cultivate existing relationships and to make new ones." />
-        <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/relationships/bg-masthead-relationships.png" />
+        <meta name="twitter:title" content="Relationships – LensShare" />
+        <meta name="twitter:description" content="Strengthen existing relationships and build new ones." />
+        <meta name="twitter:image" content="https://lensshare.co/assets/img/relationships/bg-masthead-relationships.png" />
 
-        <meta property="og:url" content="https://<?= $site_domain ?>/relationships.php" />
-        <meta property="og:title" content="Relationships - <?= $site_name ?>" />
-        <meta property="og:description" content="Learn how to cultivate existing relationships and to make new ones." />
-        <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/relationships/bg-masthead-relationships.png" />    
-        <meta property="og:site_name" content="<?= $site_name ?>" />
+        <meta property="og:url" content="https://lensshare.co/relationships.php" />
+        <meta property="og:title" content="Relationships – LensShare" />
+        <meta property="og:description" content="Strengthen existing relationships and build new ones." />
+        <meta property="og:image" content="https://lensshare.co/assets/img/relationships/bg-masthead-relationships.png" />
+        <meta property="og:site_name" content="LensShare" />
 
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -75,7 +75,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.php"><?= $site_name ?></a>
+                <a class="navbar-brand" href="index.php">LensShare</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -97,7 +97,7 @@
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-7 align-self-baseline">
-                        <p class="text-white mb-3">This Portal is here to help you learn how to cultivate existing relationships and also make new ones too.</p>
+                        <p class="text-white mb-3">This Portal helps you grow existing relationships and make new ones along the way.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -110,7 +110,7 @@
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-4 text-center">
-                        <a class="btn btn-dark btn-xl" href="#dating">Explore Portal</a>
+                        <a class="btn btn-dark btn-xl" href="#dating">Start Connecting</a>
                     </div>
                 </div>
             </div>
@@ -121,7 +121,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Dating</strong></h2>
-                        <p class="text-muted"><?= $site_name ?> can be used as a free online dating site! Meet singles online, then you can develop the relationship offline.</p>
+                        <p class="text-muted">LensShare can also help you meet new people. Chat online, then see where the connection goes offline.</p>
                         <div class="mt-4">
                             <a class="btn btn-warning btn-xl mb-3" href="room.php?room=virtual-hookups">Virtual Hookups</a>
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=college-dating">College</a>
@@ -152,7 +152,7 @@
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Married Life</strong></h2>
-                        <p class="text-muted">Marriages can get very complicated. Talk with other couples in your age range and see if you can help each other out.</p>
+                        <p class="text-muted">Marriage can be complicated. Talk with other couples your age and see how you can support each other.</p>
                         <div class="mt-4">
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=wedding-planning">Wedding Planning</a>
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=newlyweds">Newlyweds</a>
@@ -177,7 +177,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Parenting</strong></h2>
-                        <p class="text-muted">Parenting is a life long responsibility. Work with other parents to try and make the best parenting decisions for your kids.</p>
+                        <p class="text-muted">Parenting is a lifelong responsibility. Connect with other parents and work together to make the best decisions for your kids.</p>
                         <div class="mt-4">
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=newborns">Newborns (0-2 Months)</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=infants">Infants (3-11 months)</a>

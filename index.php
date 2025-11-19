@@ -74,7 +74,7 @@
             }
 
             #two-step {
-                background-image: url(assets/img/homepage/<?= $site_name_font_on_homepage ?>);
+                background-image: url(assets/img/homepage/lensshare-print.png);
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: contain;
@@ -87,12 +87,12 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.php"><?= $site_name ?></a>
+                <a class="navbar-brand" href="index.php">LensShare</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item my-auto"><a class="nav-link" href="#how-it-works">How it Works</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#the-metaverse">The Metaverse</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#getting-started">Getting Started</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
                         <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
@@ -104,11 +104,11 @@
             <div class="container px-4 px-lg-5">
                 <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="">
                     <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold"><strong>The <?= $site_name ?> Metaverse</strong></h1>
+                        <h1 class="text-white font-weight-bold"><strong>LensShare Spaces</strong></h1>
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-7 align-self-baseline">
-                        <p class="text-white mb-0"><?= $site_name ?> is a text + video chat platform with interest-based rooms.</p>
+                        <p class="text-white mb-0">LensShare is a text + video chat platform with interest-based rooms.</p>
                         <p class="text-white mb-3">Hang out, meet people — no sign-up needed.</p>
                     </div>
                 </div>
@@ -182,18 +182,18 @@
             </div>
         </section>
         <!-- Call to action-->
-        <section class="page-section-smaller bg-light text-dark" id="the-metaverse">
+        <section class="page-section-smaller bg-light text-dark" id="getting-started">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h2 class="mb-3"><strong>The <?= $site_name ?> Metaverse</strong></h2>
+                        <h2 class="mb-3"><strong>Getting Started</strong></h2>
                         <p class="text-muted">LensShare is a 2D network of “Rooms,” which are simple, interest-based spaces with text and video chat.</p>
                         <p class="text-muted mb-0">There’s no 3D world, no cartoon avatars, and no complicated controls.</p>
                         <p class="text-muted">Just people talking to people — face-to-face, in real time.</p>
                         <span style="font-size: 2.7rem;">😀😆🤣😇</span>
                     </div>
                     <div class="col-lg-6 text-center">
-                        <img class="explanation-image img-fluid" style="" src="assets/img/homepage/metaverse.gif">
+                        <img class="explanation-image img-fluid" style="" src="assets/img/homepage/space-book.gif">
                     </div>
                 </div>
             </div>
