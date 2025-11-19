@@ -70,12 +70,13 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand text-secondary" href="index.php"><?= $site_name ?></a>
+                <a class="navbar-brand text-secondary" href="index.php">LensShare</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item my-auto"><a class="nav-link" href="#sports">Sports</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#fitness">Fitness</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#sports-talk-central">Sports Talk Central</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
                         <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
@@ -166,7 +167,7 @@
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
         <!-- Call to action-->
-        <section class="page-section text-dark" id="mental-health">
+        <section class="page-section text-dark" id="sports-talk-central">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">

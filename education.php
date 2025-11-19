@@ -87,12 +87,10 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item my-auto"><a class="nav-link" href="#base-station">Base Station</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#mixer">Mixer</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#grade">Grade</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#learning">Learning</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#majors">Majors</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#study">Study Together</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#college-prep">College Prep</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#majors" style="margin-right: 0.65rem;">Majors</a></li>
                         <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
@@ -119,7 +117,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
-                    <div class="col-lg-4 text-center">
+                    <div class="col-lg-6 text-center">
                         <a class="btn btn-dark btn-xl mb-2" href="#base-station">Explore Rooms</a>
                         <a class="btn btn-light btn-xl" href="#study">Study Together</a>
                     </div>
@@ -233,7 +231,7 @@
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
         <!-- Call to action-->
-        <section class="page-section bg-light text-dark" id="learning">
+        <section class="page-section bg-light text-dark" id="college-prep">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">

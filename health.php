@@ -7,26 +7,27 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="This Portal is for students in any grade level, and their parents, who want to get ahead of the competition in school." />
-        <meta name="author" content="<?= $site_name ?>" />
-        
+        <meta name="description" content="Explore Health & Wellness Rooms where you can talk about physical health, mental wellbeing, healthy habits, and ask general health questions in a supportive space." />
+        <meta name="author" content="LensShare" />
+
         <!-- Page title -->
-        <title>Health & Wellness - Maintain and improve your physical and mental health.</title>
-        
+        <title>Health & Wellness Rooms — Support for Body & Mind | LensShare</title>
+
         <!-- Favicon-->
         <link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />
 
         <!-- Twitter card and Open Graph-->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Health - <?= $site_name ?>" />
-        <meta name="twitter:description" content="Maintain and improve your physical and mental health." />
-        <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/health/mural-mental-health.jpeg" />
+        <meta name="twitter:title" content="Health & Wellness Rooms — LensShare" />
+        <meta name="twitter:description" content="Join Health & Wellness Rooms to discuss physical health, mental wellbeing, coping tools, and general health questions with others in a supportive environment." />
+        <meta name="twitter:image" content="https://lensshare.co/assets/img/health/mural-mental-health.jpeg" />
 
-        <meta property="og:url" content="https://<?= $site_domain ?>/health.php" />
-        <meta property="og:title" content="Health - <?= $site_name ?>" />
-        <meta property="og:description" content="Maintain and improve your physical and mental health." />
-        <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/health/mural-mental-health.jpeg" />    
-        <meta property="og:site_name" content="<?= $site_name ?>" />
+        <meta property="og:url" content="https://lensshare.co/health.php" />
+        <meta property="og:title" content="Health & Wellness Rooms — LensShare" />
+        <meta property="og:description" content="Join Health & Wellness Rooms to discuss physical health, mental wellbeing, coping tools, and general health questions with others in a supportive environment." />
+        <meta property="og:image" content="https://lensshare.co/assets/img/health/mural-mental-health.jpeg" />
+        <meta property="og:site_name" content="LensShare" />
+
 
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -123,16 +124,14 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.php"><?= $site_name ?></a>
+                <a class="navbar-brand" href="index.php">LensShare</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item my-auto"><a class="nav-link" href="#base-station">Base Station</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#physical-health">Physical</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#mental-health">Mental</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#mood-board">Mood Board</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#emoji-and-game-section">Emotions</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#ask">Ask a Question</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#mood-board" style="margin-right: 0.65rem;">Mood Board</a></li>
                         <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
@@ -147,7 +146,7 @@
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-7 align-self-baseline">
-                        <p class="mb-3">This Portal is to help and motivate you to maintain and improve your physical and mental health.</p>
+                        <p class="mb-3">This Portal is here to help motivate and support you in maintaining and improving your physical and mental wellbeing.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -159,30 +158,15 @@
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
-                    <div class="col-lg-4 text-center">
-                        <a class="btn btn-dark btn-xl" href="#base-station">Explore Portal</a>
+                    <div class="col-lg-6 text-center">
+                        <a class="btn btn-dark btn-xl mb-2" href="#base-station">Explore Rooms</a>
+                        <a class="btn btn-light btn-xl mb-3" href="room.php?room=health-questions">Ask a Health Question</a>
                     </div>
                 </div>
             </div>
         </header>
         <!-- Call to action-->
-        <section class="page-section text-dark" id="base-station">
-            <div class="container px-4 px-lg-5">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <h2 class="mb-3"><strong>Health <span class="text-pink">+</span> Wellness Base Station</strong></h2>
-                        <p class="text-muted">Join the Health & Wellness Base Station to discuss physical and mental health issues in general.</p>
-                        <a id="base-station-btn" class="btn btn-dark btn-xl mt-3" href="room.php?room=health-and-wellness-base-station">Join Base Station</a>
-                    </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="base-station-image img-fluid" style="" src="assets/img/all/base-station.gif">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <!-- Call to action-->
-        <section class="page-section bg-light text-dark" id="physical-health">
+        <section class="page-section text-dark" id="physical-health">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -190,7 +174,7 @@
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Physical Health</strong></h2>
-                        <p class="text-muted">Join one of these spaces to discuss issues pertaining to maintaining a healty body.</p>
+                        <p class="text-muted">Join one of these rooms to talk about staying active, building healthy routines, and caring for your body.</p>
                         <div class="mt-4">
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=physical-health-in-general">In Genenral</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=health-insurance">Health Insurance</a>
@@ -208,14 +192,14 @@
                 </div>
             </div>
         </section>
-        <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
+        <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
         <!-- Call to action-->
-        <section class="page-section text-dark" id="mental-health">
+        <section class="page-section bg-light text-dark" id="mental-health">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Mental Health</strong></h2>
-                        <p class="text-muted">Join one of these rooms to discuss mental health issues that you may have, or a friend or family member.</p>
+                        <p class="text-muted">Join one of these rooms to discuss emotional wellbeing, stress, coping tools, and experiences related to mental health—for yourself or someone you care about.</p>
                         <div class="mt-4">
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=mental-health-in-general">In General</a>
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=health-insurance">Health Insurance</a>
@@ -235,20 +219,38 @@
                 </div>
             </div>
         </section>
+        <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
+        <!-- Call to action-->
+        <section class="page-section text-dark" id="ask">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6" style="">
+                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/health-questions.gif">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="mb-3"><strong>Ask a Health Question</strong></h2>
+                        <p class="text-muted">A supportive space to ask general health and wellness questions. Share experiences, compare routines, and learn from others—no medical advice, just community insight.</p>
+                        <div class="mt-4">
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=health-questions">Ask a Health Question</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
         <!-- Call to action-->
         <section class="page-section bg-light text-dark" id="mood-board">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6" style="">
-                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/mask.webp">
-                    </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Mood Board</strong></h2>
-                        <p class="text-muted">Fix you mood by watching memes of other people feeling the same way as you do. You may find it therapeutic!</p>
+                        <p class="text-muted">Lift your mood by scrolling through memes, reactions, and relatable moments from others who feel the same way. Sometimes a little humor is the best therapy.</p>
                         <div class="mt-4">
                             <a class="btn btn-dark btn-xl mb-3" href="mood-board.php">Fix Your Mood</a>
                         </div>
+                    </div>
+                    <div class="col-lg-6 text-center" style="">
+                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/mask.webp">
                     </div>
                 </div>
             </div>

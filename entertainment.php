@@ -84,11 +84,10 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item my-auto"><a class="nav-link" href="#watch-party">Watch Party Central</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#media">Media</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#iheartradio">iHeartRadio</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#memes">Memes</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#games">Game Watch</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#games" style="margin-right: 0.65rem;" >Game Watch</a></li>
                         <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
@@ -123,7 +122,7 @@
             </div>
         </header>
         <!-- Call to action-->
-        <section class="page-section text-dark" id="media">
+        <section class="page-section text-dark" id="watch-party">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
