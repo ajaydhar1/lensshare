@@ -126,28 +126,104 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
+
         <!-- Call to action-->
-        <section class="page-section bg-light text-dark" id="tech">
+        <section class="page-section bg-light text-dark" id="future-tech">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center order-lg-2">
+                        <img class="explanation-image img-fluid" src="assets/img/technology/future-tech.gif">
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <h2 class="mb-3"><strong>Future & Emerging Tech</strong></h2>
+                        <p class="text-muted">Spaces exploring breakthrough technologies, next-generation science, and the ideas shaping tomorrow.</p>
+                        <div class="mt-4">
+                            <a class="btn btn-primary btn-xl mb-3" href="room.php?room=ai-ml">AI & Machine Learning</a>
+                            <a class="btn btn-success btn-xl mb-3" href="room.php?room=quantum-computing">Quantum Computing</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=synthetic-biology">Synthetic Biology</a>
+                            <a class="btn btn-info btn-xl mb-3" href="room.php?room=robotics">Robotics</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=blockchain">Blockchain</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=space-tech">Space Tech</a>
+                            <a class="btn btn-danger btn-xl mb-3" href="room.php?room=cybersecurity">Cybersecurity</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
+
+        <!-- Call to action-->
+        <section class="page-section bg-white text-dark" id="gadgets">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <img class="explanation-image img-fluid" style="margin-top:-20px;" src="assets/img/technology/tech-common.gif">
+                        <img class="explanation-image img-fluid" src="assets/img/technology/gadgets.gif">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="mb-3"><strong>Consumer Gadgets & Devices</strong></h2>
+                        <p class="text-muted">Fun Spaces for the everyday devices we love, compare, mod, and obsess over.</p>
+                        <div class="mt-4">
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=smartphones">Smartphones</a>
+                            <a class="btn btn-primary btn-xl mb-3" href="room.php?room=laptops">Laptops</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=gaming-consoles">Gaming Consoles</a>
+                            <a class="btn btn-info btn-xl mb-3" href="room.php?room=smartwatches">Smartwatches</a>
+                            <a class="btn btn-success btn-xl mb-3" href="room.php?room=drones">Drones</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=headphones">Headphones</a>
+                            <a class="btn btn-danger btn-xl mb-3" href="room.php?room=smart-home-devices">Smart Home Devices</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
+
+        <!-- Call to action-->
+        <section class="page-section bg-light text-dark" id="future-tech">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center order-lg-2">
+                        <img class="explanation-image img-fluid" src="assets/img/technology/online-culture.gif">
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <h2 class="mb-3"><strong>Digital Life & Online Culture</strong></h2>
+                        <p class="text-muted">Where the internet, creativity, and community meet.</p>
+                        <div class="mt-4">
+                            <a class="btn btn-primary btn-xl mb-3" href="room.php?room=social-media">Social Media</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=streaming-tech">Streaming Technology</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=gaming-tech">Gaming Tech</a>
+                            <a class="btn btn-success btn-xl mb-3" href="room.php?room=content-creation">Content Creation</a>
+                            <a class="btn btn-info btn-xl mb-3" href="room.php?room=web-design">Web Design</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=coding-beginners">Coding for Beginners</a>
+                            <a class="btn btn-danger btn-xl mb-3" href="room.php?room=tech-careers">Tech Careers</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
+
+        <!-- Call to action-->
+        <section class="page-section text-dark" id="tech">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <img class="explanation-image img-fluid" style="margin-top:-20px;" src="assets/img/technology/blue-chip-tech.gif">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Blue Chip Technology</strong></h2>
                         <p class="text-muted">These Spaces focus on foundational technologies that have shaped—and continue to shape—how we live and work.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=computers">Computers</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=software">Software</a>
+                            <a class="btn btn-primary btn-xl mb-3" href="room.php?room=computers">Computers</a>
+                            <a class="btn btn-info btn-xl mb-3" href="room.php?room=software">Software</a>
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=hardware">Hardware</a>
                             <a class="btn btn-warning btn-xl mb-3" href="room.php?room=nano-tech">Nano Tech</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=biotech">Biotech</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=mobile-devices">Mobile Devices</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=websites">Websites</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=mobile-apps">Mobile Apps</a>
+                            <a class="btn btn-success btn-xl mb-3" href="room.php?room=biotech">Biotech</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=mobile-devices">Mobile Devices</a>
+                            <a class="btn btn-primary btn-xl mb-3" href="room.php?room=websites">Websites</a>
+                            <a class="btn btn-danger btn-xl mb-3" href="room.php?room=mobile-apps">Mobile Apps</a>
                             <a class="btn btn-warning btn-xl mb-3" href="room.php?room=home-appliances">Home Appliances</a>
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cars">Cars</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=construction">Construction</a>
+                            <a class="btn btn-info btn-xl mb-3" href="room.php?room=construction">Construction</a>
                         </div>
                     </div>
                 </div>
