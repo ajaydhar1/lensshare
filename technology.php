@@ -7,26 +7,26 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Use the Technology Portal to stay up-to-date or current on the latest trends in the technology space." />
-        <meta name="author" content="<?= $site_name ?>" />
-        
+        <meta name="description" content="Stay current with the latest trends, tools, and breakthroughs in technology." />
+        <meta name="author" content="LensShare" />
+
         <!-- Page title -->
-        <title>Technology - Stay up-to-date and current on the latest tech trends.</title>
-        
-        <!-- Favicon-->
+        <title>Technology – Stay current with the latest tech trends.</title>
+
+        <!-- Favicon -->
         <link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />
 
-        <!-- Twitter card and Open Graph-->
+        <!-- Twitter card and Open Graph -->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Technology - <?= $site_name ?>" />
-        <meta name="twitter:description" content="Stay up-to-date and current on the latest tech trends." />
-        <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/technology/bg-masthead-technology.png" />
+        <meta name="twitter:title" content="Technology – LensShare" />
+        <meta name="twitter:description" content="Stay current with the latest tech trends." />
+        <meta name="twitter:image" content="https://lensshare.co/assets/img/technology/bg-masthead-technology.png" />
 
-        <meta property="og:url" content="https://<?= $site_domain ?>/technology.php" />
-        <meta property="og:title" content="Technology - <?= $site_name ?>" />
-        <meta property="og:description" content="Stay up-to-date and current on the latest tech trends." />
-        <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/technology/bg-masthead-technology.png" />    
-        <meta property="og:site_name" content="<?= $site_name ?>" />
+        <meta property="og:url" content="https://lensshare.co/technology.php" />
+        <meta property="og:title" content="Technology – LensShare" />
+        <meta property="og:description" content="Stay current with the latest tech trends." />
+        <meta property="og:image" content="https://lensshare.co/assets/img/technology/bg-masthead-technology.png" />
+        <meta property="og:site_name" content="LensShare" />
 
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -71,7 +71,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand text-dark" href="index.php"><?= $site_name ?></a>
+                <a class="navbar-brand text-dark" href="index.php">LensShare</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -92,7 +92,7 @@
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-7 align-self-baseline">
-                        <p class="text-white-75 mb-3">Use the Technology Portal to stay up-to-date or current on the latest trends in the technology space.</p>
+                        <p class="text-white-75 mb-3">Use this Portal to stay current with the latest trends, tools, and breakthroughs in technology.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -105,7 +105,7 @@
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-4 text-center">
-                        <a class="btn btn-light btn-xl" href="#base-station">Explore Portal</a>
+                        <a class="btn btn-light btn-xl" href="#base-station">Enter a Tech Space</a>
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Tech Base Station</strong></h2>
-                        <p class="text-muted">Join the Tech Base Station to discuss technology in general. Trade thoughts and share insight on the latest tech.</p>
+                        <p class="text-muted">Join the Tech Base Station to talk about technology in general. Share ideas, compare tools, and explore what’s new in tech.</p>
                         <a id="base-station-btn" class="btn btn-dark btn-xl mt-3" href="room.php?room=tech-base-station">Join Base Station</a>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -135,7 +135,7 @@
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Blue Chip Technology</strong></h2>
-                        <p class="text-muted">These spaces are for discussing foundational technologies that have changed the way we live our lives.</p>
+                        <p class="text-muted">These Spaces focus on foundational technologies that have shaped—and continue to shape—how we live and work.</p>
                         <div class="mt-4">
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=computers">Computers</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=software">Software</a>
