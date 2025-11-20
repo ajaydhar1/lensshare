@@ -75,8 +75,9 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item my-auto"><a class="nav-link" href="#base-station">Base Station</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#tech">Tech</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#future-tech">Future</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#gadgets">Gadgets</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#digital-life">Online Culture</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
                         <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
@@ -105,7 +106,7 @@
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-4 text-center">
-                        <a class="btn btn-light btn-xl" href="#base-station">Enter a Tech Space</a>
+                        <a class="btn btn-dark btn-xl" href="#base-station">Enter a Tech Space</a>
                     </div>
                 </div>
             </div>
@@ -178,7 +179,7 @@
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
 
         <!-- Call to action-->
-        <section class="page-section bg-light text-dark" id="future-tech">
+        <section class="page-section bg-light text-dark" id="digital-life">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6 text-center order-lg-2">
@@ -203,7 +204,7 @@
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
 
         <!-- Call to action-->
-        <section class="page-section text-dark" id="tech">
+        <section class="page-section text-dark" id="blue-chip">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">

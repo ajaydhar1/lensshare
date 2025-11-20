@@ -16,7 +16,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">Room Name</span>
                                 </div>
-                                <input id="holodeck-space" type="text" class="form-control" placeholder="i.e., Pick 6" aria-label="Username" aria-describedby="basic-addon1" required pattern="[a-zA-Z0-9 ]+">
+                                <input id="holodeck-space" type="text" class="form-control" placeholder="Type any room name to open it…" aria-label="Username" aria-describedby="basic-addon1" required pattern="[a-zA-Z0-9 ]+">
                                 <div class="input-group-append">
                                     <button class="btn btn-secondary" type="button" onclick="goToSpace();">Let's Go!</button>
                                 </div>

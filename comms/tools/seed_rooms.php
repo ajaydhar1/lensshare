@@ -14,7 +14,7 @@ function slugify($name) {
     return $slug;
 }
 
-$file = __DIR__ . '/../data/rooms-work-slugs-shortened.txt';
+$file = __DIR__ . '/../data/rooms-technology.txt';
 $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 $now = date('Y-m-d H:i:s');
@@ -22,7 +22,7 @@ $now = date('Y-m-d H:i:s');
 $stmt = $db->prepare('INSERT OR IGNORE INTO rooms (slug, name, created_at) VALUES (:slug, :name, :created_at)');
 
 foreach ($lines as $line) {
-    $name = trim($line);
+    $name = strtoupper(trim($line));
     if ($name === '') continue;
 
     $slug = slugify($name);

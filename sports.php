@@ -74,10 +74,10 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item my-auto"><a class="nav-link" href="#pro-league-fans">Pro Leagues</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#sports">Sports</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#fitness">Fitness</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#sports-talk-central">Sports Talk Central</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#sports-talk-central" style="margin-right: 0.65rem;">Sports Talk Central</a></li>
                         <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
@@ -111,29 +111,62 @@
                 </div>
             </div>
         </header>
+
+        <!-- Pro League Fans -->
+        <section class="page-section bg-light text-dark" id="pro-league-fans">
+            <div class="container px-4 px-lg-5">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2 class="mb-3"><strong>Pro League Fans</strong></h2>
+                        <p class="text-muted">
+                            Jump into a Pro League Room if you love watching the games, following trades, 
+                            and reacting in real time. Talk matchups, big plays, controversies, and 
+                            everything happening around your favorite teams and players.
+                        </p>
+                        <div class="mt-4">
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=nfl-fans">NFL Fans</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=nba-fans">NBA Fans</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=mlb-fans">MLB Fans</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=nhl-fans">NHL Fans</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=global-football-fans">Soccer / Global Football</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=college-football">College Football</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=college-basketball">College Basketball</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=fantasy-sports">Fantasy Sports</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=big-fight-night">Big Fight Night (Boxing & MMA)</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=motorsport-fans">Motorsport & F1 Fans</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img class="explanation-image img-fluid" src="assets/img/sports/pro-leagues.gif" alt="Pro league fans watching sports together">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
         <!-- Call to action-->
         <section class="page-section text-dark" id="sports">
             <div class="container px-4 px-lg-5">
                 <div class="row">
                     <div class="col-lg-6">
+                        <img class="explanation-image img-fluid" style="" src="assets/img/sports/sports.gif">
+                    </div>
+                    <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Sports</strong></h2>
-                        <p class="text-muted">Join a Sports Room if you’re a fan of professional leagues or play a sport yourself. Talk strategy, compare experiences, and get help improving your skills.</p>
+                        <p class="text-muted">Join a Sports Room to talk training, technique, and everything that goes into playing the sports you love. Compare experiences, improve your skills, and connect with others who share your passion for staying active.</p>
                         <div class="mt-4">
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=football">Football</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=baseball">Baseball</a>
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=basketball">Basketball</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=hockey">Hockey</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=soccer">Soccer</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=golf">Golf</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=tennis">Tennis</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=auto-racing">Auto Racing</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=mma">MMA</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=hockey">Hockey</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=soccer">Soccer</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=golf">Golf</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=tennis">Tennis</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=auto-racing">Auto Racing</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=boxing">Boxing</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=mma">MMA</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=wrestling">Wrestling</a>
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=gymnastics">Gymnastics</a>
                         </div>
-                    </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="explanation-image img-fluid" style="" src="assets/img/sports/sports.gif">
                     </div>
                 </div>
             </div>
@@ -143,9 +176,6 @@
         <section class="page-section bg-light text-dark" id="fitness">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <img class="explanation-image img-fluid" style="" src="assets/img/sports/fitness.gif">
-                    </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Fitness</strong></h2>
                         <p class="text-muted">Use these rooms to share your fitness goals, routines, and progress with others who train the same way you do. Support each other and stay motivated.</p>
@@ -162,6 +192,9 @@
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=fitness-wearables">Fitness Wearables</a>
                         </div>
                     </div>
+                    <div class="col-lg-6 text-center">
+                        <img class="explanation-image img-fluid" style="" src="assets/img/sports/fitness.gif">
+                    </div>
                 </div>
             </div>
         </section>
@@ -171,14 +204,14 @@
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
+                        <img class="explanation-image img-fluid" style="" src="assets/img/sports/sports-talk.gif">
+                    </div>
+                    <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Sports Talk Central</strong></h2>
                         <p class="text-muted">Sports Talk Central is the main hub for sports fans in this Portal. Talk about games, trades, players, and storylines across any league — or just hang out and react in real time.</p>
                         <div class="mt-4">
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=sports-talk-central">Sports Talk Central</a>
                         </div>
-                    </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="explanation-image img-fluid" style="" src="assets/img/sports/sports-talk.gif">
                     </div>
                 </div>
             </div>
