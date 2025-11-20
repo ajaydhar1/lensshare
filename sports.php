@@ -181,15 +181,19 @@
                         <p class="text-muted">Use these rooms to share your fitness goals, routines, and progress with others who train the same way you do. Support each other and stay motivated.</p>
                         <div class="mt-4">
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=lifting-weights">Lifting Weights</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=calisthenics">Calisthenics</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cardio">Cardio</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=running">Running</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=biking">Biking</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=walking">Walking</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=stretching">Stretching</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=swimming">Swimming</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=calisthenics">Bodyweight &amp; Calisthenics</a>
+
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cardio">Cardio &amp; HIIT</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=running">Running &amp; Jogging</a>
+
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=biking">Cycling &amp; Biking</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=walking">Walking &amp; Daily Steps</a>
+
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=stretching">Mobility &amp; Stretching</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=swimming">Swimming &amp; Water Training</a>
+
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cross-training">Cross Training</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=fitness-wearables">Fitness Wearables</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=fitness-wearables">Fitness Trackers &amp; Wearables</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center">

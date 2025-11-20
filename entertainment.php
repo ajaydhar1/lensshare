@@ -150,13 +150,13 @@
                         <h2 class="mb-3"><strong>Mass Media</strong></h2>
                         <p class="text-muted">Discuss the latest hit projects from your favorite creators across film, TV, streaming, and more.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=latest-projects">Latest Projects</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=films">Films</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=music">Music</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=tv">TV</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=books">Books</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=art">Art</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=celebrities">Celebrities</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=latest-projects">Trending Releases</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=films">Movies &amp; Film Talk</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=music">Music &amp; Artists</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=tv">TV &amp; Streaming</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=books">Books &amp; Literature</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=art">Art &amp; Creativity</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=celebrities">Celebrities &amp; Pop Culture</a>
                         </div>
                     </div>
                 </div>
@@ -171,7 +171,7 @@
                         <h2 class="mb-3"><strong>iHeartRadio</strong></h2>
                         <p class="text-muted">Listen to top radio stations from across the U.S., including NYC, Chicago, LA, Miami, and more.</p>
                         <div class="mt-3">
-                            <a class="btn btn-danger btn-xl mb-3" href="iheartradio.php">iHeartRadio</a>
+                            <a class="btn btn-danger btn-xl mb-3" href="iheartradio.php">Listen Now - iHeartRadio</a>
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex">
@@ -254,8 +254,50 @@
                 </div>
             </div>
         </section>
+        <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
+        <!-- Games & Play -->
+        <section class="page-section bg-light text-dark" id="games">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="mb-3"><strong>Games &amp; Play</strong></h2>
+                        <p class="text-muted">
+                            Join a Games Room to talk strategy, builds, deck ideas, and iconic moments. 
+                            Whether you’re into competitive online titles, legendary RPGs, or cult-favorite 
+                            card games, these Spaces are perfect for meeting players who share your passion.
+                        </p>
+                        <div class="mt-4">
 
-        <div class="container-fluid d-flex" style="padding: 0; margin: 0;">
+                            <!-- Video Game Staples -->
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=fortnite">Fortnite</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=call-of-duty">Call of Duty</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=league-of-legends">League of Legends</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=zelda">Zelda</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=minecraft">Minecraft</a>
+
+                            <!-- Tabletop & Card Games -->
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=magic-the-gathering">Magic: The Gathering</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=pokemon-tcg">Pokémon TCG</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=dnd">Dungeons &amp; Dragons (D&amp;D)</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=catan">Catan</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=chess">Chess Masters</a>
+
+                            <!-- Retro & Party -->
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=mario">Mario Fans</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=retro-games">Retro Classics</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 text-center">
+                        <img class="explanation-image img-fluid" 
+                             src="assets/img/entertainment/gaming.gif" 
+                             alt="Gaming community">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container-fluid bg-light d-flex" style="padding: 0; margin: 0;">
             <img class="img-fluid mx-auto" src="assets/img/entertainment/party.gif">
         </div>
         

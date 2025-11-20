@@ -14,7 +14,7 @@ function slugify($name) {
     return $slug;
 }
 
-$file = __DIR__ . '/../data/rooms-technology.txt';
+$file = __DIR__ . '/../data/rooms-new-entertainment.txt';
 $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 $now = date('Y-m-d H:i:s');

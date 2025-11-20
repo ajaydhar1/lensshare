@@ -275,3 +275,27 @@ body footer a {
     padding-bottom: 0;
   }
 }
+
+.room-hot-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.btn.btn-dark .room-hot-badge,
+.btn.btn-secondary .room-hot-badge,
+.btn.btn-warning .room-hot-badge {
+  /* Let the button control background; just keep text clear */
+  background: rgba(0, 0, 0, 0.15);
+}
+
+#active-rooms-list .badge + .badge {
+  margin-left: 0.35rem;
+}
+
+#active-rooms-list a:hover {
+  text-decoration: underline;
+}

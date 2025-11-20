@@ -204,14 +204,14 @@
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
 
         <!-- Call to action-->
-        <section class="page-section text-dark" id="blue-chip">
+        <section class="page-section text-dark" id="core-tech">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <img class="explanation-image img-fluid" style="margin-top:-20px;" src="assets/img/technology/blue-chip-tech.gif">
+                        <img class="explanation-image img-fluid" style="margin-top:-20px;" src="assets/img/technology/core-tech.gif">
                     </div>
                     <div class="col-lg-6">
-                        <h2 class="mb-3"><strong>Blue Chip Technology</strong></h2>
+                        <h2 class="mb-3"><strong>Core Technologies</strong></h2>
                         <p class="text-muted">These Spaces focus on foundational technologies that have shaped—and continue to shape—how we live and work.</p>
                         <div class="mt-4">
                             <a class="btn btn-primary btn-xl mb-3" href="room.php?room=computers">Computers</a>
