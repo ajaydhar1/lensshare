@@ -154,18 +154,24 @@
                         <h2 class="mb-3"><strong>Sports</strong></h2>
                         <p class="text-muted">Join a Sports Room to talk training, technique, and everything that goes into playing the sports you love. Compare experiences, improve your skills, and connect with others who share your passion for staying active.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=football">Football</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=baseball">Baseball</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=basketball">Basketball</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=hockey">Hockey</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=soccer">Soccer</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=golf">Golf</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=tennis">Tennis</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=auto-racing">Auto Racing</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=boxing">Boxing</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=mma">MMA</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=wrestling">Wrestling</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=gymnastics">Gymnastics</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=football">Football – Play &amp; Strategy</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=baseball">Baseball &amp; Ballpark Talk</a>
+
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=basketball">Basketball &amp; Pick-Up Runs</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=hockey">Hockey &amp; Ice Time</a>
+
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=soccer">Soccer &amp; Footwork</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=golf">Golf &amp; Range Sessions</a>
+
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=tennis">Tennis &amp; Court Sessions</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=auto-racing">Motorsport &amp; Auto Racing</a>
+
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=boxing">Boxing – Training &amp; Fights</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=mma">MMA &amp; Fight Camp</a>
+
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=wrestling">Wrestling &amp; Grappling</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=gymnastics">Gymnastics &amp; Tumbling</a>
+
                         </div>
                     </div>
                 </div>

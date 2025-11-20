@@ -146,6 +146,7 @@
                 </div>
             </div>
         </section>
+        <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
         <!-- Active Rooms card -->
         <section class="page-section bg-light text-dark" id="active-now">
             <div class="container px-4 px-lg-5">
@@ -176,8 +177,9 @@
                 </div>
             </div>
         </section>
+        <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
         <!-- Services-->
-        <section id="how-it-works" class="page-section-smaller" style="padding-top: 2rem; padding-bottom: 8rem">
+        <section id="how-it-works" class="page-section-smaller" style="padding-top: 5rem; padding-bottom: 8rem">
             <div class="container px-4 px-lg-5">
                 <h2 class="text-center mt-0"><strong>How it Works</strong></h2>
                 <hr class="divider" style="background-color: deeppink"/>

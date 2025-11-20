@@ -121,23 +121,27 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Dating</strong></h2>
-                        <p class="text-muted">LensShare can also help you meet new people. Chat online, then see where the connection goes offline.</p>
+                        <p class="text-muted">
+                            LensShare can also help you meet new people. Chat online, swap stories,
+                            and see where the connection goes offline.
+                        </p>
                         <div class="mt-4">
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=virtual-hookups">Virtual Hookups</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=college-dating">College</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=20s-dating">20s</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=30s-dating">30s</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=40s-dating">40s</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=50s-dating">50s</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=silver-singles">Silver Singles</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=gay-dating">Gay</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=lesbian-dating">Lesbian</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=bisexual-dating">Bisexual</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=trans-dating">Trans</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=virtual-hookups">Casual &amp; Virtual Connections</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=college-dating">College Dating &amp; Campus Life</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=20s-dating">Dating in Your 20s</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=30s-dating">Dating in Your 30s</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=40s-dating">Dating in Your 40s</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=50s-dating">Dating in Your 50s</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=silver-singles">Silver Singles (60+)</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=gay-dating">Gay Dating</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=lesbian-dating">Lesbian Dating</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=bisexual-dating">Bi+ Dating</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=trans-dating">Trans &amp; Nonbinary Dating</a>
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex">
-                        <img class="explanation-image mx-auto my-auto" style="height: 370px; width: auto;" src="assets/img/relationships/dating.gif">
+                        <img class="explanation-image mx-auto my-auto" style="height: 370px; width: auto;"
+                             src="assets/img/relationships/dating.gif">
                     </div>
                 </div>
             </div>
@@ -148,49 +152,83 @@
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6 d-flex">
-                        <img class="explanation-image my-auto" style="height: 370px; width: auto;" src="assets/img/relationships/married.gif">
+                        <img class="explanation-image my-auto" style="height: 370px; width: auto;"
+                             src="assets/img/relationships/married.gif">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Married Life</strong></h2>
-                        <p class="text-muted">Marriage can be complicated. Talk with other couples your age and see how you can support each other.</p>
+                        <p class="text-muted">
+                            Marriage can be complicated. Talk with other couples at a similar stage and
+                            share what’s working, what’s hard, and how you support each other.
+                        </p>
                         <div class="mt-4">
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=wedding-planning">Wedding Planning</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=newlyweds">Newlyweds</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=married-2-to-5-years">2-5 Years</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=married-5-to-10-years">5-10 Years</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=married-10-to-15-years">10-15 Years</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=married-15-to-20-years">15-20 Years</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=married-20-plus-years">20+ Years</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=separated">Separated</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=divorced">Divorced</a>
-                        </div>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=wedding-planning">Wedding Planning &amp; Engagement</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=newlyweds">Newlyweds (First Years)</a>
 
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=married-2-to-5-years">Married 2–5 Years</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=married-5-to-10-years">Married 5–10 Years</a>
+
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=married-10-to-15-years">Married 10–15 Years</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=married-15-to-20-years">Married 15–20 Years</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=married-20-plus-years">Married 20+ Years</a>
+
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=separated">Separated &amp; Taking Space</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=divorced">Divorced &amp; Starting Over</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Call to action-->
-        <section class="page-section text-dark" id="parenting">
+        <section class="page-section text-dark" id="family-friends">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h2 class="mb-3"><strong>Parenting</strong></h2>
-                        <p class="text-muted">Parenting is a lifelong responsibility. Connect with other parents and work together to make the best decisions for your kids.</p>
+                        <h2 class="mb-3"><strong>Family &amp; Close Relationships</strong></h2>
+                        <p class="text-muted">
+                            Not every important relationship is romantic. These rooms are for friendships,
+                            siblings, parents, in-laws, and the people who feel like family.
+                        </p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=newborns">Newborns (0-2 Months)</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=infants">Infants (3-11 months)</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=toddlers">Toddlers (1-2 Years)</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=preschoolers">Preschoolers (3-4 Years)</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=school-aged">School-Aged (5-12 Years)</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=teenagers">Teens (13-17)</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=college-kids">College Kids (18-21 years)</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=adult-children">Adult Children (22+)</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=friends-social-circle">Friends &amp; Social Circle</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=siblings">Siblings &amp; Family Dynamics</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=parents-adult-kids">Parents &amp; Adult Children</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=in-laws">In-Laws &amp; Extended Family</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=caregiving-parents">Caregiving for Parents</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center">
-                        <img class="explanation-image img-fluid" style="" src="assets/img/relationships/kids.gif">
+                        <img class="explanation-image img-fluid" src="assets/img/relationships/family.gif" alt="Family and close relationships">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
+        <!-- Call to action-->
+        <section class="page-section bg-light text-dark" id="parenting">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center">
+                        <img class="explanation-image img-fluid" src="assets/img/relationships/kids.gif">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="mb-3"><strong>Parenting</strong></h2>
+                        <p class="text-muted">
+                            Parenting is a lifelong responsibility. Connect with other parents at similar stages
+                            and work together to make the best decisions for your kids.
+                        </p>
+                        <div class="mt-4">
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=newborns">Newborns (0–2 Months)</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=infants">Infants (3–11 Months)</a>
+
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=toddlers">Toddlers (1–2 Years)</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=preschoolers">Preschoolers (3–4 Years)</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=school-aged">School-Aged Kids (5–12 Years)</a>
+
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=teenagers">Teens (13–17)</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=college-kids">College Kids (18–21)</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=adult-children">Adult Children (22+)</a>
+                        </div>
                     </div>
                 </div>
             </div>

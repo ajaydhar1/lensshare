@@ -173,19 +173,24 @@
                         <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/doctor.gif">
                     </div>
                     <div class="col-lg-6">
-                        <h2 class="mb-3"><strong>Physical Health</strong></h2>
+                        <h2 class="mb-3"><strong>Body & Physical Health</strong></h2>
                         <p class="text-muted">Join one of these rooms to talk about staying active, building healthy routines, and caring for your body.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=physical-health-in-general">In Genenral</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=health-insurance">Health Insurance</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=im-sick">I'm Sick</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=nutrition">Nutrition</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=fitness">Fitness</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=dental">Dental</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=vision">Vision</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=medical-issues">Medical Issues</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=physical-health-in-general">General Health</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=health-insurance">Health Insurance Help</a>
+
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=im-sick">I'm Not Feeling Well</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=nutrition">Nutrition &amp; Healthy Eating</a>
+
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=fitness">Fitness &amp; Movement</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=dental">Dental Care</a>
+
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=vision">Vision &amp; Eye Care</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=medical-issues">Medical Questions</a>
+
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=illness-prevention">Illness Prevention</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=exercise">Exercise</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=exercise">Exercise &amp; Workouts</a>
+
                             <?php //<a class="btn btn-dark btn-xl mb-3" href="room.php?room=vaping">Vaping</a> ?>
                         </div>
                     </div>
@@ -198,19 +203,22 @@
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h2 class="mb-3"><strong>Mental Health</strong></h2>
+                        <h2 class="mb-3"><strong>Mind & Mental Health</strong></h2>
                         <p class="text-muted">Join one of these rooms to discuss emotional wellbeing, stress, coping tools, and experiences related to mental health—for yourself or someone you care about.</p>
                         <div class="mt-4">
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=mental-health-in-general">In General</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=health-insurance">Health Insurance</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=sleep">Sleep</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=stress">Stress</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=alcohol">Alcohol</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=meditation">Meditation</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=breathwork">Breathwork</a>
-                            <?php //<a class="btn btn-warning btn-xl mb-3" href="room.php?room=ph.d.">Ph.D.</a> ?>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=mental-health-in-general">General Mental Health</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=health-insurance">Health Insurance Help</a>
+
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=sleep">Sleep &amp; Rest</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=stress">Stress &amp; Overwhelm</a>
+
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=alcohol">Alcohol &amp; Habits</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=meditation">Meditation &amp; Mindfulness</a>
+
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=breathwork">Breathwork &amp; Relaxation</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=emotional-wellness">Emotional Wellness</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=body-image">Body Image</a>
+
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=body-image">Body Image &amp; Self-Confidence</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -225,13 +233,19 @@
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6" style="">
-                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/health-questions.gif">
+                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/special-topics.gif">
                     </div>
                     <div class="col-lg-6">
-                        <h2 class="mb-3"><strong>Ask a Health Question</strong></h2>
-                        <p class="text-muted">A supportive space to ask general health and wellness questions. Share experiences, compare routines, and learn from others—no medical advice, just community insight.</p>
+                        <h2 class="mb-3"><strong>Special Topics</strong></h2>
+                        <p class="text-muted">Join a Special Topics room to talk about more focused areas of health, from chronic conditions to long-term wellness planning.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=health-questions">Ask a Health Question</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=chronic-conditions">Chronic Conditions</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=women-health">Women’s Health</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=men-health">Men’s Health</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=aging-longevity">Aging &amp; Longevity</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=healthy-routines">Healthy Routines</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=injury-recovery">Injury Recovery</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=supplements">Supplements</a>
                         </div>
                     </div>
                 </div>
@@ -239,18 +253,36 @@
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
         <!-- Call to action-->
-        <section class="page-section bg-light text-dark" id="mood-board">
+        <section class="page-section bg-light text-dark" id="ask">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="mb-3"><strong>Ask a Health Question</strong></h2>
+                        <p class="text-muted">A supportive space to ask general health and wellness questions. Share experiences, compare routines, and learn from others—no medical advice, just community insight.</p>
+                        <div class="mt-4">
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=health-questions">Ask a Health Question</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center" style="">
+                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/health-questions.gif">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
+        <!-- Call to action-->
+        <section class="page-section text-dark" id="mood-board">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6" style="">
+                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/mask.webp">
+                    </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Mood Board</strong></h2>
                         <p class="text-muted">Lift your mood by scrolling through memes, reactions, and relatable moments from others who feel the same way. Sometimes a little humor is the best therapy.</p>
                         <div class="mt-4">
                             <a class="btn btn-dark btn-xl mb-3" href="mood-board.php">Fix Your Mood</a>
                         </div>
-                    </div>
-                    <div class="col-lg-6 text-center" style="">
-                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/mask.webp">
                     </div>
                 </div>
             </div>
