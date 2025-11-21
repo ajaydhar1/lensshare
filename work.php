@@ -73,9 +73,9 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item my-auto"><a class="nav-link" href="#essential-rooms">Essential Rooms</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#work-support">Work Support Hub</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#management">Management Index</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#occupations">Occupations</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#occupations">Job Titles</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
                         <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
@@ -116,63 +116,126 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Work Base Station</strong></h2>
-                        <p class="text-muted">Join the Work Rooms Base Station to talk about work in general. Trade thoughts about your jobs, careers, challenges, and wins.</p>
-                        <a id="base-station-btn" class="btn btn-dark btn-xl mt-3" href="room.php?room=work-base-station">Join Base Station</a>
+                        <p class="text-muted">
+                            Join the Work Base Station to talk about work in general. Share what you do,
+                            vent about challenges, celebrate wins, and connect with people who get it.
+                        </p>
+                        <a id="base-station-btn" class="btn btn-dark btn-xl mt-3" href="room.php?room=work-base-station">
+                            Enter Work Base Station
+                        </a>
                     </div>
                     <div class="col-lg-6 text-center">
-                        <img class="base-station-image img-fluid" style="" src="assets/img/all/base-station.gif">
+                        <img class="base-station-image img-fluid" src="assets/img/all/base-station.gif" alt="Work base station">
                     </div>
                 </div>
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
         <!-- Call to action-->
-        <section class="page-section text-dark" id="essential-rooms">
+        <section class="page-section text-dark" id="work-support">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <img class="explanation-image img-fluid" style="" src="assets/img/work/important-rooms.gif">
+                        <img class="explanation-image img-fluid" src="assets/img/work/important-rooms.gif" alt="Essential work rooms">
                     </div>
                     <div class="col-lg-6">
-                        <h2 class="mb-3"><strong>Essential Rooms</strong></h2>
-                        <p class="text-muted">These are the key Rooms in the Work Portal. Help each other through challenges, share solutions, and get quick support when you need it.</p>
+                        <h2 class="mb-3"><strong>Work Support Hub</strong></h2>
+                        <p class="text-muted">
+                            Stuck on something? Need quick feedback? These Rooms are your support system — 
+                            share insights, get guidance, and tackle work challenges together.
+                        </p>
+
                         <div class="mt-4">
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=need-help-now">Need Help Now</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=lets-work-together">Let's Work Together</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=career-advice">Career Advice and Planning</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=for-managers">For Managers</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=networking">Networking</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=executives">Executives</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=ceos">CEOs</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=need-help-now">
+                                Stuck at Work (Need Help Now)
+                            </a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=lets-work-together">
+                                Co-Working &amp; Focus Sessions
+                            </a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=career-advice">
+                                Career Advice &amp; Planning
+                            </a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=for-managers">
+                                Managing People &amp; Teams
+                            </a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=networking">
+                                Networking &amp; Intros
+                            </a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=executives">
+                                Executives &amp; Senior Leaders
+                            </a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=ceos">
+                                Founders &amp; CEOs
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <!-- Call to action-->
-        <section class="page-section bg-light text-dark" id="management">
+        <section class="page-section bg-light text-dark" id="job-search">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <h2 class="mb-3"><strong>Management Skills Index</strong></h2>
-                        <p class="text-muted">Explore 1,000+ professional skills organized by executive and managerial roles. A quick way to grow your leadership toolkit.</p>
-                        <a id="" class="btn btn-warning btn-xl mt-3" href="management-index.php">Management Index</a>
+                        <h2 class="mb-3"><strong>Job Search &amp; Career Moves</strong></h2>
+                        <p class="text-muted">
+                            Looking for your next role, making a career change, or navigating layoffs?
+                            These Rooms are for practical help with applications, interviews, and big moves.
+                        </p>
+                        <div class="mt-4">
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=job-search">
+                                Job Search Strategy
+                            </a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=resumes-interviews">
+                                Résumés, Portfolios &amp; Interviews
+                            </a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=career-change">
+                                Career Change &amp; Pivots
+                            </a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=remote-work">
+                                Remote &amp; Hybrid Work
+                            </a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=layoffs-job-loss">
+                                Layoffs, Job Loss &amp; Bouncing Back
+                            </a>
+                        </div>
                     </div>
                     <div class="col-lg-6 text-center">
-                        <img class="explanation-image img-fluid" style="" src="assets/img/work/org-chart.gif">
+                        <img class="explanation-image img-fluid" src="assets/img/work/job-search.gif" alt="Job search and career moves">
                     </div>
                 </div>
             </div>
         </section>
+
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
         <!-- Call to action-->
-        <section class="page-section-smaller text-dark" id="occupations">
+        <section class="page-section text-dark" id="management">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <img class="explanation-image img-fluid" src="assets/img/work/org-chart.gif" alt="Org chart illustration">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="mb-3"><strong>Management Skills Index</strong></h2>
+                        <p class="text-muted">
+                            Explore 1,000+ professional skills organized by executive and managerial roles.
+                            A quick way to grow your leadership toolkit.
+                        </p>
+                        <a class="btn btn-warning btn-xl mt-3" href="management-index.php">
+                            Explore Management Index
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
+        <!-- Call to action-->
+        <section class="page-section-smaller bg-light text-dark" id="occupations">
             <div class="container px-4 px-lg-5">
                 <div class="row text-center justify-content-center">
                     <div class="col-lg-8">
-                        <h2 class="mb-3"><strong>Occuptation Rooms</strong></h2>
-                        <p class="text-muted">Search and click your job title to talk with others in your field. You can also enter Rooms outside your job if you’re curious about that domain or want a different point of view.</p>
+                        <h2 class="mb-3"><strong>Job Title Rooms</strong></h2>
+                        <p class="text-muted">Search and click your job title to talk and network with others in your field. You can also enter Rooms outside your job if you’re curious about that domain or want a different point of view.</p>
                         <p class="text-muted">If you don’t see anyone in these Rooms, jump into the Base Station instead.</p>
                     </div>
                 </div>
@@ -182,7 +245,7 @@
                             <thead class="bg-dark text-white">
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Job</th>
+                                    <th scope="col">Job Title</th>
                                 </tr>
                             </thead>
                             <tbody>

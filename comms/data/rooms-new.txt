@@ -1,5 +1,5 @@
-friends-social-circle
-siblings
-parents-adult-kids
-in-laws
-caregiving-parents
+job-search
+resumes-interviews
+career-change
+remote-work
+layoffs-job-loss
