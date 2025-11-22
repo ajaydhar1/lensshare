@@ -12,7 +12,7 @@ require_once __DIR__ . '/../config.php';
 /* ====== CONFIG — change these as needed ====== */
 define('INIT_ADMIN_TOKEN', $secrets['init_admin_token']);          // same token your tools expect
 define('DB_PATH', env_db_path());
-define('ROOM_VIEW_BASE', '../index.php');            // viewer that accepts ?room=...&token=...
+define('ROOM_VIEW_BASE', '../../room.php');            // viewer that accepts ?room=...&token=...
 define('ADMIN_USER', 'ajay');                           // <— hard-coded login (your request)
 define('ADMIN_PASS', 'ajay-777');                       // <— change this!
 /* ============================================= */
@@ -571,23 +571,30 @@ if ($LOGGED_IN) {
 
     <div class="card">
       <div class="k" style="margin-bottom:8px;">Quick Room Links</div>
-      <ul class="ul">
-        <?php
-          try {
-            $rows = $db->query("SELECT slug FROM rooms ORDER BY slug")->fetchAll(PDO::FETCH_COLUMN);
-            foreach ($rows as $slug):
-              $params = ['room'=>$slug, 'token'=>($_SESSION['admin_token'] ?? INIT_ADMIN_TOKEN)];
-              $sep = (strpos(ROOM_VIEW_BASE,'?')===false) ? '?' : '&';
-              $url = ROOM_VIEW_BASE . $sep . http_build_query($params);
-        ?>
-          <li><span>@<?= h($slug) ?></span> <a class="btn" target="_blank" rel="noopener" href="<?= h($url) ?>">Open</a></li>
-        <?php
-            endforeach;
-          } catch (Throwable $e) {
-            echo '<li><span>Error</span><span class="meta">'.h($e->getMessage()).'</span></li>';
-          }
-        ?>
-      </ul>
+
+      <div style="max-height:260px; overflow:auto; border-radius:10px; border:1px solid var(--border);">
+        <ul class="ul">
+          <?php
+            try {
+              $rows = $db->query("SELECT slug FROM rooms ORDER BY slug")->fetchAll(PDO::FETCH_COLUMN);
+              foreach ($rows as $slug):
+                $params = ['room'=>$slug, 'token'=>($_SESSION['admin_token'] ?? INIT_ADMIN_TOKEN)];
+                $sep = (strpos(ROOM_VIEW_BASE,'?')===false) ? '?' : '&';
+                $url = ROOM_VIEW_BASE . $sep . http_build_query($params);
+          ?>
+            <li><span>@<?= h($slug) ?></span> <a class="btn" target="_blank" rel="noopener" href="<?= h($url) ?>">Open</a></li>
+          <?php
+              endforeach;
+            } catch (Throwable $e) {
+              echo '<li><span>Error</span><span class="meta">'.h($e->getMessage()).'</span></li>';
+            }
+          ?>
+        </ul>
+      </div>
+
+      <div class="meta" style="margin-top:8px;">
+        Showing all rooms (scroll inside panel).
+      </div>
     </div>
 
   <?php endif; ?>
