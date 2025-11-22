@@ -10,7 +10,7 @@
         <meta name="author" content="LensShare" />
         
         <!-- Page title -->
-        <title>Management Index</title>
+        <title>Management Index – LensShare</title>
         
         <!-- Favicon-->
         <link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />

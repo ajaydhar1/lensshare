@@ -11,7 +11,7 @@
 		<meta name="author" content="LensShare">
 
 		<!-- Page title -->
-		<title>Mood Board</title>
+		<title>Mood Board – LensShare</title>
 
 		<!-- Favicon-->
 		<link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />

@@ -68,6 +68,66 @@ if ($LOGGED_IN) {
         $msgs_today = (int)$stmt->fetchColumn();
       }
 
+      // ---- "What's happening" data ----
+      $recentMessages = [];
+      $recentMessages_error = '';
+      $activeRooms = [];
+      $activeRooms_error = '';
+
+      // helper: parse created_at into DateTime (INT epoch or TEXT)
+      function dt_from_created($val, DateTimeZone $tz): ?DateTime {
+        if ($val === null || $val === '') return null;
+        try {
+          $s = (string)$val;
+          if (ctype_digit($s)) {
+            return (new DateTime('@' . (int)$s))->setTimezone($tz);
+          }
+          return (new DateTime($s))->setTimezone($tz);
+        } catch (Throwable $e) {
+          return null;
+        }
+      }
+
+      // latest 50 messages (message, who, which room)
+      try {
+        $sql = "
+          SELECT 
+            m.id,
+            m.room_id,
+            m.created_at,
+            r.slug AS room_slug,
+            m.user AS author,
+            m.body AS body
+          FROM messages m
+          JOIN rooms r ON r.id = m.room_id
+          ORDER BY m.created_at DESC
+          LIMIT 50
+        ";
+        $stmt = $db->query($sql);
+        $recentMessages = $stmt ? $stmt->fetchAll() : [];
+      } catch (Throwable $e) {
+        $recentMessages_error = $e->getMessage();
+      }
+
+      // rooms with most recent activity (latest message per room)
+      try {
+        $sql = "
+          SELECT 
+            r.slug AS room_slug,
+            COUNT(m.id)          AS msg_count,
+            MAX(m.created_at)    AS last_at
+          FROM messages m
+          JOIN rooms r ON r.id = m.room_id
+          GROUP BY m.room_id
+          ORDER BY last_at DESC
+          LIMIT 10
+        ";
+        $stmt = $db->query($sql);
+        $activeRooms = $stmt ? $stmt->fetchAll() : [];
+      } catch (Throwable $e) {
+        $activeRooms_error = $e->getMessage();
+      }
+
     } catch (Throwable $e) {
       $status_error = "DB error: " . h($e->getMessage());
     }
@@ -371,6 +431,126 @@ if ($LOGGED_IN) {
         <div class="card"><div class="k">Messages (today)</div><div class="v"><?= (int)$msgs_today ?></div></div>
       </div>
     <?php endif; ?>
+
+        <?php if (!empty($status_error)): ?>
+      <div class="card" style="margin-bottom:12px;"><?= $status_error ?></div>
+    <?php else: ?>
+      <div class="grid" style="margin-bottom:12px;">
+        <div class="card"><div class="k">Rooms</div><div class="v"><?= (int)$rooms_count ?></div></div>
+        <div class="card"><div class="k">Messages (total)</div><div class="v"><?= (int)$msgs_total ?></div></div>
+        <div class="card"><div class="k">Messages (today)</div><div class="v"><?= (int)$msgs_today ?></div></div>
+      </div>
+
+      <?php
+        // convenience token for room links
+        $adminToken = $_SESSION['admin_token'] ?? INIT_ADMIN_TOKEN;
+        $viewerBase = ROOM_VIEW_BASE;
+        $sepBase    = (strpos($viewerBase, '?') === false) ? '?' : '&';
+      ?>
+
+      <!-- See what's happening: recent messages -->
+      <div class="card" style="margin-bottom:12px;">
+        <div class="header" style="margin-bottom:6px;">
+          <div>
+            <div class="k">See what's happening</div>
+            <div class="meta">Latest messages across all rooms (most recent first)</div>
+          </div>
+        </div>
+
+        <?php if ($recentMessages_error): ?>
+          <div class="meta" style="color:#ff8c8c;"><?= h($recentMessages_error) ?></div>
+        <?php elseif (empty($recentMessages)): ?>
+          <div class="meta">No messages yet.</div>
+        <?php else: ?>
+          <div style="max-height:260px; overflow:auto; border-radius:10px; border:1px solid var(--border);">
+            <ul class="ul">
+              <?php foreach ($recentMessages as $row): 
+                $slug   = $row['room_slug'] ?? '';
+                $author = isset($row['author']) && $row['author'] !== '' ? $row['author'] : '—';
+                $body   = isset($row['body'])   && $row['body']   !== '' ? $row['body']   : '';
+                $body   = trim($body);
+                if ($body === '') $body = '(no message body)';
+
+                $createdRaw = $row['created_at'] ?? null;
+                $dtMsg      = $createdRaw ? dt_from_created($createdRaw, $tz) : null;
+                $whenHuman  = $dtMsg ? human_ago($dtMsg, $now) : '';
+                $whenExact  = $dtMsg ? $dtMsg->format('Y-m-d h:i A') : '';
+
+                $params = ['room'=>$slug, 'token'=>$adminToken];
+                $url    = $viewerBase . $sepBase . http_build_query($params);
+
+                // truncate message for the list
+                $bodyShort = mb_substr($body, 0, 80);
+                if (mb_strlen($body) > 80) $bodyShort .= '…';
+              ?>
+                <li>
+                  <div style="flex:1; min-width:0;">
+                    <div style="font-size:13px; color:#e8f0f7; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;">
+                      <?= h($bodyShort) ?>
+                    </div>
+                    <div class="meta">
+                      @<?= h($slug) ?>
+                      <?php if ($author !== '—'): ?> · <?= h($author) ?><?php endif; ?>
+                      <?php if ($whenHuman): ?> · <?= h($whenHuman) ?><?php endif; ?>
+                      <?php if ($whenExact): ?> · <span title="Exact time"><?= h($whenExact) ?></span><?php endif; ?>
+                    </div>
+                  </div>
+                  <div>
+                    <a class="btn" target="_blank" rel="noopener" href="<?= h($url) ?>">Open</a>
+                  </div>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        <?php endif; ?>
+      </div>
+
+      <!-- Rooms with recent activity -->
+      <div class="card" style="margin-bottom:12px;">
+        <div class="header" style="margin-bottom:6px;">
+          <div>
+            <div class="k">Rooms with recent activity</div>
+            <div class="meta">Most recently active rooms (by latest message)</div>
+          </div>
+        </div>
+
+        <?php if ($activeRooms_error): ?>
+          <div class="meta" style="color:#ff8c8c;"><?= h($activeRooms_error) ?></div>
+        <?php elseif (empty($activeRooms)): ?>
+          <div class="meta">No activity yet.</div>
+        <?php else: ?>
+          <ul class="ul">
+            <?php foreach ($activeRooms as $row):
+              $slug      = $row['room_slug'] ?? '';
+              $count     = (int)($row['msg_count'] ?? 0);
+              $lastRaw   = $row['last_at'] ?? null;
+              $dtLast    = $lastRaw ? dt_from_created($lastRaw, $tz) : null;
+              $lastHuman = $dtLast ? human_ago($dtLast, $now) : '';
+              $lastExact = $dtLast ? $dtLast->format('Y-m-d h:i A') : '';
+
+              $params = ['room'=>$slug, 'token'=>$adminToken];
+              $url    = $viewerBase . $sepBase . http_build_query($params);
+            ?>
+              <li>
+                <div style="flex:1; min-width:0;">
+                  <div style="font-size:13px; color:#e8f0f7;">@<?= h($slug) ?></div>
+                  <div class="meta">
+                    <?= $count ?> msg<?= $count === 1 ? '' : 's' ?>
+                    <?php if ($lastHuman): ?> · <?= h($lastHuman) ?><?php endif; ?>
+                    <?php if ($lastExact): ?> · <span title="Exact time"><?= h($lastExact) ?></span><?php endif; ?>
+                  </div>
+                </div>
+                <div>
+                  <a class="btn" target="_blank" rel="noopener" href="<?= h($url) ?>">Open</a>
+                </div>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        <?php endif; ?>
+      </div>
+
+    <?php endif; ?>
+
 
     <div class="card" style="margin-bottom:12px;">
       <div class="k" style="margin-bottom:8px;">Tools</div>
