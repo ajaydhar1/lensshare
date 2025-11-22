@@ -1,4 +1,3 @@
-<?php require_once("___config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -35,9 +34,6 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
         
-        <?php /*<?php /* <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" /> */ ?>
-        
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/custom.css" rel="stylesheet" />
@@ -52,16 +48,8 @@
                 margin-top: -7rem;
             }
 
-            hr {
-                border-top: none;
-            }
-
             hr.divider {
-                height: 0.2rem;
-                max-width: 3.25rem;
-                margin: 1.5rem auto;
                 background-color: white;
-                opacity: 1;
             }
 
         </style>
@@ -111,7 +99,7 @@
                 </div>
             </div>
         </header>
-        <!-- Call to action-->
+        <!-- Base Station -->
         <section class="page-section text-dark" id="base-station">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -127,8 +115,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-
-        <!-- Call to action-->
+        <!-- Future Tech -->
         <section class="page-section bg-light text-dark" id="future-tech">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -152,8 +139,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-
-        <!-- Call to action-->
+        <!-- Gadgets and Devices -->
         <section class="page-section bg-white text-dark" id="gadgets">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -177,8 +163,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-
-        <!-- Call to action-->
+        <!-- Digital Life -->
         <section class="page-section bg-light text-dark" id="digital-life">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -202,8 +187,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-
-        <!-- Call to action-->
+        <!-- Core Tech -->
         <section class="page-section text-dark" id="core-tech">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -217,14 +201,14 @@
                             <a class="btn btn-primary btn-xl mb-3" href="room.php?room=computers">Computers</a>
                             <a class="btn btn-info btn-xl mb-3" href="room.php?room=software">Software</a>
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=hardware">Hardware</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=nano-tech">Nano Tech</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=nanotech">Nano Tech</a>
                             <a class="btn btn-success btn-xl mb-3" href="room.php?room=biotech">Biotech</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=mobile-devices">Mobile Devices</a>
                             <a class="btn btn-primary btn-xl mb-3" href="room.php?room=websites">Websites</a>
                             <a class="btn btn-danger btn-xl mb-3" href="room.php?room=mobile-apps">Mobile Apps</a>
                             <a class="btn btn-warning btn-xl mb-3" href="room.php?room=home-appliances">Home Appliances</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cars">Cars</a>
-                            <a class="btn btn-info btn-xl mb-3" href="room.php?room=construction">Construction</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=car-tech">Cars & Vehicle Tech</a>
+                            <a class="btn btn-info btn-xl mb-3" href="room.php?room=construction-tech">Construction Tech & Tools</a>
                         </div>
                     </div>
                 </div>
@@ -237,9 +221,6 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <?php /* <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script> */ ?>
 
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>

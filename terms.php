@@ -7,8 +7,8 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta name="description" content="A clear explanation of the rules, guidelines, and expectations for using LensShare, an early experimental project for connecting through shared-interest Rooms." />
+        <meta name="author" content="LensShare" />
         <title>Terms of Use (Beta Version)</title>
         
         <!-- Favicon-->
@@ -20,9 +20,6 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-        
-        <?php /* <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" /> */ ?>
         
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
@@ -38,18 +35,6 @@
                 margin-top: -7rem;
             }
 
-            hr {
-                border-top: none;
-            }
-
-            hr.divider {
-                height: 0.2rem;
-                max-width: 3.25rem;
-                margin: 1.5rem auto;
-                background-color: deeppink;
-                opacity: 1;
-            }
-
             hr.rectangle-divider {
                 height: 1rem;
                 max-width: 2rem;
@@ -58,7 +43,6 @@
                 opacity: .5;
                 z-index: 10;
             }
-
 
         </style>
 
@@ -72,8 +56,8 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item my-auto"><a class="nav-link" href="privacy.php">Privacy Policy</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#holodeck">Holodeck</a></li>
-                        <li class="nav-item"><a class="btn bg-primary text-white" style="margin-left: 0.65rem;" href="https://video-lensshare.com/Happy%20Hour#config.disableDeepLinking=true">Happy Hour</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
+                        <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
             </div>
@@ -98,14 +82,9 @@
                         <img class="hi" src="assets/img/all/webcam6.gif">
                     </div>
                 </div>
-                <div class="row justify-content-center mt-3">
-                    <div class="col-lg-4 text-center">
-                        <?php //<a class="btn btn-dark btn-xl" href="#about">How it Works</a> ?>
-                    </div>
-                </div>
             </div>
         </header>
-        <!-- About-->
+        <!-- Legal Copy -->
         <section class="page-section" id="" style="padding: 5rem 0;">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 d-flex justify-content-center align-items-center">
@@ -237,9 +216,6 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-        <?php /* <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script> */ ?>
 
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>

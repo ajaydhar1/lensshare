@@ -1,4 +1,3 @@
-<?php require_once("___config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -35,9 +34,6 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
         
-        <?php /*<?php /* <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" /> */ ?>
-        
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/custom.css" rel="stylesheet" />
@@ -50,16 +46,8 @@
                 background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%), url(assets/img/bg-masthead.jpg);
             }
 
-            hr {
-                border-top: none;
-            }
-
             hr.divider {
-                height: 0.2rem;
-                max-width: 3.25rem;
-                margin: 1.5rem auto;
                 background-color: deeppink;
-                opacity: 1;
             }
 
         </style>
@@ -69,7 +57,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand text-secondary" href="index.php"><?= $site_name ?></a>
+                <a class="navbar-brand text-secondary" href="index.php">LensShare</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -110,7 +98,7 @@
                 </div>
             </div>
         </header>
-        <!-- Call to action-->
+        <!-- Base Station -->
         <section class="page-section bg-light text-dark" id="base-station">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -121,7 +109,7 @@
                             vent about challenges, celebrate wins, and connect with people who get it.
                         </p>
                         <a id="base-station-btn" class="btn btn-dark btn-xl mt-3" href="room.php?room=work-base-station">
-                            Enter Work Base Station
+                            Work Base Station
                         </a>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -131,7 +119,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- Work Support Hub -->
         <section class="page-section text-dark" id="work-support">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -146,7 +134,7 @@
                         </p>
 
                         <div class="mt-4">
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=need-help-now">
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=stuck-at-work">
                                 Stuck at Work (Need Help Now)
                             </a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=lets-work-together">
@@ -155,7 +143,7 @@
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=career-advice">
                                 Career Advice &amp; Planning
                             </a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=for-managers">
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=managing-people-teams">
                                 Managing People &amp; Teams
                             </a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=networking">
@@ -164,7 +152,7 @@
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=executives">
                                 Executives &amp; Senior Leaders
                             </a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=ceos">
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=founders-ceos">
                                 Founders &amp; CEOs
                             </a>
                         </div>
@@ -173,6 +161,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
+        <!-- Jobs & Careers -->
         <section class="page-section bg-light text-dark" id="job-search">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -206,9 +195,8 @@
                 </div>
             </div>
         </section>
-
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- Management Skills -->
         <section class="page-section text-dark" id="management">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -229,7 +217,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- Job Titles -->
         <section class="page-section-smaller bg-light text-dark" id="occupations">
             <div class="container px-4 px-lg-5">
                 <div class="row text-center justify-content-center">
@@ -1266,16 +1254,13 @@
 <tr><th scope="row">1015</th><td><a href="room.php?room=writers-and-authors">Writers and Authors</a></td></tr>
 <tr><th scope="row">1016</th><td><a href="room.php?room=zoologists-and-wildlife-biologists">Zoologists and Wildlife Biologists</a></td></tr>
 
-
-
-
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Portfolio-->
+        <!-- Work Rooms Top -->
         <div id="portfolio">
             <div class="container-fluid p-0">
                 <div class="row g-0">
@@ -1312,7 +1297,7 @@
         
         <?php require_once("___holodeck.php"); ?>
 
-        <!-- Portfolio-->
+        <!-- Work Rooms Bottom -->
         <div id="portfolio">
             <div class="container-fluid p-0">
                 <div class="row g-0">
@@ -1351,9 +1336,6 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <?php /* <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script> */ ?>
         
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>

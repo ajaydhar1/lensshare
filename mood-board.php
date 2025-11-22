@@ -8,7 +8,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="Find humor in memes related to negative emotions you may be feeling and learn to lighten' up.">
-		<meta name="author" content="<?= $site_name ?>">
+		<meta name="author" content="LensShare">
 
 		<!-- Page title -->
 		<title>Mood Board</title>
@@ -18,15 +18,15 @@
 
 		<!-- Twitter card and Open Graph-->
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Mood Board - <?= $site_name ?>" />
+		<meta name="twitter:title" content="Mood Board - LensShare" />
 		<meta name="twitter:description" content="Find humor in memes related to negative emotions you may be feeling." />
-		<meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/health/cat-moods.jpg" />
+		<meta name="twitter:image" content="https://lensshare.co/assets/img/health/cat-moods.jpg" />
 
-		<meta property="og:url" content="https://<?= $site_domain ?>/mood-board.php" />
-		<meta property="og:title" content="Mood Board - <?= $site_name ?>" />
+		<meta property="og:url" content="https://lensshare.co/mood-board.php" />
+		<meta property="og:title" content="Mood Board - LensShare" />
 		<meta property="og:description" content="Find humor in memes related to negative emotions you may be feeling." />
-		<meta property="og:image" content="https://<?= $site_domain ?>/assets/img/health/cat-moods.jpg" />    
-		<meta property="og:site_name" content="<?= $site_name ?>" />
+		<meta property="og:image" content="https://lensshare.co/assets/img/health/cat-moods.jpg" />    
+		<meta property="og:site_name" content="LensShare" />
 
 		<!-- Font Awesome for all fonts -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
@@ -100,7 +100,7 @@
 	  		<!-- Navigation-->
 		    <nav class="navbar navbar-expand-lg fixed-top py-3" id="mainNav">
 		        <div class="container px-4 px-lg-5">
-		            <a class="navbar-brand" href="index.php"><?= $site_name ?></a>
+		            <a class="navbar-brand" href="index.php">LensShare</a>
 		            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 		            <div class="collapse navbar-collapse" id="navbarResponsive">
 		                <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -113,14 +113,6 @@
 
 			<section class="document">
 				<div class="container">
-
-					<?php /*
-					<!-- visitor counter -->
-				    <div class="w-100 text-center mt-5">
-				    	<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-				        <div class="elfsight-app-b057f10b-5b29-4357-ae67-1e26ee05c0b4"></div>
-				    </div>
-					*/ ?>
 
 					<h1 id="category" class="text-center mb-3" style="display: block; margin-top: 40px; font-size: 3.75rem;">The Mood Board</h1>
 					<p style="font-size: 1.2rem;">Our <strong style="color: orangered;">mood board</strong> is a big list of emotions that are organized into our 8 categories, and then grouped by their strength.</p>

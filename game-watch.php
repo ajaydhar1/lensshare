@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Watch some of the most entertaining video gameplay, sports, music, and just chatting live streams from around the world.">
-        <meta name="author" content="<?= $site_name ?>">
+        <meta name="author" content="LensShare">
       
         <!-- Page title -->
         <title>Game Watch</title>
@@ -18,15 +18,15 @@
 
         <!-- Twitter card and Open Graph-->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Game Watch - <?= $site_name ?>" />
+        <meta name="twitter:title" content="Game Watch - LensShare" />
         <meta name="twitter:description" content="Watch some of the most entertaining video gameplay, sports, music, and just chatting live streams." />
-        <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/entertainment/game-tournament.jpeg" />
+        <meta name="twitter:image" content="https://lensshare.co/assets/img/entertainment/game-tournament.jpeg" />
 
-        <meta property="og:url" content="https://<?= $site_domain ?>/game-watch.php" />
-        <meta property="og:title" content="Game Watch - <?= $site_name ?>" />
+        <meta property="og:url" content="https://lensshare.co/game-watch.php" />
+        <meta property="og:title" content="Game Watch - LensShare" />
         <meta property="og:description" content="Watch some of the most entertaining video gameplay, sports, music, and just chatting live streams." />
-        <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/entertainment/game-tournament.jpeg" />    
-        <meta property="og:site_name" content="<?= $site_name ?>" />
+        <meta property="og:image" content="https://lensshare.co/assets/img/entertainment/game-tournament.jpeg" />    
+        <meta property="og:site_name" content="LensShare" />
 
         <!-- Font Awesome for all fonts -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
@@ -143,7 +143,7 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg fixed-top py-3" id="mainNav">
                 <div class="container px-4 px-lg-5">
-                    <a class="navbar-brand" href="index.php"><?= $site_name ?></a>
+                    <a class="navbar-brand" href="index.php">LensShare</a>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -154,7 +154,7 @@
                 </div>
             </nav>
 
-            <section class="document">
+            <section class="document mb-5">
                 <?php
 
                     require_once("___modules.php");

@@ -1,4 +1,3 @@
-<?php require_once("___config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -35,9 +34,6 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
         
-        <?php /*<?php /* <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" /> */ ?>
-        
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/custom.css" rel="stylesheet" />
@@ -51,16 +47,8 @@
                 background-size: cover;
             }
 
-            hr {
-                border-top: none;
-            }
-
             hr.divider {
-                height: 0.2rem;
-                max-width: 3.25rem;
-                margin: 1.5rem auto;
                 background-color: deeppink;
-                opacity: 1;
             }
 
         </style>
@@ -111,7 +99,6 @@
                 </div>
             </div>
         </header>
-
         <!-- Pro League Fans -->
         <section class="page-section bg-light text-dark" id="pro-league-fans">
             <div class="container px-4 px-lg-5">
@@ -143,7 +130,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- Sports -->
         <section class="page-section text-dark" id="sports">
             <div class="container px-4 px-lg-5">
                 <div class="row">
@@ -178,7 +165,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- Fitness -->
         <section class="page-section bg-light text-dark" id="fitness">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -186,16 +173,16 @@
                         <h2 class="mb-3"><strong>Fitness</strong></h2>
                         <p class="text-muted">Use these rooms to share your fitness goals, routines, and progress with others who train the same way you do. Support each other and stay motivated.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=lifting-weights">Lifting Weights</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=strength-training">Lifting Weights</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=calisthenics">Bodyweight &amp; Calisthenics</a>
 
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cardio">Cardio &amp; HIIT</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cardio-hiit">Cardio &amp; HIIT</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=running">Running &amp; Jogging</a>
 
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=biking">Cycling &amp; Biking</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cycling">Cycling &amp; Biking</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=walking">Walking &amp; Daily Steps</a>
 
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=stretching">Mobility &amp; Stretching</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=mobility-stretching">Mobility &amp; Stretching</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=swimming">Swimming &amp; Water Training</a>
 
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cross-training">Cross Training</a>
@@ -209,7 +196,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- Sports Talk -->
         <section class="page-section text-dark" id="sports-talk-central">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -227,16 +214,12 @@
             </div>
         </section>
         
-        
         <?php require_once("___holodeck.php"); ?>
         
         <?php require_once("___footer.php"); ?>
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <?php /* <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script> */ ?>
 
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>

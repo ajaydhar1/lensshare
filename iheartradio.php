@@ -7,7 +7,7 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    	<meta name="description" content="Browse iHeartRadio live stations, playlists, and podcasts in one place. Jump into rap, pop, rock, sports, news, and more." />
+        <meta name="description" content="Browse iHeartRadio live stations, playlists, and podcasts in one place. Jump into rap, pop, rock, sports, news, and more." />
         <meta name="author" content="LensShare" />
 
         <!-- Page title -->
@@ -35,20 +35,12 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
         
-        <?php /*<?php /* <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" /> */ ?>
-        
         <!-- Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
 
         <!-- Custom fonts for this template -->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-
-        <!--
-        <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-        <link rel="icon" type="image/png" href="/img/angry.png">
-        -->
 
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
@@ -597,9 +589,6 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        <?php /* <!-- SimpleLightbox plugin JS-->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script> */ ?>
-
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
 
@@ -608,58 +597,57 @@
         <script src="vendors/datatables/datatables-demo.js"></script>
 
         <script>
+          $(function () {
+            // --- Genre filtering for Live Radio ---
+            function filterStations(genre) {
+              if (genre === 'all') {
+                $('.station').show();
+              } else {
+                $('.station').each(function () {
+                  const $el = $(this);
+                  if ($el.hasClass(genre)) {
+                    $el.show();
+                  } else {
+                    $el.hide();
+                  }
+                });
+              }
+            }
 
-  $(function () {
-    // --- Genre filtering for Live Radio ---
-    function filterStations(genre) {
-      if (genre === 'all') {
-        $('.station').show();
-      } else {
-        $('.station').each(function () {
-          const $el = $(this);
-          if ($el.hasClass(genre)) {
-            $el.show();
-          } else {
-            $el.hide();
-          }
-        });
-      }
-    }
+            $('.genre-pill').on('click', function () {
+              const $btn = $(this);
+              const genre = $btn.data('genre');
 
-    $('.genre-pill').on('click', function () {
-      const $btn = $(this);
-      const genre = $btn.data('genre');
+              $('.genre-pill').removeClass('is-active');
+              $btn.addClass('is-active');
 
-      $('.genre-pill').removeClass('is-active');
-      $btn.addClass('is-active');
+              filterStations(genre);
+            });
 
-      filterStations(genre);
-    });
+            // --- Tab switching (Live / Playlists / Podcasts) ---
+            $('.tab-pill').on('click', function () {
+              const $btn = $(this);
+              const tab = $btn.data('tab');
 
-    // --- Tab switching (Live / Playlists / Podcasts) ---
-    $('.tab-pill').on('click', function () {
-      const $btn = $(this);
-      const tab = $btn.data('tab');
+              $('.tab-pill').removeClass('is-active');
+              $btn.addClass('is-active');
 
-      $('.tab-pill').removeClass('is-active');
-      $btn.addClass('is-active');
+              $('.tab-section').removeClass('is-active');
+              $('.tab-section[data-tab="' + tab + '"]').addClass('is-active');
 
-      $('.tab-section').removeClass('is-active');
-      $('.tab-section[data-tab="' + tab + '"]').addClass('is-active');
+              // Only show genre pills row on Live tab
+              if (tab === 'live') {
+                $('#live-genre-row').show();
+              } else {
+                $('#live-genre-row').hide();
+              }
+            });
 
-      // Only show genre pills row on Live tab
-      if (tab === 'live') {
-        $('#live-genre-row').show();
-      } else {
-        $('#live-genre-row').hide();
-      }
-    });
-
-    // Default state
-    filterStations('all');
-    $('#live-genre-row').show();
-  });
-</script>
+            // Default state
+            filterStations('all');
+            $('#live-genre-row').show();
+          });
+        </script>
 
     </body>
 

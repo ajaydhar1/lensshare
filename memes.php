@@ -8,7 +8,7 @@
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <meta name="description" content="Search and discover the most fun and popular gifs, memes, and stickers on the Internet." />
-      <meta name="author" content="<?= $site_name ?>" />
+      <meta name="author" content="LensShare" />
       
       <!-- Page title -->
       <title>The Meme Factory - Enjoy discovering fun and playful animated gifs.</title>
@@ -18,15 +18,15 @@
 
       <!-- Twitter card and Open Graph-->
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Memes - <?= $site_name ?>" />
+      <meta name="twitter:title" content="Memes - LensShare" />
       <meta name="twitter:description" content="Enjoy discovering fun and playful animated gifs." />
-      <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/entertainment/meme-card.jpg" />
+      <meta name="twitter:image" content="https://lensshare.co/assets/img/entertainment/meme-card.jpg" />
       
-      <meta property="og:url" content="https://<?= $site_domain ?>/memes.php" />
-      <meta property="og:title" content="Memes - <?= $site_name ?>" />
+      <meta property="og:url" content="https://lensshare.co/memes.php" />
+      <meta property="og:title" content="Memes - LensShare" />
       <meta property="og:description" content="Enjoy discovering fun and playful animated gifs." />
-      <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/entertainment/meme-card.jpg" />    
-      <meta property="og:site_name" content="<?= $site_name ?>" />
+      <meta property="og:image" content="https://lensshare.co/assets/img/entertainment/meme-card.jpg" />    
+      <meta property="og:site_name" content="LensShare" />
 
       <!-- Bootstrap Icons-->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -41,9 +41,6 @@
       <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-
-      <?php /*<!-- SimpleLightbox plugin CSS-->
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />*/ ?>
 
       <!-- Core theme CSS (includes Bootstrap)-->
       <link href="css/styles.css" rel="stylesheet" />
@@ -60,22 +57,9 @@
               background-position: bottom
           }
 
-          .hi {
-              border: solid 3px deeppink;
-          }
-
-          hr {
-              border-top: none;
-          }
-
           hr.divider {
-              height: 0.2rem;
-              max-width: 3.25rem;
-              margin: 1.5rem auto;
               background-color: white;
-              opacity: 1;
           }
-
 
           .hash-btn {
               background-image: linear-gradient(-80deg,#FF7676,#F54EA2);
@@ -182,7 +166,7 @@
       <!-- Navigation-->
       <nav class="navbar navbar-expand-lg fixed-top py-3" id="mainNav">
           <div class="container px-4 px-lg-5">
-              <a class="navbar-brand" href="index.php"><?= $site_name ?></a>
+              <a class="navbar-brand" href="index.php">LensShare</a>
               <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
               <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -292,7 +276,6 @@
           <section id="photos">
 
               <?php
-
 
                   $count = 0;
 
@@ -615,9 +598,6 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <?php /* <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script> */ ?>
 
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>

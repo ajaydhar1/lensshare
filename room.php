@@ -7,8 +7,8 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="<?= $site_name ?> is a video-chat platform that lets you interact with people who share common interests with you. Meet people, make friends, no sign up needed!" />
-        <meta name="author" content="<?= $site_name ?>" />
+        <meta name="description" content="LensShare is a video-chat platform that lets you interact with people who share common interests with you. Meet people, make friends, no sign up needed!" />
+        <meta name="author" content="LensShare" />
         
         <!-- Page title -->
         <title><?= strtoupper(str_replace("-", " ", $_GET['room'])) ?> · Space</title>
@@ -20,13 +20,13 @@
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="LenShare" />
         <meta name="twitter:description" content="A video-chat platform that lets you interact with people who share common interests with you." />
-        <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/homepage/bg-masthead-home.png" />
+        <meta name="twitter:image" content="https://lensshare.co/assets/img/homepage/bg-masthead-home.png" />
         
-        <meta property="og:url" content="https://<?= $site_domain ?>/" />
-        <meta property="og:title" content="<?= $site_name ?>" />
+        <meta property="og:url" content="https://lensshare.co/" />
+        <meta property="og:title" content="LensShare" />
         <meta property="og:description" content="A video-chat platform that lets you interact with people who share common interests with you." />
-        <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/homepage/bg-masthead-home.png" />    
-        <meta property="og:site_name" content="<?= $site_name ?>" />
+        <meta property="og:image" content="https://lensshare.co/assets/img/homepage/bg-masthead-home.png" />    
+        <meta property="og:site_name" content="LensShare" />
 
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -34,9 +34,6 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-        
-        <?php /*<!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />*/ ?>
         
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
@@ -52,16 +49,8 @@
                 margin-top: -7rem;
             }
 
-            hr {
-                border-top: none;
-            }
-
             hr.divider {
-                height: 0.2rem;
-                max-width: 3.25rem;
-                margin: 1.5rem auto;
                 background-color: white;
-                opacity: 1;
             }
 
             hr.rectangle-divider {
@@ -94,18 +83,6 @@
                 overflow-x: hidden;
                 scroll-behavior: smooth;
             }
-
-            <?php /*
-
-            * {
-              box-sizing: border-box;
-            }
-
-            body * {
-              outline: 1px solid rgba(255, 0, 0, 0.2);
-            }
-
-            */ ?>
 
             #mainNav {
                 box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -225,7 +202,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.php"><?= $site_name ?></a>
+                <a class="navbar-brand" href="index.php">LensShare</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -244,83 +221,83 @@
 
         <!-- Quick Holodeck: Private Room Jump -->
         <section class="private-room-quickjump my-4">
-          <div class="container-fluid px-0">
-            <div class="row justify-content-center">
-              <div class="col-lg-8 col-xl-6">
-                <div class="card bg-light border-0 shadow-sm">
-                  <div class="card-body p-3 p-sm-4">
-                    <h3 class="h5 mb-2">Jump to a Private Room</h3>
-                    <p class="mb-3 small text-muted">
-                      Enter a room name to open a private video space, then share the link with a friend.
-                    </p>
-                    <form id="quick-holodeck-form" class="mb-0">
-                      <div class="input-group input-group-sm">
-                        <span class="input-group-text">Room Name</span>
-                        <input
-                          id="quick-holodeck-room"
-                          type="text"
-                          class="form-control"
-                          placeholder="e.g., Study Pod A"
-                          required
-                          pattern="[a-zA-Z0-9 ]+"
-                          aria-label="Private room name"
-                        >
-                        <button class="btn btn-secondary" type="submit">
-                          Go
-                        </button>
-                      </div>
-                    </form>
-                  </div>
+            <div class="container-fluid px-0">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="card bg-light border-0 shadow-sm">
+                            <div class="card-body p-3 p-sm-4">
+                                <h3 class="h5 mb-2">Jump to a Private Room</h3>
+                                <p class="mb-3 small text-muted">
+                                    Enter a room name to open a private video space, then share the link with a friend.
+                                </p>
+                                <form id="quick-holodeck-form" class="mb-0">
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text">Room Name</span>
+                                        <input
+                                            id="quick-holodeck-room"
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="e.g., Study Pod A"
+                                            required
+                                            pattern="[a-zA-Z0-9 ]+"
+                                            aria-label="Private room name"
+                                        >
+                                        <button class="btn btn-secondary" type="submit">
+                                            Go
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </section>
 
         <script>
-          (function () {
-            const form  = document.getElementById('quick-holodeck-form');
-            const input = document.getElementById('quick-holodeck-room');
+            (function () {
+                const form  = document.getElementById('quick-holodeck-form');
+                const input = document.getElementById('quick-holodeck-room');
 
-            if (!form || !input) return;
+                if (!form || !input) return;
 
-            // Small helper to generate a GUID/UUID
-            function generateGuid() {
-              if (window.crypto && window.crypto.randomUUID) {
-                return window.crypto.randomUUID();
-              }
-              // Fallback: not a perfect RFC UUID, but random enough for our use
-              const hex = () => Math.floor((1 + Math.random()) * 0x10000)
-                .toString(16)
-                .substring(1);
-              return (
-                hex() + hex() + "-" +
-                hex() + "-" +
-                hex() + "-" +
-                hex() + "-" +
-                hex() + hex() + hex()
-              );
-            }
+                // Small helper to generate a GUID/UUID
+                function generateGuid() {
+                    if (window.crypto && window.crypto.randomUUID) {
+                        return window.crypto.randomUUID();
+                    }
+                    // Fallback: not a perfect RFC UUID, but random enough for our use
+                    const hex = () => Math.floor((1 + Math.random()) * 0x10000)
+                    .toString(16)
+                    .substring(1);
+                    return (
+                        hex() + hex() + "-" +
+                        hex() + "-" +
+                        hex() + "-" +
+                        hex() + "-" +
+                        hex() + hex() + hex()
+                    );
+                }
 
-            form.addEventListener('submit', function (e) {
-              e.preventDefault();
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
 
-              // Use built-in browser validation
-              if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
-              }
+                    // Use built-in browser validation
+                    if (!form.checkValidity()) {
+                        form.reportValidity();
+                        return;
+                    }
 
-              const raw = input.value.trim();
-              if (!raw) return;
+                    const raw = input.value.trim();
+                    if (!raw) return;
 
-              const room = encodeURIComponent(raw);
-              const guid = encodeURIComponent(generateGuid());
+                    const room = encodeURIComponent(raw);
+                    const guid = encodeURIComponent(generateGuid());
 
-              // Match main Holodeck behavior: room = label, id = secret key
-              window.location.href = 'holodeck-video.php?room=' + room + '&id=' + guid;
-            });
-          })();
+                    // Match main Holodeck behavior: room = label, id = secret key
+                    window.location.href = 'holodeck-video.php?room=' + room + '&id=' + guid;
+                });
+            })();
         </script>
 
         <?php endif; ?>
@@ -330,14 +307,9 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <?php /* <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script> */ ?>
 
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-
-
 
     </body>
 </html>

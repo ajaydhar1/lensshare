@@ -1,4 +1,3 @@
-<?php require_once("___config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,7 +27,6 @@
         <meta property="og:image" content="https://lensshare.co/assets/img/health/mural-mental-health.jpeg" />
         <meta property="og:site_name" content="LensShare" />
 
-
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         
@@ -37,9 +35,6 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-        <?php /*<?php /* <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" /> */ ?>
         
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
@@ -53,18 +48,10 @@
                 background: url(assets/img/health/bg-masthead-health.gif);
                 background-position: bottom;
                 margin-top: -7rem;
-            }
-
-            hr {
-                border-top: none;
-            }
+            }            
 
             hr.divider {
-                height: 0.2rem;
-                max-width: 3.25rem;
-                margin: 1.5rem auto;
                 background-color: deeppink;
-                opacity: 1;
             }
 
             iframe {
@@ -72,7 +59,6 @@
                 background-color: #ff4800;
                 padding: 2px 4px 4px 4px;
             }
-
 
             #emoji-and-game-section {
                 /* background-color: #1a1a1a; */
@@ -103,11 +89,11 @@
                 color: white;
             }
 
-            .p-1 a {
+            #emoji-and-game-section .p-1 a {
                 text-decoration: none;
             }
 
-            .p-1 a h4 {
+            #emoji-and-game-section .p-1 a h4 {
                 font-weight: 600;
             }
 
@@ -165,7 +151,7 @@
                 </div>
             </div>
         </header>
-        <!-- Call to action-->
+        <!-- Physical Health -->
         <section class="page-section text-dark" id="physical-health">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -176,29 +162,28 @@
                         <h2 class="mb-3"><strong>Body & Physical Health</strong></h2>
                         <p class="text-muted">Join one of these rooms to talk about staying active, building healthy routines, and caring for your body.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=physical-health-in-general">General Health</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=health-insurance">Health Insurance Help</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=physical-general-health">General Health</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=health-insurance-help">Health Insurance Help</a>
 
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=im-sick">I'm Not Feeling Well</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=nutrition">Nutrition &amp; Healthy Eating</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=not-feeling-well">I'm Not Feeling Well</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=nutrition-eating">Nutrition &amp; Healthy Eating</a>
 
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=fitness">Fitness &amp; Movement</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=dental">Dental Care</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=fitness-movement">Fitness &amp; Movement</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=dental-care">Dental Care</a>
 
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=vision">Vision &amp; Eye Care</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=medical-issues">Medical Questions</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=vision-eye-care">Vision &amp; Eye Care</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=medical-questions">Medical Questions</a>
 
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=illness-prevention">Illness Prevention</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=exercise">Exercise &amp; Workouts</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=exercise-workouts">Exercise &amp; Workouts</a>
 
-                            <?php //<a class="btn btn-dark btn-xl mb-3" href="room.php?room=vaping">Vaping</a> ?>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- Mental Health -->
         <section class="page-section bg-light text-dark" id="mental-health">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -206,19 +191,19 @@
                         <h2 class="mb-3"><strong>Mind & Mental Health</strong></h2>
                         <p class="text-muted">Join one of these rooms to discuss emotional wellbeing, stress, coping tools, and experiences related to mental health—for yourself or someone you care about.</p>
                         <div class="mt-4">
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=mental-health-in-general">General Mental Health</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=health-insurance">Health Insurance Help</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=general-mental-health">General Mental Health</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=health-insurance-help">Health Insurance Help</a>
 
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=sleep">Sleep &amp; Rest</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=stress">Stress &amp; Overwhelm</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=sleep-rest">Sleep &amp; Rest</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=stress-overwhelm">Stress &amp; Overwhelm</a>
 
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=alcohol">Alcohol &amp; Habits</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=meditation">Meditation &amp; Mindfulness</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=alcohol-habits">Alcohol &amp; Habits</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=meditation-mindfulness">Meditation &amp; Mindfulness</a>
 
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=breathwork">Breathwork &amp; Relaxation</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=breathwork-relaxation">Breathwork &amp; Relaxation</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=emotional-wellness">Emotional Wellness</a>
 
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=body-image">Body Image &amp; Self-Confidence</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=body-image-confidence">Body Image &amp; Self-Confidence</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -228,8 +213,8 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Call to action-->
-        <section class="page-section text-dark" id="ask">
+        <!-- Special Topics -->
+        <section class="page-section text-dark" id="special-topics">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
                     <div class="col-lg-6" style="">
@@ -252,7 +237,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- Ask a Question -->
         <section class="page-section bg-light text-dark" id="ask">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -264,13 +249,13 @@
                         </div>
                     </div>
                     <div class="col-lg-6 text-center" style="">
-                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/health-questions.gif">
+                        <img class="explanation-image img-fluid" style="height: 370px; width: auto;" src="assets/img/health/health-questions.gif">
                     </div>
                 </div>
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- Mood Board -->
         <section class="page-section text-dark" id="mood-board">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -287,6 +272,7 @@
                 </div>
             </div>
         </section>
+        <!-- How Do You Feel? -->
         <section id="emoji-and-game-section">
             <div class="container games">
                 <h1 id="howdoyoufeel" class="pt-5" style="">How do you feel?</h1>
@@ -382,9 +368,6 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-        <?php /* <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script> */ ?>
 
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>

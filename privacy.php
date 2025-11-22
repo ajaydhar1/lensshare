@@ -7,9 +7,9 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Privacy Policy</title>
+        <meta name="description" content="Learn how LensShare handles information during its early experimental beta phase, including minimal data collection, local device storage, and user privacy protections." />
+        <meta name="author" content="LensShare" />
+        <title>Privacy Policy (Beta Version)</title>
         
         <!-- Favicon-->
         <link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />
@@ -44,7 +44,6 @@
                 height: 0.2rem;
                 max-width: 3.25rem;
                 margin: 1.5rem auto;
-                background-color: deeppink;
                 opacity: 1;
             }
 
@@ -69,8 +68,8 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item my-auto"><a class="nav-link" href="terms.php">Terms of Use</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#holodeck">Holodeck</a></li>
-                        <li class="nav-item"><a class="btn bg-primary text-white" style="margin-left: 0.65rem;" href="https://video-lensshare.com/Happy%20Hour#config.disableDeepLinking=true">Happy Hour</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
+                        <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
             </div>
@@ -97,7 +96,7 @@
                 </div>
             </div>
         </header>
-        <!-- About-->
+        <!-- Legal Copy -->
         <section class="page-section" id="" style="padding: 5rem 0;">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 d-flex justify-content-center align-items-center">
@@ -105,7 +104,7 @@
 
                         <p class="mb-4">Last updated: <?= date('F j, Y'); ?></p>
 
-                        <p>By using LensShare, you agree to the practices described here.</p>
+                        <p class="mb-4">By using LensShare, you agree to the practices described here.</p>
 
                         <div class="legal-section">
                             <h2 class="">1. Overview</h2>
@@ -253,16 +252,12 @@
             </div>
         </section>
 
-        
         <?php require_once("___holodeck.php"); ?>
 
         <?php require_once("___footer.php"); ?>
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <?php /* <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script> */ ?>
         
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>

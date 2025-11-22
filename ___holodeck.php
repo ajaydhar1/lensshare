@@ -1,4 +1,4 @@
-        <!-- Call to action-->
+        <!-- Holodeck -->
         <section class="page-section-holodeck bg-light text-white" id="holodeck">
             <div class="container-fluid px-4 px-lg-5 py-lg-5">
                 <div class="row justify-content-center">

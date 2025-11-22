@@ -1,4 +1,3 @@
-<?php require_once("___config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -35,9 +34,6 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
         
-        <?php /*<!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />*/ ?>
-        
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/custom.css" rel="stylesheet" />
@@ -52,16 +48,8 @@
                 margin-top: -7rem;
             }
 
-            hr {
-                border-top: none;
-            }
-
             hr.divider {
-                height: 0.2rem;
-                max-width: 3.25rem;
-                margin: 1.5rem auto;
                 background-color: white;
-                opacity: 1;
             }
 
             hr.rectangle-divider {
@@ -130,7 +118,7 @@
                 </div>
             </div>
         </header>
-        <!-- About-->
+        <!-- Portals -->
         <section class="page-section-smaller">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -178,7 +166,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Services-->
+        <!-- How it Works -->
         <section id="how-it-works" class="page-section-smaller" style="padding-top: 5rem; padding-bottom: 8rem">
             <div class="container px-4 px-lg-5">
                 <h2 class="text-center mt-0"><strong>How it Works</strong></h2>
@@ -213,7 +201,7 @@
                 </div>
             </div>
         </section>
-        <!-- Call to action-->
+        <!-- Getting Started -->
         <section class="page-section-smaller bg-light text-dark" id="getting-started">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -231,7 +219,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- How Portals Works -->
         <section class="page-section-smaller text-dark">
             <div class="container px-4 px-lg-5">
                 <div class="row">
@@ -258,7 +246,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- What Rooms Are -->
         <section class="page-section-smaller bg-light text-dark">
             <div class="container px-4 px-lg-5">
                 <div class="row">
@@ -280,7 +268,7 @@
                 </div>
             </div>
         </section>
-        <!-- Portfolio-->
+        <!-- Work Rooms Top -->
         <div id="portfolio">
             <div class="container-fluid p-0">
                 <div class="row g-0">
@@ -317,7 +305,7 @@
         
         <?php require_once("___holodeck.php"); ?>
 
-        <!-- Portfolio-->
+        <!-- Work Rooms Bottom -->
         <div id="portfolio">
             <div class="container-fluid p-0">
                 <div class="row g-0">
@@ -356,143 +344,140 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <?php /* <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script> */ ?>
 
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
 
         <script>
-        (function () {
-          const API_URL = 'https://logfeed-socket-broker.onrender.com/api/active-rooms?min=1';
+            (function () {
+                const API_URL = 'https://logfeed-socket-broker.onrender.com/api/active-rooms?min=1';
 
-          if (!('fetch' in window)) return;
+                if (!('fetch' in window)) return;
 
-          // TEMP: connections -> users (since each tab opens 2 sockets right now)
-          function normalizeUsers(rawCount) {
-            if (typeof rawCount !== 'number' || rawCount <= 0) return 0;
-            return Math.max(1, Math.ceil(rawCount / 2));
-          }
-
-          function buildRoomUrl(roomId) {
-            return 'room.php?room=' + encodeURIComponent(roomId);
-          }
-
-          function formatCountLabel(users) {
-            if (users <= 0) return '';
-            if (users === 1) return '1 person here now';
-            return users + ' people here now';
-          }
-
-          function isHot(users) {
-            return users >= 2; // HOT threshold
-          }
-
-          function populateActiveRoomsCard(rooms) {
-            const listEl = document.getElementById('active-rooms-list');
-            const loadingEl = document.getElementById('active-rooms-loading');
-            const footerEl = document.getElementById('active-rooms-footer');
-
-            if (!listEl) return; // not on this page
-
-            if (loadingEl) {
-              loadingEl.remove();
-            }
-
-            if (!rooms.length) {
-              const li = document.createElement('li');
-              li.className = 'list-group-item text-muted small';
-              li.textContent = 'No rooms are active right now. Check back soon or start a room yourself.';
-              listEl.appendChild(li);
-              return;
-            }
-
-            // Sort by user count desc
-            rooms.sort((a, b) => b.users - a.users);
-
-            // Limit to top 6 for now
-            rooms.slice(0, 6).forEach(room => {
-              const li = document.createElement('li');
-              li.className = 'list-group-item d-flex justify-content-between align-items-center';
-
-              const left = document.createElement('div');
-
-              const link = document.createElement('a');
-              link.href = buildRoomUrl(room.roomId);
-              link.textContent = room.label;
-              link.className = 'fw-semibold text-decoration-none';
-
-              left.appendChild(link);
-
-              const right = document.createElement('div');
-              right.className = 'd-flex align-items-center gap-2';
-
-              // Count pill
-              const countBadge = document.createElement('span');
-              countBadge.className = 'badge bg-secondary rounded-pill';
-              countBadge.textContent = formatCountLabel(room.users);
-              right.appendChild(countBadge);
-
-              // HOT badge
-              if (isHot(room.users)) {
-                const hotBadge = document.createElement('span');
-                hotBadge.className = 'badge bg-danger rounded-pill';
-                hotBadge.textContent = 'HOT';
-                right.appendChild(hotBadge);
-              }
-
-              li.appendChild(left);
-              li.appendChild(right);
-              listEl.appendChild(li);
-            });
-
-            if (footerEl) {
-              footerEl.style.display = 'block';
-            }
-          }
-
-          function prettyRoomLabel(roomId) {
-            // Basic slug -> label guess: "magic-the-gathering" -> "Magic The Gathering"
-            // You can later replace this with a lookup map if you want perfect names.
-            return roomId
-              .replace(/-/g, ' ')
-              .replace(/\b\w/g, c => c.toUpperCase());
-          }
-
-          window.addEventListener('DOMContentLoaded', function () {
-            const listEl = document.getElementById('active-rooms-list');
-            if (!listEl) return; // not on homepage
-
-            fetch(API_URL)
-              .then(r => r.json())
-              .then(data => {
-                if (!data || !Array.isArray(data.rooms)) {
-                  populateActiveRoomsCard([]);
-                  return;
+                // TEMP: connections -> users (since each tab opens 2 sockets right now)
+                function normalizeUsers(rawCount) {
+                    if (typeof rawCount !== 'number' || rawCount <= 0) return 0;
+                    return Math.max(1, Math.ceil(rawCount / 2));
                 }
 
-                const mapped = data.rooms
-                  .map(r => {
-                    if (!r || !r.room || typeof r.count !== 'number') return null;
-                    const users = normalizeUsers(r.count);
-                    if (users <= 0) return null;
-                    return {
-                      roomId: r.room,
-                      users,
-                      label: prettyRoomLabel(r.room)
-                    };
-                  })
-                  .filter(Boolean);
+                function buildRoomUrl(roomId) {
+                    return 'room.php?room=' + encodeURIComponent(roomId);
+                }
 
-                populateActiveRoomsCard(mapped);
-              })
-              .catch(() => {
-                // On error, just show "no active rooms"
-                populateActiveRoomsCard([]);
-              });
-          });
-        })();
+                function formatCountLabel(users) {
+                    if (users <= 0) return '';
+                    if (users === 1) return '1 person here now';
+                    return users + ' people here now';
+                }
+
+                function isHot(users) {
+                    return users >= 2; // HOT threshold
+                }
+
+                function populateActiveRoomsCard(rooms) {
+                    const listEl = document.getElementById('active-rooms-list');
+                    const loadingEl = document.getElementById('active-rooms-loading');
+                    const footerEl = document.getElementById('active-rooms-footer');
+
+                    if (!listEl) return; // not on this page
+
+                    if (loadingEl) {
+                        loadingEl.remove();
+                    }
+
+                    if (!rooms.length) {
+                        const li = document.createElement('li');
+                        li.className = 'list-group-item text-muted small';
+                        li.textContent = 'No rooms are active right now. Check back soon or start a room yourself.';
+                        listEl.appendChild(li);
+                        return;
+                    }
+
+                    // Sort by user count desc
+                    rooms.sort((a, b) => b.users - a.users);
+
+                    // Limit to top 6 for now
+                    rooms.slice(0, 6).forEach(room => {
+                        const li = document.createElement('li');
+                        li.className = 'list-group-item d-flex justify-content-between align-items-center';
+
+                        const left = document.createElement('div');
+
+                        const link = document.createElement('a');
+                        link.href = buildRoomUrl(room.roomId);
+                        link.textContent = room.label;
+                        link.className = 'fw-semibold text-decoration-none';
+
+                        left.appendChild(link);
+
+                        const right = document.createElement('div');
+                        right.className = 'd-flex align-items-center gap-2';
+
+                        // Count pill
+                        const countBadge = document.createElement('span');
+                        countBadge.className = 'badge bg-secondary rounded-pill';
+                        countBadge.textContent = formatCountLabel(room.users);
+                        right.appendChild(countBadge);
+
+                        // HOT badge
+                        if (isHot(room.users)) {
+                            const hotBadge = document.createElement('span');
+                            hotBadge.className = 'badge bg-danger rounded-pill';
+                            hotBadge.textContent = 'HOT';
+                            right.appendChild(hotBadge);
+                        }
+
+                        li.appendChild(left);
+                        li.appendChild(right);
+                        listEl.appendChild(li);
+                    });
+
+                    if (footerEl) {
+                        footerEl.style.display = 'block';
+                    }
+                }
+
+                function prettyRoomLabel(roomId) {
+                // Basic slug -> label guess: "magic-the-gathering" -> "Magic The Gathering"
+                // You can later replace this with a lookup map if you want perfect names.
+                    return roomId
+                        .replace(/-/g, ' ')
+                        .replace(/\b\w/g, c => c.toUpperCase());
+                }
+
+                window.addEventListener('DOMContentLoaded', function () {
+                    const listEl = document.getElementById('active-rooms-list');
+                    if (!listEl) return; // not on homepage
+
+                    fetch(API_URL)
+                    .then(r => r.json())
+                    .then(data => {
+                        if (!data || !Array.isArray(data.rooms)) {
+                            populateActiveRoomsCard([]);
+                            return;
+                        }
+
+                        const mapped = data.rooms
+                        .map(r => {
+                            if (!r || !r.room || typeof r.count !== 'number') return null;
+                            const users = normalizeUsers(r.count);
+                            if (users <= 0) return null;
+                            return {
+                                roomId: r.room,
+                                users,
+                                label: prettyRoomLabel(r.room)
+                            };
+                        })
+                        .filter(Boolean);
+
+                        populateActiveRoomsCard(mapped);
+                    })
+                    .catch(() => {
+                    // On error, just show "no active rooms"
+                        populateActiveRoomsCard([]);
+                    });
+                });
+            })();
         </script>
 
     </body>

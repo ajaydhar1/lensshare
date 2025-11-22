@@ -1,4 +1,3 @@
-<?php require_once("___config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -35,9 +34,6 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
         
-        <?php /*<?php /* <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" /> */ ?>
-        
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/custom.css" rel="stylesheet" />
@@ -52,16 +48,8 @@
                 margin-top: -7rem;
             }
 
-            hr {
-                border-top: none;
-            }
-
             hr.divider {
-                height: 0.2rem;
-                max-width: 3.25rem;
-                margin: 1.5rem auto;
                 background-color: deeppink;
-                opacity: 1;
             }
 
             iframe {
@@ -124,7 +112,7 @@
                 </div>
             </div>
         </header>
-        <!-- Call to action-->
+        <!-- Base Station -->
         <section class="page-section text-dark" id="base-station">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -140,7 +128,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- College Mixer -->
         <section class="page-section bg-light text-dark" id="mixer">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -158,7 +146,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- Grade Level -->
         <section class="page-section text-dark" id="grade">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -168,14 +156,14 @@
                         <div class="mt-4">
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=pre-k">Pre-K</a>
                             <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=elementary-school">Elementary School</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=middle-school">Middle Schools</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=middle-school">Middle School</a>
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=high-school">High School</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=undergrad">Undegrad</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=masters">Masters</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=ph.d.">Ph.D.</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=med-school">Med School</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=mba">MBA</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=cross-training">Vocational School</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=undergraduate">Undergrad</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=masters-program">Masters</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=phd-program">Ph.D.</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=medical-school">Med School</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=mba-program">MBA</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=vocational-school">Vocational School</a>
                         </div>
                     </div>
                     <div class="col-lg-6 text-center">
@@ -185,7 +173,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- How to Learn -->
         <section class="page-section bg-light text-dark" id="learning">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -200,7 +188,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- Study Together -->
         <section class="page-section-smaller text-dark" id="study">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -230,7 +218,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- College Prep -->
         <section class="page-section bg-light text-dark" id="college-prep">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -248,7 +236,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- College Majors -->
         <section class="page-section-smaller text-dark" id="majors">
             <div class="container px-4 px-lg-5">
                 <div class="row text-center justify-content-center">
@@ -586,10 +574,6 @@
 <tr><th scope="row">317</th><td><a href="room.php?room=youth-ministries">Youth Ministries</a></td></tr>
 <tr><th scope="row">318</th><td><a href="room.php?room=zoology">Zoology</a></td></tr>
 
-
-
-
-
                             </tbody>
                         </table>
                     </div>
@@ -603,9 +587,6 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <?php /* <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script> */ ?>
 
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>

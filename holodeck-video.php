@@ -7,26 +7,30 @@
         <!-- Meta -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    	<meta name="description" content="Your favorite songs and artists in one place. Listen to live radio."> 
-        <meta name="author" content="<?= $site_name ?>" />
-        
+        <?php
+          $roomSlug = $_GET['room'] ?? '';
+          $roomName = $roomSlug ? ucwords(str_replace('-', ' ', $roomSlug)) : 'Private Room';
+        ?>
+        <meta name="description" content="Join <?= htmlspecialchars($roomName) ?> in a private Holodeck video room on LensShare. Create an invite-only space to talk, collaborate, or hang out face-to-face." />
+        <meta name="author" content="LensShare" />
+
         <!-- Page title -->
-        <title><?= strtoupper(str_replace("-", " ", $_GET['room'])) ?> · Holodeck</title>
-        
+        <title><?= htmlspecialchars($roomName) ?> · Holodeck</title>
+
         <!-- Favicon-->
         <link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />
-        
+
         <!-- Twitter card and Open Graph-->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="iHeartRadio - <?= $site_name ?>" />
-        <meta name="twitter:description" content="Your favorite songs and artists in one place. Listen to live radio." />
-        <meta name="twitter:image" content="https://<?= $site_domain ?>/assets/img/entertainment/heart.jpg" />
-        
-        <meta property="og:url" content="https://<?= $site_domain ?>/iheartradio.php" />
-        <meta property="og:title" content="iHeartRadio - <?= $site_name ?>" />
-        <meta property="og:description" content="Your favorite songs and artists in one place. Listen to live radio." />
-        <meta property="og:image" content="https://<?= $site_domain ?>/assets/img/entertainment/heart.jpg" />    
-        <meta property="og:site_name" content="<?= $site_name ?>" />
+        <meta name="twitter:title" content="<?= htmlspecialchars($roomName) ?> · Holodeck – LensShare" />
+        <meta name="twitter:description" content="Start or join a private Holodeck video room on LensShare to talk, collaborate, or hang out face-to-face." />
+        <meta name="twitter:image" content="https://lensshare.co/assets/img/all/teleport.png" />
+
+        <meta property="og:url" content="https://lensshare.co/holodeck-video.php?room=<?= urlencode($roomSlug) ?>" />
+        <meta property="og:title" content="<?= htmlspecialchars($roomName) ?> · Holodeck – LensShare" />
+        <meta property="og:description" content="Join <?= htmlspecialchars($roomName) ?> in a private Holodeck video room on LensShare. Create an invite-only space to connect in real time." />
+        <meta property="og:image" content="https://lensshare.co/assets/img/all/teleport.png" />
+        <meta property="og:site_name" content="LensShare" />
 
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -35,20 +39,12 @@
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
         
-        <?php /*<?php /* <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" /> */ ?>
-        
         <!-- Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
 
         <!-- Custom fonts for this template -->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-
-        <!--
-        <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-        <link rel="icon" type="image/png" href="/img/angry.png">
-        -->
 
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />

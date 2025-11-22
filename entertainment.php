@@ -34,9 +34,6 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-
-        <?php /*<?php /* <!-- SimpleLightbox plugin CSS-->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" /> */ ?>
         
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
@@ -52,16 +49,8 @@
                 margin-top: -7rem;
             }
 
-            hr {
-                border-top: none;
-            }
-
             hr.divider {
-                height: 0.2rem;
-                max-width: 3.25rem;
-                margin: 1.5rem auto;
                 background-color: #ffc107;
-                opacity: 1;
             }
 
             .meme-image {
@@ -69,9 +58,6 @@
                 border-radius: 20px;
                 object-fit: cover;
             }
-
-
-
 
         </style>
 
@@ -121,7 +107,7 @@
                 </div>
             </div>
         </header>
-        <!-- Call to action-->
+        <!-- Watch Party -->
         <section class="page-section text-dark" id="watch-party">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -139,7 +125,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- Mass Media -->
         <section class="page-section bg-light text-dark" id="media">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -150,20 +136,20 @@
                         <h2 class="mb-3"><strong>Mass Media</strong></h2>
                         <p class="text-muted">Discuss the latest hit projects from your favorite creators across film, TV, streaming, and more.</p>
                         <div class="mt-4">
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=latest-projects">Trending Releases</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=films">Movies &amp; Film Talk</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=music">Music &amp; Artists</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=tv">TV &amp; Streaming</a>
-                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=books">Books &amp; Literature</a>
-                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=art">Art &amp; Creativity</a>
-                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=celebrities">Celebrities &amp; Pop Culture</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=trending-releases">Trending Releases</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=movies-film">Movies &amp; Film Talk</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=music-artists">Music &amp; Artists</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=tv-streaming">TV &amp; Streaming</a>
+                            <a class="btn btn-dark btn-xl mb-3" href="room.php?room=books-literature">Books &amp; Literature</a>
+                            <a class="btn btn-secondary btn-xl mb-3" href="room.php?room=art-creativity">Art &amp; Creativity</a>
+                            <a class="btn btn-warning btn-xl mb-3" href="room.php?room=celebrities-pop">Celebrities &amp; Pop Culture</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- I Heart Radio-->
         <section class="page-section text-dark" id="iheartradio">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -181,7 +167,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- The Meme Factory -->
         <section class="page-section bg-light text-dark" id="memes">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -199,7 +185,7 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
-        <!-- Call to action-->
+        <!-- Game Watch -->
         <section class="page-section text-dark" id="games">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
@@ -307,9 +293,6 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <?php /* <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script> */ ?>
 
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
