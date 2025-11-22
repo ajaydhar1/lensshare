@@ -430,16 +430,6 @@ if ($LOGGED_IN) {
         <div class="card"><div class="k">Messages (total)</div><div class="v"><?= (int)$msgs_total ?></div></div>
         <div class="card"><div class="k">Messages (today)</div><div class="v"><?= (int)$msgs_today ?></div></div>
       </div>
-    <?php endif; ?>
-
-        <?php if (!empty($status_error)): ?>
-      <div class="card" style="margin-bottom:12px;"><?= $status_error ?></div>
-    <?php else: ?>
-      <div class="grid" style="margin-bottom:12px;">
-        <div class="card"><div class="k">Rooms</div><div class="v"><?= (int)$rooms_count ?></div></div>
-        <div class="card"><div class="k">Messages (total)</div><div class="v"><?= (int)$msgs_total ?></div></div>
-        <div class="card"><div class="k">Messages (today)</div><div class="v"><?= (int)$msgs_today ?></div></div>
-      </div>
 
       <?php
         // convenience token for room links
@@ -555,6 +545,7 @@ if ($LOGGED_IN) {
     <div class="card" style="margin-bottom:12px;">
       <div class="k" style="margin-bottom:8px;">Tools</div>
       <ul class="ul">
+        <li><span>Health Check</span>  <a class="btn" href="<?= h(tool_url('health.php')) ?>">Open</a></li>
         <li><span>KPI Dashboard</span>  <a class="btn" href="<?= h(tool_url('kpi_dashboard.php')) ?>">Open</a></li>
         <li><span>Room Links</span>     <a class="btn" href="<?= h(tool_url('room_links.php')) ?>">Open</a></li>
         <?php if (is_file(__DIR__.'/log_browser.php')): ?>
