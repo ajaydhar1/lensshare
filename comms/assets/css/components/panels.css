@@ -8,6 +8,22 @@ pre {
   overflow: auto;
 }
 
+.chat-log {
+    /* white-space: pre-wrap; */     /* behave like <pre> but allow wrapping */
+    font-family: monospace;
+}
+
+.chat-line {
+    /* margin-bottom: 2px; */
+}
+
+.chat-line.highlight-focus {
+    background: rgba(255, 230, 150, 0.5);
+    outline: 1px solid #ffd966;
+    border-radius: 4px;
+}
+
+
 /* Two-up grid with dedicated toolbar row */
 main.panel.viewer-two-up {
   --left:  minmax(0, 1.35fr);

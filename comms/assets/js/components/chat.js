@@ -301,19 +301,50 @@
 
 
 /**
- * Scroll the chat window to the last message when the DOM is ready
+ * Scroll the chat window to the focus message or last message when the DOM is ready
  */
-document.addEventListener('DOMContentLoaded', () => {
-  // messages panel: prefer bubble panel, else <pre id="log">
-  const panel =
-    document.getElementById('panelMessages') ||
-    document.querySelector('[data-panel="messages"]') ||
-    document.getElementById('log');
+document.addEventListener('DOMContentLoaded', function () {
+    const log    = document.getElementById('log');
+    const params = new URLSearchParams(window.location.search);
+    const focusId = params.get('focus');
 
-  if (!panel) return;
+    if (focusId) {
+        const el = document.getElementById('msg-' + focusId);
+        if (el) {
+            // Run after layout so nothing overrides it
+            setTimeout(function () {
+                el.scrollIntoView({ block: 'center', behavior: 'auto' });
 
-  // wait a tick so layout settles, then scroll
-  requestAnimationFrame(() => {
-    panel.scrollTop = panel.scrollHeight;
-  });
+                el.classList.add('highlight-focus');
+                setTimeout(function () {
+                    el.classList.remove('highlight-focus');
+                }, 5000);
+            }, 0);
+        } else if (log) {
+            // Fallback: if we *don't* find the focused msg, just scroll to bottom
+            log.scrollTop = log.scrollHeight;
+        }
+    } else if (log) {
+        // No focus param → default behavior: scroll to bottom
+        log.scrollTop = log.scrollHeight;
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const params  = new URLSearchParams(window.location.search);
+    const focusId = params.get('focus');
+    if (!focusId) return;
+
+    const el = document.getElementById('msg-' + focusId);
+    if (!el) return;
+
+    // Scroll the focused message into view
+    el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+
+    // Highlight it briefly
+    el.classList.add('highlight-focus');
+    setTimeout(function () {
+        el.classList.remove('highlight-focus');
+    }, 5000);
 });

@@ -146,7 +146,7 @@ $messages = $post = null;
 if ($view === 'messages') {
   // messages stay room-scoped, no global
   $q = db()->prepare("
-    SELECT user, body, created_at
+    SELECT id, user, body, created_at
     FROM messages
     WHERE room_id = ?
       AND is_deleted = 0
@@ -310,19 +310,32 @@ if ($view === 'messages') {
         <span style="flex:1"></span>
       </div>
 
-      <pre id="log" class="mono"><?php
-        if (!$messages){ echo "No messages yet — be the first to say hello 👋
-"; }
-        else {
-          foreach ($messages as $m){
-            $ts = date('Y-m-d H:i', strtotime($m['created_at']));
-            $user = $m['user'];
-            $body = $m['body'];
-            echo h("[$ts] <$user> ") . h($body) . "
-";
+      <div id="log" class="mono chat-log">
+      <?php
+          if (!$messages){
+              echo "No messages yet — be the first to say hello 👋";
+          } else {
+              foreach ($messages as $m){
+                  $ts   = date('Y-m-d H:i', strtotime($m['created_at']));
+                  $user = $m['user'];
+                  $body = $m['body'];
+
+                  // Use the real DB id for the DOM id
+                  $msgId = isset($m['id']) ? (int)$m['id'] : 0;
+                  ?>
+                  <div class="chat-line" id="msg-<?= $msgId ?>">
+                      <span class="chat-meta">
+                          <?= h("[$ts] <$user> ") ?>
+                      </span>
+                      <span class="chat-body">
+                          <?= nl2br(h($body)) ?>
+                      </span>
+                  </div>
+                  <?php
+              }
           }
-        }
-      ?></pre>
+      ?>
+      </div>
 
       <div class="toolbar">
         <form id="composer" method="post" class="stack" style="width:100%">
