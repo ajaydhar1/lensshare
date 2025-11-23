@@ -139,6 +139,10 @@ render_admin_topnav([
           $url = ROOM_VIEW_BASE . (strpos(ROOM_VIEW_BASE,'?')===false ? '?' : '&')
                . http_build_query(['room'=>$r['slug'],'token'=>$TOKEN]);
           $is_active = (int)$r['active'];
+          $messages_url = 'messages.php?' . http_build_query([
+            'token' => $TOKEN,
+            'room'  => $r['slug'],
+          ]);
           ?>
           <li class="<?= $is_active ? '' : 'inactive' ?>">
             <a href="<?= h($url) ?>"><?= h($r['title']) ?></a>
@@ -147,20 +151,31 @@ render_admin_topnav([
               <span class="badge">inactive</span>
             <?php endif; ?>
 
-            <!-- Block / Unblock button -->
-            <form method="post" action="room_toggle_active.php" style="margin-left:auto;">
-              <input type="hidden" name="slug" value="<?= h($r['slug']) ?>">
-              <input type="hidden" name="token" value="<?= h($TOKEN) ?>">
-              <?php if ($is_active): ?>
-                <button type="submit" class="badge" style="border-color:#ff9966;color:#ff9966;cursor:pointer;background:none;">
-                  Block
-                </button>
-              <?php else: ?>
-                <button type="submit" class="badge" style="border-color:#66cc66;color:#66cc66;cursor:pointer;background:none;">
-                  Unblock
-                </button>
-              <?php endif; ?>
-            </form>
+            <div style="margin-left:auto;display:flex;align-items:center;gap:8px;">
+              <!-- Messages badge link -->
+              <a href="<?= h($messages_url) ?>"
+                 class="badge"
+                 style="border-color:#3fa0ff;color:#3fa0ff;cursor:pointer;">
+                Messages
+              </a>
+
+              <!-- Block / Unblock button -->
+              <form method="post" action="room_toggle_active.php">
+                <input type="hidden" name="slug" value="<?= h($r['slug']) ?>">
+                <input type="hidden" name="token" value="<?= h($TOKEN) ?>">
+                <?php if ($is_active): ?>
+                  <button type="submit" class="badge"
+                          style="border-color:#ff9966;color:#ff9966;cursor:pointer;background:none;">
+                    Block
+                  </button>
+                <?php else: ?>
+                  <button type="submit" class="badge"
+                          style="border-color:#66cc66;color:#66cc66;cursor:pointer;background:none;">
+                    Unblock
+                  </button>
+                <?php endif; ?>
+              </form>
+            </div>
           </li>
         <?php endforeach; ?>
       </ul>

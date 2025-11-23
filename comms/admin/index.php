@@ -469,6 +469,12 @@ if ($LOGGED_IN) {
                 $params = ['room'=>$slug, 'token'=>$adminToken];
                 $url    = $viewerBase . $sepBase . http_build_query($params);
 
+                $messagesUrl = 'messages.php?' . http_build_query([
+                  'token' => $adminToken,
+                  'room'  => $slug,
+                ]);
+
+
                 // truncate message for the list
                 $bodyShort = mb_substr($body, 0, 80);
                 if (mb_strlen($body) > 80) $bodyShort .= '…';
@@ -485,8 +491,13 @@ if ($LOGGED_IN) {
                       <?php if ($whenExact): ?> · <span title="Exact time"><?= h($whenExact) ?></span><?php endif; ?>
                     </div>
                   </div>
-                  <div>
+                  <div style="display:flex;gap:4px;align-items:flex-end;">
                     <a class="btn" target="_blank" rel="noopener" href="<?= h($url) ?>">Open</a>
+                    <a class="btn"
+                       href="<?= h($messagesUrl) ?>"
+                       style="background:none;border-color:#3fa0ff;color:#3fa0ff;">
+                      Messages
+                    </a>
                   </div>
                 </li>
               <?php endforeach; ?>
@@ -545,6 +556,7 @@ if ($LOGGED_IN) {
     <div class="card" style="margin-bottom:12px;">
       <div class="k" style="margin-bottom:8px;">Tools</div>
       <ul class="ul">
+        <li><span>Messages</span>  <a class="btn" href="<?= h(tool_url('messages.php')) ?>">Open</a></li>
         <li><span>Health Check</span>  <a class="btn" href="<?= h(tool_url('health.php')) ?>">Open</a></li>
         <li><span>KPI Dashboard</span>  <a class="btn" href="<?= h(tool_url('kpi_dashboard.php')) ?>">Open</a></li>
         <li><span>Room Links</span>     <a class="btn" href="<?= h(tool_url('room_links.php')) ?>">Open</a></li>

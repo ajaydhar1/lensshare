@@ -54,6 +54,7 @@ if (!defined('ADM_TOPNAV_LOADED')) {
       ['label'=>'Rooms',      'href'=>'room_links.php'],
       ['label'=>'KPIs',      'href'=>'kpi_dashboard.php'],
       ['label'=>'Health',      'href'=>'health.php'],
+      ['label'=>'Messages',      'href'=>'messages.php'],
       //['label'=>'Dashboard','href'=>'/admin/dashboard.php'],
     ];
     // Preserve both room & db by default so context sticks across tools
