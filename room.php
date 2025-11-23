@@ -1,4 +1,8 @@
-<?php require_once("___config.php"); ?>
+<?php 
+require_once("___config.php");
+$room_slug  = $room['slug']  ?? ($_GET['room'] ?? '');
+$room_title = $room['title'] ?? ucfirst(str_replace('-', ' ', $room_slug));
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -198,7 +202,7 @@
         </style>
 
     </head>
-    <body id="page-top">
+    <body id="page-top" data-room-slug="<?= htmlspecialchars($room_slug, ENT_QUOTES, 'UTF-8') ?>" data-room-name="<?= htmlspecialchars($room_title, ENT_QUOTES, 'UTF-8') ?>">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -310,6 +314,66 @@
 
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <script>
+            (function () {
+                function safeGetJSON(key, fallback) {
+                    try {
+                        var raw = localStorage.getItem(key);
+                        if (!raw) return fallback;
+                        return JSON.parse(raw);
+                    } catch (e) {
+                        return fallback;
+                    }
+                }
+
+                function safeSetJSON(key, value) {
+                    try {
+                        localStorage.setItem(key, JSON.stringify(value));
+                    } catch (e) {
+                        // ignore quota / private mode issues
+                    }
+                }
+
+                function addRecentRoom(slug, name) {
+                    if (!slug) return;
+
+                    var key = 'lensshare_recent_rooms';
+                    var list = safeGetJSON(key, []);
+
+                    // Remove any existing entry for this slug
+                    list = list.filter(function (item) {
+                        return item.slug !== slug;
+                    });
+
+                    // Add to front with timestamp
+                    list.unshift({
+                        slug: slug,
+                        name: name || slug,
+                        ts: Math.floor(Date.now() / 1000)
+                    });
+
+                    // Cap at 5 rooms
+                    if (list.length > 5) {
+                        list = list.slice(0, 5);
+                    }
+
+                    safeSetJSON(key, list);
+                }
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    var body = document.body;
+                    if (!body) return;
+
+                    var slug = body.getAttribute('data-room-slug');
+                    var name = body.getAttribute('data-room-name');
+
+                    if (slug) {
+                        addRecentRoom(slug, name);
+                    }
+                });
+            })();
+        </script>
 
     </body>
 </html>

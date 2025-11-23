@@ -316,3 +316,10 @@ body footer a {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+
+/* Match Activity card heights on desktop */
+@media (min-width: 992px) {
+  .activity-card {
+    min-height: 260px; /* tweak up/down as needed */
+  }
+}

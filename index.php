@@ -135,35 +135,55 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <!-- Active Rooms card -->
-        <section class="page-section bg-light text-dark" id="active-now">
-            <div class="container px-4 px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="card shadow-sm border-0">
-                            <div class="card-body">
-                                <h2 class="h4 mb-3"><strong>Active Rooms</strong></h2>
-                                <p class="text-muted mb-3">
-                                    See which Spaces currently have people hanging out. 
-                                    Jump in and join the conversation.
-                                </p>
+        <section class="page-section bg-light text-dark" id="activity">
+          <div class="container px-4 px-lg-5">
 
-                                <!-- List container populated by JS -->
-                                <ul class="list-group list-group-flush" id="active-rooms-list">
-                                    <li class="list-group-item text-muted small" id="active-rooms-loading">
-                                        Checking for active rooms…
-                                    </li>
-                                </ul>
-
-                                <!-- Fallback / footer text -->
-                                <div class="mt-3 small text-muted" id="active-rooms-footer" style="display:none;">
-                                    Counts are approximate and update periodically.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Shared heading for the zone -->
+            <div class="row justify-content-center mb-3">
+              <div class="col-lg-10 text-center">
+                <h2 class="h4 mb-2"><strong>Activity</strong></h2>
+                <p class="text-muted mb-0">
+                  See where people are hanging out now, or jump back into Spaces you’ve already visited.
+                </p>
+              </div>
             </div>
+
+            <!-- Two separate cards underneath -->
+            <div class="row justify-content-center">
+              <div class="col-lg-6">
+                <!-- Active Rooms card (unchanged structurally) -->
+                <div class="card activity-card">
+                  <div class="card-body">
+                    <h3 class="h6 text-uppercase text-muted mb-2">Active Rooms</h3>
+                    <p class="text-muted small mb-2">
+                      Spaces that currently have people hanging out.
+                    </p>
+                    <ul class="list-group list-group-flush" id="active-rooms-list">
+                      <li class="list-group-item text-muted small" id="active-rooms-loading">
+                        Checking for active rooms…
+                      </li>
+                    </ul>
+                    <div class="mt-2 small text-muted" id="active-rooms-footer" style="display:none;">
+                      Counts are approximate and update periodically.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <!-- Recently visited card -->
+                <div class="card activity-card" id="recent-rooms-card" style="display:none;">
+                  <div class="card-body">
+                    <h3 class="h6 text-uppercase text-muted mb-2">Your Recent Rooms</h3>
+                    <p class="text-muted small mb-2" id="recent-rooms-empty" style="display:none;">
+                      Join a few rooms and your recent activity will show up here.
+                    </p>
+                    <ul class="list-unstyled mb-0" id="recent-rooms-list"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
         <hr class="rectangle-divider" style="margin-top: -0.5rem;"/>
         <!-- How it Works -->
@@ -479,6 +499,55 @@
                 });
             })();
         </script>
+
+        <script>
+        (function () {
+          function safeGetJSON(key, fallback) {
+            try {
+              var raw = localStorage.getItem(key);
+              if (!raw) return fallback;
+              return JSON.parse(raw);
+            } catch (e) {
+              return fallback;
+            }
+          }
+
+          document.addEventListener('DOMContentLoaded', function () {
+            var card  = document.getElementById('recent-rooms-card');
+            var list  = document.getElementById('recent-rooms-list');
+            var empty = document.getElementById('recent-rooms-empty');
+
+            if (!card || !list) return;
+
+            var recent = safeGetJSON('lensshare_recent_rooms', []);
+
+            // Always show the card once JS runs
+            card.style.display = 'block';
+
+            if (!recent || !recent.length) {
+              // No recent rooms yet → show helper text, leave list empty
+              if (empty) empty.style.display = 'block';
+              return;
+            }
+
+            // We have recent rooms → hide the empty helper text
+            if (empty) empty.style.display = 'none';
+
+            recent.forEach(function (room) {
+              var li = document.createElement('li');
+              var a  = document.createElement('a');
+
+              a.href        = 'room.php?room=' + encodeURIComponent(room.slug);
+              a.textContent = room.name || room.slug;
+              a.className   = 'link-primary d-inline-block mb-1';
+
+              li.appendChild(a);
+              list.appendChild(li);
+            });
+          });
+        })();
+        </script>
+
 
     </body>
 </html>

@@ -409,12 +409,103 @@ $FOOTER_LABEL = ucwords($room_slug) . " (@{$room_slug})";
     <label class="stack" style="margin-top:10px">
       <input id="name-input" type="text" maxlength="32" placeholder="Enter your name">
     </label>
+    <small class="text-muted" id="last-used-name-note">
+        Last used name: <span id="last-used-name-value"></span>
+    </small>
     <div class="row" style="justify-content:flex-end; gap:8px; margin-top:14px">
       <button id="name-cancel" class="btn muted name-modal-btn">Cancel</button>
       <button id="name-save" class="btn primary name-modal-btn">Save</button>
     </div>
   </div>
 </div>
+
+<script>
+// Track current + last used name in localStorage (single current key)
+(function () {
+    var KEY_CURRENT_NAME = 'lensshare:name';
+    var KEY_LAST_NAME    = 'lensshare_last_used_name';
+
+    function loadString(key) {
+        try {
+            return localStorage.getItem(key) || '';
+        } catch (e) {
+            return '';
+        }
+    }
+
+    function saveString(key, value) {
+        try {
+            if (!value) return;
+            localStorage.setItem(key, value);
+        } catch (e) {
+            // ignore
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var input = document.getElementById('name-input');
+        var note  = document.getElementById('last-used-name-note');
+        var span  = document.getElementById('last-used-name-value');
+        var btn   = document.getElementById('name-save');
+
+        if (!input) return; // Name UI not on this page
+
+        var currentName = loadString(KEY_CURRENT_NAME);
+        var lastName    = loadString(KEY_LAST_NAME);
+
+        // Prefill input with current name, if any
+        if (!input.value && currentName) {
+            input.value = currentName;
+        }
+
+        // Show "Last used name" only if we have one
+        if (lastName && span && note) {
+            span.textContent = lastName;
+            note.style.display = 'block';
+        } else if (note) {
+            note.style.display = 'none';
+        }
+
+        function persist() {
+            var newName = (input.value || '').trim();
+            if (!newName) return;
+
+            var existingCurrent = loadString(KEY_CURRENT_NAME);
+
+            // If there was a current name and it's changing, move it to "last used"
+            if (existingCurrent && existingCurrent !== newName) {
+                saveString(KEY_LAST_NAME, existingCurrent);
+
+                if (span) {
+                    span.textContent = existingCurrent;
+                }
+                if (note) {
+                    note.style.display = 'block';
+                }
+            }
+
+            // Save the new name as the current name
+            saveString(KEY_CURRENT_NAME, newName);
+        }
+
+        if (btn) {
+            btn.addEventListener('click', persist);
+        }
+
+        // Optional: also persist on Enter
+        input.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                persist();
+            }
+        });
+
+        // If you *want* to save on blur as well, you can add:
+        // input.addEventListener('blur', persist);
+    });
+})();
+</script>
+
+
 
 <div id="toast-stack" class="toast-stack" aria-live="polite" aria-atomic="true"></div>
 

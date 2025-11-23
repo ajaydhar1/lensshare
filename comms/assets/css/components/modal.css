@@ -28,3 +28,17 @@
 @media (prefers-color-scheme: light) {
   .modal-card { background: #fff; color: #0f172a; border-color: rgba(15,23,42,.08); }
 }
+/* Make the input and the note share the same left edge / width */
+#name-modal label.stack,
+#name-modal #last-used-name-note {
+  display: block;
+  width: 100%;
+}
+
+/* Style + alignment for the "Last used name" line */
+#name-modal #last-used-name-note {
+  margin-top: 4px;           /* little gap under the input */
+  font-size: 0.85rem;        /* slightly smaller text */
+  text-align: left;          /* in case modal-card uses text-align:center */
+  padding-left: 0.4rem;      /* tiny indent to visually match input padding */
+}

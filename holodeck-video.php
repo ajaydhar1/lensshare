@@ -413,16 +413,62 @@
               var editBtn = document.getElementById("btn-edit-name");
               if (editBtn) {
                 editBtn.addEventListener("click", function () {
-                  var current = (localStorage.getItem("lensshare:name") || "").trim();
-                  var proposed = window.prompt("Enter the name you want to show in this space:", current || "Guest");
+                  var KEY_CURRENT_NAME = 'lensshare:name';
+                  var KEY_LAST_NAME    = 'lensshare_last_used_name';
+
+                  function loadString(key) {
+                    try {
+                      return (localStorage.getItem(key) || '').trim();
+                    } catch (e) {
+                      return '';
+                    }
+                  }
+
+                  function saveString(key, value) {
+                    try {
+                      if (!value) return;
+                      localStorage.setItem(key, value);
+                    } catch (e) {
+                      // ignore
+                    }
+                  }
+
+                  var current = loadString(KEY_CURRENT_NAME);
+                  var last    = loadString(KEY_LAST_NAME);
+
+                  // Build prompt message
+                  var msg = "Enter the name you want to show in this space:";
+                  if (last) {
+                    msg += "\n\nLast used name: " + last;
+                  }
+
+                  // Default value: current name or Guest
+                  var defaultName = current || "Guest";
+
+                  var proposed = window.prompt(msg, defaultName);
 
                   if (proposed === null) {
                     // user cancelled
                     return;
                   }
 
+                  proposed = proposed.trim();
+                  if (!proposed) {
+                    return;
+                  }
+
+                  // Move current -> last, if it's changing
+                  if (current && current !== proposed) {
+                    saveString(KEY_LAST_NAME, current);
+                  }
+
+                  // Save the new one as the current name
+                  saveString(KEY_CURRENT_NAME, proposed);
+
+                  // Keep Holodeck's display in sync
                   setHolodeckDisplayName(proposed);
                 });
+
               }
 
               // On load, set UI name from storage (even before Jitsi loads)
