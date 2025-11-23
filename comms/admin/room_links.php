@@ -138,11 +138,29 @@ render_admin_topnav([
         <?php foreach ($rooms as $r):
           $url = ROOM_VIEW_BASE . (strpos(ROOM_VIEW_BASE,'?')===false ? '?' : '&')
                . http_build_query(['room'=>$r['slug'],'token'=>$TOKEN]);
+          $is_active = (int)$r['active'];
           ?>
-          <li class="<?= $r['active'] ? '' : 'inactive' ?>">
+          <li class="<?= $is_active ? '' : 'inactive' ?>">
             <a href="<?= h($url) ?>"><?= h($r['title']) ?></a>
             <span class="badge">@<?= h($r['slug']) ?></span>
-            <?php if (!$r['active']): ?><span class="badge">inactive</span><?php endif; ?>
+            <?php if (!$is_active): ?>
+              <span class="badge">inactive</span>
+            <?php endif; ?>
+
+            <!-- Block / Unblock button -->
+            <form method="post" action="room_toggle_active.php" style="margin-left:auto;">
+              <input type="hidden" name="slug" value="<?= h($r['slug']) ?>">
+              <input type="hidden" name="token" value="<?= h($TOKEN) ?>">
+              <?php if ($is_active): ?>
+                <button type="submit" class="badge" style="border-color:#ff9966;color:#ff9966;cursor:pointer;background:none;">
+                  Block
+                </button>
+              <?php else: ?>
+                <button type="submit" class="badge" style="border-color:#66cc66;color:#66cc66;cursor:pointer;background:none;">
+                  Unblock
+                </button>
+              <?php endif; ?>
+            </form>
           </li>
         <?php endforeach; ?>
       </ul>

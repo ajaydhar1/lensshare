@@ -48,6 +48,34 @@ if (!$ROOM_ID){
   }
 }
 
+/**
+ * 🔒 Blocked / inactive room check
+ * Reuse is_active column if present; default to 1 (active) if missing.
+ */
+$ROOM_ACTIVE = isset($ROOM['is_active']) ? (int)$ROOM['is_active'] : 1;
+
+if ($ROOM_ACTIVE === 0) {
+    // Same admin check as above
+    $hasToken = ($showAdminBar || ($token && hash_equals(INIT_ADMIN_TOKEN, $token)));
+
+    if ($hasToken) {
+        // Admin sees a banner but can still continue into the room
+        echo "<div class='space-error space-warning'>This Space is currently offline (visible because you are using an admin token).</div>";
+        // do NOT exit; let the rest of the page render for you
+    } else {
+        // Normal user: show “offline” message and stop, but NOT a 404
+        http_response_code(200);
+        echo "<div class='space-error'>
+                <strong>This Space is currently offline.</strong><br>
+                <span class='space-error-muted'>
+                  The host or site admin has temporarily taken this Space offline.
+                  Try another Room from the Portals.
+                </span>
+              </div>";
+        exit;
+    }
+}
+
 // ---------- view routing ----------
 $view    = $_GET['view'] ?? 'messages';   // messages | post
 $post_id = (int)($_GET['post'] ?? 0);
@@ -121,6 +149,7 @@ if ($view === 'messages') {
     SELECT user, body, created_at
     FROM messages
     WHERE room_id = ?
+      AND is_deleted = 0
     ORDER BY id ASC
   ");
   $q->execute([$ROOM_ID]);
@@ -282,7 +311,7 @@ if ($view === 'messages') {
       </div>
 
       <pre id="log" class="mono"><?php
-        if (!$messages){ echo "No messages yet.
+        if (!$messages){ echo "No messages yet — be the first to say hello 👋
 "; }
         else {
           foreach ($messages as $m){

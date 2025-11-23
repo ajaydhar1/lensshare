@@ -7,7 +7,7 @@ $db = new PDO('sqlite:' . $env['db_path']);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-$stmt = $db->prepare('DELETE FROM posts WHERE id IN (251, 252);');
+$stmt = $db->prepare('ALTER TABLE rooms ADD COLUMN is_active INTEGER NOT NULL DEFAULT 1;');
 $stmt->execute();
 
 
