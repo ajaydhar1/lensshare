@@ -74,7 +74,21 @@
                         <li class="nav-item my-auto"><a class="nav-link" href="#media">Media</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#memes">Memes</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#games" style="margin-right: 0.65rem;" >Game Watch</a></li>
-                        <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
+                        
+                        <!-- New: Search icon/link -->
+                        <li class="nav-item my-auto">
+                            <a class="nav-link d-flex align-items-center" href="search.php">
+                                <span class="me-1">🔍</span>
+                                <span class="d-none d-lg-inline">Search</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="btn btn-primary text-white" style="margin-left: 0.65rem;" href="room.php?room=happy-hour">
+                                Happy Hour
+                            </a>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>

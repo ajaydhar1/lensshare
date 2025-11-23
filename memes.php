@@ -170,8 +170,22 @@
               <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
               <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                      <li class="nav-item my-auto"><a class="nav-link text-nav-dark" style="margin-right: 0.65rem;" href="entertainment.php">Entertainment</a></li>
-                      <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
+                      <li class="nav-item my-auto"><a class="nav-link text-nav-dark" href="entertainment.php">Entertainment</a></li>
+                      
+                      <!-- New: Search icon/link -->
+                      <li class="nav-item my-auto">
+                          <a class="nav-link d-flex align-items-center" href="search.php">
+                              <span class="me-1">🔍</span>
+                              <span class="d-none d-lg-inline">Search</span>
+                          </a>
+                      </li>
+
+                      <li class="nav-item">
+                          <a class="btn btn-primary text-white" style="margin-left: 0.65rem;" href="room.php?room=happy-hour">
+                              Happy Hour
+                          </a>
+                      </li>
+                      
                   </ul>
               </div>
           </div>

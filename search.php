@@ -247,10 +247,8 @@ if ($db) {
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item my-auto"><a class="nav-link" href="#how-it-works">How it Works</a></li>
-                    <li class="nav-item my-auto"><a class="nav-link" href="#getting-started">Getting Started</a></li>
-                    <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="#holodeck">Holodeck</a></li>
-                    <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
+                    <li class="nav-item my-auto"><a class="nav-link" href="search.php">Explore</a></li>
+                    <li class="nav-item"><a class="btn btn-primary text-white" style="margin-left: 0.65rem;" href="room.php?room=happy-hour">Happy Hour</a></li>
                 </ul>
             </div>
         </div>

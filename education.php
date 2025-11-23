@@ -78,8 +78,22 @@
                         <li class="nav-item my-auto"><a class="nav-link" href="#mixer">Mixer</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#study">Study Together</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#college-prep">College Prep</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#majors" style="margin-right: 0.65rem;">Majors</a></li>
-                        <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#majors">Majors</a></li>
+                        
+                        <!-- New: Search icon/link -->
+                        <li class="nav-item my-auto">
+                            <a class="nav-link d-flex align-items-center" href="search.php">
+                                <span class="me-1">🔍</span>
+                                <span class="d-none d-lg-inline">Search</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="btn btn-primary text-white" style="margin-left: 0.65rem;" href="room.php?room=happy-hour">
+                                Happy Hour
+                            </a>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>

@@ -128,8 +128,22 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ms-auto my-2 my-lg-0">
                 <li class="nav-item my-auto"><a class="nav-link" href="terms.php">Terms</a></li>
-                  <li class="nav-item my-auto"><a class="nav-link" style="margin-right: 0.65rem;" href="privacy.php">Privacy</a></li>
-                  <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
+                  <li class="nav-item my-auto"><a class="nav-link" href="privacy.php">Privacy</a></li>
+                  
+                  <!-- New: Search icon/link -->
+                  <li class="nav-item my-auto">
+                      <a class="nav-link d-flex align-items-center" href="search.php">
+                          <span class="me-1">🔍</span>
+                          <span class="d-none d-lg-inline">Search</span>
+                      </a>
+                  </li>
+
+                  <li class="nav-item">
+                      <a class="btn btn-primary text-white" style="margin-left: 0.65rem;" href="room.php?room=happy-hour">
+                          Happy Hour
+                      </a>
+                  </li>
+                  
               </ul>
           </div>
       </div>

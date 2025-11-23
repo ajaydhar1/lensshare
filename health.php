@@ -117,8 +117,22 @@
                         <li class="nav-item my-auto"><a class="nav-link" href="#physical-health">Physical</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#mental-health">Mental</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#ask">Ask a Question</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#mood-board" style="margin-right: 0.65rem;">Mood Board</a></li>
-                        <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#mood-board">Mood Board</a></li>
+                        
+                        <!-- New: Search icon/link -->
+                        <li class="nav-item my-auto">
+                            <a class="nav-link d-flex align-items-center" href="search.php">
+                                <span class="me-1">🔍</span>
+                                <span class="d-none d-lg-inline">Search</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="btn btn-primary text-white" style="margin-left: 0.65rem;" href="room.php?room=happy-hour">
+                                Happy Hour
+                            </a>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>
