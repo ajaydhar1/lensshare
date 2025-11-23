@@ -477,6 +477,93 @@
             })();
           </script>
 
+
+          <script>
+            (function () {
+              var KEY_RECENT = 'lensshare_recent_rooms';
+
+              function safeGetJSON(key, fallback) {
+                try {
+                  var raw = localStorage.getItem(key);
+                  if (!raw) return fallback;
+                  return JSON.parse(raw);
+                } catch (e) {
+                  return fallback;
+                }
+              }
+
+              function safeSetJSON(key, value) {
+                try {
+                  localStorage.setItem(key, JSON.stringify(value));
+                } catch (e) {
+                  // ignore
+                }
+              }
+
+              function addRecentPlace(slug, name, url) {
+                if (!slug) return;
+
+                var list = safeGetJSON(KEY_RECENT, []);
+
+                // Use URL as the primary identity for Holodeck entries
+                list = list.filter(function (item) {
+                  // Keep compatibility with old room objects that might not have url
+                  if (item.url && url) {
+                    return item.url !== url;
+                  }
+                  return item.slug !== slug;
+                });
+
+                list.unshift({
+                  slug: slug,
+                  name: name || slug,
+                  url: url || null,
+                  ts: Math.floor(Date.now() / 1000)
+                });
+
+                // Cap at, say, 5 recent places
+                if (list.length > 5) {
+                  list = list.slice(0, 5);
+                }
+
+                safeSetJSON(KEY_RECENT, list);
+              }
+
+              function getHolodeckSpaceId() {
+                // If you already expose this as a JS var, use that:
+                if (window.holodeckSpaceId) return String(window.holodeckSpaceId);
+
+                // Otherwise, fallback to ?space=... in the URL
+                var match = window.location.search.match(/[?&]room=([^&]+)/);
+                if (match) {
+                  try {
+                    return decodeURIComponent(match[1].replace(/\+/g, ' '));
+                  } catch (e) {
+                    return match[1];
+                  }
+                }
+                return null;
+              }
+
+              document.addEventListener('DOMContentLoaded', function () {
+                var spaceId = getHolodeckSpaceId();
+                if (!spaceId) return;
+
+                // Make a unique slug for this private Holodeck space
+                var slug  = 'holodeck:' + spaceId;
+
+                // Label it nicely in the UI
+                var label = 'Holodeck – ' + spaceId + ' 🔒';
+
+                // Use the full URL so clicking returns to the exact private space
+                var url   = window.location.pathname + window.location.search;
+
+                addRecentPlace(slug, label, url);
+              });
+            })();
+          </script>
+
+
     </body>
 
 </html>

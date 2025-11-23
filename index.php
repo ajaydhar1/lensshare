@@ -530,15 +530,17 @@
               return;
             }
 
-            // We have recent rooms → hide the empty helper text
             if (empty) empty.style.display = 'none';
 
             recent.forEach(function (room) {
               var li = document.createElement('li');
               var a  = document.createElement('a');
 
-              a.href        = 'room.php?room=' + encodeURIComponent(room.slug);
-              a.textContent = room.name || room.slug;
+              // 🔑 Prefer explicit URL (for Holodeck), fall back to room.php
+              var href = room.url || ('room.php?room=' + encodeURIComponent(room.slug || ''));
+
+              a.href        = href;
+              a.textContent = room.name || room.slug || 'Recent Space';
               a.className   = 'link-primary d-inline-block mb-1';
 
               li.appendChild(a);
@@ -547,6 +549,7 @@
           });
         })();
         </script>
+
 
 
     </body>

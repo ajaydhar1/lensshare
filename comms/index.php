@@ -450,6 +450,7 @@ $FOOTER_LABEL = ucwords($room_slug) . " (@{$room_slug})";
 
         if (!input) return; // Name UI not on this page
 
+        // ⬇️ Capture the current name ONCE when the modal boots
         var currentName = loadString(KEY_CURRENT_NAME);
         var lastName    = loadString(KEY_LAST_NAME);
 
@@ -470,22 +471,24 @@ $FOOTER_LABEL = ucwords($room_slug) . " (@{$room_slug})";
             var newName = (input.value || '').trim();
             if (!newName) return;
 
-            var existingCurrent = loadString(KEY_CURRENT_NAME);
-
-            // If there was a current name and it's changing, move it to "last used"
-            if (existingCurrent && existingCurrent !== newName) {
-                saveString(KEY_LAST_NAME, existingCurrent);
+            // 🔥 Use the captured currentName (the "old" value),
+            // not whatever profile.js just wrote.
+            if (currentName && currentName !== newName) {
+                saveString(KEY_LAST_NAME, currentName);
 
                 if (span) {
-                    span.textContent = existingCurrent;
+                    span.textContent = currentName;
                 }
                 if (note) {
                     note.style.display = 'block';
                 }
             }
 
-            // Save the new name as the current name
+            // Update current name in storage
             saveString(KEY_CURRENT_NAME, newName);
+
+            // Update our in-memory reference for next time the user reopens the modal
+            currentName = newName;
         }
 
         if (btn) {
@@ -498,9 +501,7 @@ $FOOTER_LABEL = ucwords($room_slug) . " (@{$room_slug})";
                 persist();
             }
         });
-
-        // If you *want* to save on blur as well, you can add:
-        // input.addEventListener('blur', persist);
+        // (Leave blur handling off here if profile.js is already doing its thing)
     });
 })();
 </script>
