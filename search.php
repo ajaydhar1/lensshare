@@ -109,13 +109,16 @@ if ($db) {
         // ===== Posts =====
         if ($type === 'all' || $type === 'posts') {
             $sql = "
-                SELECT id,
-                       title,
-                       SUBSTR(body, 1, 200) AS snippet
-                FROM posts
-                WHERE title LIKE :q
-                   OR body LIKE :q
-                ORDER BY id DESC
+                SELECT p.id,
+                       p.title,
+                       SUBSTR(p.body, 1, 200) AS snippet,
+                       p.room_id,
+                       COALESCE(r.slug, 'main') AS room_slug
+                FROM posts p
+                LEFT JOIN rooms r ON r.id = p.room_id
+                WHERE p.title LIKE :q
+                   OR p.body LIKE :q
+                ORDER BY p.id DESC
                 $limitClause
             ";
             $stmt = $db->prepare($sql);
@@ -456,7 +459,7 @@ if ($db) {
                                                     </div>
                                                 </div>
                                                 <a class="btn btn-sm btn-outline-info"
-                                                   href="post.php?id=<?= (int)$p['id'] ?>">
+                                                   href="room.php?room=<?= urlencode($p['room_slug']) ?>&view=post&post=<?= (int)$p['id'] ?>">
                                                     Open post
                                                 </a>
                                             </div>
@@ -595,12 +598,19 @@ if ($db) {
                             </div>
                         </div>
                     <?php elseif ($type === 'posts'): ?>
-                        <div class="card mb-4">
+                        <!-- Posts -->
+                        <div class="card h-100">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <div>
                                     <span class="badge bg-info me-2">📝 Posts</span>
                                     <span class="fw-semibold">Posts & pages</span>
                                 </div>
+                                <?php if ($type === 'all' && !empty($postResults)): ?>
+                                    <a class="small text-decoration-none"
+                                       href="search.php?q=<?= urlencode($q) ?>&type=posts&limit=all">
+                                       View all
+                                    </a>
+                                <?php endif; ?>
                             </div>
                             <div class="card-body p-0">
                                 <?php if (empty($postResults)): ?>
@@ -618,7 +628,7 @@ if ($db) {
                                                 </div>
                                             </div>
                                             <a class="btn btn-sm btn-outline-info"
-                                               href="post.php?id=<?= (int)$p['id'] ?>">
+                                               href="room.php?room=<?= urlencode($p['room_slug']) ?>&view=post&post=<?= (int)$p['id'] ?>">
                                                 Open post
                                             </a>
                                         </div>
