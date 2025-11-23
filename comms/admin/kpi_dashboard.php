@@ -12,7 +12,7 @@ require_once __DIR__ . '/../config.php';
 
 define('INIT_ADMIN_TOKEN', $secrets['init_admin_token']);
 define('DB_PATH', env_db_path());
-define('ROOM_VIEW_BASE', '../index.php');   // the page that accepts ?room=...&token=...
+define('ROOM_VIEW_BASE', '../../room.php');   // the page that accepts ?room=...&token=...
 
 function deny($m){ http_response_code(403); echo htmlspecialchars($m); exit; }
 function h($s){ return htmlspecialchars($s,ENT_QUOTES,'UTF-8'); }

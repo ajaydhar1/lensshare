@@ -11,7 +11,7 @@ require_once __DIR__ . '/../config.php';
 // ----- config -----
 define('INIT_ADMIN_TOKEN', $secrets['init_admin_token']); // match your existing tools
 define('REGISTRY_DB', env_db_path());
-define('ROOM_VIEW_BASE', '../index.php');   // the page that accepts ?room=...&token=...
+define('ROOM_VIEW_BASE', '../../room.php');   // the page that accepts ?room=...&token=...
 
 function deny($msg='forbidden'){ http_response_code(403); echo htmlspecialchars($msg); exit; }
 function h($s){ return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }
