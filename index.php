@@ -87,6 +87,7 @@
                 </div>
             </div>
         </nav>
+        <?php require_once('___beta-banner.php'); ?>
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5">

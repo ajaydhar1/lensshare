@@ -6,7 +6,9 @@
                     <span style="margin-left: 5px;">·</span> 
             		<a href="terms.php" style="margin-left: 5px; margin-right: 5px; text-decoration: none;">Terms</a>
                     <span style="margin-right: 5px;">·</span> 
-            		<a href="privacy.php" style="text-decoration: none;">Privacy</a>
+            		<a href="privacy.php" style="margin-right: 5px; text-decoration: none;">Privacy</a>
+                    <span style="margin-right: 5px;">·</span> 
+                    <a href="beta-test-agreement.php" style="text-decoration: none;">Beta Test Agreement</a>
             	</div>
             </div>
         </footer>

@@ -148,7 +148,7 @@
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ms-auto my-2 my-lg-0">
                             <li class="nav-item my-auto"><a class="nav-link text-nav-dark" style="margin-right: 0.65rem;" href="entertainment.php">Entertainment</a></li>
-                            <li class="nav-item"><a class="btn btn-primary text-white" href="https://video-lensshare.com/Happy%20Hour#config.disableDeepLinking=true">Happy Hour</a></li>
+                            <li class="nav-item"><a class="btn btn-primary text-white" href="room.php?room=happy-hour">Happy Hour</a></li>
                         </ul>
                     </div>
                 </div>
