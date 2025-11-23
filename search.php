@@ -23,12 +23,37 @@ try {
 $q    = trim($_GET['q'] ?? '');
 $type = $_GET['type'] ?? 'all';
 
+// NEW: limit param handling
+$limitParam    = $_GET['limit'] ?? '';   // e.g. "", "50", "all"
+$defaultLimit  = 20;                     // default max rows per section
+$limitAll      = false;                  // true = no LIMIT clause
+$limit         = $defaultLimit;          // numeric limit when not "all"
+
+// Interpret limit param
+if ($limitParam === '') {
+    // use default 20
+    $limitAll = false;
+    $limit    = $defaultLimit;
+} elseif ($limitParam === 'all') {
+    // special value = no LIMIT in SQL
+    $limitAll = true;
+} else {
+    // numeric value, clamp to a reasonable range
+    $limitAll = false;
+    $limit    = (int)$limitParam;
+    if ($limit < 1)   { $limit = 1; }
+    if ($limit > 1000){ $limit = 1000; } // hard cap for safety
+}
+
+// Build SQL LIMIT clause once, reuse in each query
+$limitClause = $limitAll ? '' : (' LIMIT ' . $limit);
+
 $types = [
     'all'      => 'All',
-    'messages' => 'Messages',
-    'rooms'    => 'Rooms',
-    'posts'    => 'Posts',
-    'people'   => 'People',
+    'messages' => '💬 Messages',
+    'rooms'    => '🚪 Rooms',
+    'posts'    => '📝 Posts',
+    'people'   => '👤 People',
 ];
 
 if (!array_key_exists($type, $types)) {
@@ -41,7 +66,7 @@ $roomResults    = [];
 $postResults    = [];
 $peopleResults  = [];
 
-// Only query if we have a DB and a non-empty search
+// Run queries whenever we have a DB (empty q = "show everything")
 if ($db) {
     try {
         $like = '%' . $q . '%';
@@ -60,7 +85,7 @@ if ($db) {
                 WHERE m.body LIKE :q
                    OR m.user LIKE :q
                 ORDER BY m.created_at DESC
-                LIMIT 20
+                $limitClause
             ";
             $stmt = $db->prepare($sql);
             $stmt->execute([':q' => $like]);
@@ -74,7 +99,7 @@ if ($db) {
                 FROM rooms
                 WHERE name LIKE :q
                 ORDER BY name ASC
-                LIMIT 20
+                $limitClause
             ";
             $stmt = $db->prepare($sql);
             $stmt->execute([':q' => $like]);
@@ -91,7 +116,7 @@ if ($db) {
                 WHERE title LIKE :q
                    OR body LIKE :q
                 ORDER BY id DESC
-                LIMIT 20
+                $limitClause
             ";
             $stmt = $db->prepare($sql);
             $stmt->execute([':q' => $like]);
@@ -107,7 +132,7 @@ if ($db) {
                 WHERE user LIKE :q
                 GROUP BY user
                 ORDER BY message_count DESC
-                LIMIT 20
+                $limitClause
             ";
             $stmt = $db->prepare($sql);
             $stmt->execute([':q' => $like]);
@@ -133,6 +158,7 @@ if ($db) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -152,6 +178,13 @@ if ($db) {
 
     <!-- Bootstrap CSS & your main stylesheet (adjust paths as needed) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
     
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
@@ -173,15 +206,12 @@ if ($db) {
         main {
             padding-top: 6.25rem !important;
         }
-
         #mainNav .navbar-nav .nav-item .nav-link {
-            color: rgba(0,0,0,.5);
+            color: rgba(0,0,0,.55);
         }
-
         #mainNav .navbar-nav .nav-item .nav-link:hover {
-            color: rgba(0,0,0,.7);
+            color: rgba(0,0,0,.8);
         }
-
         #mainNav {
             background-color: #fff;
         }
@@ -199,6 +229,7 @@ if ($db) {
         .list-group-item .btn-sm {
             white-space: nowrap;
         }
+
     </style>
 </head>
 <body>
@@ -311,7 +342,7 @@ if ($db) {
                                     </div>
                                     <?php if ($type === 'all' && !empty($messageResults)): ?>
                                         <a class="small text-decoration-none"
-                                           href="search.php?q=<?= urlencode($q) ?>&type=messages">
+                                           href="search.php?q=<?= urlencode($q) ?>&type=messages&limit=all">
                                            View all
                                         </a>
                                     <?php endif; ?>
@@ -327,7 +358,7 @@ if ($db) {
                                                     <div class="small text-muted mb-1">
                                                         <?= htmlspecialchars($m['room_name']) ?> ·
                                                         <?= htmlspecialchars($m['created_at']) ?> ·
-                                                        <?= htmlspecialchars($m['author']) ?>
+                                                        <?= htmlspecialchars($m['user']) ?>
                                                     </div>
                                                     <div>
                                                         <?= htmlspecialchars(mb_strimwidth($m['body'], 0, 140, '…')) ?>
@@ -358,6 +389,12 @@ if ($db) {
                                         <span class="badge bg-success me-2">🚪 Rooms</span>
                                         <span class="fw-semibold">Matching rooms</span>
                                     </div>
+                                    <?php if ($type === 'all' && !empty($roomResults)): ?>
+                                        <a class="small text-decoration-none"
+                                           href="search.php?q=<?= urlencode($q) ?>&type=rooms&limit=all">
+                                           View all
+                                        </a>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="card-body p-0">
                                     <?php if (empty($roomResults)): ?>
@@ -396,6 +433,12 @@ if ($db) {
                                         <span class="badge bg-info me-2">📝 Posts</span>
                                         <span class="fw-semibold">Posts & pages</span>
                                     </div>
+                                    <?php if ($type === 'all' && !empty($postResults)): ?>
+                                        <a class="small text-decoration-none"
+                                           href="search.php?q=<?= urlencode($q) ?>&type=posts&limit=all">
+                                           View all
+                                        </a>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="card-body p-0">
                                     <?php if (empty($postResults)): ?>
@@ -432,6 +475,12 @@ if ($db) {
                                         <span class="badge bg-warning text-dark me-2">👤 People</span>
                                         <span class="fw-semibold">Authors & participants</span>
                                     </div>
+                                    <?php if ($type === 'all' && !empty($peopleResults)): ?>
+                                        <a class="small text-decoration-none"
+                                           href="search.php?q=<?= urlencode($q) ?>&type=people&limit=all">
+                                           View all
+                                        </a>
+                                    <?php endif; ?>
                                 </div>
                                 <div class="card-body p-0">
                                     <?php if (empty($peopleResults)): ?>
@@ -442,14 +491,14 @@ if ($db) {
                                             <div class="list-group-item d-flex justify-content-between align-items-center">
                                                 <div>
                                                     <div class="fw-semibold">
-                                                        <?= htmlspecialchars($person['author']) ?>
+                                                        <?= htmlspecialchars($person['user']) ?>
                                                     </div>
                                                     <div class="small text-muted">
                                                         <?= (int)$person['message_count'] ?> messages
                                                     </div>
                                                 </div>
                                                 <a class="btn btn-sm btn-outline-warning"
-                                                   href="search.php?q=<?= urlencode($person['author']) ?>&type=messages">
+                                                   href="search.php?q=<?= urlencode($person['user']) ?>&type=messages">
                                                     View messages
                                                 </a>
                                             </div>
@@ -489,7 +538,7 @@ if ($db) {
                                                 <div class="small text-muted mb-1">
                                                     <?= htmlspecialchars($m['room_name']) ?> ·
                                                     <?= htmlspecialchars($m['created_at']) ?> ·
-                                                    <?= htmlspecialchars($m['author']) ?>
+                                                    <?= htmlspecialchars($m['user']) ?>
                                                 </div>
                                                 <div>
                                                     <?= htmlspecialchars(mb_strimwidth($m['body'], 0, 140, '…')) ?>
@@ -595,14 +644,14 @@ if ($db) {
                                         <div class="list-group-item d-flex justify-content-between align-items-center">
                                             <div>
                                                 <div class="fw-semibold">
-                                                    <?= htmlspecialchars($person['author']) ?>
+                                                    <?= htmlspecialchars($person['user']) ?>
                                                 </div>
                                                 <div class="small text-muted">
                                                     <?= (int)$person['message_count'] ?> messages
                                                 </div>
                                             </div>
                                             <a class="btn btn-sm btn-outline-warning"
-                                               href="search.php?q=<?= urlencode($person['author']) ?>&type=messages">
+                                               href="search.php?q=<?= urlencode($person['user']) ?>&type=messages">
                                                 View messages
                                             </a>
                                         </div>
