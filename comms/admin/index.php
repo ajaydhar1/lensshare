@@ -558,6 +558,7 @@ if ($LOGGED_IN) {
       <ul class="ul">
         <li><span>Messages</span>  <a class="btn" href="<?= h(tool_url('messages.php')) ?>">Open</a></li>
         <li><span>Health Check</span>  <a class="btn" href="<?= h(tool_url('health.php')) ?>">Open</a></li>
+        <li><span>Post Editor</span>  <a class="btn" href="<?= h(tool_url('post_editor.php')) ?>">Open</a></li>
         <li><span>KPI Dashboard</span>  <a class="btn" href="<?= h(tool_url('kpi_dashboard.php')) ?>">Open</a></li>
         <li><span>Room Links</span>     <a class="btn" href="<?= h(tool_url('room_links.php')) ?>">Open</a></li>
         <?php if (is_file(__DIR__.'/log_browser.php')): ?>

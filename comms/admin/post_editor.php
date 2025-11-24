@@ -1,6 +1,6 @@
 <?php
-// admin/post_editor.php — Global posts editor for LensShare/Comms
-// Global = posts with room_id = 0
+// admin/post_editor.php — Posts editor for LensShare/Comms
+// Supports global posts (room_id = GLOBAL_ROOM_ID) and room-specific posts.
 //
 // Usage: /admin/post_editor.php?token=YOUR_INIT_ADMIN_TOKEN
 //
@@ -20,8 +20,9 @@ require_once __DIR__ . '/../config.php';
 
 define('INIT_ADMIN_TOKEN', $secrets['init_admin_token']);
 define('DB_PATH', env_db_path());
-define('GLOBAL_ROOM_ID', 1); // posts that appear in all spaces
+define('GLOBAL_ROOM_ID', 1); // posts that appear in all spaces (global)
 
+// simple esc helper
 function h($s){ return htmlspecialchars((string)$s, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
 function deny($m='forbidden'){ http_response_code(403); echo h($m); exit; }
 
@@ -55,22 +56,34 @@ function url_with_token(array $extra = []){
   global $TOKEN;
   $base = ['token' => $TOKEN];
   $out  = array_merge($base, $extra);
-  return '?' . http_build_query($out);
+  $q    = http_build_query($out);
+  return $q ? ('?' . $q) : '';
 }
 
-// ---- POST handlers ----
-$flash_error = null;
-$flash_ok    = null;
+// ---- load rooms for dropdowns ----
+$rooms = [];
+try {
+  $rooms = $pdo->query("SELECT id, slug, name FROM rooms ORDER BY name ASC, id ASC")->fetchAll();
+} catch (Throwable $e) {
+  $rooms = [];
+}
 
+// ---- flash messages (read + clear) ----
+$flash_error = $_SESSION['post_editor_flash_error'] ?? null;
+$flash_ok    = $_SESSION['post_editor_flash_ok'] ?? null;
+unset($_SESSION['post_editor_flash_error'], $_SESSION['post_editor_flash_ok']);
+
+// ---- POST handlers (POST → REDIRECT → GET) ----
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = $_POST['action'] ?? '';
 
     if ($action === 'create') {
-        $title = trim($_POST['title'] ?? '');
-        $body  = trim($_POST['body'] ?? '');
+        $title   = trim($_POST['title'] ?? '');
+        $body    = trim($_POST['body'] ?? '');
+        $room_id = (int)($_POST['room_id'] ?? GLOBAL_ROOM_ID);
 
         if ($title === '' || $body === '') {
-            $flash_error = 'Title and body are required.';
+            $_SESSION['post_editor_flash_error'] = 'Title and body are required.';
         } else {
             try {
                 $now = date('c');
@@ -79,46 +92,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     VALUES (:room_id, :title, :body, :created_at)
                 ");
                 $stmt->execute([
-                    ':room_id'    => GLOBAL_ROOM_ID,
+                    ':room_id'    => $room_id,
                     ':title'      => $title,
                     ':body'       => $body,
                     ':created_at' => $now,
                 ]);
-                $flash_ok = 'Post created.';
+                $_SESSION['post_editor_flash_ok'] = 'Post created.';
             } catch (Throwable $e) {
-                $flash_error = 'DB error (create): ' . $e->getMessage();
+                $_SESSION['post_editor_flash_error'] = 'DB error (create): ' . $e->getMessage();
             }
         }
-        // no redirect; fall through and render page with flash
+
+        header('Location: post_editor.php' . url_with_token());
+        exit;
     }
 
     if ($action === 'update') {
-        $id    = (int)($_POST['id'] ?? 0);
-        $title = trim($_POST['title'] ?? '');
-        $body  = trim($_POST['body'] ?? '');
+        $id      = (int)($_POST['id'] ?? 0);
+        $title   = trim($_POST['title'] ?? '');
+        $body    = trim($_POST['body'] ?? '');
+        $room_id = (int)($_POST['room_id'] ?? GLOBAL_ROOM_ID);
 
         if ($id <= 0 || $title === '' || $body === '') {
-            $flash_error = 'Invalid update request.';
+            $_SESSION['post_editor_flash_error'] = 'Invalid update request.';
         } else {
             try {
                 $stmt = $pdo->prepare("
                     UPDATE posts
-                    SET title = :title,
-                        body  = :body
-                    WHERE id = :id AND room_id = :room_id
+                    SET title   = :title,
+                        body    = :body,
+                        room_id = :room_id
+                    WHERE id = :id
                 ");
                 $stmt->execute([
                     ':title'   => $title,
                     ':body'    => $body,
+                    ':room_id' => $room_id,
                     ':id'      => $id,
-                    ':room_id' => GLOBAL_ROOM_ID,
                 ]);
-                $flash_ok = 'Post updated.';
+                $_SESSION['post_editor_flash_ok'] = 'Post updated.';
             } catch (Throwable $e) {
-                $flash_error = 'DB error (update): ' . $e->getMessage();
+                $_SESSION['post_editor_flash_error'] = 'DB error (update): ' . $e->getMessage();
             }
         }
-        // no redirect
+
+        header('Location: post_editor.php' . url_with_token());
+        exit;
     }
 
     if ($action === 'toggle_archive') {
@@ -128,20 +147,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt = $pdo->prepare("
                     UPDATE posts
                     SET is_archived = CASE WHEN is_archived = 1 THEN 0 ELSE 1 END
-                    WHERE id = :id AND room_id = :room_id
+                    WHERE id = :id
                 ");
-                $stmt->execute([
-                    ':id'      => $id,
-                    ':room_id' => GLOBAL_ROOM_ID,
-                ]);
-                $flash_ok = 'Archive state toggled.';
+                $stmt->execute([':id' => $id]);
+                $_SESSION['post_editor_flash_ok'] = 'Archive state toggled.';
             } catch (Throwable $e) {
-                $flash_error = 'DB error (archive): ' . $e->getMessage();
+                $_SESSION['post_editor_flash_error'] = 'DB error (archive): ' . $e->getMessage();
             }
         } elseif (!$HAS_IS_ARCHIVED) {
-            $flash_error = 'is_archived column missing. Run migration first.';
+            $_SESSION['post_editor_flash_error'] = 'is_archived column missing. Run migration first.';
         }
-        // no redirect
+
+        header('Location: post_editor.php' . url_with_token());
+        exit;
     }
 }
 
@@ -150,36 +168,44 @@ $editPost = null;
 if (!empty($_GET['edit'])) {
   $id = (int)$_GET['edit'];
   if ($id > 0) {
-    $stmt = $pdo->prepare("SELECT * FROM posts WHERE id = :id AND room_id = :room_id");
-    $stmt->execute([
-      ':id'      => $id,
-      ':room_id' => GLOBAL_ROOM_ID,
-    ]);
+    $stmt = $pdo->prepare("SELECT * FROM posts WHERE id = :id");
+    $stmt->execute([':id' => $id]);
     $editPost = $stmt->fetch();
   }
 }
 
-// ---- fetch all global posts ----
+// ---- fetch all posts (global + room-specific) ----
 if ($HAS_IS_ARCHIVED) {
   $sql = "
     SELECT id, room_id, title, body, created_at, is_archived
     FROM posts
-    WHERE room_id = :room_id
     ORDER BY is_archived ASC, created_at DESC, id DESC
   ";
 } else {
   $sql = "
     SELECT id, room_id, title, body, created_at
     FROM posts
-    WHERE room_id = :room_id
     ORDER BY created_at DESC, id DESC
   ";
 }
-$stmt = $pdo->prepare($sql);
-$stmt->execute([':room_id' => GLOBAL_ROOM_ID]);
+$stmt = $pdo->query($sql);
 $posts = $stmt->fetchAll();
 
 $now = date('Y-m-d H:i:s');
+
+// helper to label room in UI
+function room_label_for($room_id, $rooms){
+    if ((int)$room_id === GLOBAL_ROOM_ID) {
+        return 'Global (all spaces)';
+    }
+    foreach ($rooms as $r) {
+        if ((int)$r['id'] === (int)$room_id) {
+            $name = $r['name'] ?: $r['slug'] ?: ('Room ' . $r['id']);
+            return 'Room #' . $r['id'] . ' · ' . $name;
+        }
+    }
+    return 'Room #' . (int)$room_id;
+}
 ?>
 <!doctype html>
 <html>
@@ -212,7 +238,7 @@ a{color:var(--acc);text-decoration:none} a:hover{text-decoration:underline}
 .panel{background:var(--panel);border:1px solid var(--border);border-radius:12px}
 .panel h3{margin:0;padding:10px 12px;border-bottom:1px solid var(--border);background:#0e1620;font-size:13px;color:#cbd5e1}
 .section{padding:10px 12px}
-.input, textarea.input{
+.input, textarea.input, select.input{
   padding:8px 10px;border:1px solid var(--border);border-radius:8px;
   background:#0b1220;color:var(--ink);width:100%;font:inherit;resize:vertical;
 }
@@ -284,7 +310,9 @@ render_admin_topnav([
       <span class="badge mono"><?= h(basename(DB_PATH)) ?></span>
       <span class="badge mono"><?= h($now) ?></span>
     </div>
-    <div class="badge">global posts · room_id = <?= (int)GLOBAL_ROOM_ID ?></div>
+    <div class="badge">
+      Global posts use room_id = <?= (int)GLOBAL_ROOM_ID ?> · other posts are room-specific
+    </div>
   </div>
 
   <?php if ($flash_ok): ?>
@@ -297,68 +325,72 @@ render_admin_topnav([
   <div class="grid">
     <!-- LEFT: create / edit form -->
     <div class="panel">
-      <?php if ($editPost): ?>
-        <h3>Edit post #<?= (int)$editPost['id'] ?></h3>
-        <div class="section">
-          <form method="post" action="post_editor.php<?= url_with_token() ?>">
+      <?php
+        $isEdit   = (bool)$editPost;
+        $formTitle = $isEdit ? ('Edit post #' . (int)$editPost['id']) : 'Create new post';
+        $postRoomId = $isEdit ? (int)($editPost['room_id'] ?? GLOBAL_ROOM_ID) : GLOBAL_ROOM_ID;
+      ?>
+      <h3><?= h($formTitle) ?></h3>
+      <div class="section">
+        <form method="post" action="post_editor.php<?= url_with_token() ?>">
+          <?php if ($isEdit): ?>
             <input type="hidden" name="action" value="update">
             <input type="hidden" name="id" value="<?= (int)$editPost['id'] ?>">
-
-            <div style="margin-bottom:10px">
-              <label for="title" class="note">Title</label>
-              <input id="title" name="title" type="text"
-                     class="input"
-                     value="<?= h($editPost['title'] ?? '') ?>" required>
-            </div>
-
-            <div style="margin-bottom:10px">
-              <label for="body" class="note">Body (HTML or plain text)</label>
-              <textarea id="body" name="body" class="input" required><?= h($editPost['body'] ?? '') ?></textarea>
-            </div>
-
-            <div class="note" style="margin-bottom:10px">
-              Global post · room_id = <?= (int)($editPost['room_id'] ?? GLOBAL_ROOM_ID) ?>
-            </div>
-
-            <div style="display:flex;gap:8px;flex-wrap:wrap">
-              <button type="submit" class="btn btn-primary">Save changes</button>
-              <a href="post_editor.php<?= url_with_token() ?>" class="btn btn-secondary">Cancel</a>
-            </div>
-          </form>
-        </div>
-      <?php else: ?>
-        <h3>Create new global post</h3>
-        <div class="section">
-          <form method="post" action="post_editor.php<?= url_with_token() ?>">
+          <?php else: ?>
             <input type="hidden" name="action" value="create">
+          <?php endif; ?>
 
-            <div style="margin-bottom:10px">
-              <label for="title" class="note">Title</label>
-              <input id="title" name="title" type="text" class="input"
-                     placeholder="e.g. Welcome to LensShare ✨"
-                     required>
-            </div>
+          <div style="margin-bottom:10px">
+            <label for="title" class="note">Title</label>
+            <input id="title" name="title" type="text"
+                   class="input"
+                   value="<?= h($editPost['title'] ?? '') ?>"
+                   placeholder="<?= $isEdit ? '' : 'e.g. Welcome to LensShare ✨' ?>"
+                   required>
+          </div>
 
-            <div style="margin-bottom:10px">
-              <label for="body" class="note">Body (HTML or plain text)</label>
-              <textarea id="body" name="body" class="input"
-                        placeholder="Short announcement or system message..."
-                        required></textarea>
-            </div>
+          <div style="margin-bottom:10px">
+            <label for="body" class="note">Body (HTML or plain text)</label>
+            <textarea id="body" name="body" class="input"
+                      placeholder="<?= $isEdit ? '' : 'Short announcement or system message...' ?>"
+                      required><?= h($editPost['body'] ?? '') ?></textarea>
+          </div>
 
-            <div class="note" style="margin-bottom:10px">
-              This will be created as a <strong>global</strong> post with <code class="mono">room_id = <?= (int)GLOBAL_ROOM_ID ?></code>.
-            </div>
+          <div style="margin-bottom:10px">
+            <label for="room_id" class="note">Room</label>
+            <select id="room_id" name="room_id" class="input">
+              <option value="<?= (int)GLOBAL_ROOM_ID ?>" <?= $postRoomId === GLOBAL_ROOM_ID ? 'selected' : '' ?>>
+                Global (all spaces)
+              </option>
+              <?php foreach ($rooms as $r): ?>
+                <?php $rid = (int)$r['id']; ?>
+                <option value="<?= $rid ?>" <?= $postRoomId === $rid ? 'selected' : '' ?>>
+                  Room #<?= $rid ?> · <?= h($r['name'] ?: $r['slug'] ?: ('Room ' . $rid)) ?>
+                </option>
+              <?php endforeach; ?>
+            </select>
+          </div>
 
-            <button type="submit" class="btn btn-primary">Publish</button>
-          </form>
-        </div>
-      <?php endif; ?>
+          <div class="note" style="margin-bottom:10px">
+            Choose <strong>Global (all spaces)</strong> to show this post platform-wide,
+            or pick a specific room to scope it to that space.
+          </div>
+
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button type="submit" class="btn btn-primary">
+              <?= $isEdit ? 'Save changes' : 'Publish' ?>
+            </button>
+            <?php if ($isEdit): ?>
+              <a href="post_editor.php<?= url_with_token() ?>" class="btn btn-secondary">Cancel</a>
+            <?php endif; ?>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- RIGHT: posts list -->
     <div class="panel">
-      <h3>Global posts (room_id = <?= (int)GLOBAL_ROOM_ID ?>)</h3>
+      <h3>All posts (global + room-specific)</h3>
       <div class="section" style="overflow:auto;max-height:65vh">
         <?php if (!$posts): ?>
           <p class="note">No posts yet. Create one on the left.</p>
@@ -368,6 +400,7 @@ render_admin_topnav([
               <tr>
                 <th style="width:50px">ID</th>
                 <th>Title &amp; body</th>
+                <th style="width:140px">Room</th>
                 <th style="width:110px">Status</th>
                 <th style="width:150px">Actions</th>
               </tr>
@@ -375,8 +408,9 @@ render_admin_topnav([
             <tbody>
               <?php foreach ($posts as $p): ?>
                 <?php
-                  $arch = $HAS_IS_ARCHIVED ? (int)$p['is_archived'] : 0;
+                  $arch     = $HAS_IS_ARCHIVED ? (int)$p['is_archived'] : 0;
                   $rowClass = $arch ? 'row-archived' : '';
+                  $roomId   = (int)$p['room_id'];
                 ?>
                 <tr class="<?= $rowClass ?>">
                   <td class="mono"><?= (int)$p['id'] ?></td>
@@ -391,6 +425,11 @@ render_admin_topnav([
                     </div>
                     <div class="note mono" style="margin-top:4px">
                       created: <?= h($p['created_at']) ?>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="note">
+                      <?= h(room_label_for($roomId, $rooms)) ?>
                     </div>
                   </td>
                   <td>

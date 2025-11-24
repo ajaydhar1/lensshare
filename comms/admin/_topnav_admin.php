@@ -53,6 +53,7 @@ if (!defined('ADM_TOPNAV_LOADED')) {
       ['label'=>'DB',      'href'=>'db_browser.php'],
       ['label'=>'Rooms',      'href'=>'room_links.php'],
       ['label'=>'KPIs',      'href'=>'kpi_dashboard.php'],
+      ['label'=>'Posts',      'href'=>'post_editor.php'],
       ['label'=>'Health',      'href'=>'health.php'],
       ['label'=>'Messages',      'href'=>'messages.php'],
       //['label'=>'Dashboard','href'=>'/admin/dashboard.php'],
