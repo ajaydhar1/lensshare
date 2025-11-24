@@ -52,7 +52,7 @@ $features = [
  * ============================================================ */
 $env = [
   // SQLite path (absolute recommended). Keep writable dir.
-  'db_path'        => __DIR__ . '/data/comms_fresh.sqlite',
+  'db_path'        => __DIR__ . '/data/comms.sqlite',
 
   // Jitsi base (self-hosted); trailing slash optional
   'jitsi_base_url' => 'https://video-lensshare.com/',
