@@ -13,6 +13,7 @@ $room_title = $room['title'] ?? ucfirst(str_replace('-', ' ', $room_slug));
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="LensShare is a video-chat platform that lets you interact with people who share common interests with you. Meet people, make friends, no sign up needed!" />
         <meta name="author" content="LensShare" />
+        <meta name="robots" content="noindex,follow">
         
         <!-- Page title -->
         <title><?= strtoupper(str_replace("-", " ", $_GET['room'])) ?> · Space</title>
@@ -226,7 +227,7 @@ $room_title = $room['title'] ?? ucfirst(str_replace('-', ' ', $room_slug));
                                 Happy Hour
                             </a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>

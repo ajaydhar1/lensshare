@@ -264,7 +264,7 @@
             <!-- Masthead-->
             <header class="masthead">
                     <div class="container px-4 px-lg-5">
-                        <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="">
+                        <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                             <div class="col-lg-8 align-self-end">
                                 <h1 class="text-light font-weight-bold"><strong>Management Skills</strong></h1>
                                 <hr class="divider" />
@@ -275,10 +275,10 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-lg-12 text-center">
-                                <img class="hi" src="assets/img/all/webcam7.gif">
-                                <img class="hi" src="assets/img/all/webcam2.gif">
-                                <img class="hi" src="assets/img/all/webcam4.gif">
-                                <img class="hi" src="assets/img/all/webcam6.gif">
+                                <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
+                                <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
+                                <img class="hi" src="assets/img/all/webcam4.gif" alt="" aria-hidden="true">
+                                <img class="hi" src="assets/img/all/webcam6.gif" alt="" aria-hidden="true">
                             </div>
                         </div>
                         <div class="row justify-content-center mt-3">
@@ -310,7 +310,7 @@
                 </div>
              <div id="tag-cloud-ul">
 
-<div id="youtube-tags" class="tag-cloud-sidebar basement_content card-content" style="">
+<div id="youtube-tags" class="tag-cloud-sidebar basement_content card-content">
 <h1 style="text-align: center; font-size: 40px;"><strong>SKILLS INVENTORY</strong></h1>
 
 <div class="row">

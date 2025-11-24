@@ -251,10 +251,10 @@
 
         <div class="row justify-content-center mb-3 w-100" style="margin-top: 7.5rem !important;">
             <div class="col-lg-12 text-center">
-                <img class="hi" src="assets/img/all/webcam7.gif">
-                <img class="hi" src="assets/img/all/webcam2.gif">
-                <img class="hi" src="assets/img/all/webcam4.gif">
-                <img class="hi" src="assets/img/all/webcam6.gif">
+                <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
+                <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
+                <img class="hi" src="assets/img/all/webcam4.gif" alt="" aria-hidden="true">
+                <img class="hi" src="assets/img/all/webcam6.gif" alt="" aria-hidden="true">
             </div>
         </div>
 

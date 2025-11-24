@@ -192,10 +192,10 @@
       </nav>
       <div id="hello" class="row justify-content-center mb-4">
           <div class="col-lg-12 text-center">
-              <img class="hi" src="assets/img/all/webcam7.gif">
-              <img class="hi" src="assets/img/all/webcam2.gif">
-              <img class="hi" src="assets/img/all/webcam4.gif">
-              <img class="hi" src="assets/img/all/webcam6.gif">
+              <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
+              <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
+              <img class="hi" src="assets/img/all/webcam4.gif" alt="" aria-hidden="true">
+              <img class="hi" src="assets/img/all/webcam6.gif" alt="" aria-hidden="true">
           </div>
       </div>
 
@@ -203,10 +203,10 @@
 
 
       <div class="container">
-          <div class="row h-100 justify-content-center" style="">
+          <div class="row h-100 justify-content-center">
               <div class="col-lg-7 col-md-8 col-10 text-center">
-                  <h1 class=""><?php if (isset($_GET["stickers"])) {echo "Stickers!";} else { echo "Gifs!"; } ?></h1>
-                  <form class="form-inline" action="memes.php" style="" method="get">
+                  <h1><?php if (isset($_GET["stickers"])) {echo "Stickers!";} else { echo "Gifs!"; } ?></h1>
+                  <form class="form-inline" action="memes.php" method="get">
                       <div class="input-group">
                           <input placeholder="Search..." type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" id="q" name="q" value="<?php if(isset($_GET['q'])) {echo $_GET['q'];} else {echo 'unicorn';} ?>">
                           <div class="input-group-append">

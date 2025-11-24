@@ -89,7 +89,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5">
-                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="">
+                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
                         <h1 class="text-warning font-weight-bold"><strong>Technology</strong></h1>
                         <hr class="divider" />
@@ -100,10 +100,10 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <img class="hi" src="assets/img/all/webcam7.gif">
-                        <img class="hi" src="assets/img/all/webcam2.gif">
-                        <img class="hi" src="assets/img/all/webcam4.gif">
-                        <img class="hi" src="assets/img/all/webcam6.gif">
+                        <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam4.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam6.gif" alt="" aria-hidden="true">
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
@@ -122,8 +122,8 @@
                         <p class="text-muted">Join the Tech Base Station to talk about technology in general. Share ideas, compare tools, and explore what’s new in tech.</p>
                         <a id="base-station-btn" class="btn btn-dark btn-xl mt-3" href="room.php?room=tech-base-station">Join Base Station</a>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="base-station-image img-fluid" style="" src="assets/img/all/base-station.gif">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="base-station-image img-fluid" src="assets/img/all/base-station.gif" alt="A man in a space suit">
                     </div>
                 </div>
             </div>
@@ -133,10 +133,7 @@
         <section class="page-section bg-light text-dark" id="future-tech">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 text-center order-lg-2">
-                        <img class="explanation-image img-fluid" src="assets/img/technology/future-tech.gif">
-                    </div>
-                    <div class="col-lg-6 order-lg-1">
+                    <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Future & Emerging Tech</strong></h2>
                         <p class="text-muted">Spaces exploring breakthrough technologies, next-generation science, and the ideas shaping tomorrow.</p>
                         <div class="mt-4">
@@ -149,6 +146,9 @@
                             <a class="btn btn-danger btn-xl mb-3" href="room.php?room=cybersecurity">Cybersecurity</a>
                         </div>
                     </div>
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="explanation-image img-fluid" src="assets/img/technology/future-tech.gif" alt="A girl with a flying space suit on">
+                    </div>
                 </div>
             </div>
         </section>
@@ -157,8 +157,8 @@
         <section class="page-section bg-white text-dark" id="gadgets">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <img class="explanation-image img-fluid" src="assets/img/technology/gadgets.gif">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image img-fluid" src="assets/img/technology/gadgets.gif" alt="A see-through game controller">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Consumer Gadgets & Devices</strong></h2>
@@ -181,10 +181,7 @@
         <section class="page-section bg-light text-dark" id="digital-life">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 text-center order-lg-2">
-                        <img class="explanation-image img-fluid" src="assets/img/technology/online-culture.gif">
-                    </div>
-                    <div class="col-lg-6 order-lg-1">
+                    <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Digital Life & Online Culture</strong></h2>
                         <p class="text-muted">Where the internet, creativity, and community meet.</p>
                         <div class="mt-4">
@@ -197,6 +194,9 @@
                             <a class="btn btn-danger btn-xl mb-3" href="room.php?room=tech-careers">Tech Careers</a>
                         </div>
                     </div>
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="explanation-image img-fluid" src="assets/img/technology/online-culture.gif" alt="An illustration of a website">
+                    </div>
                 </div>
             </div>
         </section>
@@ -205,8 +205,8 @@
         <section class="page-section text-dark" id="core-tech">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <img class="explanation-image img-fluid" style="margin-top:-20px;" src="assets/img/technology/core-tech.gif">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image img-fluid" style="margin-top:-20px;" src="assets/img/technology/core-tech.gif" alt="A guy scrolling through a mobile app">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Core Technologies</strong></h2>

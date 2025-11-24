@@ -1,0 +1,13 @@
+User-agent: *
+# Block admin and internal tooling
+Disallow: /tools/
+Disallow: /comms/admin/
+Disallow: /comms/tools/
+
+# Block explicit error pages
+Disallow: /404.php
+Disallow: /500.html
+
+# Everything else is allowed by default
+
+Sitemap: https://lensshare.co/sitemap.xml

@@ -81,7 +81,7 @@
                                 Happy Hour
                             </a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
@@ -89,7 +89,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5">
-                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="">
+                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
                         <h1 class="text-dark font-weight-bold"><strong>Relationships</strong></h1>
                         <hr class="divider" />
@@ -100,10 +100,10 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <img class="hi" src="assets/img/all/webcam7.gif">
-                        <img class="hi" src="assets/img/all/webcam2.gif">
-                        <img class="hi" src="assets/img/all/webcam4.gif">
-                        <img class="hi" src="assets/img/all/webcam6.gif">
+                        <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam4.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam6.gif" alt="" aria-hidden="true">
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
@@ -137,8 +137,8 @@
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=trans-nonbinary-dating">Trans &amp; Nonbinary Dating</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 d-flex">
-                        <img class="explanation-image mx-auto my-auto" style="height: 370px; width: auto;" src="assets/img/relationships/dating.gif">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="explanation-image" style="height: 370px; width: auto;" src="assets/img/relationships/dating.gif" alt="An illustration that says visual date">
                     </div>
                 </div>
             </div>
@@ -148,9 +148,9 @@
         <section class="page-section bg-light text-dark" id="marriage">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 d-flex">
-                        <img class="explanation-image my-auto" style="height: 370px; width: auto;"
-                             src="assets/img/relationships/married.gif">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image" style="height: 370px; width: auto;"
+                             src="assets/img/relationships/married.gif" alt="Male and female animated characters holding each other">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Married Life</strong></h2>
@@ -192,8 +192,8 @@
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=caregiving-parents">Caregiving for Parents</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="explanation-image img-fluid" src="assets/img/relationships/family.gif" alt="Family and close relationships">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="explanation-image img-fluid" src="assets/img/relationships/family.gif" alt="Three people in a group video chat">
                     </div>
                 </div>
             </div>
@@ -203,8 +203,8 @@
         <section class="page-section bg-light text-dark" id="parenting">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 text-center">
-                        <img class="explanation-image img-fluid" src="assets/img/relationships/kids.gif">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image img-fluid" src="assets/img/relationships/kids.gif" alt="Two kids playing patty cakes with their hands">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Parenting</strong></h2>

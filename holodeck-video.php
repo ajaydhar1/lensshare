@@ -13,6 +13,7 @@
         ?>
         <meta name="description" content="Join <?= htmlspecialchars($roomName) ?> in a private Holodeck video room on LensShare. Create an invite-only space to talk, collaborate, or hang out face-to-face." />
         <meta name="author" content="LensShare" />
+        <meta name="robots" content="noindex">
 
         <!-- Page title -->
         <title><?= htmlspecialchars($roomName) ?> · Holodeck</title>

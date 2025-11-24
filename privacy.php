@@ -91,7 +91,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5">
-                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="">
+                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
                         <h1 class="text-dark font-weight-bold"><strong>LensShare Privacy Policy (Beta Version)</strong></h1>
                         <hr class="divider" />
@@ -102,10 +102,10 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <img class="hi" src="assets/img/all/webcam7.gif">
-                        <img class="hi" src="assets/img/all/webcam2.gif">
-                        <img class="hi" src="assets/img/all/webcam4.gif">
-                        <img class="hi" src="assets/img/all/webcam6.gif">
+                        <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam4.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam6.gif" alt="" aria-hidden="true">
                     </div>
                 </div>
             </div>
@@ -121,7 +121,7 @@
                         <p class="mb-4">By using LensShare, you agree to the practices described here.</p>
 
                         <div class="legal-section">
-                            <h2 class="">1. Overview</h2>
+                            <h2>1. Overview</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>Because LensShare is not a business and does not operate as a commercial service, we intentionally collect <strong>as little personal information as possible</strong>.</p>
                             <p>We do not sell data, do not run ads, and do not use tracking for marketing purposes.</p>
@@ -129,7 +129,7 @@
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">2. Information We Collect</h2>
+                            <h2>2. Information We Collect</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p><strong>a. Information You Voluntarily Provide</strong></p>
                             <p>If you choose to interact with features such as:</p>
@@ -154,7 +154,7 @@
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">3. What We Do <i>Not</i> Collect</h2>
+                            <h2>3. What We Do <i>Not</i> Collect</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>LensShare does <strong>not</strong> collect or store:</p>
                             <ul>
@@ -171,7 +171,7 @@
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">4. How We Use Information</h2>
+                            <h2>4. How We Use Information</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>Data collected during the beta phase is used solely for:</p>
                             <ul>
@@ -185,7 +185,7 @@
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">5. Sharing Your Information</h2>
+                            <h2>5. Sharing Your Information</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>We do not <strong>sell, rent,</strong> or <strong>trade</strong> your personal information.</p>
                             <p>We may share data <strong>only if required</strong>:</p>
@@ -198,7 +198,7 @@
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">6. Third-Party Services</h2>
+                            <h2>6. Third-Party Services</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>LensShare may embed or link to third-party platforms, such as:</p>
                             <ul>
@@ -212,7 +212,7 @@
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">7. Data Security</h2>
+                            <h2>7. Data Security</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>LensShare takes reasonable steps to protect the limited data it collects during this beta period. However:</p>
                             <ul>
@@ -224,21 +224,21 @@
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">8. Children’s Privacy</h2>
+                            <h2>8. Children’s Privacy</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>LensShare is not intended for use by individuals under <strong>13 years of age</strong>.</p>
                             <p>We do not knowingly collect personal information from children under 13. If we become aware that such data was unintentionally collected, it will be deleted.</p>
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">9. International Users</h2>
+                            <h2>9. International Users</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>LensShare is based in the United States.</p>
                             <p>By using the Website, you consent to having your information stored and processed in the United States.</p>
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">10. Your Choices</h2>
+                            <h2>10. Your Choices</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>You may:</p>
                             <ul>
@@ -250,14 +250,14 @@
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">11. Changes to This Privacy Policy</h2>
+                            <h2>11. Changes to This Privacy Policy</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>We may update this Privacy Policy periodically.</p>
                             <p>When updated, the new version becomes effective once posted on this page.</p>
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">12. Contact</h2>
+                            <h2>12. Contact</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>Because LensShare is an early experimental project and not a commercial service, we do not currently maintain a dedicated support or privacy contact channel. If you have concerns about how your information is handled or wish to stop using the Website, you may discontinue use at any time.</p>
                         </div>

@@ -79,7 +79,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5">
-                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="">
+                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
                         <h1 class="text-dark font-weight-bold"><strong>LensShare Terms of Use (Beta Version)</strong></h1>
                         <hr class="divider" />
@@ -90,10 +90,10 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <img class="hi" src="assets/img/all/webcam7.gif">
-                        <img class="hi" src="assets/img/all/webcam2.gif">
-                        <img class="hi" src="assets/img/all/webcam4.gif">
-                        <img class="hi" src="assets/img/all/webcam6.gif">
+                        <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam4.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam6.gif" alt="" aria-hidden="true">
                     </div>
                 </div>
             </div>
@@ -107,14 +107,14 @@
                         <p class="mb-4">Last updated: <?= date('F j, Y'); ?></p>
 
                         <div class="legal-section">
-                            <h2 class="">1. Acceptance of These Terms</h2>
+                            <h2>1. Acceptance of These Terms</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>By accessing or using LensShare (the “Website”), you agree to these Terms. If you do not agree, you should not use the Website.</p>
                             <p>Because this is an early-stage project, these Terms are intentionally simple and may evolve over time.</p>
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">2. Beta Status & No Guarantees</h2>
+                            <h2>2. Beta Status & No Guarantees</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>LensShare is provided <strong>as an experimental, non-commercial test platform.</strong></p>
                             <p>You understand and agree that:</p>
@@ -128,13 +128,13 @@
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">3. Changes to These Terms</h2>
+                            <h2>3. Changes to These Terms</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>We may update these Terms periodically. The revised version becomes effective once posted.</p>
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">4. Permitted Use</h2>
+                            <h2>4. Permitted Use</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>You are granted a limited, revocable license to access and use LensShare for personal, non-commercial purposes, provided you:</p>
                             <ul>
@@ -146,7 +146,7 @@
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">5. Prohibited Activities</h2>
+                            <h2>5. Prohibited Activities</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>You agree <strong>not</strong> to:</p>
                             <ul>
@@ -159,21 +159,21 @@
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">6. Intellectual Property</h2>
+                            <h2>6. Intellectual Property</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>All code, designs, features, logos, and content on the Website belong to LensShare (or the respective content owners where applicable). You may not reproduce or distribute any of it without permission.</p>
                             <p>User-generated content remains the property of the user, but you grant LensShare a temporary license to display it on the Website.</p>
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">7. Third-Party Links</h2>
+                            <h2>7. Third-Party Links</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>Some parts of the Website may link to third-party platforms (e.g., Vimeo, YouTube, Discord).</p>
                             <p>We are <strong>not responsible</strong> for those websites, their content, or their privacy practices. Use them at your own risk.</p>
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">8. No Warranties</h2>
+                            <h2>8. No Warranties</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>The Website is offered <strong>“as is” and “as available.”</strong></p>
                             <p>To the fullest extent permitted by law:</p>
@@ -185,7 +185,7 @@
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">9. Limitation of Liability</h2>
+                            <h2>9. Limitation of Liability</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>To the maximum extent permitted by law:</p>
                             <ul>
@@ -195,26 +195,26 @@
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">10. Indemnification</h2>
+                            <h2>10. Indemnification</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>You agree to indemnify and hold harmless LensShare and its developer(s) from any claims, losses, or damages arising from your use of the Website or your violation of these Terms.</p>
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">11. Termination</h2>
+                            <h2>11. Termination</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>We may suspend or remove access to the Website at any time, with or without notice, for any reason.</p>
                             <p>Because the Website is not a commercial service, no continued access is guaranteed.</p>
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">12. Severability</h2>
+                            <h2>12. Severability</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>If any part of these Terms is found invalid or unenforceable, the remaining provisions remain in full effect.</p>
                         </div>
 
                         <div class="legal-section">
-                            <h2 class="">13. Entire Agreement</h2>
+                            <h2>13. Entire Agreement</h2>
                             <hr class="divider divider-dark" style="margin:1.5rem 0;" />
                             <p>These Terms represent the complete agreement regarding your use of LensShare.</p>
                         </div>

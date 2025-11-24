@@ -34,6 +34,10 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+
+        <link rel="preconnect" href="https://player.twitch.tv">
+        <link rel="preconnect" href="https://static.twitchcdn.net">
+        <link rel="preconnect" href="https://embed.twitch.tv">
         
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
@@ -88,7 +92,7 @@
                                 Happy Hour
                             </a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
@@ -96,7 +100,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5">
-                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="">
+                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
                         <h1 class="text-white font-weight-bold"><strong>Entertainment</strong></h1>
                         <hr class="divider" />
@@ -107,16 +111,16 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <img class="hi" src="assets/img/all/webcam7.gif">
-                        <img class="hi" src="assets/img/all/webcam2.gif">
-                        <img class="hi" src="assets/img/all/webcam4.gif">
-                        <img class="hi" src="assets/img/all/webcam6.gif">
+                        <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam4.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam6.gif" alt="" aria-hidden="true">
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-6 text-center">
                         <a class="btn btn-dark btn-xl mb-2" href="#media">Explore Portal</a>
-                        <a class="btn btn-secondary btn-xl" style="" href="room.php?room=watch-party-central">Join Watch Party Central</a>
+                        <a class="btn btn-secondary btn-xl" href="room.php?room=watch-party-central">Join Watch Party Central</a>
                     </div>
                 </div>
             </div>
@@ -132,8 +136,8 @@
                             <a class="btn btn-warning btn-xl mb-3" href="room.php?room=watch-party-central">Watch Party Central</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="explanation-image img-fluid" style="" src="assets/img/entertainment/watch-party.gif">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="explanation-image img-fluid" src="assets/img/entertainment/watch-party.gif" alt="A visual slideshow on an LCD TV">
                     </div>
                 </div>
             </div>
@@ -143,8 +147,8 @@
         <section class="page-section bg-light text-dark" id="media">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 text-left">
-                        <img class="explanation-image img-fluid" style="" src="assets/img/entertainment/spiderman.gif">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image img-fluid" src="assets/img/entertainment/spiderman.gif" alt="A glitching image of Spiderman's mask">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Mass Media</strong></h2>
@@ -174,8 +178,8 @@
                             <a class="btn btn-danger btn-xl mb-3" href="iheartradio.php">Listen Now - iHeartRadio</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 d-flex">
-                        <img class="explanation-image mx-auto" style="height: 370px; width: auto;" src="assets/img/entertainment/heart.gif">
+                    <div class="col-lg-6 text-lg-end">
+                        <img class="explanation-image" style="height: 370px; width: auto;" src="assets/img/entertainment/heart.gif" alt="A 3D heart-eyes emoji">
                     </div>
                 </div>
             </div>
@@ -185,8 +189,8 @@
         <section class="page-section bg-light text-dark" id="memes">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 text-left">
-                        <img class="meme-image img-fluid shadow" style="" src="assets/img/entertainment/memes.gif">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="meme-image img-fluid shadow" src="assets/img/entertainment/memes.gif" alt="A meme of a girl with a wow expression on her face">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>The Meme Factory</strong></h2>
@@ -209,7 +213,7 @@
                             <a class="btn btn-dark btn-xl mb-3" href="game-watch.php">Game Watch</a>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 text-center text-lg-end">
                         <?php
 
                             require_once("___modules.php");
@@ -288,10 +292,10 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 text-center">
+                    <div class="col-lg-6 text-center text-lg-end">
                         <img class="explanation-image img-fluid" 
                              src="assets/img/entertainment/gaming.gif" 
-                             alt="Gaming community">
+                             alt="A cool layered video game graphic">
                     </div>
                 </div>
             </div>

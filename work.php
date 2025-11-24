@@ -87,7 +87,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5">
-                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="">
+                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
                         <h1 class="text-white font-weight-bold"><strong>Work Rooms</strong></h1>
                         <hr class="divider" />
@@ -98,16 +98,16 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <img class="hi" src="assets/img/all/webcam7.gif">
-                        <img class="hi" src="assets/img/all/webcam2.gif">
-                        <img class="hi" src="assets/img/all/webcam4.gif">
-                        <img class="hi" src="assets/img/all/webcam6.gif">
+                        <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam4.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam6.gif" alt="" aria-hidden="true">
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-6 text-center">
-                        <a class="btn btn-light btn-xl mb-2" style="" href="#base-station">Explore Rooms</a>
-                        <a class="btn btn-secondary btn-xl" style="" href="room.php?room=lets-work-together">Join a Work Session</a>
+                        <a class="btn btn-light btn-xl mb-2" href="#base-station">Explore Rooms</a>
+                        <a class="btn btn-secondary btn-xl" href="room.php?room=lets-work-together">Join a Work Session</a>
                     </div>
                 </div>
             </div>
@@ -126,8 +126,8 @@
                             Work Base Station
                         </a>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="base-station-image img-fluid" src="assets/img/all/base-station.gif" alt="Work base station">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="base-station-image img-fluid" src="assets/img/all/base-station.gif" alt="A guy in a space suit">
                     </div>
                 </div>
             </div>
@@ -137,8 +137,8 @@
         <section class="page-section text-dark" id="work-support">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <img class="explanation-image img-fluid" src="assets/img/work/important-rooms.gif" alt="Essential work rooms">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image img-fluid" src="assets/img/work/important-rooms.gif" alt="A robot typing on a computer">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Work Support Hub</strong></h2>
@@ -203,8 +203,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="explanation-image img-fluid" src="assets/img/work/job-search.gif" alt="Job search and career moves">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="explanation-image img-fluid" src="assets/img/work/job-search.gif" alt="A girl with headphones scrolling on her laptop">
                     </div>
                 </div>
             </div>
@@ -214,8 +214,8 @@
         <section class="page-section text-dark" id="management">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <img class="explanation-image img-fluid" src="assets/img/work/org-chart.gif" alt="Org chart illustration">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image img-fluid" src="assets/img/work/org-chart.gif" alt="An illustration of people inside a chart">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Management Skills Index</strong></h2>
@@ -1279,8 +1279,8 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="room.php?room=marketers" title="room name">
-                            <img class="img-fluid" src="assets/img/work/marketers.gif" alt="..." />
+                        <a class="portfolio-box" href="room.php?room=marketers" title="Marketers room">
+                            <img class="img-fluid" src="assets/img/work/marketers.gif" alt="" aria-hidden="true" />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Room</div>
                                 <div class="project-name">Marketers</div>
@@ -1288,8 +1288,8 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="room.php?room=accountants" title="room name">
-                            <img class="img-fluid" src="assets/img/work/accountants.gif" alt="..." />
+                        <a class="portfolio-box" href="room.php?room=accountants" title="Accountants room">
+                            <img class="img-fluid" src="assets/img/work/accountants.gif" alt="" aria-hidden="true" />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Room</div>
                                 <div class="project-name">Accountants</div>
@@ -1297,8 +1297,8 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="room.php?room=doctors" title="room name">
-                            <img class="img-fluid" src="assets/img/work/doctors.gif" alt="..." />
+                        <a class="portfolio-box" href="room.php?room=doctors" title="Doctors room">
+                            <img class="img-fluid" src="assets/img/work/doctors.gif" alt="" aria-hidden="true" />
                             <div class="portfolio-box-caption p-3">
                                 <div class="project-category text-white-50">Room</div>
                                 <div class="project-name">Doctors</div>
@@ -1316,8 +1316,8 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="room.php?room=managers" title="room name">
-                            <img class="img-fluid" src="assets/img/work/managers.gif" alt="..." />
+                        <a class="portfolio-box" href="room.php?room=managers" title="Managers room">
+                            <img class="img-fluid" src="assets/img/work/managers.gif" alt="" aria-hidden="true" />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Room</div>
                                 <div class="project-name">Managers</div>
@@ -1325,8 +1325,8 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="room.php?room=programmers" title="room name">
-                            <img class="img-fluid" src="assets/img/work/programmers.gif" alt="..." />
+                        <a class="portfolio-box" href="room.php?room=programmers" title="Programmers room">
+                            <img class="img-fluid" src="assets/img/work/programmers.gif" alt="" aria-hidden="true" />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Room</div>
                                 <div class="project-name">Programmers</div>
@@ -1334,8 +1334,8 @@
                         </a>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="room.php?room=startups" title="room name">
-                            <img class="img-fluid" src="assets/img/work/startups.gif" alt="..." />
+                        <a class="portfolio-box" href="room.php?room=startups" title="Startups room">
+                            <img class="img-fluid" src="assets/img/work/startups.gif" alt="" aria-hidden="true" />
                             <div class="portfolio-box-caption">
                                 <div class="project-category text-white-50">Room</div>
                                 <div class="project-name">Startups</div>

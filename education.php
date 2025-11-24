@@ -101,7 +101,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5">
-                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="">
+                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
                         <h1 class="text-dark font-weight-bold"><strong>School <span class="text-white">&</span> Education</strong></h1>
                         <hr class="divider" />
@@ -112,10 +112,10 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <img class="hi" src="assets/img/all/webcam7.gif">
-                        <img class="hi" src="assets/img/all/webcam2.gif">
-                        <img class="hi" src="assets/img/all/webcam4.gif">
-                        <img class="hi" src="assets/img/all/webcam6.gif">
+                        <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam4.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam6.gif" alt="" aria-hidden="true">
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
@@ -135,8 +135,8 @@
                         <p class="text-muted">Join the School & Education Base Station to talk about learning in general. Share comments and concerns about homework, classes, extra-curriculars, and the education system as a whole.</p>
                         <a id="base-station-btn" class="btn btn-dark btn-xl mt-3" href="room.php?room=school-and-education-base-station">Join Base Station</a>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="base-station-image img-fluid" style="" src="assets/img/all/base-station.gif">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="base-station-image img-fluid" src="assets/img/all/base-station.gif" alt="A guy in a space suit">
                     </div>
                 </div>
             </div>
@@ -146,8 +146,8 @@
         <section class="page-section bg-light text-dark" id="mixer">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <img class="explanation-image img-fluid" style="height: 370px; width: auto;" src="assets/img/education/mixer.gif">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image img-fluid" style="height: 370px; width: auto;" src="assets/img/education/mixer.gif" alt="A martini">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Online College Mixer</strong></h2>
@@ -180,8 +180,8 @@
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=vocational-school">Vocational School</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="base-station-image img-fluid" style="" src="assets/img/education/student.gif">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="base-station-image img-fluid" src="assets/img/education/student.gif" alt="An elementary school kid having his teeth brushed">
                     </div>
                 </div>
             </div>
@@ -191,7 +191,7 @@
         <section class="page-section bg-light text-dark" id="learning">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 text-center text-lg-start">
                         <iframe id="soundcloud" width="500" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1099957360&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
                     </div>
                     <div class="col-lg-6">
@@ -225,8 +225,8 @@
                             <a class="btn btn-warning btn-xl mb-3" href="room.php?room=ask">Ask a Question</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="base-station-image img-fluid" style="" src="assets/img/education/study-together.gif">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="base-station-image img-fluid" src="assets/img/education/study-together.gif" alt="A teen studying in front of his laptop">
                     </div>
                 </div>
             </div>
@@ -236,8 +236,8 @@
         <section class="page-section bg-light text-dark" id="college-prep">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <img class="explanation-image img-fluid" style="height: 370px; width: auto;" src="assets/img/education/college-prep.gif">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image img-fluid" style="height: 370px; width: auto;" src="assets/img/education/college-prep.gif" alt="A girl at a desk typing on her laptop">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>College Prep</strong></h2>

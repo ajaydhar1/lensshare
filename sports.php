@@ -88,7 +88,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5">
-                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="">
+                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
                         <h1 class="text-warning font-weight-bold"><strong>Sports & Fitness</strong></h1>
                         <hr class="divider" />
@@ -99,16 +99,16 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <img class="hi" src="assets/img/all/webcam7.gif">
-                        <img class="hi" src="assets/img/all/webcam2.gif">
-                        <img class="hi" src="assets/img/all/webcam4.gif">
-                        <img class="hi" src="assets/img/all/webcam6.gif">
+                        <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam4.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam6.gif" alt="" aria-hidden="true">
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-6 text-center">
                         <a class="btn btn-light btn-xl mb-2" href="#sports">Explore Rooms</a>
-                        <a class="btn btn-secondary btn-xl" style="" href="room.php?room=sports-talk-central">Join Sports Talk Central</a>
+                        <a class="btn btn-secondary btn-xl" href="room.php?room=sports-talk-central">Join Sports Talk Central</a>
                     </div>
                 </div>
             </div>
@@ -137,8 +137,8 @@
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=motorsport-fans">Motorsport & F1 Fans</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="explanation-image img-fluid" src="assets/img/sports/pro-leagues.gif" alt="Pro league fans watching sports together">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="explanation-image img-fluid" src="assets/img/sports/pro-leagues.gif" alt="LeBron James crying">
                     </div>
                 </div>
             </div>
@@ -148,8 +148,8 @@
         <section class="page-section text-dark" id="sports">
             <div class="container px-4 px-lg-5">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <img class="explanation-image img-fluid" style="" src="assets/img/sports/sports.gif">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image img-fluid" src="assets/img/sports/sports.gif" alt="Beams tilting back and forth">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Sports</strong></h2>
@@ -203,8 +203,8 @@
                             <a class="btn btn-warning btn-xl mb-3" href="room.php?room=fitness-wearables">Fitness Trackers &amp; Wearables</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="explanation-image img-fluid" style="" src="assets/img/sports/fitness.gif">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="explanation-image img-fluid" src="assets/img/sports/fitness.gif" alt="Balls swinging in a Newton's Cradle">
                     </div>
                 </div>
             </div>
@@ -214,8 +214,8 @@
         <section class="page-section text-dark" id="sports-talk-central">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <img class="explanation-image img-fluid" style="" src="assets/img/sports/sports-talk.gif">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image img-fluid" src="assets/img/sports/sports-talk.gif" alt="Patrick Mahomes being put on a playing card">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Sports Talk Central</strong></h2>

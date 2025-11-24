@@ -326,13 +326,11 @@ body footer a {
 
 .ls-beta-banner {
   background: linear-gradient(90deg, #1f2937, #0f172a);
-  border-bottom: 1px solid #1f2933;
   color: #e5e7eb;
   font-size: 13px;
   margin-top: 4.5rem; /* 👈 match roughly the nav height */
   position: relative;
   z-index: 900;
-  min-height: 40px;
 }
 
 .ls-beta-inner {
@@ -386,4 +384,27 @@ body footer a {
 
 .ls-beta-close:hover {
   color: #e5e7eb;
+}
+
+/* --- Global focus styles --- */
+
+/* Don't nuke outlines globally */
+:focus {
+    outline: none;
+}
+
+/* Use :focus-visible so mouse users don't get random outlines */
+:focus-visible {
+    outline: 2px solid deeppink;
+    outline-offset: 2px;
+}
+
+/* Stronger focus for main interactive elements */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible {
+    outline: 2px solid deeppink;
+    outline-offset: 3px;
+    border-radius: 4px;
 }

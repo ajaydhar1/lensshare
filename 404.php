@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="This page could not be found. Explore LensShare’s Rooms and Portals to get back to the conversation." />
         <meta name="author" content="LensShare" />
+        <meta name="robots" content="noindex">
+
         <title>Page Not Found – LensShare</title>
         
         <!-- Favicon-->
@@ -68,26 +70,40 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5">
-                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="">
+                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
                         <h1 class="text-white font-weight-bold"><strong>404</strong></h1>
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-7 align-self-baseline">
-                        <p class="text-white-75 mb-3">Page not found</p>
+                        <p class="text-white-75 mb-3">
+                            The page you’re looking for doesn’t exist or may have moved.
+                        </p>
+                        <p class="text-white-75 mb-4">
+                            Use the options below to jump back into LensShare.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-3">
+                    <div class="col-lg-8 d-flex flex-wrap justify-content-center gap-2">
+                        <a class="btn btn-primary btn-xl mb-2" href="index.php">
+                            Return Home
+                        </a>
+                        <a class="btn btn-outline-light btn-xl mb-2" href="search.php">
+                            Explore LensShare
+                        </a>
+                        <a class="btn btn-outline-light btn-xl mb-2" href="room.php?room=happy-hour">
+                            Go to Happy Hour
+                        </a>
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <img class="hi" src="assets/img/all/webcam7.gif">
-                        <img class="hi" src="assets/img/all/webcam2.gif">
-                        <img class="hi" src="assets/img/all/webcam4.gif">
-                        <img class="hi" src="assets/img/all/webcam6.gif">
-                    </div>
-                </div>
-                <div class="row justify-content-center mt-3">
-                    <div class="col-lg-6 text-center">
-                        <a class="btn btn-primary btn-xl" style="" href="index.php">Return Home</a>
+                        <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam4.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam6.gif" alt="" aria-hidden="true">
                     </div>
                 </div>
             </div>
@@ -99,19 +115,8 @@
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- SimpleLightbox plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
-        <script src="vendors/datatables/jquery.dataTables.min.js"></script>
-        <script src="vendors/datatables/dataTables.bootstrap4.min.js"></script>
-        <script src="vendors/datatables/datatables-demo.js"></script>
-
+        
     </body>
 </html>

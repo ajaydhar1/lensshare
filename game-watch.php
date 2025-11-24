@@ -42,6 +42,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
+        <link rel="preconnect" href="https://player.twitch.tv">
+        <link rel="preconnect" href="https://static.twitchcdn.net">
+        <link rel="preconnect" href="https://embed.twitch.tv">
+
         <!-- Bootstrap core JavaScript -->
         <?php //<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> ?>
 
@@ -162,7 +166,7 @@
                                     Happy Hour
                                 </a>
                             </li>
-                           
+
                         </ul>
                     </div>
                 </div>

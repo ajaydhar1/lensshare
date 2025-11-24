@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Home -->
+    <url>
+        <loc>https://lensshare.co/</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Search Hub -->
+    <url>
+        <loc>https://lensshare.co/search.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Portals -->
+    <url>
+        <loc>https://lensshare.co/work.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lensshare.co/sports.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lensshare.co/education.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lensshare.co/entertainment.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lensshare.co/health.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lensshare.co/relationships.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://lensshare.co/technology.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Apps / Experiences -->
+    <url>
+        <loc>https://lensshare.co/management-index.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://lensshare.co/iheartradio.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://lensshare.co/memes.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://lensshare.co/game-watch.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://lensshare.co/mood-board.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Legal -->
+    <url>
+        <loc>https://lensshare.co/terms.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://lensshare.co/privacy.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://lensshare.co/beta-test-agreement.php</loc>
+        <lastmod>2025-11-24</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>

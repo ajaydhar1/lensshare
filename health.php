@@ -132,7 +132,7 @@
                                 Happy Hour
                             </a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
@@ -140,7 +140,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container px-4 px-lg-5">
-                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="">
+                <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
                         <h1 class="text-white font-weight-bold"><strong>Health <span class="text-warning">+</span> Wellness</strong></h1>
                         <hr class="divider" />
@@ -151,10 +151,10 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center">
-                        <img class="hi" src="assets/img/all/webcam7.gif">
-                        <img class="hi" src="assets/img/all/webcam2.gif">
-                        <img class="hi" src="assets/img/all/webcam4.gif">
-                        <img class="hi" src="assets/img/all/webcam6.gif">
+                        <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam4.gif" alt="" aria-hidden="true">
+                        <img class="hi" src="assets/img/all/webcam6.gif" alt="" aria-hidden="true">
                     </div>
                 </div>
                 <div class="row justify-content-center mt-3">
@@ -169,8 +169,8 @@
         <section class="page-section text-dark" id="physical-health">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/doctor.gif">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/doctor.gif" alt="A shiny image of a doctor">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Body & Physical Health</strong></h2>
@@ -220,8 +220,8 @@
                             <a class="btn btn-warning btn-xl mb-3" href="room.php?room=body-image-confidence">Body Image &amp; Self-Confidence</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img class="explanation-image img-fluid" style="" src="assets/img/health/brain.gif">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="explanation-image img-fluid" src="assets/img/health/brain.gif" alt="A girl with her head exploding">
                     </div>
                 </div>
             </div>
@@ -231,8 +231,8 @@
         <section class="page-section text-dark" id="special-topics">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6" style="">
-                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/special-topics.gif">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/special-topics.gif" alt="A doctor showing the thumbs up">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Special Topics</strong></h2>
@@ -262,8 +262,8 @@
                             <a class="btn btn-dark btn-xl mb-3" href="room.php?room=health-questions">Ask a Health Question</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center" style="">
-                        <img class="explanation-image img-fluid" style="height: 370px; width: auto;" src="assets/img/health/health-questions.gif">
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img class="explanation-image img-fluid" style="height: 370px; width: auto;" src="assets/img/health/health-questions.gif" alt="A guy running tired on a treadmill">
                     </div>
                 </div>
             </div>
@@ -273,8 +273,8 @@
         <section class="page-section text-dark" id="mood-board">
             <div class="container px-4 px-lg-5">
                 <div class="row align-items-center">
-                    <div class="col-lg-6" style="">
-                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/mask.webp">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="explanation-image img-fluid" style="margin-top: -100px; height: 370px; width: auto;" src="assets/img/health/mask.webp" alt="A real life animated emoji of a guy with different masks on">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Mood Board</strong></h2>
@@ -289,8 +289,8 @@
         <!-- How Do You Feel? -->
         <section id="emoji-and-game-section">
             <div class="container games">
-                <h1 id="howdoyoufeel" class="pt-5" style="">How do you feel?</h1>
-                <div class="row align-items-start mt-5 mb-4 feelings emoji-rack" style="">
+                <h1 id="howdoyoufeel" class="pt-5">How do you feel?</h1>
+                <div class="row align-items-start mt-5 mb-4 feelings emoji-rack">
                     <div class="col-lg-3 col-md-4 col-sm-6 col-6">
                         <div class="p-3" style="text-align:center;">
                             <a href="room.php?room=i-feel-annoyed" class="feeling">
