@@ -119,14 +119,13 @@
   }
 
   function renderIncoming({ name, text, ts, nonce }) {
-    
+    const fromSelf = isFromSelf({ nonce });
     const who  = name || 'Guest';
     const when = fmtStamp(ts);
     const line = `[${when}] <${who}> ${text || ''}`;
 
     // toast only if not from self
-    if (!isFromSelf({nonce})) {
-
+    if (!fromSelf) {
       Toaster.showToast({
         text: `${who}: ${line}`,
         kind: 'info',
@@ -151,18 +150,31 @@
           window.location.replace(clean);
         }
       });
-
     }
 
     if (!panel) return;
 
+    // Don't add another row for messages from self (renderOutgoing handles those)
+    if (fromSelf) {
+      return;
+    }
+
     if (isPre) {
+      // legacy <pre> mode — keep simple text form
       const needsNL = panel.textContent && !panel.textContent.endsWith('\n');
       panel.textContent += (needsNL ? '\n' : '') + line;
     } else {
+      // New div-based chat log – match PHP structure
       const row = document.createElement('div');
-      row.className = 'msg msg-incoming';
-      row.innerHTML = `<strong>${esc(who)}</strong> <span class="muted">${esc(when)}</span><br>${esc(text||'')}`;
+      row.className = 'chat-line chat-line-incoming';
+
+      const meta = `[${when}] <${who}> `;
+
+      row.innerHTML = `
+        <span class="chat-meta">${esc(meta)}</span>
+        <span class="chat-body">${esc(text || '')}</span>
+      `;
+
       panel.appendChild(row);
     }
 
@@ -170,11 +182,32 @@
   }
 
   function renderOutgoing({ name, text, tempId }) {
-    if (!panel || isPre) return; // no pending in <pre> mode
+    if (!panel || isPre) return; // still bail in <pre> mode, just in case
+
     const row = document.createElement('div');
-    row.className = 'msg msg-outgoing pending';
-    row.setAttribute('data-temp-id', tempId);
-    row.innerHTML = `<strong>${esc(name||'Me')}</strong> <span class="muted">sending…</span><br>${esc(text||'')}`;
+    row.className = 'chat-line chat-line-outgoing pending';
+    if (tempId) {
+      row.setAttribute('data-temp-id', tempId);
+    }
+
+    // Build a timestamp similar to PHP: date('Y-m-d H:i')
+    const now = new Date();
+    const pad = n => n.toString().padStart(2, '0');
+    const ts =
+      now.getFullYear() + '-' +
+      pad(now.getMonth() + 1) + '-' +
+      pad(now.getDate()) + ' ' +
+      pad(now.getHours()) + ':' +
+      pad(now.getMinutes());
+
+    const who = name || 'Me';
+    const meta = `[${ts}] <${who}> `;
+
+    row.innerHTML = `
+      <span class="chat-meta">${esc(meta)}</span>
+      <span class="chat-body">${esc(text || '')}</span>
+    `;
+
     panel.appendChild(row);
     panel.scrollTop = panel.scrollHeight;
   }

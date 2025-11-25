@@ -163,13 +163,13 @@
             </div>
         </section>
         <hr class="rectangle-divider" style="margin-bottom: -0.5rem;"/>
-        <section class="page-section bg-light text-dark" id="activity">
+        <section class="page-section bg-light text-dark" id="activity" style="padding: 6rem 0;">
           <div class="container px-4 px-lg-5">
 
             <!-- Shared heading for the zone -->
             <div class="row justify-content-center mb-3">
               <div class="col-lg-10 text-center">
-                <h2 class="h4 mb-2"><strong>Activity</strong></h2>
+                <h2 class="h3 mb-2"><strong>Activity</strong></h2>
                 <p class="text-muted mb-0">
                   See where people are hanging out now, or jump back into Spaces you’ve already visited.
                 </p>

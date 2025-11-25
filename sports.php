@@ -65,7 +65,7 @@
                         <li class="nav-item my-auto"><a class="nav-link" href="#pro-league-fans">Pro Leagues</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#sports">Sports</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#fitness">Fitness</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#sports-talk-central" style="margin-right: 0.65rem;">Sports Talk Central</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#sports-talk-central">Sports Talk Central</a></li>
                         
                         <!-- New: Search icon/link -->
                         <li class="nav-item my-auto">
@@ -107,7 +107,7 @@
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-6 text-center">
-                        <a class="btn btn-light btn-xl mb-2" href="#sports">Explore Rooms</a>
+                        <a class="btn btn-light btn-xl mb-2" href="#pro-league-fans">Explore Rooms</a>
                         <a class="btn btn-secondary btn-xl" href="room.php?room=sports-talk-central">Join Sports Talk Central</a>
                     </div>
                 </div>

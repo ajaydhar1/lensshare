@@ -77,7 +77,7 @@
                         <li class="nav-item my-auto"><a class="nav-link" href="#watch-party">Watch Party Central</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#media">Media</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#memes">Memes</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#games" style="margin-right: 0.65rem;" >Game Watch</a></li>
+                        <li class="nav-item my-auto"><a class="nav-link" href="#games">Game Watch</a></li>
                         
                         <!-- New: Search icon/link -->
                         <li class="nav-item my-auto">
@@ -119,7 +119,7 @@
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-6 text-center">
-                        <a class="btn btn-dark btn-xl mb-2" href="#media">Explore Portal</a>
+                        <a class="btn btn-dark btn-xl mb-2" href="#watch-party">Explore Portal</a>
                         <a class="btn btn-secondary btn-xl" href="room.php?room=watch-party-central">Join Watch Party Central</a>
                     </div>
                 </div>

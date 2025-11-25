@@ -69,13 +69,6 @@
 				font-size: 1rem;
 			}
 
-			body,
-			body a.strong-link,
-			body a.medium-link,
-			body a.light-link {	  	
-				cursor: url(assets/img/health/small-pointer.png), auto !important;
-			}
-
 			body a.strong-link:hover {
 				color: black;
 			}
@@ -89,6 +82,16 @@
 				a.light-link {
 				    color: black;
 				}
+			}
+
+			a:hover {
+				cursor: pointer !important;
+			}
+
+			.btn-primary:hover {
+			    color: var(--bs-btn-hover-color) !important;
+			    background-color: var(--bs-btn-hover-bg) !important;
+			    border-color: var(--bs-btn-hover-border-color) !important;
 			}
 	  
 	  	</style>
@@ -108,7 +111,7 @@
 		                    
 		                    <!-- New: Search icon/link -->
 		                    <li class="nav-item my-auto">
-		                        <a class="nav-link d-flex align-items-center" href="search.php">
+		                        <a class="nav-link text-nav-dark d-flex align-items-center" href="search.php">
 		                            <span class="me-1">🔍</span>
 		                            <span class="d-none d-lg-inline">Search</span>
 		                        </a>

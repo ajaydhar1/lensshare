@@ -64,7 +64,6 @@
                         <li class="nav-item my-auto"><a class="nav-link" href="#work-support">Work Support Hub</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#management">Management Index</a></li>
                         <li class="nav-item my-auto"><a class="nav-link" href="#occupations">Job Titles</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#holodeck">Holodeck</a></li>
                         
                         <!-- New: Search icon/link -->
                         <li class="nav-item my-auto">

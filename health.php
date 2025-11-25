@@ -159,7 +159,7 @@
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-6 text-center">
-                        <a class="btn btn-dark btn-xl mb-2" href="#base-station">Explore Rooms</a>
+                        <a class="btn btn-dark btn-xl mb-2" href="#physical-health">Explore Rooms</a>
                         <a class="btn btn-light btn-xl mb-3" href="room.php?room=health-questions">Ask a Health Question</a>
                     </div>
                 </div>
