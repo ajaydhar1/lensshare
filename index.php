@@ -94,6 +94,21 @@
                 background-size: contain;
             }
 
+            .cta-1 {
+                box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+                border: 2px solid rgba(255,255,255,0.2);
+            }
+
+            .mb-responsive {
+                margin-bottom: 0.5rem; /* mb-2 (mobile default) */
+            }
+
+            @media (min-width: 992px) { /* Bootstrap lg breakpoint */
+                .mb-responsive {
+                    margin-bottom: 1rem; /* mb-3 (desktop) */
+                }
+            }
+
         </style>
 
     </head>
@@ -132,12 +147,16 @@
             <div class="container px-4 px-lg-5">
                 <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold"><strong>LensShare Spaces</strong></h1>
+                        <h1 class="text-white font-weight-bold"><strong>Join Live Rooms</strong></h1>
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-7 align-self-baseline">
-                        <p class="text-white mb-0">LensShare is a text + video chat platform with interest-based rooms.</p>
-                        <p class="text-white mb-3">Hang out, meet people — no sign-up needed.</p>
+                        <p class="text-white mb-0">
+                         Join live text and video rooms on any topic.
+                        </p>
+                        <p class="text-white mb-3">
+                        Talk, listen, or just hang out — no sign-up required.
+                        </p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -150,16 +169,26 @@
                 </div>
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-4 text-center">
-                        <a id="" class="btn btn-xl text-white cta" href="#how-it-works">
-                            <span>How it Works</span>
-                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12m-5-5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                        <!-- Primary CTA -->
+                        <a class="btn btn-xl btn-primary cta-1 me-2 mb-responsive" href="#portals">
+                            Join Quietly
                         </a>
+                        <!-- Secondary CTA -->
+                        <a class="btn btn-xl btn-outline-light me-2 mb-responsive" style="border: solid 1px var(--bs-light);" href="#holodeck">
+                            Create a Room
+                        </a>
+                        <div>
+                            <a id="" class="btn btn-xl text-white cta" href="#how-it-works">
+                                <span>How it Works</span>
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12m-5-5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
         <!-- Portals -->
-        <section class="page-section-smaller">
+        <section id="portals" class="page-section-smaller">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-12 text-center">
@@ -270,8 +299,8 @@
                         <p class="text-muted">LensShare lets you create or join live “Rooms,” which are simple, interest-based spaces with text and video chat.</p>
                         <ul class="text-muted">
                             <li>Browse or create a room</li>
-                            <li>Join when you're ready (camera not shared by default)</li>
-                            <li>Talk, listen, or just text</li>
+                            <li>Join when you're ready (Camera and mic are off by default)</li>
+                            <li>Talk, listen, or just hang out</li>
                         </ul>
                         <p class="text-muted">No setup. No pressure. Just jump in.</p>
                         <span style="font-size: 2.7rem;">😀😆🤣😇</span>
