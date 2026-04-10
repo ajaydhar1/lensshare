@@ -40,6 +40,12 @@
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
+        <link rel="preload" as="image" href="assets/img/bg-masthead.jpg">
+        <link rel="preload" as="image" href="assets/img/all/webcam7.gif">
+        <link rel="preload" as="image" href="assets/img/all/webcam2.gif">
+        <link rel="preload" as="image" href="assets/img/all/webcam4.gif">
+        <link rel="preload" as="image" href="assets/img/all/webcam6.gif">
+
         <style>
 
             header.masthead {
