@@ -42,6 +42,12 @@
 
         <style>
 
+            @media screen and (max-width: 992px) {
+                #masthead-text {
+                    padding-top: 9rem !important;
+                }
+            }
+
             #mainNav.navbar-homepage {
                 box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
                 background-color: #fff;
@@ -255,9 +261,13 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Getting Started</strong></h2>
-                        <p class="text-muted">LensShare is a 2D network of “Rooms,” which are simple, interest-based spaces with text and video chat.</p>
-                        <p class="text-muted mb-0">There’s no 3D world, no cartoon avatars, and no complicated controls.</p>
-                        <p class="text-muted">Just people talking to people — face-to-face, in real time.</p>
+                        <p class="text-muted">LensShare lets you create or join live “Rooms,” which are simple, interest-based spaces with text and video chat.</p>
+                        <ul class="text-muted">
+                            <li>Browse or create a room</li>
+                            <li>Join when you're ready (camera not shared by default)</li>
+                            <li>Talk, listen, or just text</li>
+                        </ul>
+                        <p class="text-muted">No setup. No pressure. Just jump in.</p>
                         <span style="font-size: 2.7rem;">😀😆🤣😇</span>
                     </div>
                     <div class="col-lg-6 text-center text-lg-end">
@@ -277,7 +287,7 @@
                     <div class="col-lg-6">
                         <h2 class="mb-3"><strong>Portals</strong></h2>
 
-                        <p class="text-muted">LensShare has an unlimited number of Rooms, so we group them into themed Portals to make it easier to explore.</p>
+                        <p class="text-muted">Rooms are grouped into themed Portals to make them easier to explore.</p>
                         <p class="text-muted">Just choose a Portal → click a Room → and you’re instantly in a space where someone might already be hanging out.</p>
                         <p class="text-muted">Here is the complete list of Portals:</p>
                         <div class="mt-4">
