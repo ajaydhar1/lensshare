@@ -9,9 +9,9 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- Search Hub -->
+    <!-- Explore Hub -->
     <url>
-        <loc>https://lensshare.co/search.php</loc>
+        <loc>https://lensshare.co/explore.php</loc>
         <lastmod>2025-11-24</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>

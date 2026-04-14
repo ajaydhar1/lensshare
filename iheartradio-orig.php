@@ -126,7 +126,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item my-auto"><a class="nav-link" href="entertainment.php">Entertainment</a></li>
-                        <li class="nav-item"><a class="btn btn-primary text-white" style="margin-left: 0.65rem;" href="room.php?room=happy-hour">Happy Hour</a></li>
+                        <li class="nav-item"><a class="btn btn-primary text-white ms-lg-2" href="room.php?room=happy-hour">Happy Hour</a></li>
                     </ul>
                 </div>
             </div>

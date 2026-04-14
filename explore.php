@@ -1,5 +1,5 @@
 <?php
-// search.php — LensShare Search Hub (messages + rooms + posts + people)
+// explore.php — LensShare Explore Hub (messages + rooms + posts + people)
 
 ini_set('display_errors','0'); error_reporting(E_ALL);
 $debug = true; // TODO: set to false in production
@@ -144,7 +144,7 @@ if ($db) {
 
     } catch (Throwable $e) {
         // Always log it
-        error_log('Search.php DB error: ' . $e->getMessage());
+        error_log('explore.php DB error: ' . $e->getMessage());
 
         if ($debug) {
             // Show a simple debug block in the browser
@@ -170,11 +170,11 @@ if ($db) {
     <!-- Meta -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Search across LensShare messages, rooms, posts, and people with one fun, powerful search hub." />
+    <meta name="description" content="Explore LensShare rooms, messages, and people. Jump into live conversations or search across everything in one place." />
     <meta name="author" content="LensShare" />
 
     <!-- Page title -->
-    <title>Search – LensShare</title>
+    <title>Explore – LensShare</title>
 
     <!-- Favicon-->
     <link rel="icon" type="image/png" href="assets/img/all/galaxy.png" />
@@ -195,13 +195,13 @@ if ($db) {
 
     <!-- Twitter card and Open Graph-->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Search – LensShare" />
-    <meta name="twitter:description" content="Search messages, rooms, posts, and people across LensShare." />
+    <meta name="twitter:title" content="Explore – LensShare" />
+    <meta name="twitter:description" content="Explore messages, rooms, posts, and people across LensShare." />
     <meta name="twitter:image" content="https://lensshare.co/assets/img/all/galaxy.png" />
 
-    <meta property="og:url" content="https://lensshare.co/search.php" />
-    <meta property="og:title" content="Search – LensShare" />
-    <meta property="og:description" content="Search messages, rooms, posts, and people across LensShare." />
+    <meta property="og:url" content="https://lensshare.co/explore.php" />
+    <meta property="og:title" content="Explore – LensShare" />
+    <meta property="og:description" content="Explore messages, rooms, posts, and people across LensShare." />
     <meta property="og:image" content="https://lensshare.co/assets/img/all/galaxy.png" />
 
     <style>
@@ -209,12 +209,15 @@ if ($db) {
         main {
             padding-top: 6.25rem !important;
         }
-        #mainNav .navbar-nav .nav-item .nav-link {
-            color: rgba(0,0,0,.55);
+
+        #mainNav.navbar .navbar-nav .nav-item .nav-link {
+            color: #212529;
         }
-        #mainNav .navbar-nav .nav-item .nav-link:hover {
-            color: rgba(0,0,0,.8);
+
+        #mainNav.navbar .navbar-nav .nav-item .nav-link:hover {
+            color: #f4623a;
         }
+
         #mainNav {
             background-color: #fff;
         }
@@ -247,8 +250,14 @@ if ($db) {
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item my-auto"><a class="nav-link" href="search.php">Explore</a></li>
-                    <li class="nav-item"><a class="btn btn-primary text-white" style="margin-left: 0.65rem;" href="room.php?room=happy-hour">Happy Hour</a></li>
+                    <!-- New: Explore icon/link -->
+                    <li class="nav-item my-auto">
+                        <a class="nav-link d-flex align-items-center" href="explore.php">
+                            <span class="me-1">🧭</span>
+                            <span>Explore</span>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="btn btn-primary text-white ms-lg-2" href="room.php?room=happy-hour">Happy Hour</a></li>
                 </ul>
             </div>
         </div>
@@ -258,14 +267,14 @@ if ($db) {
 
         <div class="container">
 
-            <!-- Search hero -->
+            <!-- Explore hero -->
             <div class="card shadow-sm mb-4 search-hero-card">
                 <div class="card-body">
                     <h1 class="h3 mb-1"><strong>🧭 Explore LensShare</strong></h1>
                     <p class="text-muted mb-3">
                         Find <strong>messages</strong>, <strong>rooms</strong>, <strong>posts</strong>, and <strong>people</strong> with one search.
                     </p>
-                    <form class="d-flex gap-2" method="get" action="search.php">
+                    <form class="d-flex gap-2" method="get" action="explore.php">
                         <input
                             type="text"
                             class="form-control form-control-lg"
@@ -284,7 +293,7 @@ if ($db) {
                             <span class="text-muted small me-2">Try:</span>
                             <?php foreach (['coffee','music','gaming','study','physical health'] as $suggest): ?>
                                 <a class="badge rounded-pill text-bg-secondary text-decoration-none me-1 mb-1"
-                                   href="search.php?q=<?= urlencode($suggest) ?>">
+                                   href="explore.php?q=<?= urlencode($suggest) ?>">
                                     <?= htmlspecialchars($suggest) ?>
                                 </a>
                             <?php endforeach; ?>
@@ -299,7 +308,7 @@ if ($db) {
                     <?php foreach ($types as $tKey => $tLabel): ?>
                         <li class="nav-item me-2 mb-2">
                             <a class="nav-link<?= $type === $tKey ? ' active' : '' ?>"
-                               href="search.php?q=<?= urlencode($q) ?>&type=<?= urlencode($tKey) ?>">
+                               href="explore.php?q=<?= urlencode($q) ?>&type=<?= urlencode($tKey) ?>">
                                 <?= htmlspecialchars($tLabel) ?>
                             </a>
                         </li>
@@ -343,7 +352,7 @@ if ($db) {
                                     </div>
                                     <?php if ($type === 'all' && !empty($messageResults)): ?>
                                         <a class="small text-decoration-none"
-                                           href="search.php?q=<?= urlencode($q) ?>&type=messages&limit=all">
+                                           href="explore.php?q=<?= urlencode($q) ?>&type=messages&limit=all">
                                            View all
                                         </a>
                                     <?php endif; ?>
@@ -392,7 +401,7 @@ if ($db) {
                                     </div>
                                     <?php if ($type === 'all' && !empty($roomResults)): ?>
                                         <a class="small text-decoration-none"
-                                           href="search.php?q=<?= urlencode($q) ?>&type=rooms&limit=all">
+                                           href="explore.php?q=<?= urlencode($q) ?>&type=rooms&limit=all">
                                            View all
                                         </a>
                                     <?php endif; ?>
@@ -436,7 +445,7 @@ if ($db) {
                                     </div>
                                     <?php if ($type === 'all' && !empty($postResults)): ?>
                                         <a class="small text-decoration-none"
-                                           href="search.php?q=<?= urlencode($q) ?>&type=posts&limit=all">
+                                           href="explore.php?q=<?= urlencode($q) ?>&type=posts&limit=all">
                                            View all
                                         </a>
                                     <?php endif; ?>
@@ -478,7 +487,7 @@ if ($db) {
                                     </div>
                                     <?php if ($type === 'all' && !empty($peopleResults)): ?>
                                         <a class="small text-decoration-none"
-                                           href="search.php?q=<?= urlencode($q) ?>&type=people&limit=all">
+                                           href="explore.php?q=<?= urlencode($q) ?>&type=people&limit=all">
                                            View all
                                         </a>
                                     <?php endif; ?>
@@ -499,7 +508,7 @@ if ($db) {
                                                     </div>
                                                 </div>
                                                 <a class="btn btn-sm btn-outline-warning"
-                                                   href="search.php?q=<?= urlencode($person['user']) ?>&type=messages">
+                                                   href="explore.php?q=<?= urlencode($person['user']) ?>&type=messages">
                                                     View messages
                                                 </a>
                                             </div>
@@ -523,7 +532,7 @@ if ($db) {
                                 </div>
                                 <?php if ($type === 'all' && !empty($messageResults)): ?>
                                     <a class="small text-decoration-none"
-                                       href="search.php?q=<?= urlencode($q) ?>&type=messages">
+                                       href="explore.php?q=<?= urlencode($q) ?>&type=messages">
                                        View all
                                     </a>
                                 <?php endif; ?>
@@ -605,7 +614,7 @@ if ($db) {
                                 </div>
                                 <?php if ($type === 'all' && !empty($postResults)): ?>
                                     <a class="small text-decoration-none"
-                                       href="search.php?q=<?= urlencode($q) ?>&type=posts&limit=all">
+                                       href="explore.php?q=<?= urlencode($q) ?>&type=posts&limit=all">
                                        View all
                                     </a>
                                 <?php endif; ?>
@@ -659,7 +668,7 @@ if ($db) {
                                                 </div>
                                             </div>
                                             <a class="btn btn-sm btn-outline-warning"
-                                               href="search.php?q=<?= urlencode($person['user']) ?>&type=messages">
+                                               href="explore.php?q=<?= urlencode($person['user']) ?>&type=messages">
                                                 View messages
                                             </a>
                                         </div>

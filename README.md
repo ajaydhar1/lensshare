@@ -2,7 +2,7 @@
 
 LensShare is a lightweight social platform built around simple text + video chat Rooms, grouped into themed Portals.
 
-This MVP includes the core experience: entering Rooms, chatting, exploring Portals, and navigating the platform through a unified Search Hub.
+This MVP includes the core experience: entering Rooms, chatting, exploring Portals, and navigating the platform through a unified Explore Hub.
 
 
 ## 🚀 Features (MVP v1)
@@ -10,7 +10,7 @@ This MVP includes the core experience: entering Rooms, chatting, exploring Porta
 - **Rooms** — Interest-based spaces with text and optional video chat
 - **Portals** — Work, Sports, Education, Entertainment, Health, Relationships, Technology
 - **Holodeck** — Create or join private Rooms by typing a name
-- **Search Hub** — Cross-platform search (Messages, Rooms, Posts, People) + Explore mode
+- **Explore Hub** — Cross-platform search (Messages, Rooms, Posts, People) + Explore mode
 - **Posts System** — Global and room-specific posts
 - **Fresh DB Tools** — Script to generate a new SQLite DB with seeded rooms/posts
 - **Accessibility**
@@ -43,7 +43,7 @@ This MVP includes the core experience: entering Rooms, chatting, exploring Porta
 ```bash
 /
 ├── room.php                 # Main chat room view
-├── search.php               # Search + Explore hub
+├── explore.php               # Search + Explore hub
 ├── work.php, sports.php…    # Portal pages
 ├── admin/                   # Admin tools (post editor, db browser, etc.)
 ├── comms/                   # Chat backend + WebSocket glue

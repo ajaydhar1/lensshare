@@ -153,16 +153,16 @@
                         <ul class="navbar-nav ms-auto my-2 my-lg-0">
                             <li class="nav-item my-auto"><a class="nav-link text-nav-dark" href="entertainment.php">Entertainment</a></li>
                            
-                            <!-- New: Search icon/link -->
+                            <!-- New: Explore icon/link -->
                             <li class="nav-item my-auto">
-                                <a class="nav-link d-flex align-items-center" href="search.php">
-                                    <span class="me-1">🔍</span>
-                                    <span class="d-none d-lg-inline">Search</span>
+                                <a class="nav-link d-flex align-items-center" href="explore.php">
+                                    <span class="me-1">🧭</span>
+                                    <span>Explore</span>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="btn btn-primary text-white" style="margin-left: 0.65rem;" href="room.php?room=happy-hour">
+                                <a class="btn btn-primary text-white ms-lg-2" href="room.php?room=happy-hour">
                                     Happy Hour
                                 </a>
                             </li>

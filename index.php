@@ -124,16 +124,16 @@
                     <li class="nav-item my-auto"><a class="nav-link" href="#getting-started">Getting Started</a></li>
                     <li class="nav-item my-auto"><a class="nav-link" href="#holodeck">Holodeck</a></li>
 
-                    <!-- New: Search icon/link -->
+                    <!-- New: Explore icon/link -->
                     <li class="nav-item my-auto">
-                        <a class="nav-link d-flex align-items-center" href="search.php">
-                            <span class="me-1">🔍</span>
-                            <span class="d-none d-lg-inline">Search</span>
+                        <a class="nav-link d-flex align-items-center" href="explore.php">
+                            <span class="me-1">🧭</span>
+                            <span>Explore</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="btn btn-primary text-white" style="margin-left: 0.65rem;" href="room.php?room=happy-hour">
+                        <a class="btn btn-primary text-white ms-lg-2" href="room.php?room=happy-hour">
                             Happy Hour
                         </a>
                     </li>
@@ -170,11 +170,11 @@
                 <div class="row justify-content-center mt-3">
                     <div class="col-lg-4 text-center">
                         <!-- Primary CTA -->
-                        <a class="btn btn-xl btn-primary cta-1 me-2 mb-responsive" href="#portals">
+                        <a class="btn btn-xl btn-primary cta-1 mb-responsive" href="#portals">
                             Join Quietly
                         </a>
                         <!-- Secondary CTA -->
-                        <a class="btn btn-xl btn-outline-light me-2 mb-responsive" style="border: solid 1px var(--bs-light);" href="#holodeck">
+                        <a class="btn btn-xl btn-outline-light mb-responsive" style="border: solid 1px var(--bs-light);" href="#holodeck">
                             Create a Room
                         </a>
                         <div>
