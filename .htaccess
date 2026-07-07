@@ -1,3 +1,8 @@
 RewriteEngine On
 
+# Protect hidden files (except .well-known)
 RewriteRule "(^|/)\.(?!well-known/)" - [F,L]
+
+# Custom error pages
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.html
