@@ -1,8 +1,8 @@
 # LensShare — MVP v1
 
-LensShare is a lightweight social platform built around simple text + video chat Rooms, grouped into themed Portals.
+LensShare is a lightweight social platform centered around communities, conversation, and shared interests. Users can discover themed Portals, join text and video chat Rooms, share posts, and explore the platform through a unified Explore Hub.
 
-This MVP includes the core experience: entering Rooms, chatting, exploring Portals, and navigating the platform through a unified Explore Hub.
+This repository contains the first public milestone of LensShare, establishing the foundation for a richer social experience with authentication, user profiles, personalized feeds, and real-time communication.
 
 
 ## 🚀 Features (MVP v1)
@@ -12,7 +12,8 @@ This MVP includes the core experience: entering Rooms, chatting, exploring Porta
 - **Holodeck** — Create or join private Rooms by typing a name
 - **Explore Hub** — Cross-platform search (Messages, Rooms, Posts, People) + Explore mode
 - **Posts System** — Global and room-specific posts
-- **Fresh DB Tools** — Script to generate a new SQLite DB with seeded rooms/posts
+- **Cloud Database Foundation** — PostgreSQL-powered backend ready for user accounts and future social features
+- **Authentication Ready** — Project structure prepared for user accounts and profiles
 - **Accessibility**
     - Focus ring
     - Keyboard navigation
@@ -31,7 +32,8 @@ This MVP includes the core experience: entering Rooms, chatting, exploring Porta
 ## 📦 Tech Stack
 
 - **PHP 8+**
-- **SQLite 3**
+- **SQLite 3 (current)**
+- **PostgreSQL (Neon, migration in progress)**
 - **Bootstrap 5**
 - **JavaScript (vanilla + WebSocket client)**
 - **Apache + .htaccess routing**
@@ -45,6 +47,9 @@ This MVP includes the core experience: entering Rooms, chatting, exploring Porta
 ├── room.php                 # Main chat room view
 ├── explore.php               # Search + Explore hub
 ├── work.php, sports.php…    # Portal pages
+├── ___config.php            # Project configuration
+├── includes/                # Shared PHP helpers (DB, auth, etc.)
+├── database/                # PostgreSQL schema and migrations
 ├── admin/                   # Admin tools (post editor, db browser, etc.)
 ├── comms/                   # Chat backend + WebSocket glue
 ├── data/                    # SQLite database(s)
@@ -57,19 +62,23 @@ This MVP includes the core experience: entering Rooms, chatting, exploring Porta
 
 ## 🛠 Setup
 
-1. Clone the repository
-2. Ensure PHP + SQLite are installed
-3. Configure environment/path inside `config.php`
-4. Generate a fresh DB (optional):
-```bash
-php tools/init_fresh_comms_db.php
-```
-5. Make sure Apache serves the project root
-6. Visit:
-```arduino
-https://lensshare.co/
-```
-(or local equivalent)
+1. Clone the repository.
+2. Run `composer install`.
+3. Create a `.env` file from `.env.example`.
+4. Configure your `DATABASE_URL`.
+5. Ensure PHP and PostgreSQL are available.
+6. Run the initial database schema (coming soon).
+7. Start your local web server.
+
+## 🗄 Database
+
+LensShare is currently transitioning from SQLite to PostgreSQL.
+
+Development uses a cloud-hosted PostgreSQL database provided by Neon. Database configuration is supplied through environment variables, with the primary connection defined by:
+
+DATABASE_URL=...
+
+Database schemas and future migrations are stored in the `database/` directory.
 
 
 ## ⚙️ Development Notes
@@ -84,9 +93,24 @@ https://lensshare.co/
 - `room.php` is intentionally `noindex,follow` due to dynamic content
 
 
+## 🛣 Roadmap
+
+- [x] MVP Rooms and Portals
+- [x] Explore Hub
+- [x] WebSocket Chat
+- [x] Cloud PostgreSQL foundation
+- [ ] Authentication
+- [ ] User Profiles
+- [ ] Photo & Video Posts
+- [ ] Following System
+- [ ] Personalized Feed
+- [ ] Zoom-like Spaces
+- [ ] Direct Messages
+
+
 ## 📜 License
 
-MVP internal project. No explicit open-source license yet.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 
 ## 🏷 Version
