@@ -5,6 +5,11 @@
  * Drop-in: require_once __DIR__ . '/config.php';
  */
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->safeLoad();
+
 /* ============================================================
  * Branding
  * ============================================================ */
@@ -84,7 +89,7 @@ function env_db_path(): string {
  * Secrets (keep out of version control in production)
  * ============================================================ */
 $secrets = [
-  'init_admin_token' => 'ajay-7c9f4f2f3a',
+    'init_admin_token' => $_ENV['INIT_ADMIN_TOKEN'] ?? '',
 ];
 
 

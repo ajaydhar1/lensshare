@@ -13,8 +13,8 @@ require_once __DIR__ . '/../config.php';
 define('INIT_ADMIN_TOKEN', $secrets['init_admin_token']);          // same token your tools expect
 define('DB_PATH', env_db_path());
 define('ROOM_VIEW_BASE', '../../room.php');            // viewer that accepts ?room=...&token=...
-define('ADMIN_USER', 'ajay');                           // <— hard-coded login (your request)
-define('ADMIN_PASS', 'ajay-777');                       // <— change this!
+define('ADMIN_USER', $_ENV['ADMIN_USER'] ?? '');
+define('ADMIN_PASS', $_ENV['ADMIN_PASS'] ?? '');
 /* ============================================= */
 
 function h($s){ return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }
