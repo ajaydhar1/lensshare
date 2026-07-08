@@ -88,7 +88,7 @@ if (!defined('ADM_TOPNAV_LOADED')) {
     $isLoggedIn = !empty($_SESSION['is_admin']);
     if ($isLoggedIn) {
       // don’t preserve token on logout
-      $logoutHref = '/admin/index.php?logout=1';
+      $logoutHref = '/comms/admin/index.php?logout=1';
       $logoutBtn  = '<a class="admtn__btn" href="'.$logoutHref.'" title="Sign out">Logout</a>';
       $rightHTML  = ($rightHTML ? $rightHTML.' ' : '') . $logoutBtn;
     }

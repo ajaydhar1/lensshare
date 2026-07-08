@@ -72,7 +72,7 @@ $env = [
 
   'favicon_type'   => 'image/png',
 
-  'web_base'       => '/lensshare/comms',
+  'web_base'       => '/comms',
 
   'shell'          => 'lensshare',
 
