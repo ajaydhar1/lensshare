@@ -9,14 +9,6 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- Explore Hub -->
-    <url>
-        <loc>https://lensshare.co/explore.php</loc>
-        <lastmod>2025-11-24</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.7</priority>
-    </url>
-
     <!-- Portals -->
     <url>
         <loc>https://lensshare.co/work.php</loc>
