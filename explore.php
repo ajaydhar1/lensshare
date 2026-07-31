@@ -173,6 +173,8 @@ if ($db) {
     <meta name="description" content="Explore LensShare rooms, messages, and people. Jump into live conversations or search across everything in one place." />
     <meta name="author" content="LensShare" />
 
+    <meta name="robots" content="noindex,follow">
+
     <!-- Page title -->
     <title>Explore – LensShare</title>
 
