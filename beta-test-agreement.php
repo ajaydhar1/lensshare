@@ -31,6 +31,7 @@
   <!-- Core theme CSS (includes Bootstrap)-->
   <link href="css/styles.css" rel="stylesheet" />
   <link href="css/custom.css" rel="stylesheet" />
+  <?php require_once __DIR__ . '/includes/nav/site-nav.php'; ls_nav_head(); ?>
 
 
   <style>
@@ -100,56 +101,20 @@
         border-radius: 12px;
       }
     }
-
-
-    /* Navbar tweak on dark bg */
-    #mainNav {
-      background: rgba(15,23,42,0.96);
-      border-bottom: 1px solid #1f2933;
-    }
-
-    .navbar-brand,
-    .navbar-nav .nav-link {
-      color: #e5e7eb !important;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #a5b4fc !important;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg fixed-top py-3" id="mainNav">
-      <div class="container px-4 px-lg-5">
-          <a class="navbar-brand text-secondary" href="index.php">LensShare</a>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                <li class="nav-item my-auto"><a class="nav-link" href="terms.php">Terms</a></li>
-                  <li class="nav-item my-auto"><a class="nav-link" href="privacy.php">Privacy</a></li>
-                  
-                  <!-- New: Explore icon/link -->
-                  <li class="nav-item my-auto">
-                      <a class="nav-link d-flex align-items-center" href="explore.php">
-                          <span class="me-1">🧭</span>
-                          <span>Explore</span>
-                      </a>
-                  </li>
+  <?php ls_nav_render([
+      'page_label' => 'Legal',
+      'page_links' => [
+          ['label' => 'Terms', 'href' => 'terms.php'],
+          ['label' => 'Privacy', 'href' => 'privacy.php'],
+      ],
+      'skip_target' => 'main-content',
+  ]); ?>
 
-                  <li class="nav-item">
-                      <a class="btn btn-primary text-white ms-lg-2" href="room.php?room=happy-hour">
-                          Happy Hour
-                      </a>
-                  </li>
-                  
-              </ul>
-          </div>
-      </div>
-  </nav>
-
-  <div class="shell">
+  <div class="shell" id="main-content">
     <div class="card">
       <h1>LensShare Beta Test Agreement</h1>
       <p class="subtitle">How the LensShare Beta works and what we ask from you.</p>
@@ -237,5 +202,6 @@
   </div>
 
   <?php require_once('___footer.php'); ?>
+<?php ls_nav_scripts(); ?>
 </body>
 </html>

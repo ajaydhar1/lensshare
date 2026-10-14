@@ -22,6 +22,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/custom.css" rel="stylesheet" />
+        <?php require_once __DIR__ . '/includes/nav/site-nav.php'; ls_nav_head('/'); ?>
 
         <style>
 
@@ -44,31 +45,9 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand white-text" href="index.php">LensShare</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <!-- New: Explore icon/link -->
-                        <li class="nav-item my-auto">
-                            <a class="nav-link d-flex align-items-center" href="explore.php">
-                                <span class="me-1">🧭</span>
-                                <span>Explore</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="btn btn-primary text-white ms-lg-2" href="room.php?room=happy-hour">
-                                Happy Hour
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <?php ls_nav_render(['base' => '/']); ?>
         <!-- Masthead-->
-        <header class="masthead">
+        <header class="masthead" id="main-content">
             <div class="container px-4 px-lg-5">
                 <div id="masthead-text" class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
@@ -117,6 +96,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <?php ls_nav_scripts('/'); ?>
         
     </body>
 </html>

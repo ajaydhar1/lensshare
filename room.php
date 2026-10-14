@@ -43,6 +43,7 @@ $room_title = $room['title'] ?? ucfirst(str_replace('-', ' ', $room_slug));
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/custom.css" rel="stylesheet" />
+        <?php require_once __DIR__ . '/includes/nav/site-nav.php'; ls_nav_head(); ?>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
@@ -87,19 +88,6 @@ $room_title = $room['title'] ?? ucfirst(str_replace('-', ' ', $room_slug));
             html, body {
                 overflow-x: hidden;
                 scroll-behavior: smooth;
-            }
-
-            #mainNav {
-                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-                background-color: #fff !important;
-            }
-
-            #mainNav .navbar-nav .nav-item .nav-link {
-                color: #212529
-            }
-
-            #mainNav .navbar-nav .nav-item .nav-link:hover {
-                color: #f4623a;
             }
 
             .admtn-wrap {
@@ -205,34 +193,16 @@ $room_title = $room['title'] ?? ucfirst(str_replace('-', ' ', $room_slug));
     </head>
     <body id="page-top" data-room-slug="<?= htmlspecialchars($room_slug, ENT_QUOTES, 'UTF-8') ?>" data-room-name="<?= htmlspecialchars($room_title, ENT_QUOTES, 'UTF-8') ?>">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.php">LensShare</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item my-auto"><a class="nav-link" href="#sections">Sections</a></li>
-                        <li class="nav-item my-auto"><a class="nav-link" href="#panel">Panel</a></li>
-                        
-                        <!-- New: Explore icon/link -->
-                        <li class="nav-item my-auto">
-                            <a class="nav-link d-flex align-items-center" href="explore.php">
-                                <span class="me-1">🧭</span>
-                                <span>Explore</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="btn btn-primary text-white ms-lg-2" href="room.php?room=happy-hour">
-                                Happy Hour
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        
+        <?php ls_nav_render([
+            'cta' => $room_slug !== 'happy-hour',
+            'page_label' => 'In this room',
+            'skip_target' => 'panel',
+            'page_links' => [
+                ['label' => 'Sections', 'href' => '#sections'],
+                ['label' => 'Panel', 'href' => '#panel'],
+            ],
+        ]); ?>
+        <?php ls_nav_scripts(); /* emitted early: comms/index.php may stop rendering (unknown room) */ ?>
 
         <?php require __DIR__.'/comms/index.php'; ?>
         

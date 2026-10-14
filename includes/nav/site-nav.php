@@ -12,6 +12,8 @@
 //   portal       key of the current Portal; highlights the Portals menu and its item.
 //   page_links   [['label' => 'How it Works', 'href' => '#how-it-works'], ...]
 //                Same-page section links, shown as a secondary "On this page" group.
+//   page_label   heading for the page_links group (default 'On this page').
+//   holodeck_local  true when the page has its own #holodeck section (links to #holodeck).
 //   skip_target  id of the main content for the skip link (default 'main-content').
 //   cta          false to hide the Happy Hour call to action.
 //   base         string prefixed to relative hrefs (default '').
@@ -89,6 +91,8 @@ if (!function_exists('ls_nav_esc')) {
         $skip    = preg_replace('/[^A-Za-z0-9_-]/', '', (string)($opts['skip_target'] ?? 'main-content'));
         $base    = (string)($opts['base'] ?? '');
         $showCta = ($opts['cta'] ?? true) !== false;
+        $label   = (string)($opts['page_label'] ?? 'On this page');
+        $localHolodeck = !empty($opts['holodeck_local']);
         $e       = 'ls_nav_esc';
 
         $out  = '<header class="ls-nav" data-ls-nav data-variant="' . $e($variant) . '">';
@@ -126,14 +130,15 @@ if (!function_exists('ls_nav_esc')) {
             }
             $isActive = $active === $item['key'];
             $spy = isset($item['spy']) ? ' data-ls-spy="' . $e($item['spy']) . '"' : '';
+            $href = ($localHolodeck && isset($item['spy'])) ? '#' . $item['spy'] : ls_nav_url($item['href'], $base);
             $out .= '<li class="ls-nav__item"><a class="ls-nav__link' . ($isActive ? ' is-active' : '') . '" href="'
-                  . $e(ls_nav_url($item['href'], $base)) . '"' . $spy . ($isActive ? ' aria-current="page"' : '') . '>'
+                  . $e($href) . '"' . $spy . ($isActive ? ' aria-current="page"' : '') . '>'
                   . $e($item['label']) . '</a></li>';
         }
         $out .= '</ul>';
 
         if ($pages) {
-            $out .= '<div class="ls-nav__page"><span class="ls-nav__page-label" id="ls-nav-page-label">On this page</span>'
+            $out .= '<div class="ls-nav__page"><span class="ls-nav__page-label" id="ls-nav-page-label">' . $e($label) . '</span>'
                   . '<ul class="ls-nav__list ls-nav__list--page" aria-labelledby="ls-nav-page-label">';
             foreach ($pages as $link) {
                 $href = (string)($link['href'] ?? '#');

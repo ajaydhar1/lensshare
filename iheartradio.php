@@ -45,6 +45,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/custom.css" rel="stylesheet" />
+        <?php require_once __DIR__ . '/includes/nav/site-nav.php'; ls_nav_head(); ?>
 
         <link rel="preload" as="image" href="assets/img/all/webcam7.gif">
         <link rel="preload" as="image" href="assets/img/all/webcam2.gif">
@@ -227,34 +228,15 @@
     <body class="wide side-panel side-panel-static">
 
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg fixed-top py-3" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand text-secondary" href="index.php">LensShare</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item my-auto"><a class="nav-link" href="entertainment.php">Entertainment</a></li>
-                        
-                        <!-- New: Explore icon/link -->
-                        <li class="nav-item my-auto">
-                            <a class="nav-link d-flex align-items-center" href="explore.php">
-                                <span class="me-1">🧭</span>
-                                <span>Explore</span>
-                            </a>
-                        </li>
+        <?php ls_nav_render([
+            'portal' => 'entertainment',
+            'page_label' => 'Related',
+            'page_links' => [
+                ['label' => 'Entertainment', 'href' => 'entertainment.php'],
+            ],
+        ]); ?>
 
-                        <li class="nav-item">
-                            <a class="btn btn-primary text-white ms-lg-2" href="room.php?room=happy-hour">
-                                Happy Hour
-                            </a>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <div class="row justify-content-center mb-3 w-100" style="margin-top: 7.5rem !important;">
+        <div id="main-content" class="row justify-content-center mb-3 w-100" style="margin-top: 7.5rem !important;">
             <div class="col-lg-12 text-center">
                 <img class="hi" src="assets/img/all/webcam7.gif" alt="" aria-hidden="true">
                 <img class="hi" src="assets/img/all/webcam2.gif" alt="" aria-hidden="true">
@@ -610,6 +592,7 @@
 
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <?php ls_nav_scripts(); ?>
 
         <script src="vendors/datatables/jquery.dataTables.min.js"></script>
         <script src="vendors/datatables/dataTables.bootstrap4.min.js"></script>
