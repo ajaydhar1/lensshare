@@ -116,6 +116,8 @@
     stopTimers();               // fine to stop local polling
     panel.classList.add('hidden');
     panel.setAttribute('aria-hidden','true');
+    setBtnOpened(false);
+    btnToggle?.setAttribute('aria-expanded','false');
     status('');                 // clear any status text
     // keep player instance alive so reopening is instant
   });
@@ -436,17 +438,16 @@
     }
   }
 
-  function initThreeUp() {
+  function initRoomLayout() {
     if (!mainPanel) return;
 
     const watchPanel = document.getElementById('watch-panel');
     const videoPanel = document.getElementById('video-panel');
+    if (!watchPanel || !videoPanel || !document.getElementById('chat-block')) return;
 
-    // Make sure both panels are visible
-    if (watchPanel) {
-      watchPanel.classList.remove('hidden');
-      watchPanel.setAttribute('aria-hidden', 'false');
-    }
+    // Restore the room's original default: show video and Watch Together.
+    watchPanel.classList.remove('hidden');
+    watchPanel.setAttribute('aria-hidden', 'false');
     if (videoPanel) {
       videoPanel.classList.remove('hidden');
       videoPanel.setAttribute('aria-hidden', 'false');
@@ -456,11 +457,10 @@
       window.CommsVideo.initJitsi();
     }
 
-    // Set layout to three-up
     setTwoUp(true);
     setTwoToThreeUp(true);
 
-    // Fix button states
+    // Reflect the visible panels in their controls.
     const watchBtn = document.getElementById('btn-watch-toggle');
     const videoBtn = document.getElementById('btn-video-toggle');
 
@@ -473,20 +473,11 @@
       videoBtn.textContent = '🎥 Joined (click to hide)';
       videoBtn.setAttribute('aria-expanded', 'true');
     }
-    
-
-    // Fix button states (if they exist)
-    if (btnToggle) {
-      btnToggle.setAttribute('aria-expanded', 'true');
-    }
-    if (btnVideoToggle) {
-      btnVideoToggle.setAttribute('aria-expanded', 'true');
-    }
   }
 
   // Optional: expose it globally so other code can call it
   window.CommsLayout = window.CommsLayout || {};
-  window.CommsLayout.initThreeUp = initThreeUp;
+  window.CommsLayout.initRoomLayout = initRoomLayout;
 
 
   // Button: manual toggle (S key also)

@@ -110,6 +110,29 @@
   }
   const getName = () => (userInput?.value || localStorage.getItem(LS_NAME_KEY) || 'Guest').trim();
 
+  function appendChatLine({ name, text, ts, className = '', tempId }) {
+    if (!panel || isPre) return null;
+
+    panel.querySelector('.chat-empty')?.remove();
+    const who = name || 'Guest';
+    const row = document.createElement('div');
+    row.className = `chat-line ${className}`.trim();
+    if (tempId) row.dataset.tempId = tempId;
+
+    const date = ts ? new Date(ts) : null;
+    const datetime = date && !Number.isNaN(date.getTime()) ? date.toISOString() : '';
+    row.innerHTML = `
+      <div class="chat-message-meta">
+        <span class="chat-sender">${esc(who)}</span>
+        <time class="chat-time"${datetime ? ` datetime="${esc(datetime)}"` : ''}>${esc(fmtStamp(ts))}</time>
+      </div>
+      <div class="chat-body">${esc(text || '')}</div>
+    `;
+
+    panel.appendChild(row);
+    panel.scrollTop = panel.scrollHeight;
+    return row;
+  }
 
   function isFromSelf(msg){
     // Next: nonce echo (if the server bounces our message back)
@@ -122,12 +145,10 @@
     const fromSelf = isFromSelf({ nonce });
     const who  = name || 'Guest';
     const when = fmtStamp(ts);
-    const line = `[${when}] <${who}> ${text || ''}`;
-
     // toast only if not from self
     if (!fromSelf) {
       Toaster.showToast({
-        text: `${who}: ${line}`,
+        text: `${who}: [${when}] ${text || ''}`,
         kind: 'info',
         timeout: 4500,
         place: 'top',
@@ -161,64 +182,33 @@
 
     if (isPre) {
       // legacy <pre> mode — keep simple text form
+      const line = `[${when}] <${who}> ${text || ''}`;
       const needsNL = panel.textContent && !panel.textContent.endsWith('\n');
       panel.textContent += (needsNL ? '\n' : '') + line;
     } else {
-      // New div-based chat log – match PHP structure
-      const row = document.createElement('div');
-      row.className = 'chat-line chat-line-incoming';
-
-      const meta = `[${when}] <${who}> `;
-
-      row.innerHTML = `
-        <span class="chat-meta">${esc(meta)}</span>
-        <span class="chat-body">${esc(text || '')}</span>
-      `;
-
-      panel.appendChild(row);
+      appendChatLine({ name: who, text, ts, className: 'chat-line-incoming' });
     }
 
-    panel.scrollTop = panel.scrollHeight;
   }
 
   function renderOutgoing({ name, text, tempId }) {
     if (!panel || isPre) return; // still bail in <pre> mode, just in case
-
-    const row = document.createElement('div');
-    row.className = 'chat-line chat-line-outgoing pending';
-    if (tempId) {
-      row.setAttribute('data-temp-id', tempId);
-    }
-
-    // Build a timestamp similar to PHP: date('Y-m-d H:i')
-    const now = new Date();
-    const pad = n => n.toString().padStart(2, '0');
-    const ts =
-      now.getFullYear() + '-' +
-      pad(now.getMonth() + 1) + '-' +
-      pad(now.getDate()) + ' ' +
-      pad(now.getHours()) + ':' +
-      pad(now.getMinutes());
-
-    const who = name || 'Me';
-    const meta = `[${ts}] <${who}> `;
-
-    row.innerHTML = `
-      <span class="chat-meta">${esc(meta)}</span>
-      <span class="chat-body">${esc(text || '')}</span>
-    `;
-
-    panel.appendChild(row);
-    panel.scrollTop = panel.scrollHeight;
+    appendChatLine({
+      name: name || 'Me',
+      text,
+      ts: Date.now(),
+      className: 'chat-line-outgoing pending',
+      tempId
+    });
   }
 
   function resolvePending(tempId, serverTs) {
     if (!panel || isPre || !tempId) return;
-    const el = panel.querySelector(`.msg.pending[data-temp-id="${CSS.escape(tempId)}"]`);
+    const el = panel.querySelector(`.chat-line.pending[data-temp-id="${CSS.escape(tempId)}"]`);
     if (el) {
       el.classList.remove('pending');
-      const m = el.querySelector('.muted');
-      if (m) m.textContent = fmtStamp(serverTs) || 'sent';
+      const time = el.querySelector('.chat-time');
+      if (time) time.textContent = fmtStamp(serverTs) || 'sent';
     }
   }
 

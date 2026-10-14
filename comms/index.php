@@ -122,8 +122,6 @@ if (!defined('GLOBAL_ROOM_ID')) {
   define('GLOBAL_ROOM_ID', 1);
 }
 
-$rooms = db()->query("SELECT slug,name FROM rooms ORDER BY id ASC")->fetchAll(PDO::FETCH_ASSOC);
-
 // posts = room-specific + global (room_id = GLOBAL_ROOM_ID), non-archived
 $posts = (function($room_id){
   $sql = "
@@ -170,6 +168,21 @@ if ($view === 'messages') {
   $q->execute([$post_id, $ROOM_ID, GLOBAL_ROOM_ID]);
   $post = $q->fetch(PDO::FETCH_ASSOC);
 }
+
+$sectionQuery = ['room' => $ROOM['slug']];
+if ($showAdminBar) {
+  $sectionQuery['token'] = $token;
+}
+$chatHref = '?' . http_build_query($sectionQuery);
+$postsTargetId = ($view === 'post' && $post)
+  ? (int)$post['id']
+  : (int)($posts[0]['id'] ?? 0);
+$postsQuery = $sectionQuery + ['view' => 'post'];
+if ($postsTargetId) {
+  $postsQuery['post'] = $postsTargetId;
+}
+$postsHref = '?' . http_build_query($postsQuery);
+$roomTitle = ucwords(str_replace('-', ' ', $ROOM['name']));
 ?>
 <!DOCTYPE html>
 <html lang="en" <?= isset($_COOKIE['ui.theme']) ? 'data-theme="'.htmlspecialchars($_COOKIE['ui.theme']).'"' : 'light' ?>>
@@ -216,6 +229,8 @@ if ($view === 'messages') {
 <link rel="stylesheet" href="<?= $env['web_base'] ?>/assets/css/components/toast.css?v=<?= filemtime(__DIR__.'/assets/css/components/toast.css') ?>">
 
 <link rel="stylesheet" href="assets/css/site.css?v=<?= filemtime(__DIR__.'/assets/css/site.css') ?>">
+<link rel="stylesheet" href="<?= $env['web_base'] ?>/assets/css/components/chat-ui.css?v=<?= filemtime(__DIR__.'/assets/css/components/chat-ui.css') ?>">
+<link rel="stylesheet" href="<?= $env['web_base'] ?>/assets/css/components/posts-ui.css?v=<?= filemtime(__DIR__.'/assets/css/components/posts-ui.css') ?>">
 
 </head>
 <body>
@@ -237,55 +252,32 @@ if ($view === 'messages') {
 </header>
 
 <div id="workspace" class="row">
-  <a class="anchor" id="sections"></a>
-  <aside class="panel">
-    <h3>Posts (<?= count($posts) ?>)</h3>
-    <div class="list">
-      <?php if (!$posts): ?>
-        <div class="item"><span class="dim">No posts yet.</span></div>
-      <?php else: foreach ($posts as $p): ?>
-
-        <div class="item">
-          <div>
-            <a href="?room=<?= rawurlencode($ROOM['slug']) ?>&view=post&post=<?= (int)$p['id'] ?><?= $showAdminBar?'&token='.rawurlencode($token):''; ?>">
-              <?= h($p['title']) ?>
-            </a>
-            <div class="dim"><?= h(date('Y-m-d H:i', strtotime($p['created_at']))) ?></div>
-          </div>
-        </div>
-      <?php endforeach; endif; ?>
-    </div>
-
-    <h3>Spaces (<?= count($rooms) ?>)</h3>
-    <div class="toolbar">
-      <a class="btn chip" href="?room=<?= $ROOM['slug'] ?>">Chat: <strong><?= h(str_replace("-", " ", $ROOM['name'])) ?></strong></a>
-      <?php if ($ROOM['slug'] !== MAIN_ROOM_SLUG): ?>
-        <a class="btn chip" href="?room=main">Open <strong>Main Space</strong></a>
-      <?php endif; ?>
-    </div>
-
-  </aside>
-
-  <a class="anchor panel-viewer" id="panel"></a>
-  <main class="panel viewer-three-up">
+  <main id="panel" class="panel viewer-three-up<?= $view === 'post' ? ' posts-mode' : '' ?>">
     <h3>
       <span class="emoji" role="img" aria-label="rainbow">🌈</span>
-      Panel — <?= ($view === 'post') ? 'Post' : 'Space'; ?>
+      <?= h($roomTitle . ' · ' . ($view === 'post' ? 'Posts' : 'Chat')) ?>
     </h3>
 
-    <?php if ($view === 'messages'): ?>
-      <div id="viewer-inner-toolbar" class="toolbar" style="display:flex;align-items:center;gap:8px">
+    <div id="viewer-inner-toolbar" class="toolbar" style="display:flex;align-items:center;gap:8px">
+      <a class="anchor" id="sections"></a>
+        <nav class="section-nav" aria-label="Space sections">
+          <a class="section-tab<?= $view === 'messages' ? ' is-active' : '' ?>"
+             href="<?= h($chatHref) ?>"<?= $view === 'messages' ? ' aria-current="page"' : '' ?>>Chat</a>
+          <a class="section-tab<?= $view === 'post' ? ' is-active' : '' ?>"
+             href="<?= h($postsHref) ?>"<?= $view === 'post' ? ' aria-current="page"' : '' ?>>
+            Posts <span class="section-count"><?= count($posts) ?></span>
+          </a>
+        </nav>
+        <?php if ($view === 'messages'): ?>
         <?php if ($errors): ?>
           <div class="chip" style="background:#3a1f1f;border-color:#5f2a2a;color:#ffdada"><?= h(implode(' ', $errors)) ?></div>
-        <?php else: ?>
-          <span class="dim">Chat: <?= h(str_replace("-", " ", $ROOM['name'])) ?></span>
         <?php endif; ?>
 
         <span id="room-status" class="muted" aria-live="polite"></span>
 
         <span style="flex:1"></span>
 
-        <a class="btn chip" id="btn-watch-toggle" href="#watch">🎬 Watch together</a>
+        <a class="btn chip" id="btn-watch-toggle" href="#watch" aria-expanded="false" aria-controls="watch-panel">🎬 Watch together</a>
         <a class="btn chip" id="btn-two-up" href="#layout" title="Toggle side-by-side (S)">🧩 Side-by-side</a>
 
         <?php
@@ -293,30 +285,37 @@ if ($view === 'messages') {
         ?>
         <a class="btn chip" id="btn-video-toggle"
            href="#video"
-           data-jitsi="<?= h($jitsiUrl) ?>"
+         aria-expanded="false"
+         aria-controls="video-panel"
+         data-jitsi="<?= h($jitsiUrl) ?>"
            title="Join this room’s video chat (V)">
           🎥 Join video chat
         </a>
 
         <?php // <a id="btn-futuristic" class="btn small" style="">✨ Futuristic mode</a> ?>
 
-      </div>
+        <?php endif; ?>
+    </div>
 
+    <?php if ($view === 'messages'): ?>
       <!-- chat-block START (new) -->
       <div id="chat-block" class="room-panel">
 
-      <div class="video-bar">
-        <strong>Messages</strong>
-        <span style="flex:1"></span>
+      <div class="chat-heading">
+        <div>
+          <strong>Messages</strong>
+          <span>Conversation in <?= h(str_replace("-", " ", $ROOM['name'])) ?></span>
+        </div>
       </div>
 
-      <div id="log" class="mono chat-log">
+      <div id="log" class="chat-log" role="log" aria-label="Room messages" aria-live="polite" aria-relevant="additions">
       <?php
           if (!$messages){
-              echo "No messages yet — be the first to say hello 👋";
+              echo '<div class="chat-empty"><span class="chat-empty-icon" aria-hidden="true">✦</span><strong>It’s quiet in here</strong><span>Start the conversation with a hello.</span></div>';
           } else {
               foreach ($messages as $m){
                   $ts   = date('Y-m-d H:i', strtotime($m['created_at']));
+                  $datetime = date('c', strtotime($m['created_at']));
                   $user = $m['user'];
                   $body = $m['body'];
 
@@ -324,12 +323,11 @@ if ($view === 'messages') {
                   $msgId = isset($m['id']) ? (int)$m['id'] : 0;
                   ?>
                   <div class="chat-line" id="msg-<?= $msgId ?>">
-                      <span class="chat-meta">
-                          <?= h("[$ts] <$user> ") ?>
-                      </span>
-                      <span class="chat-body">
-                          <?= nl2br(h($body)) ?>
-                      </span>
+                      <div class="chat-message-meta">
+                          <span class="chat-sender"><?= h($user) ?></span>
+                          <time class="chat-time" datetime="<?= h($datetime) ?>"><?= h($ts) ?></time>
+                      </div>
+                      <div class="chat-body"><?= nl2br(h($body)) ?></div>
                   </div>
                   <?php
               }
@@ -343,9 +341,9 @@ if ($view === 'messages') {
           <input type="hidden" name="csrf" value="<?= h(csrf_token()) ?>">
           <input type="hidden" name="room" value="<?= h($ROOM['slug']) ?>">
           <div style="display:grid;grid-template-columns:180px 1fr auto;gap:8px;align-items:start">
-            <label style="width:100%"><input type="text" name="user" maxlength="32" placeholder="Your name" disabled></label>
-            <label style="width:100%"><textarea name="body" rows="2" placeholder="Type a message (no uploads in MVP)"></textarea></label>
-            <button type="submit">Send</button>
+            <label style="width:100%"><input type="text" name="user" maxlength="32" placeholder="Your name" aria-label="Your display name" autocomplete="name" disabled></label>
+            <label style="width:100%"><textarea name="body" rows="2" maxlength="2000" placeholder="Write a message…" aria-label="Write a message"></textarea></label>
+            <button class="chat-send" type="submit">Send</button>
           </div>
         </form>
       </div>
@@ -356,17 +354,44 @@ if ($view === 'messages') {
 
       <div class="gutter" aria-hidden="true"></div>
 
-      <!-- Video Chat Panel (Jitsi) -->
-      <div id="video-panel" class="video-panel room-panel hidden" aria-hidden="true">
-        <div class="video-bar">
-          <strong>Video chat — <?= h(str_replace("-", " ", $ROOM['name'])) ?></strong>
-          <span style="flex:1"></span>
-          <a class="btn btn-secondary chip" id="btn-video-pop" target="_blank" rel="noopener">Pop out ↗</a>
-          <button class="btn btn-secondary chip" id="btn-video-leave" type="button">Leave</button>
+      <div class="video-room-column">
+        <!-- Video Chat Panel (Jitsi) -->
+        <div id="video-panel" class="video-panel room-panel hidden" aria-hidden="true">
+          <div class="video-bar">
+            <strong>Video chat — <?= h(str_replace("-", " ", $ROOM['name'])) ?></strong>
+            <span style="flex:1"></span>
+            <a class="btn btn-secondary chip" id="btn-video-pop" target="_blank" rel="noopener">Pop out ↗</a>
+            <button class="btn btn-secondary chip" id="btn-video-leave" type="button">Leave</button>
+          </div>
+          <div class="video-frame">
+            <!-- iframe injected here when joined -->
+          </div>
         </div>
-        <div class="video-frame">
-          <!-- iframe injected here when joined -->
-        </div>
+
+        <!-- Quick Holodeck: Private Room Jump -->
+        <section class="private-room-quickjump" aria-labelledby="private-room-quickjump-title">
+          <div class="private-room-quickjump__inner">
+            <div class="private-room-quickjump__copy">
+              <h3 id="private-room-quickjump-title">Jump to a Private Room</h3>
+              <p>Enter a room name, then share the link with a friend.</p>
+            </div>
+            <form id="quick-holodeck-form" class="private-room-quickjump__form">
+              <div class="input-group input-group-sm">
+                <span class="input-group-text">Room Name</span>
+                <input
+                  id="quick-holodeck-room"
+                  type="text"
+                  class="form-control"
+                  placeholder="e.g., Study Pod A"
+                  required
+                  pattern="[a-zA-Z0-9 ]+"
+                  aria-label="Private room name"
+                >
+                <button class="btn btn-secondary" type="submit">Go</button>
+              </div>
+            </form>
+          </div>
+        </section>
       </div>
 
       <!-- Watch Together Panel -->
@@ -393,24 +418,47 @@ if ($view === 'messages') {
         </div>
       </div>
 
-    <?php elseif ($view === 'post' && $post): ?>
-      <div id="viewer-inner-toolbar" class="toolbar" style="display:flex;align-items:center;gap:8px">
-        <?php if ($errors): ?>
-          <div class="chip" style="background:#3a1f1f;border-color:#5f2a2a;color:#ffdada"><?= h(implode(' ', $errors)) ?></div>
-        <?php else: ?>
-          <span class="dim">Posts · Updates & Announcements</span>
-        <?php endif; ?>
+    <?php elseif ($view === 'post'): ?>
+      <section class="posts-view" aria-label="Room posts">
+        <nav class="posts-list" aria-label="Posts in <?= h($roomTitle) ?>">
+          <div class="posts-list-heading">
+            <strong>Posts</strong>
+            <span><?= count($posts) ?></span>
+          </div>
+          <?php if (!$posts): ?>
+            <p class="posts-list-empty">No posts in this room yet.</p>
+          <?php else: foreach ($posts as $p): ?>
+            <?php
+              $itemQuery = $sectionQuery + ['view' => 'post', 'post' => (int)$p['id']];
+              $itemHref = '?' . http_build_query($itemQuery);
+              $isSelected = $post && (int)$post['id'] === (int)$p['id'];
+            ?>
+            <a class="post-list-item<?= $isSelected ? ' is-selected' : '' ?>"
+               href="<?= h($itemHref) ?>"<?= $isSelected ? ' aria-current="page"' : '' ?>>
+              <strong><?= h($p['title']) ?></strong>
+              <time datetime="<?= h(date('c', strtotime($p['created_at']))) ?>">
+                <?= h(date('Y-m-d H:i', strtotime($p['created_at']))) ?>
+              </time>
+            </a>
+          <?php endforeach; endif; ?>
+        </nav>
 
-        <span style="flex:1"></span>
-
-      </div>
-      <div class="post">
-        <h1><?= h($post['title']) ?></h1>
-        <div id="post-date" class="muted"><?= h(date('Y-m-d H:i', strtotime($post['created_at']))) ?></div>
-        <pre class="mono" style="max-height:none"><?= h($post['body']) ?></pre>
-      </div>
+        <article class="post-reader" aria-live="polite">
+          <?php if ($post): ?>
+            <h1><?= h($post['title']) ?></h1>
+            <time id="post-date" datetime="<?= h(date('c', strtotime($post['created_at']))) ?>">
+              <?= h(date('Y-m-d H:i', strtotime($post['created_at']))) ?>
+            </time>
+            <div class="post-reader-body"><?= h($post['body']) ?></div>
+          <?php elseif ($posts): ?>
+            <p class="post-reader-empty">Choose a post from the list to read it.</p>
+          <?php else: ?>
+            <p class="post-reader-empty">There are no posts to read yet.</p>
+          <?php endif; ?>
+        </article>
+      </section>
     <?php else: ?>
-      <div class="post"><em class="muted">Select a post from the left.</em></div>
+      <div class="post"><em class="muted">This room section is unavailable.</em></div>
     <?php endif; ?>
 
     <div class="gutter" aria-hidden="true"></div>
@@ -578,8 +626,8 @@ $FOOTER_LABEL = ucwords($room_slug) . " (@{$room_slug})";
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    if (window.CommsLayout && typeof window.CommsLayout.initThreeUp === 'function') {
-      window.CommsLayout.initThreeUp();
+    if (window.CommsLayout && typeof window.CommsLayout.initRoomLayout === 'function') {
+      window.CommsLayout.initRoomLayout();
     }
   });
 </script>
