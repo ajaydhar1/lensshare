@@ -42,9 +42,10 @@
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
         <link href="assets/css/ls-portal.css" rel="stylesheet" />
+        <link href="assets/css/ls-chrome.css" rel="stylesheet" />
 
     </head>
-    <body id="page-top" class="ls-portal ls-portal--sports">
+    <body id="page-top" class="ls-portal ls-portal--sports ls-chrome">
         <!-- Navigation-->
         <?php ls_nav_render([
             'portal' => 'sports',

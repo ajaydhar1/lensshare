@@ -39,6 +39,7 @@
         <link href="css/custom.css" rel="stylesheet" />
 
         <!-- Universal top navigation -->
+        <link href="assets/css/ls-chrome.css" rel="stylesheet" />
         <?php require_once __DIR__ . '/includes/nav/site-nav.php'; ls_nav_head(); ?>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -733,54 +734,10 @@
                 background: linear-gradient(0deg, rgba(58,11,79,.92), rgba(245,61,156,.35));
             }
 
-            /* Holodeck (shared include, restyled on the homepage only) */
-            .ls-home #holodeck {
-                position: relative;
-                overflow: hidden;
-                padding: 6.5rem 0;
-                background:
-                    radial-gradient(50rem 22rem at 50% 0%, rgba(245,61,156,.40), transparent 70%),
-                    radial-gradient(36rem 20rem at 50% 100%, rgba(255,138,61,.22), transparent 70%),
-                    linear-gradient(180deg, rgba(13,6,24,.9), rgba(13,6,24,.78) 50%, rgba(13,6,24,.94)),
-                    url("assets/img/all/teleport.png") center bottom / cover no-repeat !important;
-                border-top: 1px solid rgba(255,255,255,.08);
-                border-bottom: 1px solid rgba(255,255,255,.08);
-            }
-            .ls-home #holodeck h1 {
-                font: 700 clamp(2.2rem, 5.5vw, 3.8rem)/1.08 "Merriweather Sans", sans-serif;
-                letter-spacing: -.02em;
-                text-shadow: 0 4px 30px rgba(245,61,156,.55);
-            }
-            .ls-home #holodeck p { color: #d6cae6; font-size: 1.1rem; line-height: 1.7; }
-            @media (min-width: 1200px) { .ls-home #holodeck .col-xl-4 { flex: 0 0 auto; width: 46%; } }
-            @media (min-width: 992px) { .ls-home #holodeck .col-lg-5 { flex: 0 0 auto; width: 44rem; max-width: 100%; } }
-            .ls-home #holodeck .input-group { border-radius: .7rem; box-shadow: 0 20px 50px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.16); }
-            .ls-home #holodeck .input-group-text,
-            .ls-home #holodeck .form-control,
-            .ls-home #holodeck .btn { padding: 1rem 1.15rem; }
-            .ls-home #holodeck .input-group-text { background: rgba(58,11,79,.85); color: #fff; border: 0; font-weight: 700; }
-            .ls-home #holodeck .form-control { background: rgba(255,255,255,.1); color: #fff; border: 0; }
-            .ls-home #holodeck .form-control::placeholder { color: #cdbfe0; opacity: 1; }
-            .ls-home #holodeck .form-control:focus { background: rgba(255,255,255,.16); box-shadow: inset 0 0 0 2px #FF8A3D; }
-            .ls-home #holodeck .btn-secondary { background: linear-gradient(135deg, #c91f7a, #d9480f); border: 0; color: #fff; font-weight: 700; }
-            .ls-home #holodeck .btn-secondary:hover, .ls-home #holodeck .btn-secondary:focus-visible { filter: brightness(1.12); }
-            .ls-home #holodeck :focus-visible { outline-color: #fff; }
-
-            /* Footer (shared include, homepage only) */
-            .ls-home footer.footer {
-                position: relative;
-                background: radial-gradient(40rem 12rem at 50% 100%, rgba(245,61,156,.18), transparent 70%), #0d0618 !important;
-                border-top: 1px solid rgba(255,255,255,.08);
-            }
-            .ls-home footer.footer .text-muted { color: #bfb0d3 !important; }
-            .ls-home footer.footer a { color: #fff; }
-            .ls-home footer.footer a:hover { color: #FF8A3D; }
-
             @media (max-width: 991.98px) {
                 .ls-portals { padding: 4.5rem 0 5rem; }
                 .ls-reel-intro { padding: 4.5rem 0 2.5rem; }
                 .ls-act { padding: 5rem 0 5.5rem !important; }
-                .ls-home #holodeck { padding: 4.5rem 0; }
             }
             @media (max-width: 575.98px) {
                 .ls-gate { flex-basis: 100%; max-width: none; }
@@ -794,7 +751,7 @@
         <script>document.documentElement.classList.add('ls-js');</script>
 
     </head>
-    <body id="page-top" class="ls-home">
+    <body id="page-top" class="ls-home ls-chrome">
         <!-- Navigation-->
         <?php ls_nav_render([
             'page_links' => [
