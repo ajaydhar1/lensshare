@@ -1,0 +1,250 @@
+/*
+ * LensShare Portal design system (pilot: sports.php)
+ * Every rule is scoped under body.ls-portal so it cannot leak into other pages.
+ * Per-Portal accent: add a modifier such as .ls-portal--sports to <body>.
+ */
+
+body.ls-portal {
+  --lp-plum: #3A0B4F;
+  --lp-pink: #F53D9C;
+  --lp-orange: #FF8A3D;
+  --lp-ink: #1c1230;
+  --lp-muted: #5f5873;
+  --lp-bg: #FBFAFE;
+  --lp-tint: #F3EFFA;
+  --lp-card: #fff;
+  --lp-line: rgba(58, 11, 79, .09);
+  --lp-radius: 18px;
+  --lp-shadow: 0 1px 2px rgba(58, 11, 79, .05), 0 8px 24px rgba(58, 11, 79, .07);
+  --lp-shadow-hover: 0 2px 4px rgba(58, 11, 79, .06), 0 18px 40px rgba(58, 11, 79, .14);
+  --lp-accent: var(--lp-orange);
+  --lp-accent-2: var(--lp-pink);
+  background: var(--lp-bg);
+  color: var(--lp-ink);
+}
+
+body.ls-portal--sports { --lp-accent: #FF8A3D; --lp-accent-2: #F53D9C; }
+
+.ls-portal .lp-wrap { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ---------- Hero ---------- */
+.ls-portal .lp-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-align: center;
+  padding: 9rem 0 4.5rem;
+  background:
+    radial-gradient(48rem 24rem at 15% 0%, color-mix(in srgb, var(--lp-accent) 22%, transparent), transparent 70%),
+    radial-gradient(46rem 26rem at 90% 10%, color-mix(in srgb, var(--lp-accent-2) 18%, transparent), transparent 70%),
+    linear-gradient(180deg, #fff, var(--lp-bg));
+}
+.ls-portal .lp-hero::before { /* faint futuristic grid */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(58, 11, 79, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(58, 11, 79, .045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 75%);
+}
+
+.ls-portal .lp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  font: 700 .78rem/1 "Merriweather Sans", sans-serif;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--lp-accent);
+  margin: 0 0 1.1rem;
+}
+.ls-portal .lp-eyebrow::before,
+.ls-portal .lp-eyebrow::after {
+  content: "";
+  width: 2rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, currentColor);
+}
+.ls-portal .lp-eyebrow::after { transform: scaleX(-1); }
+
+.ls-portal .lp-title {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.3rem, 5.5vw, 3.9rem);
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  color: var(--lp-ink);
+  margin: 0 0 1.1rem;
+}
+.ls-portal .lp-title em,
+.ls-portal .lp-h2 em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--lp-accent-2), var(--lp-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.ls-portal .lp-lede {
+  max-width: 40rem;
+  margin: 0 auto;
+  font-size: 1.12rem;
+  line-height: 1.7;
+  color: var(--lp-muted);
+}
+
+/* Avatar cluster (mascot / webcam GIFs) */
+.ls-portal .lp-avatars { display: flex; justify-content: center; margin: 2rem 0 1.75rem; }
+.ls-portal .lp-avatars .hi {
+  width: 76px;
+  height: 76px;
+  margin: 0 -9px;
+  border: 3px solid #fff;
+  box-shadow: 0 6px 16px rgba(58, 11, 79, .18);
+  background: var(--lp-tint);
+}
+
+/* Buttons */
+.ls-portal .lp-actions { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
+.ls-portal .lp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .85rem 1.6rem;
+  border-radius: 999px;
+  font: 700 .95rem/1 "Merriweather Sans", sans-serif;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+.ls-portal .lp-btn--primary {
+  color: #fff;
+  background: linear-gradient(90deg, var(--lp-accent-2), var(--lp-accent));
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--lp-accent-2) 35%, transparent);
+}
+.ls-portal .lp-btn--primary:hover { color: #fff; transform: translateY(-2px); }
+.ls-portal .lp-btn--ghost {
+  color: var(--lp-plum);
+  background: rgba(255, 255, 255, .7);
+  border-color: var(--lp-line);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.ls-portal .lp-btn--ghost:hover { color: var(--lp-plum); background: #fff; transform: translateY(-2px); }
+
+/* Quick-jump chips */
+.ls-portal .lp-chips { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin-top: 1.75rem; }
+.ls-portal .lp-chip {
+  padding: .45rem .95rem;
+  border-radius: 999px;
+  font: 700 .8rem/1.2 "Merriweather Sans", sans-serif;
+  color: var(--lp-plum);
+  text-decoration: none;
+  background: rgba(255, 255, 255, .65);
+  border: 1px solid var(--lp-line);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: border-color .2s ease, color .2s ease;
+}
+.ls-portal .lp-chip:hover { color: var(--lp-accent-2); border-color: var(--lp-accent-2); }
+
+/* ---------- Sections ---------- */
+.ls-portal .lp-section { padding: 5rem 0; scroll-margin-top: var(--ls-nav-h, 4.5rem); }
+.ls-portal .lp-section--tint { background: var(--lp-tint); }
+.ls-portal .lp-section + .lp-section::before { display: none; }
+.ls-portal .lp-head { max-width: 42rem; margin: 0 0 2.25rem; }
+.ls-portal .lp-h2 {
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  letter-spacing: -.015em;
+  color: var(--lp-ink);
+  margin: 0 0 .75rem;
+}
+.ls-portal .lp-head p { margin: 0; color: var(--lp-muted); line-height: 1.7; }
+.ls-portal .lp-rule {
+  height: 1px;
+  border: 0;
+  margin: 0;
+  background: linear-gradient(90deg, transparent, var(--lp-accent-2), var(--lp-accent), transparent);
+  opacity: .35;
+}
+
+.ls-portal .lp-layout { display: grid; gap: 2.5rem; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 992px) {
+  .ls-portal .lp-layout { grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); }
+  .ls-portal .lp-layout--flip { grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); }
+  .ls-portal .lp-layout--flip .lp-media { order: -1; }
+}
+.ls-portal .lp-media {
+  position: relative;
+  border-radius: var(--lp-radius);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--lp-line);
+  box-shadow: var(--lp-shadow), 0 0 40px color-mix(in srgb, var(--lp-accent) 14%, transparent);
+}
+.ls-portal .lp-media img { display: block; width: 100%; height: auto; }
+
+/* ---------- Room cards ---------- */
+.ls-portal .lp-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 576px) { .ls-portal .lp-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1200px) { .ls-portal .lp-grid--3 { grid-template-columns: repeat(3, 1fr); } }
+
+.ls-portal .lp-card {
+  --mx: 50%; --my: 0%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  padding: 1.15rem 1.25rem 1.1rem;
+  text-decoration: none;
+  color: var(--lp-ink);
+  background:
+    radial-gradient(14rem 9rem at var(--mx) var(--my), color-mix(in srgb, var(--lp-accent) 14%, transparent), transparent 70%),
+    var(--lp-card);
+  border: 1px solid var(--lp-line);
+  border-radius: 16px;
+  box-shadow: var(--lp-shadow);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.ls-portal .lp-card:hover,
+.ls-portal .lp-card:focus-visible {
+  color: var(--lp-ink);
+  transform: translateY(-3px);
+  box-shadow: var(--lp-shadow-hover);
+  border-color: color-mix(in srgb, var(--lp-accent-2) 45%, transparent);
+}
+.ls-portal .lp-card:focus-visible { outline: 3px solid var(--lp-accent-2); outline-offset: 2px; }
+.ls-portal .lp-card__icon { font-size: 1.5rem; line-height: 1; }
+.ls-portal .lp-card__name {
+  font: 700 1rem/1.3 "Merriweather Sans", sans-serif;
+  margin: .25rem 0 0;
+}
+.ls-portal .lp-card__desc { font-size: .88rem; line-height: 1.5; color: var(--lp-muted); margin: 0; }
+.ls-portal .lp-card__go {
+  margin-top: auto;
+  padding-top: .6rem;
+  font: 700 .8rem/1 "Merriweather Sans", sans-serif;
+  color: var(--lp-accent-2);
+}
+.ls-portal .lp-card__go span { display: inline-block; transition: transform .2s ease; }
+.ls-portal .lp-card:hover .lp-card__go span,
+.ls-portal .lp-card:focus-visible .lp-card__go span { transform: translateX(4px); }
+
+/* Scroll reveal (only when JS is available) */
+.ls-portal.lp-js .lp-reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
+.ls-portal.lp-js .lp-reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ls-portal .lp-card,
+  .ls-portal .lp-btn,
+  .ls-portal .lp-card__go span { transition: none; }
+  .ls-portal .lp-card:hover,
+  .ls-portal .lp-card:focus-visible,
+  .ls-portal .lp-btn:hover { transform: none; }
+  .ls-portal.lp-js .lp-reveal { opacity: 1; transform: none; transition: none; }
+}
