@@ -1,0 +1,494 @@
+/*
+ * LensShare universal top navigation
+ * Every rule is scoped under .ls-nav so it cannot leak into pages, Portals or Comms.
+ * Markup: includes/nav/site-nav.php   Behavior: assets/js/ls-nav.js
+ */
+
+.ls-nav {
+  --ls-nav-h: 4.5rem;          /* keep in sync with the beta banner offset in css/custom.css */
+  --ls-ink: #212529;
+  --ls-muted: #5b6169;
+  --ls-plum: #3A0B4F;
+  --ls-pink: #F53D9C;
+  --ls-orange: #FF8A3D;
+  --ls-line: rgba(33, 37, 41, .09);
+  --ls-tint: rgba(58, 11, 79, .06);
+  --ls-radius: 10px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  height: var(--ls-nav-h);
+  background: rgba(255, 255, 255, .96);
+  border-bottom: 1px solid var(--ls-line);
+  box-shadow: 0 1px 2px rgba(33, 37, 41, .04);
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.25;
+  transition: box-shadow .2s ease;
+}
+
+@supports (backdrop-filter: blur(8px)) {
+  .ls-nav {
+    background: rgba(255, 255, 255, .95);
+    -webkit-backdrop-filter: saturate(1.4) blur(10px);
+    backdrop-filter: saturate(1.4) blur(10px);
+  }
+}
+
+.ls-nav.is-scrolled {
+  box-shadow: 0 6px 20px rgba(33, 37, 41, .10);
+}
+
+.ls-nav *,
+.ls-nav *::before,
+.ls-nav *::after {
+  box-sizing: border-box;
+}
+
+.ls-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ls-nav a {
+  text-decoration: none;
+}
+
+.ls-nav :focus-visible {
+  outline: 2px solid var(--ls-pink);
+  outline-offset: 2px;
+}
+
+/* Skip link */
+.ls-nav .ls-nav__skip {
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  transform: translateY(-120%);
+  padding: .55rem .9rem;
+  background: var(--ls-plum);
+  color: #fff;
+  border-radius: 0 0 var(--ls-radius) var(--ls-radius);
+  font-size: .85rem;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.ls-nav .ls-nav__skip:focus {
+  transform: translateY(0);
+  color: #fff;
+}
+
+/* Bar */
+.ls-nav .ls-nav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1320px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Brand */
+.ls-nav .ls-nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  color: var(--ls-plum);
+  border-radius: var(--ls-radius);
+  flex: 0 0 auto;
+}
+
+.ls-nav .ls-nav__brand:hover {
+  color: var(--ls-plum);
+}
+
+.ls-nav .ls-nav__mark {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.ls-nav .ls-nav__wordmark {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+
+/* Hamburger */
+.ls-nav .ls-nav__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -.5rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: var(--ls-radius);
+  color: var(--ls-ink);
+  cursor: pointer;
+}
+
+.ls-nav .ls-nav__toggle:hover {
+  background: var(--ls-tint);
+}
+
+.ls-nav .ls-nav__bars {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 14px;
+}
+
+.ls-nav .ls-nav__bars span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform .2s ease, opacity .15s ease, top .2s ease;
+}
+
+.ls-nav .ls-nav__bars span:nth-child(1) { top: 0; }
+.ls-nav .ls-nav__bars span:nth-child(2) { top: 6px; }
+.ls-nav .ls-nav__bars span:nth-child(3) { top: 12px; }
+
+.ls-nav.is-open .ls-nav__bars span:nth-child(1) { top: 6px; transform: rotate(45deg); }
+.ls-nav.is-open .ls-nav__bars span:nth-child(2) { opacity: 0; }
+.ls-nav.is-open .ls-nav__bars span:nth-child(3) { top: 6px; transform: rotate(-45deg); }
+
+/* Links */
+.ls-nav .ls-nav__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  width: 100%;
+  min-height: 44px;
+  padding: .6rem .75rem;
+  background: transparent;
+  border: 0;
+  border-radius: var(--ls-radius);
+  color: var(--ls-ink);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease;
+}
+
+.ls-nav .ls-nav__link:hover,
+.ls-nav .ls-nav__item--menu.is-open > .ls-nav__trigger {
+  background: var(--ls-tint);
+  color: var(--ls-plum);
+}
+
+.ls-nav .ls-nav__link.is-active,
+.ls-nav .ls-nav__link.is-current {
+  color: var(--ls-plum);
+}
+
+.ls-nav .ls-nav__link--page {
+  font-weight: 400;
+  color: var(--ls-muted);
+}
+
+.ls-nav .ls-nav__chev {
+  flex: 0 0 auto;
+  margin-left: auto;
+  transition: transform .2s ease;
+}
+
+.ls-nav .ls-nav__item--menu.is-open > .ls-nav__trigger .ls-nav__chev {
+  transform: rotate(180deg);
+}
+
+/* Portals menu */
+.ls-nav .ls-nav__panel {
+  display: none;
+}
+
+.ls-nav .ls-nav__item--menu.is-open > .ls-nav__panel {
+  display: block;
+}
+
+.ls-nav .ls-nav__panel-title {
+  margin: 0 0 .25rem;
+  padding: .5rem .75rem 0;
+  color: var(--ls-muted);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.ls-nav .ls-nav__portal {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .6rem .75rem;
+  border-radius: 12px;
+  color: var(--ls-ink);
+  transition: background-color .15s ease;
+}
+
+.ls-nav .ls-nav__portal:hover,
+.ls-nav .ls-nav__portal.is-active {
+  background: var(--ls-tint);
+  color: var(--ls-ink);
+}
+
+.ls-nav .ls-nav__portal-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #f5eff8;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.ls-nav .ls-nav__portal.is-active .ls-nav__portal-icon {
+  background: #fff;
+  box-shadow: inset 0 0 0 2px var(--ls-pink);
+}
+
+.ls-nav .ls-nav__portal-text {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  min-width: 0;
+}
+
+.ls-nav .ls-nav__portal-name {
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.ls-nav .ls-nav__portal-desc {
+  color: var(--ls-muted);
+  font-size: .75rem;
+  font-weight: 400;
+}
+
+/* Page (section) links */
+.ls-nav .ls-nav__page-label {
+  display: block;
+  margin: 1rem 0 .15rem;
+  padding: 0 .75rem;
+  color: var(--ls-muted);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* Call to action */
+.ls-nav .ls-nav__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  min-height: 44px;
+  margin-top: 1rem;
+  padding: .6rem 1.2rem;
+  border-radius: 999px;
+  background: var(--ls-plum);
+  color: #fff;
+  font-size: .95rem;
+  font-weight: 700;
+  transition: background-color .15s ease, transform .15s ease;
+}
+
+.ls-nav .ls-nav__cta:hover {
+  background: #531a6d;
+  color: #fff;
+}
+
+.ls-nav .ls-nav__live {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ls-orange);
+}
+
+.ls-nav .ls-nav__live::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--ls-orange);
+  animation: ls-nav-pulse 2.4s ease-out infinite;
+}
+
+@keyframes ls-nav-pulse {
+  0%   { transform: scale(1); opacity: .6; }
+  70%  { transform: scale(2.6); opacity: 0; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+/* Mobile / tablet: collapsible menu */
+@media (max-width: 1023.98px) {
+  .ls-nav .ls-nav__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - var(--ls-nav-h));
+    max-height: calc(100dvh - var(--ls-nav-h));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: .5rem 1rem 1.25rem;
+    background: #fff;
+    border-bottom: 1px solid var(--ls-line);
+    box-shadow: 0 16px 30px rgba(33, 37, 41, .14);
+  }
+
+  .ls-nav.is-open .ls-nav__menu {
+    display: block;
+  }
+
+  .ls-nav .ls-nav__panel {
+    margin: .15rem 0 .35rem .75rem;
+    padding-left: .5rem;
+    border-left: 2px solid var(--ls-line);
+  }
+
+  .ls-nav .ls-nav__panel-title {
+    display: none;
+  }
+
+  .ls-nav .ls-nav__link--page {
+    font-size: .95rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .ls-nav .ls-nav__toggle {
+    display: none;
+  }
+
+  .ls-nav .ls-nav__menu {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    min-width: 0;
+    margin-left: 1.25rem;
+  }
+
+  .ls-nav .ls-nav__list {
+    display: flex;
+    align-items: center;
+    gap: .15rem;
+  }
+
+  .ls-nav .ls-nav__link {
+    width: auto;
+    min-height: 40px;
+    padding: .5rem .75rem;
+    font-size: .84rem;
+  }
+
+  .ls-nav .ls-nav__link--page {
+    font-size: .8rem;
+  }
+
+  /* Underline marker for current destination */
+  .ls-nav .ls-nav__link.is-active::after,
+  .ls-nav .ls-nav__link.is-current::after {
+    content: "";
+    position: absolute;
+    left: .75rem;
+    right: .75rem;
+    bottom: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--ls-pink), var(--ls-orange));
+  }
+
+  .ls-nav .ls-nav__chev {
+    margin-left: 0;
+  }
+
+  .ls-nav .ls-nav__page {
+    display: flex;
+    align-items: center;
+    margin-left: .6rem;
+    padding-left: .6rem;
+    border-left: 1px solid var(--ls-line);
+  }
+
+  .ls-nav .ls-nav__page-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .ls-nav .ls-nav__cta {
+    margin: 0 0 0 auto;
+    padding: .5rem 1.1rem;
+    font-size: .84rem;
+  }
+
+  .ls-nav .ls-nav__item--menu {
+    position: relative;
+  }
+
+  .ls-nav .ls-nav__panel {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: -.5rem;
+    width: 560px;
+    padding: .5rem;
+    background: #fff;
+    border: 1px solid var(--ls-line);
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(33, 37, 41, .16), 0 2px 6px rgba(33, 37, 41, .06);
+  }
+
+  .ls-nav .ls-nav__item--menu.is-open > .ls-nav__panel {
+    animation: ls-nav-pop .14s ease-out;
+  }
+
+  .ls-nav .ls-nav__portals {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .1rem;
+  }
+
+  /* No-JS fallback: reveal the menu on keyboard focus */
+  .ls-nav:not([data-ls-ready]) .ls-nav__item--menu:focus-within > .ls-nav__panel {
+    display: block;
+  }
+}
+
+@keyframes ls-nav-pop {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ls-nav,
+  .ls-nav * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
