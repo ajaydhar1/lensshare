@@ -39,6 +39,8 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/custom.css" rel="stylesheet" />
+        <link href="assets/css/ls-portal.css" rel="stylesheet" />
+        <link href="assets/css/ls-chrome.css" rel="stylesheet" />
         <?php require_once __DIR__ . '/includes/nav/site-nav.php'; ls_nav_head(); ?>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -113,7 +115,7 @@
         </style>
 
     </head>
-    <body id="page-top">
+    <body id="page-top" class="ls-portal ls-portal--health ls-chrome">
         <!-- Navigation-->
         <?php ls_nav_render([
             'portal' => 'health',
