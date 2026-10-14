@@ -108,8 +108,9 @@
   <?php ls_nav_render([
       'page_label' => 'Legal',
       'page_links' => [
-          ['label' => 'Terms', 'href' => 'terms.php'],
-          ['label' => 'Privacy', 'href' => 'privacy.php'],
+          ['label' => 'Terms of Use', 'href' => 'terms.php'],
+          ['label' => 'Privacy Policy', 'href' => 'privacy.php'],
+          ['label' => 'Beta Test Agreement', 'href' => 'beta-test-agreement.php'],
       ],
       'skip_target' => 'main-content',
   ]); ?>

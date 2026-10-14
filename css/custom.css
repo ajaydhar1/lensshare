@@ -122,6 +122,12 @@ hr.rectangle-divider {
 #base-station-btn {
 	background-image: url(../assets/img/all/ultrasound.gif);
 	background-position: center;
+	color: #fff;
+}
+
+#base-station-btn:hover,
+#base-station-btn:focus-visible {
+	color: #fff;
 }
 
 .base-station-image {

@@ -54,7 +54,9 @@
             'holodeck_local' => true,
             'page_label' => 'Legal',
             'page_links' => [
+                ['label' => 'Terms of Use', 'href' => 'terms.php'],
                 ['label' => 'Privacy Policy', 'href' => 'privacy.php'],
+                ['label' => 'Beta Test Agreement', 'href' => 'beta-test-agreement.php'],
             ],
         ]); ?>
         <!-- Masthead-->
