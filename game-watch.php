@@ -159,15 +159,23 @@
 
                     require_once("___modules.php");
 
-                    $twitch_arr = get_liveTwitchStreams();
+                    try {
+                        $twitch_arr = get_liveTwitchStreams();
+                    } catch (RuntimeException $error) {
+                        error_log($error->getMessage());
+                        $twitch_arr = ['data' => []];
+                    }
 
                     $channel_ids = Array();
                     foreach ($twitch_arr["data"] as $stream) {
                         if ($stream["language"] == "en") {
-                            array_push($channel_ids, $stream["user_name"]);
+                            array_push($channel_ids, $stream["user_login"]);
                         }
                     }
 
+                    if (!$channel_ids) {
+                        echo '<p role="status">Live streams are temporarily unavailable. Please try again later.</p>';
+                    } else {
                     $first_channel_id = $channel_ids[array_rand($channel_ids)];
 
                     echo "<div id='twitch-frame' style=''><style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe id='twitch-iframe' src='https://player.twitch.tv/?channel=" . $first_channel_id . "&parent=";
@@ -191,7 +199,7 @@
                                     $thumbnail = str_replace("{width}", "1280", $stream['thumbnail_url']);
                                     $thumbnail = str_replace("{height}", "720", $thumbnail);
 
-                                    echo "<li class='splide__slide text-center'><a href='javascript:void(0)' onclick='changeTwitchChannel(\"".$stream['user_name']."\");'><img src='".$thumbnail."' alt='twitch user'/><p>".$stream['user_name']."<br><span style='color:white;'>".$stream['game_name']."</span></p></a></li>";
+                                    echo "<li class='splide__slide text-center'><a href='javascript:void(0)' onclick='changeTwitchChannel(\"".$stream['user_login']."\");'><img src='".$thumbnail."' alt='twitch user'/><p>".$stream['user_name']."<br><span style='color:white;'>".$stream['game_name']."</span></p></a></li>";
 
                                   }
 
@@ -206,7 +214,7 @@
                                     </div>
                                 </div>
                             </div>";
-
+                    }
 
                 ?>
             </section>
@@ -240,10 +248,10 @@
 
                 if ($stream["language"] == "en") {
                   if ($count == 0) {
-                    $channels = $channels . '"https://player.twitch.tv/?channel=' . $stream['user_name'] . '&parent=' . $site_domain . '&muted=true"';
+                    $channels = $channels . '"https://player.twitch.tv/?channel=' . $stream['user_login'] . '&parent=' . $site_domain . '&muted=true"';
                   }
                   else {
-                    $channels = $channels . ', "https://player.twitch.tv/?channel=' . $stream['user_name'] . '&parent=' . $site_domain . '&muted=true"';
+                    $channels = $channels . ', "https://player.twitch.tv/?channel=' . $stream['user_login'] . '&parent=' . $site_domain . '&muted=true"';
                   }
                   $count = $count + 1;
                 }
@@ -319,10 +327,12 @@
 
 
         <script>
-            new Splide( ".splide", {
-                type    : "loop",
-                perPage : 4
-            }).mount();
+            if (document.querySelector('.splide')) {
+                new Splide( ".splide", {
+                    type    : "loop",
+                    perPage : 4
+                }).mount();
+            }
         </script>
 
     </body>

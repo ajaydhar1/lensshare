@@ -208,18 +208,26 @@
 
                             require_once("___modules.php");
 
-                            $twitch_arr = get_liveTwitchStreams();
+                            try {
+                                $twitch_arr = get_liveTwitchStreams();
+                            } catch (RuntimeException $error) {
+                                error_log($error->getMessage());
+                                $twitch_arr = ['data' => []];
+                            }
 
                             $channel_ids = Array();
                             foreach ($twitch_arr["data"] as $stream) {
                                 if ($stream["language"] == "en") {
-                                    array_push($channel_ids, $stream["user_name"]);
+                                    array_push($channel_ids, $stream["user_login"]);
                                 }
                             }
 
-                            $first_channel_id = $channel_ids[0];
+                            if (!$channel_ids) {
+                                echo '<p role="status">Live streams are temporarily unavailable. Please try again later.</p>';
+                            } else {
+                                $first_channel_id = $channel_ids[0];
 
-                            echo "
+                                echo "
                                 <style>.twitch-embed-container { 
                                           position: relative; 
                                           padding-bottom: 56.25%;
@@ -242,6 +250,7 @@
                                         </div>
                                   </div>
                                 </div>";
+                            }
                         ?>
 
                     </div>

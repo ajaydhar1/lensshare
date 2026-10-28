@@ -91,6 +91,13 @@ Database schemas and future migrations are stored in the `database/` directory.
     - 2 global posts
 - Room search indexing is limited to message bodies + user names
 - `room.php` is intentionally `noindex,follow` due to dynamic content
+- Twitch previews require the server's Twitch client ID and client secret to be
+  configured. OAuth and streams failures are recorded in the PHP error log without
+  credentials or tokens; the pages show an unavailable message instead of an empty
+  channel embed. For "OAuth token is missing", check the preceding OAuth failure in
+  that log: missing server credentials, rejected credentials (HTTP 400/401), or a
+  cURL transport/TLS failure. Local success does not verify production configuration.
+- Twitch embed URLs use the API's `user_login`, not its display name (`user_name`).
 
 
 ## 🛣 Roadmap
